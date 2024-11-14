@@ -14,6 +14,7 @@
 ## Automated Findings / Publicly Known Issues
 
 The 4naly3er report can be found [here](https://github.com/code-423n4/2024-11-concrete/blob/main/4naly3er-report.md).
+
 Slither's output can be found [here](https://github.com/code-423n4/2024-11-concrete/blob/main/slither.txt).
 
 _Note for C4 wardens: Anything included in this `Automated Findings / Publicly Known Issues` section is considered a publicly known issue and is ineligible for awards._
@@ -217,8 +218,7 @@ forge test
 forge coverage
 ```
 
-![](https://github.com/user-attachments/assets/cefce125-2def-4361-80fb-2478b83e0de2)
-
+![](https://github.com/user-attachments/assets/378203c8-6300-49e0-ad6d-3129d465ef2f)
 
 ## Miscellaneous
 
