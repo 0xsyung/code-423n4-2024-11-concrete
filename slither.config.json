@@ -1,0 +1,14 @@
+{
+  "filter_paths": "src/test/|lib/",
+  "solc_remaps": [
+    "ds-test/=lib/ds-test/src/",
+    "forge-std/=lib/forge-std/src/"
+  ],
+  "legacy_ast": true,
+  "exclude_low": false,
+  "exclude_high": false,
+  "exclude_medium": false,
+  "exclude_informational": false,
+  "detectors_to_exclude": "solc-version, assembly, low-level-calls, similar-names",
+  "fail_on": "medium"
+}

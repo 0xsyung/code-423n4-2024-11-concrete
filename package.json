@@ -1,0 +1,16 @@
+{
+  "name": "@blueprint-finance/earn-v1",
+  "version": "0.1.4",
+  "description": "Contracts related to the earn side of the Concrete Protocol, including vault and strategies management.",
+  "main": "index.js",
+  "repository": "https://github.com/Blueprint-Finance/sc_earn-v1",
+  "author": "Blueprint Finance",
+  "license": "AGPL-3.0",
+  "private": false,
+  "dependencies": {
+    "@blueprint-finance/hub-and-spokes-libraries": "^0.1.0",
+    "@morpho-org/morpho-blue": "1.0.0",
+    "@openzeppelin/contracts": "5.0.2",
+    "@openzeppelin/contracts-upgradeable": "5.0.2"
+  }
+}

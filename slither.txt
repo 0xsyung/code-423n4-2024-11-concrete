@@ -1,0 +1,36 @@
+INFO:Detectors:
+SiloV1Strategy.constructor(IERC20Metadata,address,address,uint256,address,address,address,address[],uint256[],address).temp (src/strategies/Silo/SiloV1Strategy.sol#48) is a local variable never initialized
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#uninitialized-local-variables
+INFO:Detectors:
+Parameter WithdrawalQueue.getWithdrawalStatus(uint256[])._requestIds (src/queue/WithdrawalQueue.sol#73) is not in mixedCase
+Parameter WithdrawalQueue.prepareWithdrawal(uint256,uint256)._requestId (src/queue/WithdrawalQueue.sol#154) is not in mixedCase
+Parameter WithdrawalQueue.prepareWithdrawal(uint256,uint256)._avaliableAssets (src/queue/WithdrawalQueue.sol#155) is not in mixedCase
+Parameter RadiantV2Strategy.setEnableRewards(bool)._rewardsEnabled (src/strategies/Radiant/RadiantV2Strategy.sol#142) is not in mixedCase
+Parameter EasyMathV2.toValue(uint256,uint256,uint256)._assetAmount (src/strategies/Silo/EasyMathV2.sol#92) is not in mixedCase
+Parameter EasyMathV2.toValue(uint256,uint256,uint256)._assetPrice (src/strategies/Silo/EasyMathV2.sol#93) is not in mixedCase
+Parameter EasyMathV2.toValue(uint256,uint256,uint256)._assetDecimals (src/strategies/Silo/EasyMathV2.sol#94) is not in mixedCase
+Parameter EasyMathV2.calculateUtilization(uint256,uint256,uint256)._dp (src/strategies/Silo/EasyMathV2.sol#122) is not in mixedCase
+Parameter EasyMathV2.calculateUtilization(uint256,uint256,uint256)._totalDeposits (src/strategies/Silo/EasyMathV2.sol#123) is not in mixedCase
+Parameter EasyMathV2.calculateUtilization(uint256,uint256,uint256)._totalBorrowAmount (src/strategies/Silo/EasyMathV2.sol#124) is not in mixedCase
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#conformance-to-solidity-naming-conventions
+INFO:Detectors:
+AaveV3Strategy (src/strategies/Aave/AaveV3Strategy.sol#15-122) does not implement functions:
+	- IStrategy.harvestRewards() (src/interfaces/IStrategy.sol#16)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#unimplemented-functions
+INFO:Detectors:
+The following unused import(s) in src/interfaces/IConcreteMultiStrategyVault.sol should be removed:
+	-import {IERC4626} from "@openzeppelin/contracts/interfaces/IERC4626.sol"; (src/interfaces/IConcreteMultiStrategyVault.sol#4)
+The following unused import(s) in src/vault/ConcreteMultiStrategyVault.sol should be removed:
+	-import {ContextUpgradeable} from "@openzeppelin/contracts-upgradeable/utils/ContextUpgradeable.sol"; (src/vault/ConcreteMultiStrategyVault.sol#8)
+The following unused import(s) in src/strategies/Aave/AaveV3Strategy.sol should be removed:
+	-import {DataTypes} from "./DataTypes.sol"; (src/strategies/Aave/AaveV3Strategy.sol#9)
+The following unused import(s) in src/strategies/StrategyBase.sol should be removed:
+	-import {VaultFees, VaultInitParams, Strategy, IConcreteMultiStrategyVault} from "../interfaces/IConcreteMultiStrategyVault.sol"; (src/strategies/StrategyBase.sol#13)
+
+	-import {Initializable} from "@openzeppelin/contracts/proxy/utils/Initializable.sol"; (src/strategies/StrategyBase.sol#5)
+The following unused import(s) in src/strategies/ProtectStrategy/ProtectStrategy.sol should be removed:
+	-import {Errors} from "../../interfaces/Errors.sol"; (src/strategies/ProtectStrategy/ProtectStrategy.sol#11)
+The following unused import(s) in src/swapper/Swapper.sol should be removed:
+	-import {SwapperRewards} from "../interfaces/DataTypes.sol"; (src/swapper/Swapper.sol#17)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#unused-imports
+INFO:Slither:. analyzed (92 contracts with 91 detectors), 18 result(s) found

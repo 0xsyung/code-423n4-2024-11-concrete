@@ -1,0 +1,14 @@
+{
+  "chainId": 601574,
+  "rpcUrl": "https://virtual.arbitrum.rpc.tenderly.co/9496dfae-cd91-4b3e-9b41-05e2edeeed3a",
+  "verifierUrl": "https://virtual.arbitrum.rpc.tenderly.co/9496dfae-cd91-4b3e-9b41-05e2edeeed3a/verify/etherscan",
+  "etherscanApiKey": "MKXVhRSwpXu7pzMqpgP-ft8Bhyxe-Fpu",
+  "blueprint": "0x1C3bA9Ec1638990414600fa63C5B2cfFa8A61dA4",
+  "treasury": "0x11111",
+  "tokenCascade": [],
+  "blueprints": [
+    "0x1C3bA9Ec1638990414600fa63C5B2cfFa8A61dA4",
+    "0x3220A2900ccd70D36E7b55334ccD12E39Bf56cf0",
+    "0x117eC06A131af325FEFc4046b55b44Ffd53B7322"
+  ]
+}

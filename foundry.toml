@@ -1,0 +1,13 @@
+[profile.default]
+src = "src"
+out = "out"
+libs = ["node_modules","lib"]
+remappings = [".=remappings.txt"]
+fs_permissions = [{ access = "read-write", path = "./" }]
+cbor_metadata = true
+# via_ir = true
+
+# See more config options https://github.com/foundry-rs/foundry/blob/master/crates/config/README.md#all-options
+
+[etherscan]
+unknown_chain = { key = "${TENDERLY_ACCESS_KEY}", chain = 601574, url = "${ARB_VIRTUAL_RPC_URL}/verify/etherscan" }

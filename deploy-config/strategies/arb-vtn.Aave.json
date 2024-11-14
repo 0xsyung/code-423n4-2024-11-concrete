@@ -1,0 +1,9 @@
+{
+  "allocationIndex": 0,
+  "allocationAmount": 3333,
+  "feeRecipient": "0x0",
+  "rewardFee": 0,
+  "indexInVault": 1,
+  "replaceStrat": false,
+  "aaveDataProvider": "0x69FA688f1Dc47d4B5d8029D5a35FB7a548310654"
+}

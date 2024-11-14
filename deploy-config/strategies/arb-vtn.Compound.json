@@ -1,0 +1,10 @@
+{
+  "allocationIndex": 0,
+  "allocationAmount": 3333,
+  "feeRecipient": "0x0",
+  "rewardFee": 0,
+  "indexInVault": 2,
+  "replaceStrat": false,
+  "cTokenAddress": "0x9c4ec768c28520B50860ea7a15bd7213a9fF58bf",
+  "rewarderAddress": "0x88730d254A2f7e6AC8388c3198aFd694bA9f7fae"
+}

@@ -1,0 +1,1 @@
+genhtml -o report lcov.info --branch-coverage --ignore-errors category

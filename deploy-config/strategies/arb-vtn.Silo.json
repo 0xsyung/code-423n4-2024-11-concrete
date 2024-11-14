@@ -1,0 +1,14 @@
+{
+  "allocationIndex": 1,
+  "allocationAmount": 3000,
+  "feeRecipient": "0x0",
+  "rewardFee": 0,
+  "indexInVault": 0,
+  "replaceStrat": false,
+  "siloAsset": "0x6c84a8f1c29108F47a79964b5Fe888D4f4D0dE40",
+  "siloRepository": "0x8658047e48CC09161f4152c79155Dac1d710Ff0a",
+  "siloIncentivesController": "0x7e5BFBb25b33f335e34fa0d78b878092931F8D20",
+  "extraRewardAssets": ["0x912CE59144191C1204E64559FE8253a0e49E6548", "0x82af49447d8a07e3bd95bd0d56f35241523fbab1", "0x2f2a2543b76a4166549f7aab2e75bef0aefc5b0f"],
+  "extraRewardFees": [0, 0, 0]
+}
+

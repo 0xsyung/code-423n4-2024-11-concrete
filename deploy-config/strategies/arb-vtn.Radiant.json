@@ -1,0 +1,9 @@
+{
+  "allocationIndex": 0,
+  "allocationAmount": 5000,
+  "feeRecipient": "0x0",
+  "rewardFee": 0,
+  "indexInVault": 0,
+  "replaceStrat": false,
+  "addressesProvider": "0x091d52CacE1edc5527C99cDCFA6937C1635330E4"
+}

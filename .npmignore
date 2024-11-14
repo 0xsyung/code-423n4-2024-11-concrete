@@ -1,0 +1,48 @@
+# Dependency lock files
+yarn.lock
+
+# Build and temporary files
+artifacts/
+cache/
+typechain-types/
+
+# Documentation and images (exclude if not needed for the package)
+docs/
+img/
+
+# Node modules (handled automatically by npm)
+node_modules/
+out/
+
+# Forge-specific folders and files
+lib/
+script/
+test/
+slither.config.json
+
+# git diffs
+git_diff_main_develop/
+gitdiff.sh
+
+# Exclude Git's ignore file from the package
+.gitignore
+.github/
+
+# Temporary or editor-specific files
+*.log
+*.tmp
+.DS_Store
+
+# environment files
+.env
+
+# IDE files
+.vscode/
+
+# deployment files
+protocol-deploy/
+Makefile
+deploy-config
+report/
+
+
