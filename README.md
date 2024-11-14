@@ -1,3 +1,35 @@
+# Concrete audit details
+
+- Total Prize Pool: $112,500 in USDC
+  - HM awards: $72,480 in USDC
+  - QA awards: $3,020 in USDC
+  - Judge awards: $8,500 in USDC
+  - Validator awards: $5,500 USDC
+  - Scout awards: $500 in USDC
+  - Mitigation Review: $22,500 in USDC - details to be confirmed
+- [Read our guidelines for more details](https://docs.code4rena.com/roles/wardens)
+- Starts November 15, 2024 20:00 UTC
+- Ends November 29, 2024 20:00 UTC
+
+## Automated Findings / Publicly Known Issues
+
+The 4naly3er report can be found [here](https://github.com/code-423n4/2024-11-concrete/blob/main/4naly3er-report.md).
+Slither's output can be found [here](https://github.com/code-423n4/2024-11-concrete/blob/main/slither.txt).
+
+_Note for C4 wardens: Anything included in this `Automated Findings / Publicly Known Issues` section is considered a publicly known issue and is ineligible for awards._
+
+# Overview
+
+Concrete is a blockchain protocol that allows DeFi users to optimize on capital efficiency by protecting leveraged positions against collateral depreciation and by offering attractive yield opportunities for liquidity providers.
+
+## Links
+
+- **Previous audits:** [Earn V1_SSC.pdf](https://github.com/code-423n4/2024-11-concrete/blob/main/Earn%20V1%20_%20SSC.pdf)
+- **Documentation:** <https://blueprint-finance.gitbook.io/concrete_protocol/pSPVTC2wbOO8D1NFQXyP/>
+- **Website:** <https://blueprintfinance.com/>
+- **X/Twitter:** <https://x.com/Blueprint_DeFi>
+
+---
 
 
 # Scope
@@ -93,3 +125,103 @@
 | ./test/utils/mocks/MockERC4626Queue.sol |
 | Totals: 30 |
 
+## Scoping Q &amp; A
+
+### General questions
+
+### Are there any ERC20's in scope?: Yes
+
+| Question                                | Answer                       |
+| --------------------------------------- | ---------------------------- |
+| ERC20 used by the protocol              |      Any (all possible ERC20s)         |
+| Test coverage                           | 77.45%                        |
+| ERC721 used  by the protocol            |        N/A          |
+| ERC777 used by the protocol             |        N/A           |
+| ERC1155 used by the protocol            |        N/A          |
+| Chains the protocol will be deployed on | Ethereum,BSC,Other,ArbitrumCorn
+Berachain
+  |
+
+### ERC20 token behaviors in scope
+
+| Question                                                                                                                                                   | Answer |
+| ---------------------------------------------------------------------------------------------------------------------------------------------------------- | ------ |
+| [Missing return values](https://github.com/d-xo/weird-erc20?tab=readme-ov-file#missing-return-values)                                                      |   Out of scope  |
+| [Fee on transfer](https://github.com/d-xo/weird-erc20?tab=readme-ov-file#fee-on-transfer)                                                                  |  In scope  |
+| [Balance changes outside of transfers](https://github.com/d-xo/weird-erc20?tab=readme-ov-file#balance-modifications-outside-of-transfers-rebasingairdrops) | In scope    |
+| [Upgradeability](https://github.com/d-xo/weird-erc20?tab=readme-ov-file#upgradable-tokens)                                                                 |   In scope  |
+| [Flash minting](https://github.com/d-xo/weird-erc20?tab=readme-ov-file#flash-mintable-tokens)                                                              | Out of scope    |
+| [Pausability](https://github.com/d-xo/weird-erc20?tab=readme-ov-file#pausable-tokens)                                                                      | In scope    |
+| [Approval race protections](https://github.com/d-xo/weird-erc20?tab=readme-ov-file#approval-race-protections)                                              | In scope    |
+| [Revert on approval to zero address](https://github.com/d-xo/weird-erc20?tab=readme-ov-file#revert-on-approval-to-zero-address)                            | In scope    |
+| [Revert on zero value approvals](https://github.com/d-xo/weird-erc20?tab=readme-ov-file#revert-on-zero-value-approvals)                                    | In scope    |
+| [Revert on zero value transfers](https://github.com/d-xo/weird-erc20?tab=readme-ov-file#revert-on-zero-value-transfers)                                    | In scope    |
+| [Revert on transfer to the zero address](https://github.com/d-xo/weird-erc20?tab=readme-ov-file#revert-on-transfer-to-the-zero-address)                    | In scope    |
+| [Revert on large approvals and/or transfers](https://github.com/d-xo/weird-erc20?tab=readme-ov-file#revert-on-large-approvals--transfers)                  | In scope    |
+| [Doesn't revert on failure](https://github.com/d-xo/weird-erc20?tab=readme-ov-file#no-revert-on-failure)                                                   |  In scope   |
+| [Multiple token addresses](https://github.com/d-xo/weird-erc20?tab=readme-ov-file#revert-on-zero-value-transfers)                                          | In scope    |
+| [Low decimals ( < 6)](https://github.com/d-xo/weird-erc20?tab=readme-ov-file#low-decimals)                                                                 |   In scope  |
+| [High decimals ( > 18)](https://github.com/d-xo/weird-erc20?tab=readme-ov-file#high-decimals)                                                              | In scope    |
+| [Blocklists](https://github.com/d-xo/weird-erc20?tab=readme-ov-file#tokens-with-blocklists)                                                                | In scope    |
+
+### External integrations (e.g., Uniswap) behavior in scope
+
+| Question                                                  | Answer |
+| --------------------------------------------------------- | ------ |
+| Enabling/disabling fees (e.g. Blur disables/enables fees) | Yes   |
+| Pausability (e.g. Uniswap pool gets paused)               |  Yes   |
+| Upgradeability (e.g. Uniswap gets upgraded)               |   Yes  |
+
+### EIP compliance checklist
+
+| Question                                | Answer                       |
+| --------------------------------------- | ---------------------------- |
+| [ConcreteMultiStrategyVault.sol](https://github.com/code-423n4/2024-11-concrete/blob/main/src/vault/ConcreteMultiStrategyVault.sol)                         | ERC4626             |
+| [StrategyBase.sol](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/StrategyBase.sol)                       | ERC4626                 |
+
+# Additional context
+
+## Main invariants
+
+The only shareholder of strategies are multi-strategy vaults.
+
+## Attack ideas (where to focus for bugs)
+
+- Funds locked
+- DoS
+- Exploitation of roles
+- dust in vaults (possible reverts related to that)
+- inadvertent reverts in general
+
+## All trusted roles in the protocol
+
+| Role                                |
+| --------------------------------------- |
+| Owner     (multisig)                     |  
+
+## Describe any novel or unique curve logic or mathematical models implemented in the contracts
+
+N/A
+
+## Running tests
+
+```bash
+git clone --recurse https://github.com/code-423n4/2024-11-concrete.git
+cd 2024-11-concrete
+export NPM_TOKEN=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
+# make sure that `//registry.npmjs.org/:_authToken=${NPM_TOKEN}` is added in the ./.npmrc file
+yarn
+forge install
+forge build
+forge test
+forge coverage
+```
+
+![](https://github.com/user-attachments/assets/cefce125-2def-4361-80fb-2478b83e0de2)
+
+
+## Miscellaneous
+
+Employees of Concrete and employees' family members are ineligible to participate in this audit.
+
+Code4rena's rules cannot be overridden by the contents of this README. In case of doubt, please check with C4 staff.

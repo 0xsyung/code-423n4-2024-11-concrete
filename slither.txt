@@ -1,36 +1,376 @@
 INFO:Detectors:
-SiloV1Strategy.constructor(IERC20Metadata,address,address,uint256,address,address,address,address[],uint256[],address).temp (src/strategies/Silo/SiloV1Strategy.sol#48) is a local variable never initialized
+Math.mulDiv(uint256,uint256,uint256) (node_modules/@openzeppelin/contracts/utils/math/Math.sol#123-202) has bitwise-xor operator ^ instead of the exponentiation operator **: 
+	 - inverse = (3 * denominator) ^ 2 (node_modules/@openzeppelin/contracts/utils/math/Math.sol#184)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#incorrect-exponentiation
+INFO:Detectors:
+Reentrancy in ConcreteMultiStrategyVault._update(address,address,uint256) (src/vault/ConcreteMultiStrategyVault.sol#852-856):
+	External calls:
+	- updateUserRewardsToCurrent(from) (src/vault/ConcreteMultiStrategyVault.sol#853)
+		- returndata = address(token).functionCall(data) (node_modules/@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol#96)
+		- (success,returndata) = target.call{value: value}(data) (node_modules/@openzeppelin/contracts/utils/Address.sol#87)
+		- IERC20(rewardAddresses[i]).safeTransfer(userAddress,rewardsToTransfer) (src/vault/ConcreteMultiStrategyVault.sol#1044)
+	- updateUserRewardsToCurrent(to) (src/vault/ConcreteMultiStrategyVault.sol#854)
+		- returndata = address(token).functionCall(data) (node_modules/@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol#96)
+		- (success,returndata) = target.call{value: value}(data) (node_modules/@openzeppelin/contracts/utils/Address.sol#87)
+		- IERC20(rewardAddresses[i]).safeTransfer(userAddress,rewardsToTransfer) (src/vault/ConcreteMultiStrategyVault.sol#1044)
+	External calls sending eth:
+	- updateUserRewardsToCurrent(from) (src/vault/ConcreteMultiStrategyVault.sol#853)
+		- (success,returndata) = target.call{value: value}(data) (node_modules/@openzeppelin/contracts/utils/Address.sol#87)
+	- updateUserRewardsToCurrent(to) (src/vault/ConcreteMultiStrategyVault.sol#854)
+		- (success,returndata) = target.call{value: value}(data) (node_modules/@openzeppelin/contracts/utils/Address.sol#87)
+	State variables written after the call(s):
+	- updateUserRewardsToCurrent(to) (src/vault/ConcreteMultiStrategyVault.sol#854)
+		- totalRewardsClaimed[userAddress][rewardAddresses[i]] += rewardsToTransfer (src/vault/ConcreteMultiStrategyVault.sol#1043)
+	ConcreteMultiStrategyVault.totalRewardsClaimed (src/vault/ConcreteMultiStrategyVault.sol#86) can be used in cross function reentrancies:
+	- ConcreteMultiStrategyVault.getTotalRewardsClaimed(address) (src/vault/ConcreteMultiStrategyVault.sol#552-565)
+	- ConcreteMultiStrategyVault.totalRewardsClaimed (src/vault/ConcreteMultiStrategyVault.sol#86)
+	- ConcreteMultiStrategyVault.updateUserRewardsToCurrent(address) (src/vault/ConcreteMultiStrategyVault.sol#1033-1052)
+	- updateUserRewardsToCurrent(to) (src/vault/ConcreteMultiStrategyVault.sol#854)
+		- userRewardIndex[userAddress][rewardAddresses[i]] = tokenRewardIndex (src/vault/ConcreteMultiStrategyVault.sol#1047)
+	ConcreteMultiStrategyVault.userRewardIndex (src/vault/ConcreteMultiStrategyVault.sol#83) can be used in cross function reentrancies:
+	- ConcreteMultiStrategyVault.getUserRewards(address) (src/vault/ConcreteMultiStrategyVault.sol#532-549)
+	- ConcreteMultiStrategyVault.updateUserRewardsToCurrent(address) (src/vault/ConcreteMultiStrategyVault.sol#1033-1052)
+	- ConcreteMultiStrategyVault.userRewardIndex (src/vault/ConcreteMultiStrategyVault.sol#83)
+Reentrancy in ConcreteMultiStrategyVault._withdraw(uint256,address,address,uint256,uint256) (src/vault/ConcreteMultiStrategyVault.sol#419-435):
+	External calls:
+	- _burn(owner_,shares) (src/vault/ConcreteMultiStrategyVault.sol#423)
+		- returndata = address(token).functionCall(data) (node_modules/@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol#96)
+		- (success,returndata) = target.call{value: value}(data) (node_modules/@openzeppelin/contracts/utils/Address.sol#87)
+		- IERC20(rewardAddresses[i]).safeTransfer(userAddress,rewardsToTransfer) (src/vault/ConcreteMultiStrategyVault.sol#1044)
+	- _mint(feeRecipient,feeShares) (src/vault/ConcreteMultiStrategyVault.sol#424)
+		- returndata = address(token).functionCall(data) (node_modules/@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol#96)
+		- (success,returndata) = target.call{value: value}(data) (node_modules/@openzeppelin/contracts/utils/Address.sol#87)
+		- IERC20(rewardAddresses[i]).safeTransfer(userAddress,rewardsToTransfer) (src/vault/ConcreteMultiStrategyVault.sol#1044)
+	External calls sending eth:
+	- _burn(owner_,shares) (src/vault/ConcreteMultiStrategyVault.sol#423)
+		- (success,returndata) = target.call{value: value}(data) (node_modules/@openzeppelin/contracts/utils/Address.sol#87)
+	- _mint(feeRecipient,feeShares) (src/vault/ConcreteMultiStrategyVault.sol#424)
+		- (success,returndata) = target.call{value: value}(data) (node_modules/@openzeppelin/contracts/utils/Address.sol#87)
+	State variables written after the call(s):
+	- _mint(feeRecipient,feeShares) (src/vault/ConcreteMultiStrategyVault.sol#424)
+		- totalRewardsClaimed[userAddress][rewardAddresses[i]] += rewardsToTransfer (src/vault/ConcreteMultiStrategyVault.sol#1043)
+	ConcreteMultiStrategyVault.totalRewardsClaimed (src/vault/ConcreteMultiStrategyVault.sol#86) can be used in cross function reentrancies:
+	- ConcreteMultiStrategyVault.getTotalRewardsClaimed(address) (src/vault/ConcreteMultiStrategyVault.sol#552-565)
+	- ConcreteMultiStrategyVault.totalRewardsClaimed (src/vault/ConcreteMultiStrategyVault.sol#86)
+	- ConcreteMultiStrategyVault.updateUserRewardsToCurrent(address) (src/vault/ConcreteMultiStrategyVault.sol#1033-1052)
+	- _mint(feeRecipient,feeShares) (src/vault/ConcreteMultiStrategyVault.sol#424)
+		- userRewardIndex[userAddress][rewardAddresses[i]] = tokenRewardIndex (src/vault/ConcreteMultiStrategyVault.sol#1047)
+	ConcreteMultiStrategyVault.userRewardIndex (src/vault/ConcreteMultiStrategyVault.sol#83) can be used in cross function reentrancies:
+	- ConcreteMultiStrategyVault.getUserRewards(address) (src/vault/ConcreteMultiStrategyVault.sol#532-549)
+	- ConcreteMultiStrategyVault.updateUserRewardsToCurrent(address) (src/vault/ConcreteMultiStrategyVault.sol#1033-1052)
+	- ConcreteMultiStrategyVault.userRewardIndex (src/vault/ConcreteMultiStrategyVault.sol#83)
+Reentrancy in ConcreteMultiStrategyVault.changeAllocations(Allocation[],bool) (src/vault/ConcreteMultiStrategyVault.sol#865-889):
+	External calls:
+	- takeFees() (src/vault/ConcreteMultiStrategyVault.sol#868)
+		- returndata = address(token).functionCall(data) (node_modules/@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol#96)
+		- (success,returndata) = target.call{value: value}(data) (node_modules/@openzeppelin/contracts/utils/Address.sol#87)
+		- IERC20(rewardAddresses[i]).safeTransfer(userAddress,rewardsToTransfer) (src/vault/ConcreteMultiStrategyVault.sol#1044)
+	External calls sending eth:
+	- takeFees() (src/vault/ConcreteMultiStrategyVault.sol#868)
+		- (success,returndata) = target.call{value: value}(data) (node_modules/@openzeppelin/contracts/utils/Address.sol#87)
+	State variables written after the call(s):
+	- strategies[i].allocation = allocations_[i] (src/vault/ConcreteMultiStrategyVault.sol#876)
+	ConcreteMultiStrategyVault.strategies (src/vault/ConcreteMultiStrategyVault.sol#68) can be used in cross function reentrancies:
+	- ConcreteMultiStrategyVault._withdrawStrategyFunds(uint256,address) (src/vault/ConcreteMultiStrategyVault.sol#444-482)
+	- ConcreteMultiStrategyVault.deposit(uint256,address) (src/vault/ConcreteMultiStrategyVault.sol#227-268)
+	- ConcreteMultiStrategyVault.getAvailableAssetsForWithdrawal() (src/vault/ConcreteMultiStrategyVault.sol#511-524)
+	- ConcreteMultiStrategyVault.getStrategies() (src/vault/ConcreteMultiStrategyVault.sol#787-789)
+	- ConcreteMultiStrategyVault.mint(uint256,address) (src/vault/ConcreteMultiStrategyVault.sol#290-330)
+	- ConcreteMultiStrategyVault.pullFundsFromSingleStrategy(uint256) (src/vault/ConcreteMultiStrategyVault.sol#930-938)
+	- ConcreteMultiStrategyVault.pullFundsFromStrategies() (src/vault/ConcreteMultiStrategyVault.sol#910-919)
+	- ConcreteMultiStrategyVault.pushFundsIntoSingleStrategy(uint256) (src/vault/ConcreteMultiStrategyVault.sol#945-957)
+	- ConcreteMultiStrategyVault.pushFundsIntoSingleStrategy(uint256,uint256) (src/vault/ConcreteMultiStrategyVault.sol#965-971)
+	- ConcreteMultiStrategyVault.pushFundsToStrategies() (src/vault/ConcreteMultiStrategyVault.sol#895-901)
+	- ConcreteMultiStrategyVault.requestFunds(uint256) (src/vault/ConcreteMultiStrategyVault.sol#1098-1108)
+	- ConcreteMultiStrategyVault.totalAssets() (src/vault/ConcreteMultiStrategyVault.sol#573-592)
+Reentrancy in ConcreteMultiStrategyVault.deposit(uint256,address) (src/vault/ConcreteMultiStrategyVault.sol#227-268):
+	External calls:
+	- _mint(feeRecipient,feeShares) (src/vault/ConcreteMultiStrategyVault.sol#246)
+		- returndata = address(token).functionCall(data) (node_modules/@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol#96)
+		- (success,returndata) = target.call{value: value}(data) (node_modules/@openzeppelin/contracts/utils/Address.sol#87)
+		- IERC20(rewardAddresses[i]).safeTransfer(userAddress,rewardsToTransfer) (src/vault/ConcreteMultiStrategyVault.sol#1044)
+	- _mint(receiver_,shares) (src/vault/ConcreteMultiStrategyVault.sol#247)
+		- returndata = address(token).functionCall(data) (node_modules/@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol#96)
+		- (success,returndata) = target.call{value: value}(data) (node_modules/@openzeppelin/contracts/utils/Address.sol#87)
+		- IERC20(rewardAddresses[i]).safeTransfer(userAddress,rewardsToTransfer) (src/vault/ConcreteMultiStrategyVault.sol#1044)
+	External calls sending eth:
+	- _mint(feeRecipient,feeShares) (src/vault/ConcreteMultiStrategyVault.sol#246)
+		- (success,returndata) = target.call{value: value}(data) (node_modules/@openzeppelin/contracts/utils/Address.sol#87)
+	- _mint(receiver_,shares) (src/vault/ConcreteMultiStrategyVault.sol#247)
+		- (success,returndata) = target.call{value: value}(data) (node_modules/@openzeppelin/contracts/utils/Address.sol#87)
+	State variables written after the call(s):
+	- _mint(receiver_,shares) (src/vault/ConcreteMultiStrategyVault.sol#247)
+		- totalRewardsClaimed[userAddress][rewardAddresses[i]] += rewardsToTransfer (src/vault/ConcreteMultiStrategyVault.sol#1043)
+	ConcreteMultiStrategyVault.totalRewardsClaimed (src/vault/ConcreteMultiStrategyVault.sol#86) can be used in cross function reentrancies:
+	- ConcreteMultiStrategyVault.getTotalRewardsClaimed(address) (src/vault/ConcreteMultiStrategyVault.sol#552-565)
+	- ConcreteMultiStrategyVault.totalRewardsClaimed (src/vault/ConcreteMultiStrategyVault.sol#86)
+	- ConcreteMultiStrategyVault.updateUserRewardsToCurrent(address) (src/vault/ConcreteMultiStrategyVault.sol#1033-1052)
+	- _mint(receiver_,shares) (src/vault/ConcreteMultiStrategyVault.sol#247)
+		- userRewardIndex[userAddress][rewardAddresses[i]] = tokenRewardIndex (src/vault/ConcreteMultiStrategyVault.sol#1047)
+	ConcreteMultiStrategyVault.userRewardIndex (src/vault/ConcreteMultiStrategyVault.sol#83) can be used in cross function reentrancies:
+	- ConcreteMultiStrategyVault.getUserRewards(address) (src/vault/ConcreteMultiStrategyVault.sol#532-549)
+	- ConcreteMultiStrategyVault.updateUserRewardsToCurrent(address) (src/vault/ConcreteMultiStrategyVault.sol#1033-1052)
+	- ConcreteMultiStrategyVault.userRewardIndex (src/vault/ConcreteMultiStrategyVault.sol#83)
+Reentrancy in ConcreteMultiStrategyVault.mint(uint256,address) (src/vault/ConcreteMultiStrategyVault.sol#290-330):
+	External calls:
+	- _mint(feeRecipient,feeShares) (src/vault/ConcreteMultiStrategyVault.sol#309)
+		- returndata = address(token).functionCall(data) (node_modules/@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol#96)
+		- (success,returndata) = target.call{value: value}(data) (node_modules/@openzeppelin/contracts/utils/Address.sol#87)
+		- IERC20(rewardAddresses[i]).safeTransfer(userAddress,rewardsToTransfer) (src/vault/ConcreteMultiStrategyVault.sol#1044)
+	- _mint(receiver_,shares_) (src/vault/ConcreteMultiStrategyVault.sol#310)
+		- returndata = address(token).functionCall(data) (node_modules/@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol#96)
+		- (success,returndata) = target.call{value: value}(data) (node_modules/@openzeppelin/contracts/utils/Address.sol#87)
+		- IERC20(rewardAddresses[i]).safeTransfer(userAddress,rewardsToTransfer) (src/vault/ConcreteMultiStrategyVault.sol#1044)
+	External calls sending eth:
+	- _mint(feeRecipient,feeShares) (src/vault/ConcreteMultiStrategyVault.sol#309)
+		- (success,returndata) = target.call{value: value}(data) (node_modules/@openzeppelin/contracts/utils/Address.sol#87)
+	- _mint(receiver_,shares_) (src/vault/ConcreteMultiStrategyVault.sol#310)
+		- (success,returndata) = target.call{value: value}(data) (node_modules/@openzeppelin/contracts/utils/Address.sol#87)
+	State variables written after the call(s):
+	- _mint(receiver_,shares_) (src/vault/ConcreteMultiStrategyVault.sol#310)
+		- totalRewardsClaimed[userAddress][rewardAddresses[i]] += rewardsToTransfer (src/vault/ConcreteMultiStrategyVault.sol#1043)
+	ConcreteMultiStrategyVault.totalRewardsClaimed (src/vault/ConcreteMultiStrategyVault.sol#86) can be used in cross function reentrancies:
+	- ConcreteMultiStrategyVault.getTotalRewardsClaimed(address) (src/vault/ConcreteMultiStrategyVault.sol#552-565)
+	- ConcreteMultiStrategyVault.totalRewardsClaimed (src/vault/ConcreteMultiStrategyVault.sol#86)
+	- ConcreteMultiStrategyVault.updateUserRewardsToCurrent(address) (src/vault/ConcreteMultiStrategyVault.sol#1033-1052)
+	- _mint(receiver_,shares_) (src/vault/ConcreteMultiStrategyVault.sol#310)
+		- userRewardIndex[userAddress][rewardAddresses[i]] = tokenRewardIndex (src/vault/ConcreteMultiStrategyVault.sol#1047)
+	ConcreteMultiStrategyVault.userRewardIndex (src/vault/ConcreteMultiStrategyVault.sol#83) can be used in cross function reentrancies:
+	- ConcreteMultiStrategyVault.getUserRewards(address) (src/vault/ConcreteMultiStrategyVault.sol#532-549)
+	- ConcreteMultiStrategyVault.updateUserRewardsToCurrent(address) (src/vault/ConcreteMultiStrategyVault.sol#1033-1052)
+	- ConcreteMultiStrategyVault.userRewardIndex (src/vault/ConcreteMultiStrategyVault.sol#83)
+Reentrancy in ConcreteMultiStrategyVault.removeStrategy(uint256) (src/vault/ConcreteMultiStrategyVault.sol#837-847):
+	External calls:
+	- protectStrategy = MultiStrategyVaultHelper.removeStrategy(stratToBeRemoved,protectStrategy,IERC20(asset())) (src/vault/ConcreteMultiStrategyVault.sol#842)
+	- takeFees() (src/vault/ConcreteMultiStrategyVault.sol#837)
+		- returndata = address(token).functionCall(data) (node_modules/@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol#96)
+		- (success,returndata) = target.call{value: value}(data) (node_modules/@openzeppelin/contracts/utils/Address.sol#87)
+		- IERC20(rewardAddresses[i]).safeTransfer(userAddress,rewardsToTransfer) (src/vault/ConcreteMultiStrategyVault.sol#1044)
+	External calls sending eth:
+	- takeFees() (src/vault/ConcreteMultiStrategyVault.sol#837)
+		- (success,returndata) = target.call{value: value}(data) (node_modules/@openzeppelin/contracts/utils/Address.sol#87)
+	State variables written after the call(s):
+	- strategies[index_] = strategies[len - 1] (src/vault/ConcreteMultiStrategyVault.sol#845)
+	ConcreteMultiStrategyVault.strategies (src/vault/ConcreteMultiStrategyVault.sol#68) can be used in cross function reentrancies:
+	- ConcreteMultiStrategyVault._withdrawStrategyFunds(uint256,address) (src/vault/ConcreteMultiStrategyVault.sol#444-482)
+	- ConcreteMultiStrategyVault.deposit(uint256,address) (src/vault/ConcreteMultiStrategyVault.sol#227-268)
+	- ConcreteMultiStrategyVault.getAvailableAssetsForWithdrawal() (src/vault/ConcreteMultiStrategyVault.sol#511-524)
+	- ConcreteMultiStrategyVault.getStrategies() (src/vault/ConcreteMultiStrategyVault.sol#787-789)
+	- ConcreteMultiStrategyVault.mint(uint256,address) (src/vault/ConcreteMultiStrategyVault.sol#290-330)
+	- ConcreteMultiStrategyVault.pullFundsFromSingleStrategy(uint256) (src/vault/ConcreteMultiStrategyVault.sol#930-938)
+	- ConcreteMultiStrategyVault.pullFundsFromStrategies() (src/vault/ConcreteMultiStrategyVault.sol#910-919)
+	- ConcreteMultiStrategyVault.pushFundsIntoSingleStrategy(uint256) (src/vault/ConcreteMultiStrategyVault.sol#945-957)
+	- ConcreteMultiStrategyVault.pushFundsIntoSingleStrategy(uint256,uint256) (src/vault/ConcreteMultiStrategyVault.sol#965-971)
+	- ConcreteMultiStrategyVault.pushFundsToStrategies() (src/vault/ConcreteMultiStrategyVault.sol#895-901)
+	- ConcreteMultiStrategyVault.requestFunds(uint256) (src/vault/ConcreteMultiStrategyVault.sol#1098-1108)
+	- ConcreteMultiStrategyVault.totalAssets() (src/vault/ConcreteMultiStrategyVault.sol#573-592)
+	- strategies.pop() (src/vault/ConcreteMultiStrategyVault.sol#846)
+	ConcreteMultiStrategyVault.strategies (src/vault/ConcreteMultiStrategyVault.sol#68) can be used in cross function reentrancies:
+	- ConcreteMultiStrategyVault._withdrawStrategyFunds(uint256,address) (src/vault/ConcreteMultiStrategyVault.sol#444-482)
+	- ConcreteMultiStrategyVault.deposit(uint256,address) (src/vault/ConcreteMultiStrategyVault.sol#227-268)
+	- ConcreteMultiStrategyVault.getAvailableAssetsForWithdrawal() (src/vault/ConcreteMultiStrategyVault.sol#511-524)
+	- ConcreteMultiStrategyVault.getStrategies() (src/vault/ConcreteMultiStrategyVault.sol#787-789)
+	- ConcreteMultiStrategyVault.mint(uint256,address) (src/vault/ConcreteMultiStrategyVault.sol#290-330)
+	- ConcreteMultiStrategyVault.pullFundsFromSingleStrategy(uint256) (src/vault/ConcreteMultiStrategyVault.sol#930-938)
+	- ConcreteMultiStrategyVault.pullFundsFromStrategies() (src/vault/ConcreteMultiStrategyVault.sol#910-919)
+	- ConcreteMultiStrategyVault.pushFundsIntoSingleStrategy(uint256) (src/vault/ConcreteMultiStrategyVault.sol#945-957)
+	- ConcreteMultiStrategyVault.pushFundsIntoSingleStrategy(uint256,uint256) (src/vault/ConcreteMultiStrategyVault.sol#965-971)
+	- ConcreteMultiStrategyVault.pushFundsToStrategies() (src/vault/ConcreteMultiStrategyVault.sol#895-901)
+	- ConcreteMultiStrategyVault.requestFunds(uint256) (src/vault/ConcreteMultiStrategyVault.sol#1098-1108)
+	- ConcreteMultiStrategyVault.totalAssets() (src/vault/ConcreteMultiStrategyVault.sol#573-592)
+Reentrancy in ConcreteMultiStrategyVault.setVaultFees(VaultFees) (src/vault/ConcreteMultiStrategyVault.sol#744-747):
+	External calls:
+	- takeFees() (src/vault/ConcreteMultiStrategyVault.sol#744)
+		- returndata = address(token).functionCall(data) (node_modules/@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol#96)
+		- (success,returndata) = target.call{value: value}(data) (node_modules/@openzeppelin/contracts/utils/Address.sol#87)
+		- IERC20(rewardAddresses[i]).safeTransfer(userAddress,rewardsToTransfer) (src/vault/ConcreteMultiStrategyVault.sol#1044)
+	External calls sending eth:
+	- takeFees() (src/vault/ConcreteMultiStrategyVault.sol#744)
+		- (success,returndata) = target.call{value: value}(data) (node_modules/@openzeppelin/contracts/utils/Address.sol#87)
+	State variables written after the call(s):
+	- fees = newFees_ (src/vault/ConcreteMultiStrategyVault.sol#745)
+	ConcreteMultiStrategyVault.fees (src/vault/ConcreteMultiStrategyVault.sol#71) can be used in cross function reentrancies:
+	- ConcreteMultiStrategyVault.accruedPerformanceFee() (src/vault/ConcreteMultiStrategyVault.sol#711-718)
+	- ConcreteMultiStrategyVault.accruedProtocolFee() (src/vault/ConcreteMultiStrategyVault.sol#689-702)
+	- ConcreteMultiStrategyVault.deposit(uint256,address) (src/vault/ConcreteMultiStrategyVault.sol#227-268)
+	- ConcreteMultiStrategyVault.getVaultFees() (src/vault/ConcreteMultiStrategyVault.sol#725-727)
+	- ConcreteMultiStrategyVault.mint(uint256,address) (src/vault/ConcreteMultiStrategyVault.sol#290-330)
+	- ConcreteMultiStrategyVault.previewDeposit(uint256) (src/vault/ConcreteMultiStrategyVault.sol#600-608)
+	- ConcreteMultiStrategyVault.previewMint(uint256) (src/vault/ConcreteMultiStrategyVault.sol#616-619)
+	- ConcreteMultiStrategyVault.previewRedeem(uint256) (src/vault/ConcreteMultiStrategyVault.sol#640-648)
+	- ConcreteMultiStrategyVault.previewWithdraw(uint256) (src/vault/ConcreteMultiStrategyVault.sol#627-632)
+	- ConcreteMultiStrategyVault.redeem(uint256,address,address) (src/vault/ConcreteMultiStrategyVault.sol#351-365)
+	- ConcreteMultiStrategyVault.setVaultFees(VaultFees) (src/vault/ConcreteMultiStrategyVault.sol#744-747)
+	- ConcreteMultiStrategyVault.withdraw(uint256,address,address) (src/vault/ConcreteMultiStrategyVault.sol#388-406)
+	- feesUpdatedAt = block.timestamp (src/vault/ConcreteMultiStrategyVault.sol#746)
+	ConcreteMultiStrategyVault.feesUpdatedAt (src/vault/ConcreteMultiStrategyVault.sol#58) can be used in cross function reentrancies:
+	- ConcreteMultiStrategyVault._validateAndUpdateDepositTimestamps(address) (src/vault/ConcreteMultiStrategyVault.sol#1112-1119)
+	- ConcreteMultiStrategyVault.accruedProtocolFee() (src/vault/ConcreteMultiStrategyVault.sol#689-702)
+	- ConcreteMultiStrategyVault.feesUpdatedAt (src/vault/ConcreteMultiStrategyVault.sol#58)
+	- ConcreteMultiStrategyVault.setVaultFees(VaultFees) (src/vault/ConcreteMultiStrategyVault.sol#744-747)
+	- ConcreteMultiStrategyVault.takeFees() (src/vault/ConcreteMultiStrategyVault.sol#104-120)
+Reentrancy in ConcreteMultiStrategyVault.takeFees() (src/vault/ConcreteMultiStrategyVault.sol#104-120):
+	External calls:
+	- _mint(feeRecipient,feeInShare) (src/vault/ConcreteMultiStrategyVault.sol#116)
+		- returndata = address(token).functionCall(data) (node_modules/@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol#96)
+		- (success,returndata) = target.call{value: value}(data) (node_modules/@openzeppelin/contracts/utils/Address.sol#87)
+		- IERC20(rewardAddresses[i]).safeTransfer(userAddress,rewardsToTransfer) (src/vault/ConcreteMultiStrategyVault.sol#1044)
+	External calls sending eth:
+	- _mint(feeRecipient,feeInShare) (src/vault/ConcreteMultiStrategyVault.sol#116)
+		- (success,returndata) = target.call{value: value}(data) (node_modules/@openzeppelin/contracts/utils/Address.sol#87)
+	State variables written after the call(s):
+	- feesUpdatedAt = block.timestamp (src/vault/ConcreteMultiStrategyVault.sol#118)
+	ConcreteMultiStrategyVault.feesUpdatedAt (src/vault/ConcreteMultiStrategyVault.sol#58) can be used in cross function reentrancies:
+	- ConcreteMultiStrategyVault._validateAndUpdateDepositTimestamps(address) (src/vault/ConcreteMultiStrategyVault.sol#1112-1119)
+	- ConcreteMultiStrategyVault.accruedProtocolFee() (src/vault/ConcreteMultiStrategyVault.sol#689-702)
+	- ConcreteMultiStrategyVault.feesUpdatedAt (src/vault/ConcreteMultiStrategyVault.sol#58)
+	- ConcreteMultiStrategyVault.setVaultFees(VaultFees) (src/vault/ConcreteMultiStrategyVault.sol#744-747)
+	- ConcreteMultiStrategyVault.takeFees() (src/vault/ConcreteMultiStrategyVault.sol#104-120)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#reentrancy-vulnerabilities
+INFO:Detectors:
+Math.mulDiv(uint256,uint256,uint256) (node_modules/@openzeppelin/contracts/utils/math/Math.sol#123-202) performs a multiplication on the result of a division:
+	- denominator = denominator / twos (node_modules/@openzeppelin/contracts/utils/math/Math.sol#169)
+	- inverse = (3 * denominator) ^ 2 (node_modules/@openzeppelin/contracts/utils/math/Math.sol#184)
+Math.mulDiv(uint256,uint256,uint256) (node_modules/@openzeppelin/contracts/utils/math/Math.sol#123-202) performs a multiplication on the result of a division:
+	- denominator = denominator / twos (node_modules/@openzeppelin/contracts/utils/math/Math.sol#169)
+	- inverse *= 2 - denominator * inverse (node_modules/@openzeppelin/contracts/utils/math/Math.sol#188)
+Math.mulDiv(uint256,uint256,uint256) (node_modules/@openzeppelin/contracts/utils/math/Math.sol#123-202) performs a multiplication on the result of a division:
+	- denominator = denominator / twos (node_modules/@openzeppelin/contracts/utils/math/Math.sol#169)
+	- inverse *= 2 - denominator * inverse (node_modules/@openzeppelin/contracts/utils/math/Math.sol#189)
+Math.mulDiv(uint256,uint256,uint256) (node_modules/@openzeppelin/contracts/utils/math/Math.sol#123-202) performs a multiplication on the result of a division:
+	- denominator = denominator / twos (node_modules/@openzeppelin/contracts/utils/math/Math.sol#169)
+	- inverse *= 2 - denominator * inverse (node_modules/@openzeppelin/contracts/utils/math/Math.sol#190)
+Math.mulDiv(uint256,uint256,uint256) (node_modules/@openzeppelin/contracts/utils/math/Math.sol#123-202) performs a multiplication on the result of a division:
+	- denominator = denominator / twos (node_modules/@openzeppelin/contracts/utils/math/Math.sol#169)
+	- inverse *= 2 - denominator * inverse (node_modules/@openzeppelin/contracts/utils/math/Math.sol#191)
+Math.mulDiv(uint256,uint256,uint256) (node_modules/@openzeppelin/contracts/utils/math/Math.sol#123-202) performs a multiplication on the result of a division:
+	- denominator = denominator / twos (node_modules/@openzeppelin/contracts/utils/math/Math.sol#169)
+	- inverse *= 2 - denominator * inverse (node_modules/@openzeppelin/contracts/utils/math/Math.sol#192)
+Math.mulDiv(uint256,uint256,uint256) (node_modules/@openzeppelin/contracts/utils/math/Math.sol#123-202) performs a multiplication on the result of a division:
+	- denominator = denominator / twos (node_modules/@openzeppelin/contracts/utils/math/Math.sol#169)
+	- inverse *= 2 - denominator * inverse (node_modules/@openzeppelin/contracts/utils/math/Math.sol#193)
+Math.mulDiv(uint256,uint256,uint256) (node_modules/@openzeppelin/contracts/utils/math/Math.sol#123-202) performs a multiplication on the result of a division:
+	- prod0 = prod0 / twos (node_modules/@openzeppelin/contracts/utils/math/Math.sol#172)
+	- result = prod0 * inverse (node_modules/@openzeppelin/contracts/utils/math/Math.sol#199)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#divide-before-multiply
+INFO:Detectors:
+ConcreteMultiStrategyVault.harvestRewards(bytes).indices (src/vault/ConcreteMultiStrategyVault.sol#990) is a local variable never initialized
+ConcreteMultiStrategyVault.harvestRewards(bytes).data (src/vault/ConcreteMultiStrategyVault.sol#991) is a local variable never initialized
 Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#uninitialized-local-variables
 INFO:Detectors:
+StrategyBase.harvestRewards(bytes) (src/strategies/StrategyBase.sol#337-367) ignores return value by TokenHelper.attemptSafeTransfer(address(rewardAddress),_vault,netReward,false) (src/strategies/StrategyBase.sol#358)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#unused-return
+INFO:Detectors:
+VaultFactory.constructor(address).owner (src/factories/VaultFactory.sol#21) shadows:
+	- Ownable.owner() (node_modules/@openzeppelin/contracts/access/Ownable.sol#56-58) (function)
+IMetaMorphoStaticTyping.pendingGuardian().guardian (src/interfaces/IMorphoVaults.sol#185) shadows:
+	- IMetaMorphoBase.guardian() (src/interfaces/IMorphoVaults.sol#41) (function)
+WithdrawalQueue.getWithdrawalRequests(address)._owner (src/queue/WithdrawalQueue.sol#85) shadows:
+	- Ownable._owner (node_modules/@openzeppelin/contracts/access/Ownable.sol#21) (state variable)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#local-variable-shadowing
+INFO:Detectors:
+StrategyBase.harvestRewards(bytes) (src/strategies/StrategyBase.sol#337-367) has external calls inside a loop: claimedBalance = rewardAddress.balanceOf(address(this)) (src/strategies/StrategyBase.sol#347)
+Address.functionCallWithValue(address,bytes,uint256) (node_modules/@openzeppelin/contracts/utils/Address.sol#83-89) has external calls inside a loop: (success,returndata) = target.call{value: value}(data) (node_modules/@openzeppelin/contracts/utils/Address.sol#87)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation/#calls-inside-a-loop
+INFO:Detectors:
+Reentrancy in ERC4626._deposit(address,address,uint256,uint256) (node_modules/@openzeppelin/contracts/token/ERC20/extensions/ERC4626.sol#243-255):
+	External calls:
+	- SafeERC20.safeTransferFrom(_asset,caller,address(this),assets) (node_modules/@openzeppelin/contracts/token/ERC20/extensions/ERC4626.sol#251)
+	State variables written after the call(s):
+	- _mint(receiver,shares) (node_modules/@openzeppelin/contracts/token/ERC20/extensions/ERC4626.sol#252)
+		- _balances[from] = fromBalance - value (node_modules/@openzeppelin/contracts/token/ERC20/ERC20.sol#199)
+		- _balances[to] += value (node_modules/@openzeppelin/contracts/token/ERC20/ERC20.sol#211)
+	- _mint(receiver,shares) (node_modules/@openzeppelin/contracts/token/ERC20/extensions/ERC4626.sol#252)
+		- _totalSupply += value (node_modules/@openzeppelin/contracts/token/ERC20/ERC20.sol#191)
+		- _totalSupply -= value (node_modules/@openzeppelin/contracts/token/ERC20/ERC20.sol#206)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#reentrancy-vulnerabilities-2
+INFO:Detectors:
+Reentrancy in ERC4626._deposit(address,address,uint256,uint256) (node_modules/@openzeppelin/contracts/token/ERC20/extensions/ERC4626.sol#243-255):
+	External calls:
+	- SafeERC20.safeTransferFrom(_asset,caller,address(this),assets) (node_modules/@openzeppelin/contracts/token/ERC20/extensions/ERC4626.sol#251)
+	Event emitted after the call(s):
+	- Deposit(caller,receiver,assets,shares) (node_modules/@openzeppelin/contracts/token/ERC20/extensions/ERC4626.sol#254)
+	- Transfer(from,to,value) (node_modules/@openzeppelin/contracts/token/ERC20/ERC20.sol#215)
+		- _mint(receiver,shares) (node_modules/@openzeppelin/contracts/token/ERC20/extensions/ERC4626.sol#252)
+Reentrancy in ERC4626._withdraw(address,address,address,uint256,uint256) (node_modules/@openzeppelin/contracts/token/ERC20/extensions/ERC4626.sol#260-281):
+	External calls:
+	- SafeERC20.safeTransfer(_asset,receiver,assets) (node_modules/@openzeppelin/contracts/token/ERC20/extensions/ERC4626.sol#278)
+	Event emitted after the call(s):
+	- Withdraw(caller,receiver,owner,assets,shares) (node_modules/@openzeppelin/contracts/token/ERC20/extensions/ERC4626.sol#280)
+Reentrancy in ConcreteMultiStrategyVault._withdraw(uint256,address,address,uint256,uint256) (src/vault/ConcreteMultiStrategyVault.sol#419-435):
+	External calls:
+	- _burn(owner_,shares) (src/vault/ConcreteMultiStrategyVault.sol#423)
+		- returndata = address(token).functionCall(data) (node_modules/@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol#96)
+		- (success,returndata) = target.call{value: value}(data) (node_modules/@openzeppelin/contracts/utils/Address.sol#87)
+		- IERC20(rewardAddresses[i]).safeTransfer(userAddress,rewardsToTransfer) (src/vault/ConcreteMultiStrategyVault.sol#1044)
+	- _mint(feeRecipient,feeShares) (src/vault/ConcreteMultiStrategyVault.sol#424)
+		- returndata = address(token).functionCall(data) (node_modules/@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol#96)
+		- (success,returndata) = target.call{value: value}(data) (node_modules/@openzeppelin/contracts/utils/Address.sol#87)
+		- IERC20(rewardAddresses[i]).safeTransfer(userAddress,rewardsToTransfer) (src/vault/ConcreteMultiStrategyVault.sol#1044)
+	- _withdrawStrategyFunds(assets_,receiver_) (src/vault/ConcreteMultiStrategyVault.sol#427)
+		- returndata = address(token).functionCall(data) (node_modules/@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol#96)
+		- asset_.safeTransfer(receiver_,amount_) (src/vault/ConcreteMultiStrategyVault.sol#451)
+		- (success,returndata) = target.call{value: value}(data) (node_modules/@openzeppelin/contracts/utils/Address.sol#87)
+		- strategy.strategy.withdraw(amountToWithdraw,receiver_,address(this)) (src/vault/ConcreteMultiStrategyVault.sol#471)
+		- asset_.safeTransfer(receiver_,amount_ - totalWithdrawn) (src/vault/ConcreteMultiStrategyVault.sol#479)
+	- withdrawalQueue.requestWithdrawal(receiver_,assets_) (src/vault/ConcreteMultiStrategyVault.sol#432)
+	External calls sending eth:
+	- _burn(owner_,shares) (src/vault/ConcreteMultiStrategyVault.sol#423)
+		- (success,returndata) = target.call{value: value}(data) (node_modules/@openzeppelin/contracts/utils/Address.sol#87)
+	- _mint(feeRecipient,feeShares) (src/vault/ConcreteMultiStrategyVault.sol#424)
+		- (success,returndata) = target.call{value: value}(data) (node_modules/@openzeppelin/contracts/utils/Address.sol#87)
+	- _withdrawStrategyFunds(assets_,receiver_) (src/vault/ConcreteMultiStrategyVault.sol#427)
+		- (success,returndata) = target.call{value: value}(data) (node_modules/@openzeppelin/contracts/utils/Address.sol#87)
+	Event emitted after the call(s):
+	- Withdraw(msg.sender,receiver_,owner_,assets_,shares) (src/vault/ConcreteMultiStrategyVault.sol#434)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#reentrancy-vulnerabilities-3
+INFO:Detectors:
+ConcreteMultiStrategyVault._validateAndUpdateDepositTimestamps(address) (src/vault/ConcreteMultiStrategyVault.sol#1112-1119) uses timestamp for comparisons
+	Dangerous comparisons:
+	- firstDeposit == 0 (src/vault/ConcreteMultiStrategyVault.sol#1116)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#block-timestamp
+INFO:Detectors:
+AccessControl._setRoleAdmin(bytes32,bytes32) (node_modules/@openzeppelin/contracts/access/AccessControl.sol#170-174) is never used and should be removed
+Context._contextSuffixLength() (node_modules/@openzeppelin/contracts/utils/Context.sol#25-27) is never used and should be removed
+Context._msgData() (node_modules/@openzeppelin/contracts/utils/Context.sol#21-23) is never used and should be removed
+ERC4626._tryGetAssetDecimals(IERC20) (node_modules/@openzeppelin/contracts/token/ERC20/extensions/ERC4626.sol#86-97) is never used and should be removed
+MorphoVaultStrategy.encodeMorphoV1Proofs(address[],bytes[]) (src/strategies/Morpho/MorphoVaultStrategy.sol#106-111) is never used and should be removed
+ReentrancyGuard._reentrancyGuardEntered() (node_modules/@openzeppelin/contracts/utils/ReentrancyGuard.sol#81-83) is never used and should be removed
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#dead-code
+INFO:Detectors:
+Function IMorphoBase.DOMAIN_SEPARATOR() (node_modules/@morpho-org/morpho-blue/src/interfaces/IMorpho.sol#55) is not in mixedCase
+Function IERC20Permit.DOMAIN_SEPARATOR() (node_modules/@openzeppelin/contracts/token/ERC20/extensions/IERC20Permit.sol#89) is not in mixedCase
+Function IMetaMorphoBase.MORPHO() (src/interfaces/IMorphoVaults.sol#31) is not in mixedCase
+Function IMetaMorphoBase.DECIMALS_OFFSET() (src/interfaces/IMorphoVaults.sol#32) is not in mixedCase
 Parameter WithdrawalQueue.getWithdrawalStatus(uint256[])._requestIds (src/queue/WithdrawalQueue.sol#73) is not in mixedCase
 Parameter WithdrawalQueue.prepareWithdrawal(uint256,uint256)._requestId (src/queue/WithdrawalQueue.sol#154) is not in mixedCase
 Parameter WithdrawalQueue.prepareWithdrawal(uint256,uint256)._avaliableAssets (src/queue/WithdrawalQueue.sol#155) is not in mixedCase
-Parameter RadiantV2Strategy.setEnableRewards(bool)._rewardsEnabled (src/strategies/Radiant/RadiantV2Strategy.sol#142) is not in mixedCase
+Parameter RadiantV2Strategy.setEnableRewards(bool)._rewardsEnabled (src/strategies/Radiant/RadiantV2Strategy.sol#144) is not in mixedCase
 Parameter EasyMathV2.toValue(uint256,uint256,uint256)._assetAmount (src/strategies/Silo/EasyMathV2.sol#92) is not in mixedCase
 Parameter EasyMathV2.toValue(uint256,uint256,uint256)._assetPrice (src/strategies/Silo/EasyMathV2.sol#93) is not in mixedCase
 Parameter EasyMathV2.toValue(uint256,uint256,uint256)._assetDecimals (src/strategies/Silo/EasyMathV2.sol#94) is not in mixedCase
-Parameter EasyMathV2.calculateUtilization(uint256,uint256,uint256)._dp (src/strategies/Silo/EasyMathV2.sol#122) is not in mixedCase
-Parameter EasyMathV2.calculateUtilization(uint256,uint256,uint256)._totalDeposits (src/strategies/Silo/EasyMathV2.sol#123) is not in mixedCase
-Parameter EasyMathV2.calculateUtilization(uint256,uint256,uint256)._totalBorrowAmount (src/strategies/Silo/EasyMathV2.sol#124) is not in mixedCase
+Parameter EasyMathV2.sum(uint256[])._numbers (src/strategies/Silo/EasyMathV2.sol#104) is not in mixedCase
+Parameter EasyMathV2.calculateUtilization(uint256,uint256,uint256)._dp (src/strategies/Silo/EasyMathV2.sol#123) is not in mixedCase
+Parameter EasyMathV2.calculateUtilization(uint256,uint256,uint256)._totalDeposits (src/strategies/Silo/EasyMathV2.sol#124) is not in mixedCase
+Parameter EasyMathV2.calculateUtilization(uint256,uint256,uint256)._totalBorrowAmount (src/strategies/Silo/EasyMathV2.sol#125) is not in mixedCase
 Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#conformance-to-solidity-naming-conventions
 INFO:Detectors:
-AaveV3Strategy (src/strategies/Aave/AaveV3Strategy.sol#15-122) does not implement functions:
-	- IStrategy.harvestRewards() (src/interfaces/IStrategy.sol#16)
-Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#unimplemented-functions
+Clones.clone(address) (node_modules/@openzeppelin/contracts/proxy/Clones.sol#28-41) uses literals with too many digits:
+	- mstore(uint256,uint256)(0x00,implementation << 0x60 >> 0xe8 | 0x3d602d80600a3d3981f3363d3d373d3d3d363d73000000) (node_modules/@openzeppelin/contracts/proxy/Clones.sol#33)
+Clones.cloneDeterministic(address,bytes32) (node_modules/@openzeppelin/contracts/proxy/Clones.sol#50-63) uses literals with too many digits:
+	- mstore(uint256,uint256)(0x00,implementation << 0x60 >> 0xe8 | 0x3d602d80600a3d3981f3363d3d373d3d3d363d73000000) (node_modules/@openzeppelin/contracts/proxy/Clones.sol#55)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#too-many-digits
 INFO:Detectors:
-The following unused import(s) in src/interfaces/IConcreteMultiStrategyVault.sol should be removed:
-	-import {IERC4626} from "@openzeppelin/contracts/interfaces/IERC4626.sol"; (src/interfaces/IConcreteMultiStrategyVault.sol#4)
-The following unused import(s) in src/vault/ConcreteMultiStrategyVault.sol should be removed:
-	-import {ContextUpgradeable} from "@openzeppelin/contracts-upgradeable/utils/ContextUpgradeable.sol"; (src/vault/ConcreteMultiStrategyVault.sol#8)
-The following unused import(s) in src/strategies/Aave/AaveV3Strategy.sol should be removed:
-	-import {DataTypes} from "./DataTypes.sol"; (src/strategies/Aave/AaveV3Strategy.sol#9)
-The following unused import(s) in src/strategies/StrategyBase.sol should be removed:
-	-import {VaultFees, VaultInitParams, Strategy, IConcreteMultiStrategyVault} from "../interfaces/IConcreteMultiStrategyVault.sol"; (src/strategies/StrategyBase.sol#13)
-
-	-import {Initializable} from "@openzeppelin/contracts/proxy/utils/Initializable.sol"; (src/strategies/StrategyBase.sol#5)
-The following unused import(s) in src/strategies/ProtectStrategy/ProtectStrategy.sol should be removed:
-	-import {Errors} from "../../interfaces/Errors.sol"; (src/strategies/ProtectStrategy/ProtectStrategy.sol#11)
+The following unused import(s) in node_modules/@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol should be removed:
+	-import {IERC20Permit} from "../extensions/IERC20Permit.sol"; (node_modules/@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol#7)
 The following unused import(s) in src/swapper/Swapper.sol should be removed:
 	-import {SwapperRewards} from "../interfaces/DataTypes.sol"; (src/swapper/Swapper.sol#17)
 Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#unused-imports
-INFO:Slither:. analyzed (92 contracts with 91 detectors), 18 result(s) found
+INFO:Detectors:
+Loop condition i < strategies.length (src/vault/ConcreteMultiStrategyVault.sol#997) should use cached array length instead of referencing `length` member of the storage array.
+ Loop condition i < strategies.length (src/vault/ConcreteMultiStrategyVault.sol#575) should use cached array length instead of referencing `length` member of the storage array.
+ Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#cache-array-length
+INFO:Detectors:
+MorphoVaultStrategy._morphoVault (src/strategies/Morpho/MorphoVaultStrategy.sol#16) should be immutable 
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#state-variables-that-could-be-declared-immutable
+INFO:Slither:. analyzed (116 contracts with 91 detectors), 58 result(s) found
