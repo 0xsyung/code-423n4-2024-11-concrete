@@ -1,12 +1,12 @@
 # Concrete audit details
 
-- Total Prize Pool: $112,250 in USDC
+- Total Prize Pool: $112,500 in USDC
   - HM awards: $72,480 in USDC
   - QA awards: $3,020 in USDC
   - Judge awards: $8,500 in USDC
   - Validator awards: $5,500 USDC
   - Scout awards: $500 in USDC
-  - Update audit: $22,250 in USDC*
+  - Update audit: $22,500 in USDC*
 - [Read our guidelines for more details](https://docs.code4rena.com/roles/wardens)
 - Starts November 15, 2024 20:00 UTC
 - Ends November 29, 2024 20:00 UTC
