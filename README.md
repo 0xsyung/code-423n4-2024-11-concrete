@@ -11,7 +11,7 @@
 - Starts November 15, 2024 20:00 UTC
 - Ends November 29, 2024 20:00 UTC
 
-ℹ️ This audit will be followed by an update audit focused on fixes from this scope with a total prize pool of $22,500 in USDC.
+ℹ️ This audit will be followed by an update audit focused on fixes from this scope with a total prize pool of &#36;22,500 in USDC.
 
 ## Automated Findings / Publicly Known Issues
 
