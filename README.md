@@ -29,7 +29,7 @@ Concrete is a blockchain protocol that allows DeFi users to optimize on capital 
 
 - **Previous audits:** [Earn V1_SSC.pdf](https://github.com/code-423n4/2024-11-concrete/blob/main/Earn%20V1%20_%20SSC.pdf)
 - **Documentation:** <https://blueprint-finance.gitbook.io/concrete_protocol/pSPVTC2wbOO8D1NFQXyP/>
-- **Website:** <https://https://www.concrete.xyz>
+- **Website:** <https://www.concrete.xyz>
 - **X/Twitter:** <https://x.com/ConcreteXYZ>
 
 ---
