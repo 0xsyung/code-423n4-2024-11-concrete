@@ -208,7 +208,7 @@ N/A
 
 ## Running tests
 
-To run the tests, clone the rpository. This also downloads the dependency directly into the `node_modules/@blueprint-finance/hub-and-spokes-libraries` folder. Then install the node js dependencies using yarn or npm (by running `yarn install` or simply `yarn`). This will overwrite the `node_modules` folder, so you need to run `git reset --hard` to re-instanciate the dependency. Afterwards run any forge command to build, test, or generate coverage. 
+To run the tests, clone the repository. This also downloads the dependency directly into the `node_modules/@blueprint-finance/hub-and-spokes-libraries` folder. Then install the node js dependencies using yarn or npm (by running `yarn install` or simply `yarn`). This will overwrite the `node_modules` folder, so you need to run `git reset --hard` to re-instanciate the dependency. Afterwards run any forge command to build, test, or generate coverage. 
 ```bash
 git clone --recurse https://github.com/code-423n4/2024-11-concrete.git
 cd 2024-11-concrete
