@@ -38,23 +38,24 @@
     - [\[NC-16\] Functions should not be longer than 50 lines](#nc-16-functions-should-not-be-longer-than-50-lines)
     - [\[NC-17\] Interfaces should be defined in separate files from their usage](#nc-17-interfaces-should-be-defined-in-separate-files-from-their-usage)
     - [\[NC-18\] Lack of checks in setters](#nc-18-lack-of-checks-in-setters)
-    - [\[NC-19\] Missing Event for critical parameters change](#nc-19-missing-event-for-critical-parameters-change)
-    - [\[NC-20\] NatSpec is completely non-existent on functions that should have them](#nc-20-natspec-is-completely-non-existent-on-functions-that-should-have-them)
-    - [\[NC-21\] Incomplete NatSpec: `@param` is missing on actually documented functions](#nc-21-incomplete-natspec-param-is-missing-on-actually-documented-functions)
-    - [\[NC-22\] Incomplete NatSpec: `@return` is missing on actually documented functions](#nc-22-incomplete-natspec-return-is-missing-on-actually-documented-functions)
-    - [\[NC-23\] Use a `modifier` instead of a `require/if` statement for a special `msg.sender` actor](#nc-23-use-a-modifier-instead-of-a-requireif-statement-for-a-special-msgsender-actor)
-    - [\[NC-24\] Consider using named mappings](#nc-24-consider-using-named-mappings)
-    - [\[NC-25\] Owner can renounce while system is paused](#nc-25-owner-can-renounce-while-system-is-paused)
-    - [\[NC-26\] Adding a `return` statement when the function defines a named return variable, is redundant](#nc-26-adding-a-return-statement-when-the-function-defines-a-named-return-variable-is-redundant)
-    - [\[NC-27\] `require()` / `revert()` statements should have descriptive reason strings](#nc-27-requirerevertstatements-should-have-descriptive-reason-strings)
-    - [\[NC-28\] Take advantage of Custom Error's return value property](#nc-28-take-advantage-of-custom-errors-return-value-property)
-    - [\[NC-29\] Contract does not follow the Solidity style guide's suggested layout ordering](#nc-29-contract-does-not-follow-the-solidity-style-guides-suggested-layout-ordering)
-    - [\[NC-30\] TODO Left in the code](#nc-30-todo-left-in-the-code)
-    - [\[NC-31\] Use Underscores for Number Literals (add an underscore every 3 digits)](#nc-31-use-underscores-for-number-literals-add-an-underscore-every-3-digits)
-    - [\[NC-32\] Internal and private variables and functions names should begin with an underscore](#nc-32-internal-and-private-variables-and-functions-names-should-begin-with-an-underscore)
-    - [\[NC-33\] Event is missing `indexed` fields](#nc-33-event-is-missing-indexed-fields)
-    - [\[NC-34\] `public` functions not called by the contract should be declared `external` instead](#nc-34-public-functions-not-called-by-the-contract-should-be-declared-external-instead)
-    - [\[NC-35\] Variables need not be initialized to zero](#nc-35-variables-need-not-be-initialized-to-zero)
+    - [\[NC-19\] Lines are too long](#nc-19-lines-are-too-long)
+    - [\[NC-20\] Missing Event for critical parameters change](#nc-20-missing-event-for-critical-parameters-change)
+    - [\[NC-21\] NatSpec is completely non-existent on functions that should have them](#nc-21-natspec-is-completely-non-existent-on-functions-that-should-have-them)
+    - [\[NC-22\] Incomplete NatSpec: `@param` is missing on actually documented functions](#nc-22-incomplete-natspec-param-is-missing-on-actually-documented-functions)
+    - [\[NC-23\] Incomplete NatSpec: `@return` is missing on actually documented functions](#nc-23-incomplete-natspec-return-is-missing-on-actually-documented-functions)
+    - [\[NC-24\] Use a `modifier` instead of a `require/if` statement for a special `msg.sender` actor](#nc-24-use-a-modifier-instead-of-a-requireif-statement-for-a-special-msgsender-actor)
+    - [\[NC-25\] Consider using named mappings](#nc-25-consider-using-named-mappings)
+    - [\[NC-26\] Owner can renounce while system is paused](#nc-26-owner-can-renounce-while-system-is-paused)
+    - [\[NC-27\] Adding a `return` statement when the function defines a named return variable, is redundant](#nc-27-adding-a-return-statement-when-the-function-defines-a-named-return-variable-is-redundant)
+    - [\[NC-28\] `require()` / `revert()` statements should have descriptive reason strings](#nc-28-requirerevertstatements-should-have-descriptive-reason-strings)
+    - [\[NC-29\] Take advantage of Custom Error's return value property](#nc-29-take-advantage-of-custom-errors-return-value-property)
+    - [\[NC-30\] Contract does not follow the Solidity style guide's suggested layout ordering](#nc-30-contract-does-not-follow-the-solidity-style-guides-suggested-layout-ordering)
+    - [\[NC-31\] TODO Left in the code](#nc-31-todo-left-in-the-code)
+    - [\[NC-32\] Use Underscores for Number Literals (add an underscore every 3 digits)](#nc-32-use-underscores-for-number-literals-add-an-underscore-every-3-digits)
+    - [\[NC-33\] Internal and private variables and functions names should begin with an underscore](#nc-33-internal-and-private-variables-and-functions-names-should-begin-with-an-underscore)
+    - [\[NC-34\] Event is missing `indexed` fields](#nc-34-event-is-missing-indexed-fields)
+    - [\[NC-35\] `public` functions not called by the contract should be declared `external` instead](#nc-35-public-functions-not-called-by-the-contract-should-be-declared-external-instead)
+    - [\[NC-36\] Variables need not be initialized to zero](#nc-36-variables-need-not-be-initialized-to-zero)
   - [Low Issues](#low-issues)
     - [\[L-1\] `approve()`/`safeApprove()` may revert if the current approval is not zero](#l-1-approvesafeapprove-may-revert-if-the-current-approval-is-not-zero)
     - [\[L-2\] Use a 2-step ownership transfer pattern](#l-2-use-a-2-step-ownership-transfer-pattern)
@@ -95,21 +96,21 @@
 | |Issue|Instances|
 |-|:-|:-:|
 | [GAS-1](#GAS-1) | Don't use `_msgSender()` if not supporting EIP-2771 | 5 |
-| [GAS-2](#GAS-2) | `a = a + b` is more gas effective than `a += b` for state variables (excluding arrays and mappings) | 19 |
+| [GAS-2](#GAS-2) | `a = a + b` is more gas effective than `a += b` for state variables (excluding arrays and mappings) | 21 |
 | [GAS-3](#GAS-3) | Use assembly to check for `address(0)` | 37 |
 | [GAS-4](#GAS-4) | Using bools for storage incurs overhead | 9 |
-| [GAS-5](#GAS-5) | Cache array length outside of loop | 12 |
+| [GAS-5](#GAS-5) | Cache array length outside of loop | 10 |
 | [GAS-6](#GAS-6) | State variables should be cached in stack variables rather than re-reading them from storage | 5 |
-| [GAS-7](#GAS-7) | Use calldata instead of memory for function arguments that do not get mutated | 19 |
-| [GAS-8](#GAS-8) | For Operations that will not overflow, you could use unchecked | 290 |
-| [GAS-9](#GAS-9) | Avoid contract existence checks by using low level calls | 25 |
+| [GAS-7](#GAS-7) | Use calldata instead of memory for function arguments that do not get mutated | 16 |
+| [GAS-8](#GAS-8) | For Operations that will not overflow, you could use unchecked | 311 |
+| [GAS-9](#GAS-9) | Avoid contract existence checks by using low level calls | 27 |
 | [GAS-10](#GAS-10) | State variables only set in the constructor should be declared `immutable` | 19 |
-| [GAS-11](#GAS-11) | Functions guaranteed to revert when called by normal users can be marked `payable` | 76 |
-| [GAS-12](#GAS-12) | `++i` costs less gas compared to `i++` or `i += 1` (same for `--i` vs `i--` or `i -= 1`) | 43 |
+| [GAS-11](#GAS-11) | Functions guaranteed to revert when called by normal users can be marked `payable` | 78 |
+| [GAS-12](#GAS-12) | `++i` costs less gas compared to `i++` or `i += 1` (same for `--i` vs `i--` or `i -= 1`) | 49 |
 | [GAS-13](#GAS-13) | Using `private` rather than `public` for constants, saves gas | 4 |
 | [GAS-14](#GAS-14) | Superfluous event fields | 1 |
 | [GAS-15](#GAS-15) | Increments/decrements can be unchecked in for-loops | 1 |
-| [GAS-16](#GAS-16) | Use != 0 instead of > 0 for unsigned integer comparison | 13 |
+| [GAS-16](#GAS-16) | Use != 0 instead of > 0 for unsigned integer comparison | 14 |
 | [GAS-17](#GAS-17) | `internal` functions not called by the contract should be removed | 8 |
 
 ### <a name="GAS-1"></a>[GAS-1] Don't use `_msgSender()` if not supporting EIP-2771
@@ -125,18 +126,18 @@ File: src/managers/RewardManager.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/managers/RewardManager.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/managers/RewardManager.sol)
 
 ```solidity
 File: src/strategies/ProtectStrategy/ProtectStrategy.sol
 
-51:         if (claimRouter != _msgSender()) {
+54:         if (claimRouter != _msgSender()) {
 
-52:             revert ClaimRouterUnauthorizedAccount(_msgSender());
+55:             revert ClaimRouterUnauthorizedAccount(_msgSender());
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/ProtectStrategy/ProtectStrategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/ProtectStrategy/ProtectStrategy.sol)
 
 ```solidity
 File: src/vault/ConcreteMultiStrategyVault.sol
@@ -147,13 +148,13 @@ File: src/vault/ConcreteMultiStrategyVault.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
 
 ### <a name="GAS-2"></a>[GAS-2] `a = a + b` is more gas effective than `a += b` for state variables (excluding arrays and mappings)
 
 This saves **16 gas per instance.**
 
-*Instances (19)*:
+*Instances (21)*:
 
 ```solidity
 File: src/claimRouter/ClaimRouter.sol
@@ -166,7 +167,7 @@ File: src/claimRouter/ClaimRouter.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/claimRouter/ClaimRouter.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/claimRouter/ClaimRouter.sol)
 
 ```solidity
 File: src/managers/RewardManager.sol
@@ -181,16 +182,16 @@ File: src/managers/RewardManager.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/managers/RewardManager.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/managers/RewardManager.sol)
 
 ```solidity
 File: src/strategies/ProtectStrategy/ProtectStrategy.sol
 
-139:         borrowDebt += amount;
+142:         borrowDebt += amount;
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/ProtectStrategy/ProtectStrategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/ProtectStrategy/ProtectStrategy.sol)
 
 ```solidity
 File: src/strategies/Silo/EasyMathV2.sol
@@ -199,41 +200,45 @@ File: src/strategies/Silo/EasyMathV2.sol
 
 85:                 result += 1;
 
-106:             s += _numbers[i];
+105:             s += _numbers[i];
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Silo/EasyMathV2.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Silo/EasyMathV2.sol)
 
 ```solidity
 File: src/strategies/StrategyBase.sol
 
-352:                     rewardTokens[i].accumulatedFeeAccounted += collectedFee;
+352:                 rewardTokens[i].accumulatedFeeAccounted += collectedFee;
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/StrategyBase.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/StrategyBase.sol)
 
 ```solidity
 File: src/vault/ConcreteMultiStrategyVault.sol
 
-403:         shares += feeShares;
+452:         shares += feeShares;
 
-472:                 totalWithdrawn += amountToWithdraw;
+521:                 totalWithdrawn += amountToWithdraw;
 
-518:             totalAvailable += strategy.strategy.getAvailableAssetsForWithdrawal();
+567:             totalAvailable += strategy.strategy.getAvailableAssetsForWithdrawal();
 
-578:             total += strategies[i].strategy.convertToAssets(strategies[i].strategy.balanceOf(address(this)));
+629:             total += strategies[i].strategy.convertToAssets(strategies[i].strategy.balanceOf(address(this)));
 
-875:             allotmentTotals += allocations_[i].amount;
+887:             allotmentTotals += strategies[i].allocation.amount;
 
-1014:                     rewardIndex[rewardToken] += amount.mulDiv(PRECISION, totalSupply, Math.Rounding.Floor);
+983:             allotmentTotals += allocations_[i].amount;
 
-1043:                     totalRewardsClaimed[userAddress][rewardAddresses[i]] += rewardsToTransfer;
+1120:                     rewardIndex[rewardToken] += amount.mulDiv(PRECISION, totalSupply(), Math.Rounding.Floor);
+
+1149:                     totalRewardsClaimed[userAddress][rewardAddresses[i]] += rewardsToTransfer;
+
+1232:                 acumulated += toWithdraw;
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
 
 ### <a name="GAS-3"></a>[GAS-3] Use assembly to check for `address(0)`
 
@@ -254,7 +259,7 @@ File: src/claimRouter/ClaimRouter.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/claimRouter/ClaimRouter.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/claimRouter/ClaimRouter.sol)
 
 ```solidity
 File: src/managers/DeploymentManager.sol
@@ -263,7 +268,7 @@ File: src/managers/DeploymentManager.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/managers/DeploymentManager.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/managers/DeploymentManager.sol)
 
 ```solidity
 File: src/managers/RewardManager.sol
@@ -272,7 +277,7 @@ File: src/managers/RewardManager.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/managers/RewardManager.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/managers/RewardManager.sol)
 
 ```solidity
 File: src/registries/TokenRegistry.sol
@@ -281,7 +286,7 @@ File: src/registries/TokenRegistry.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/registries/TokenRegistry.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/registries/TokenRegistry.sol)
 
 ```solidity
 File: src/registries/VaultRegistry.sol
@@ -290,36 +295,36 @@ File: src/registries/VaultRegistry.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/registries/VaultRegistry.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/registries/VaultRegistry.sol)
 
 ```solidity
 File: src/strategies/Aave/AaveV3Strategy.sol
 
-117:         if (address(aaveIncentives) == address(0)) return;
+114:         if (address(aaveIncentives) == address(0)) return;
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Aave/AaveV3Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Aave/AaveV3Strategy.sol)
 
 ```solidity
 File: src/strategies/ProtectStrategy/ProtectStrategy.sol
 
-90:         if (claimRouter_ == address(0)) revert InvalidClaimRouterAddress();
+93:         if (claimRouter_ == address(0)) revert InvalidClaimRouterAddress();
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/ProtectStrategy/ProtectStrategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/ProtectStrategy/ProtectStrategy.sol)
 
 ```solidity
 File: src/strategies/Radiant/RadiantV2Strategy.sol
 
-37:         if (addressesProvider_ == address(0)) revert ZeroAddress();
+38:         if (addressesProvider_ == address(0)) revert ZeroAddress();
 
-131:         if (address(incentiveController) == address(0)) return;
+129:         if (address(incentiveController) == address(0)) return;
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Radiant/RadiantV2Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Radiant/RadiantV2Strategy.sol)
 
 ```solidity
 File: src/strategies/Silo/SiloV1Strategy.sol
@@ -332,26 +337,26 @@ File: src/strategies/Silo/SiloV1Strategy.sol
 
 92:         if (address(collateralToken) == address(0)) revert InvalidAssetAddress();
 
-178:         if (address(siloIncentivesController) == address(0)) return;
+175:         if (address(siloIncentivesController) == address(0)) return;
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Silo/SiloV1Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Silo/SiloV1Strategy.sol)
 
 ```solidity
 File: src/strategies/StrategyBase.sol
 
-90:                 if (address(rewardTokens_[i].token) == address(0)) {
+81:                 if (address(rewardTokens_[i].token) == address(0)) {
 
-109:         if (feeRecipient_ == address(0)) revert InvalidFeeRecipient();
+100:         if (feeRecipient_ == address(0)) revert InvalidFeeRecipient();
 
-193:         if (address(rewardToken_.token) == address(0)) {
+184:         if (address(rewardToken_.token) == address(0)) {
 
-262:         if (feeRecipient_ == address(0)) revert InvalidFeeRecipient();
+264:         if (feeRecipient_ == address(0)) revert InvalidFeeRecipient();
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/StrategyBase.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/StrategyBase.sol)
 
 ```solidity
 File: src/swapper/OraclePlug.sol
@@ -360,7 +365,7 @@ File: src/swapper/OraclePlug.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/swapper/OraclePlug.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/swapper/OraclePlug.sol)
 
 ```solidity
 File: src/swapper/Swapper.sol
@@ -369,42 +374,42 @@ File: src/swapper/Swapper.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/swapper/Swapper.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/swapper/Swapper.sol)
 
 ```solidity
 File: src/vault/ConcreteMultiStrategyVault.sol
 
-156:         if (address(baseAsset_) == address(0)) revert InvalidAssetAddress();
+161:         if (address(baseAsset_) == address(0)) revert InvalidAssetAddress();
 
-167:         if (feeRecipient_ == address(0)) {
+210:         if (feeRecipient_ == address(0)) revert InvalidFeeRecipient();
 
-356:         if (receiver_ == address(0)) revert InvalidRecipient();
+272:         if (receiver_ == address(0)) revert InvalidRecipient();
 
-393:         if (receiver_ == address(0)) revert InvalidRecipient();
+339:         if (receiver_ == address(0)) revert InvalidRecipient();
 
-429:             if (address(withdrawalQueue) == address(0)) {
+405:         if (receiver_ == address(0)) revert InvalidRecipient();
 
-584:         if (address(withdrawalQueue) != address(0)) {
+442:         if (receiver_ == address(0)) revert InvalidRecipient();
 
-756:         if (newRecipient_ == address(0)) revert InvalidFeeRecipient();
+478:             if (address(withdrawalQueue) == address(0)) {
 
-771:         if (withdrawalQueue_ == address(0)) revert InvalidWithdrawlQueue();
+635:         if (address(withdrawalQueue) != address(0)) {
 
-772:         if (address(withdrawalQueue) != address(0)) {
+824:         if (newRecipient_ == address(0)) revert InvalidFeeRecipient();
 
-825:         if (address(removedStrategy) != address(0)) emit StrategyRemoved(address(removedStrategy));
+839:         if (withdrawalQueue_ == address(0)) revert InvalidWithdrawlQueue();
 
-853:         if (from != address(0)) updateUserRewardsToCurrent(from);
+840:         if (address(withdrawalQueue) != address(0)) {
 
-854:         if (to != address(0)) updateUserRewardsToCurrent(to);
+961:         if (from != address(0)) updateUserRewardsToCurrent(from);
 
-1060:         if (address(withdrawalQueue) == address(0)) revert QueueNotSet();
+962:         if (to != address(0)) updateUserRewardsToCurrent(to);
 
-1113:         if (receiver_ == address(0)) revert InvalidRecipient();
+1166:         if (address(withdrawalQueue) == address(0)) revert QueueNotSet();
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
 
 ### <a name="GAS-4"></a>[GAS-4] Using bools for storage incurs overhead
 
@@ -423,7 +428,7 @@ File: src/managers/RewardManager.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/managers/RewardManager.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/managers/RewardManager.sol)
 
 ```solidity
 File: src/registries/ImplementationRegistry.sol
@@ -432,7 +437,7 @@ File: src/registries/ImplementationRegistry.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/registries/ImplementationRegistry.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/registries/ImplementationRegistry.sol)
 
 ```solidity
 File: src/registries/VaultRegistry.sol
@@ -441,25 +446,25 @@ File: src/registries/VaultRegistry.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/registries/VaultRegistry.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/registries/VaultRegistry.sol)
 
 ```solidity
 File: src/strategies/Radiant/RadiantV2Strategy.sol
 
-22:     bool public rewardsEnabled;
+23:     bool public rewardsEnabled;
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Radiant/RadiantV2Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Radiant/RadiantV2Strategy.sol)
 
 ```solidity
 File: src/strategies/StrategyBase.sol
 
-49:     mapping(address => bool) public rewardTokenApproved;
+40:     mapping(address => bool) public rewardTokenApproved;
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/StrategyBase.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/StrategyBase.sol)
 
 ```solidity
 File: src/swapper/Swapper.sol
@@ -468,7 +473,7 @@ File: src/swapper/Swapper.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/swapper/Swapper.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/swapper/Swapper.sol)
 
 ```solidity
 File: src/vault/ConcreteMultiStrategyVault.sol
@@ -477,13 +482,13 @@ File: src/vault/ConcreteMultiStrategyVault.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
 
 ### <a name="GAS-5"></a>[GAS-5] Cache array length outside of loop
 
 If not cached, the solidity compiler will always read the length of the array during each iteration. That is, if it is a storage array, this is an extra sload operation (100 additional extra gas for each iteration except for the first) and if it is a memory array, this is an extra mload operation (3 additional gas for each iteration except for the first).
 
-*Instances (12)*:
+*Instances (10)*:
 
 ```solidity
 File: src/claimRouter/ClaimRouter.sol
@@ -492,7 +497,7 @@ File: src/claimRouter/ClaimRouter.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/claimRouter/ClaimRouter.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/claimRouter/ClaimRouter.sol)
 
 ```solidity
 File: src/queue/WithdrawalQueue.sol
@@ -501,7 +506,7 @@ File: src/queue/WithdrawalQueue.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/queue/WithdrawalQueue.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/queue/WithdrawalQueue.sol)
 
 ```solidity
 File: src/registries/TokenRegistry.sol
@@ -512,16 +517,16 @@ File: src/registries/TokenRegistry.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/registries/TokenRegistry.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/registries/TokenRegistry.sol)
 
 ```solidity
 File: src/strategies/Silo/EasyMathV2.sol
 
-105:         for (uint256 i; i < _numbers.length; ) {
+104:         for (uint256 i; i < _numbers.length; ) {
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Silo/EasyMathV2.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Silo/EasyMathV2.sol)
 
 ```solidity
 File: src/strategies/Silo/SiloV1Strategy.sol
@@ -530,33 +535,29 @@ File: src/strategies/Silo/SiloV1Strategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Silo/SiloV1Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Silo/SiloV1Strategy.sol)
 
 ```solidity
 File: src/strategies/StrategyBase.sol
 
-88:             for (uint256 i; i < rewardTokens_.length; ) {
+79:             for (uint256 i; i < rewardTokens_.length; ) {
 
-326:         for (uint256 i = 0; i < rewards.length; ) {
+218:         for (uint256 i = index; i < rewardTokens.length - 1; ) {
+
+328:         for (uint256 i = 0; i < rewards.length; ) {
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/StrategyBase.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/StrategyBase.sol)
 
 ```solidity
 File: src/vault/ConcreteMultiStrategyVault.sol
 
-575:         for (uint256 i; i < strategies.length; ) {
-
-997:         for (uint256 i; i < strategies.length; ) {
-
-1000:             for (uint256 k = 0; k < indices.length; k++) {
-
-1009:             for (uint256 j; j < returnedRewards.length; ) {
+771:             for (uint256 i = 0; i < fees.performanceFee.length; ) {
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
 
 ### <a name="GAS-6"></a>[GAS-6] State variables should be cached in stack variables rather than re-reading them from storage
 
@@ -573,16 +574,16 @@ File: src/strategies/Silo/SiloV1Strategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Silo/SiloV1Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Silo/SiloV1Strategy.sol)
 
 ```solidity
 File: src/strategies/StrategyBase.sol
 
-358:                 TokenHelper.attemptSafeTransfer(address(rewardAddress), _vault, netReward, false);
+357:                 rewardAddress.safeTransfer(_vault, netReward);
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/StrategyBase.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/StrategyBase.sol)
 
 ```solidity
 File: src/swapper/Swapper.sol
@@ -591,18 +592,18 @@ File: src/swapper/Swapper.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/swapper/Swapper.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/swapper/Swapper.sol)
 
 ```solidity
 File: src/vault/ConcreteMultiStrategyVault.sol
 
-773:             if (withdrawalQueue.unfinalizedAmount() != 0) revert UnfinalizedWithdrawl(address(withdrawalQueue));
+841:             if (withdrawalQueue.unfinalizedAmount() != 0) revert UnfinalizedWithdrawl(address(withdrawalQueue));
 
-776:         emit WithdrawalQueueUpdated(address(withdrawalQueue), withdrawalQueue_);
+844:         emit WithdrawalQueueUpdated(address(withdrawalQueue), withdrawalQueue_);
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
 
 ### <a name="GAS-7"></a>[GAS-7] Use calldata instead of memory for function arguments that do not get mutated
 
@@ -612,7 +613,7 @@ If the array is passed to an `internal` function which passes the array to anoth
 
  *Saves 60 gas per instance*
 
-*Instances (19)*:
+*Instances (16)*:
 
 ```solidity
 File: src/claimRouter/ClaimRouter.sol
@@ -621,16 +622,7 @@ File: src/claimRouter/ClaimRouter.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/claimRouter/ClaimRouter.sol)
-
-```solidity
-File: src/interfaces/IStrategy.sol
-
-16:     function harvestRewards(bytes memory) external returns (ReturnedRewards[] memory);
-
-```
-
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/interfaces/IStrategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/claimRouter/ClaimRouter.sol)
 
 ```solidity
 File: src/interfaces/ITokenRegistry.sol
@@ -641,7 +633,7 @@ File: src/interfaces/ITokenRegistry.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/interfaces/ITokenRegistry.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/interfaces/ITokenRegistry.sol)
 
 ```solidity
 File: src/managers/DeploymentManager.sol
@@ -650,7 +642,7 @@ File: src/managers/DeploymentManager.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/managers/DeploymentManager.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/managers/DeploymentManager.sol)
 
 ```solidity
 File: src/managers/VaultManager.sol
@@ -659,7 +651,7 @@ File: src/managers/VaultManager.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/managers/VaultManager.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/managers/VaultManager.sol)
 
 ```solidity
 File: src/registries/ImplementationRegistry.sol
@@ -668,7 +660,7 @@ File: src/registries/ImplementationRegistry.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/registries/ImplementationRegistry.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/registries/ImplementationRegistry.sol)
 
 ```solidity
 File: src/registries/TokenRegistry.sol
@@ -679,7 +671,7 @@ File: src/registries/TokenRegistry.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/registries/TokenRegistry.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/registries/TokenRegistry.sol)
 
 ```solidity
 File: src/strategies/Aave/IAaveV3.sol
@@ -694,16 +686,7 @@ File: src/strategies/Aave/IAaveV3.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Aave/IAaveV3.sol)
-
-```solidity
-File: src/strategies/StrategyBase.sol
-
-338:         bytes memory data
-
-```
-
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/StrategyBase.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Aave/IAaveV3.sol)
 
 ```solidity
 File: src/vault/ConcreteMultiStrategyVault.sol
@@ -716,15 +699,13 @@ File: src/vault/ConcreteMultiStrategyVault.sol
 
 147:         VaultFees memory fees_,
 
-989:     function harvestRewards(bytes memory encodedData) external onlyOwner nonReentrant {
-
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
 
 ### <a name="GAS-8"></a>[GAS-8] For Operations that will not overflow, you could use unchecked
 
-*Instances (290)*:
+*Instances (311)*:
 
 ```solidity
 File: src/claimRouter/ClaimRouter.sol
@@ -793,7 +774,7 @@ File: src/claimRouter/ClaimRouter.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/claimRouter/ClaimRouter.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/claimRouter/ClaimRouter.sol)
 
 ```solidity
 File: src/factories/VaultFactory.sol
@@ -812,7 +793,7 @@ File: src/factories/VaultFactory.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/factories/VaultFactory.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/factories/VaultFactory.sol)
 
 ```solidity
 File: src/interfaces/DataTypes.sol
@@ -821,7 +802,7 @@ File: src/interfaces/DataTypes.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/interfaces/DataTypes.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/interfaces/DataTypes.sol)
 
 ```solidity
 File: src/interfaces/Errors.sol
@@ -830,20 +811,22 @@ File: src/interfaces/Errors.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/interfaces/Errors.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/interfaces/Errors.sol)
 
 ```solidity
 File: src/interfaces/IConcreteMultiStrategyVault.sol
 
-4: import {IStrategy} from "./IStrategy.sol";
+4: import {IERC4626} from "@openzeppelin/contracts/interfaces/IERC4626.sol";
 
-25:     uint256 amount; // Represented in BPS of the amount of ETF that should go into strategy
+5: import {IStrategy} from "./IStrategy.sol";
 
-29:     IStrategy strategy; //TODO: Create interface for real Strategy and implement here
+26:     uint256 amount; // Represented in BPS of the amount of ETF that should go into strategy
+
+30:     IStrategy strategy; //TODO: Create interface for real Strategy and implement here
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/interfaces/IConcreteMultiStrategyVault.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/interfaces/IConcreteMultiStrategyVault.sol)
 
 ```solidity
 File: src/interfaces/IMockProtectStrategy.sol
@@ -852,7 +835,7 @@ File: src/interfaces/IMockProtectStrategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/interfaces/IMockProtectStrategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/interfaces/IMockProtectStrategy.sol)
 
 ```solidity
 File: src/interfaces/IMockStrategy.sol
@@ -861,7 +844,7 @@ File: src/interfaces/IMockStrategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/interfaces/IMockStrategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/interfaces/IMockStrategy.sol)
 
 ```solidity
 File: src/interfaces/IProtectStrategy.sol
@@ -870,7 +853,7 @@ File: src/interfaces/IProtectStrategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/interfaces/IProtectStrategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/interfaces/IProtectStrategy.sol)
 
 ```solidity
 File: src/interfaces/IStrategy.sol
@@ -879,7 +862,7 @@ File: src/interfaces/IStrategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/interfaces/IStrategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/interfaces/IStrategy.sol)
 
 ```solidity
 File: src/interfaces/ITokenRegistry.sol
@@ -888,7 +871,7 @@ File: src/interfaces/ITokenRegistry.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/interfaces/ITokenRegistry.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/interfaces/ITokenRegistry.sol)
 
 ```solidity
 File: src/interfaces/IVaultDeploymentManager.sol
@@ -897,7 +880,7 @@ File: src/interfaces/IVaultDeploymentManager.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/interfaces/IVaultDeploymentManager.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/interfaces/IVaultDeploymentManager.sol)
 
 ```solidity
 File: src/interfaces/IVaultFactory.sol
@@ -906,7 +889,7 @@ File: src/interfaces/IVaultFactory.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/interfaces/IVaultFactory.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/interfaces/IVaultFactory.sol)
 
 ```solidity
 File: src/managers/DeploymentManager.sol
@@ -927,7 +910,7 @@ File: src/managers/DeploymentManager.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/managers/DeploymentManager.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/managers/DeploymentManager.sol)
 
 ```solidity
 File: src/managers/RewardManager.sol
@@ -954,7 +937,7 @@ File: src/managers/RewardManager.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/managers/RewardManager.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/managers/RewardManager.sol)
 
 ```solidity
 File: src/managers/VaultManager.sol
@@ -977,7 +960,7 @@ File: src/managers/VaultManager.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/managers/VaultManager.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/managers/VaultManager.sol)
 
 ```solidity
 File: src/queue/WithdrawalQueue.sol
@@ -1014,7 +997,7 @@ File: src/queue/WithdrawalQueue.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/queue/WithdrawalQueue.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/queue/WithdrawalQueue.sol)
 
 ```solidity
 File: src/registries/ImplementationRegistry.sol
@@ -1033,7 +1016,7 @@ File: src/registries/ImplementationRegistry.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/registries/ImplementationRegistry.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/registries/ImplementationRegistry.sol)
 
 ```solidity
 File: src/registries/TokenRegistry.sol
@@ -1064,7 +1047,7 @@ File: src/registries/TokenRegistry.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/registries/TokenRegistry.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/registries/TokenRegistry.sol)
 
 ```solidity
 File: src/registries/VaultRegistry.sol
@@ -1087,26 +1070,28 @@ File: src/registries/VaultRegistry.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/registries/VaultRegistry.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/registries/VaultRegistry.sol)
 
 ```solidity
 File: src/strategies/Aave/AaveV3Strategy.sol
 
-4: import {IERC20, IERC20Metadata} from "@openzeppelin/contracts/token/ERC20/extensions/ERC4626.sol";
+4: import {ERC20, IERC20, IERC20Metadata, SafeERC20} from "@openzeppelin/contracts/token/ERC20/extensions/ERC4626.sol";
 
-5: import {SafeERC20} from "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol";
+5: import {Math} from "@openzeppelin/contracts/utils/math/Math.sol";
 
-6: import {Math} from "@openzeppelin/contracts/utils/math/Math.sol";
+7: import {StrategyBase, RewardToken} from "../StrategyBase.sol";
 
-8: import {StrategyBase} from "../StrategyBase.sol";
+8: import {ILendingPool, IAaveIncentives, IAToken, IProtocolDataProvider} from "./IAaveV3.sol";
 
-9: import {ILendingPool, IAaveIncentives, IAToken, IProtocolDataProvider} from "./IAaveV3.sol";
+9: import {DataTypes} from "./DataTypes.sol";
 
-47:             string.concat("ctAv3-", metaERC20.symbol()),
+10: import {IStrategy, ReturnedRewards} from "../../interfaces/IStrategy.sol";
+
+48:             string.concat("ctAv3-", metaERC20.symbol()),
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Aave/AaveV3Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Aave/AaveV3Strategy.sol)
 
 ```solidity
 File: src/strategies/Aave/IAaveV3.sol
@@ -1117,12 +1102,12 @@ File: src/strategies/Aave/IAaveV3.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Aave/IAaveV3.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Aave/IAaveV3.sol)
 
 ```solidity
 File: src/strategies/ProtectStrategy/ProtectStrategy.sol
 
-4: import {IERC20, IERC20Metadata, SafeERC20} from "@openzeppelin/contracts/token/ERC20/extensions/ERC4626.sol";
+4: import {ERC20, IERC20, IERC4626, IERC20Metadata, SafeERC20} from "@openzeppelin/contracts/token/ERC20/extensions/ERC4626.sol";
 
 5: import {Math} from "@openzeppelin/contracts/utils/math/Math.sol";
 
@@ -1130,21 +1115,27 @@ File: src/strategies/ProtectStrategy/ProtectStrategy.sol
 
 8: import {IProtectStrategy} from "../../interfaces/IProtectStrategy.sol";
 
-9: import {IConcreteMultiStrategyVault} from "../../interfaces/IConcreteMultiStrategyVault.sol";
+9: import {IStrategy} from "../../interfaces/IStrategy.sol";
 
-39:             string.concat("ctPct-", metaERC20.symbol()),
+10: import {ReturnedRewards} from "../../interfaces/IStrategy.sol";
 
-70:         return totalAssets_.mulDiv(10 ** uint256(DECIMAL_OFFSET), totalSupply_, Math.Rounding.Ceil);
+11: import {Errors} from "../../interfaces/Errors.sol";
 
-120:         borrowDebt -= amount;
+12: import {IConcreteMultiStrategyVault} from "../../interfaces/IConcreteMultiStrategyVault.sol";
 
-136:             _requestFromVault(amount - balance);
+42:             string.concat("ctPct-", metaERC20.symbol()),
 
-139:         borrowDebt += amount;
+73:         return totalAssets_.mulDiv(10 ** uint256(DECIMAL_OFFSET), totalSupply_, Math.Rounding.Ceil);
+
+123:         borrowDebt -= amount;
+
+139:             _requestFromVault(amount - balance);
+
+142:         borrowDebt += amount;
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/ProtectStrategy/ProtectStrategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/ProtectStrategy/ProtectStrategy.sol)
 
 ```solidity
 File: src/strategies/Radiant/IRadiantV2.sol
@@ -1155,26 +1146,28 @@ File: src/strategies/Radiant/IRadiantV2.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Radiant/IRadiantV2.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Radiant/IRadiantV2.sol)
 
 ```solidity
 File: src/strategies/Radiant/RadiantV2Strategy.sol
 
-4: import {IERC20, IERC20Metadata, SafeERC20} from "@openzeppelin/contracts/token/ERC20/extensions/ERC4626.sol";
+4: import {ERC20, IERC20, IERC20Metadata, SafeERC20} from "@openzeppelin/contracts/token/ERC20/extensions/ERC4626.sol";
 
 5: import {Math} from "@openzeppelin/contracts/utils/math/Math.sol";
 
-7: import {StrategyBase} from "../StrategyBase.sol";
+7: import {StrategyBase, RewardToken} from "../StrategyBase.sol";
 
 8: import {DataTypes} from "./DataTypes.sol";
 
 9: import {IAToken, IChefIncentivesController, ILendingPoolAddressesProvider, ILendingPool} from "./IRadiantV2.sol";
 
-53:             string.concat("ctRdV2-", metaERC20.symbol()),
+10: import {IStrategy, ReturnedRewards} from "../../interfaces/IStrategy.sol";
+
+54:             string.concat("ctRdV2-", metaERC20.symbol()),
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Radiant/RadiantV2Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Radiant/RadiantV2Strategy.sol)
 
 ```solidity
 File: src/strategies/Silo/EasyMathV2.sol
@@ -1203,17 +1196,17 @@ File: src/strategies/Silo/EasyMathV2.sol
 
 99:             value /= 10 ** _assetDecimals;
 
-106:             s += _numbers[i];
+105:             s += _numbers[i];
 
-108:                 i++;
+107:                 i++;
 
-129:         utilization = _totalBorrowAmount * _dp;
+128:         utilization = _totalBorrowAmount * _dp;
 
-132:             utilization /= _totalDeposits;
+131:             utilization /= _totalDeposits;
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Silo/EasyMathV2.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Silo/EasyMathV2.sol)
 
 ```solidity
 File: src/strategies/Silo/IBaseSiloV1.sol
@@ -1222,7 +1215,7 @@ File: src/strategies/Silo/IBaseSiloV1.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Silo/IBaseSiloV1.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Silo/IBaseSiloV1.sol)
 
 ```solidity
 File: src/strategies/Silo/ISiloV1.sol
@@ -1231,12 +1224,12 @@ File: src/strategies/Silo/ISiloV1.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Silo/ISiloV1.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Silo/ISiloV1.sol)
 
 ```solidity
 File: src/strategies/Silo/SiloV1Strategy.sol
 
-4: import {IERC20, IERC20Metadata, SafeERC20} from "@openzeppelin/contracts/token/ERC20/extensions/ERC4626.sol";
+4: import {ERC20, IERC20, IERC20Metadata, SafeERC20} from "@openzeppelin/contracts/token/ERC20/extensions/ERC4626.sol";
 
 5: import {Math} from "@openzeppelin/contracts/utils/math/Math.sol";
 
@@ -1245,6 +1238,8 @@ File: src/strategies/Silo/SiloV1Strategy.sol
 8: import {StrategyBase, RewardToken} from "../StrategyBase.sol";
 
 9: import {ISilo, ISiloRepository, ISiloIncentivesController} from "./ISiloV1.sol";
+
+10: import {IStrategy, ReturnedRewards} from "../../interfaces/IStrategy.sol";
 
 65:                     temp.i++;
 
@@ -1258,79 +1253,81 @@ File: src/strategies/Silo/SiloV1Strategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Silo/SiloV1Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Silo/SiloV1Strategy.sol)
 
 ```solidity
 File: src/strategies/StrategyBase.sol
 
-4: import {ERC4626Upgradeable, IERC20, IERC20Metadata, IERC4626} from "@openzeppelin/contracts-upgradeable/token/ERC20/extensions/ERC4626Upgradeable.sol";
+4: import {ERC4626Upgradeable, ERC20Upgradeable as ERC20, IERC20, IERC20Metadata, IERC4626} from "@openzeppelin/contracts-upgradeable/token/ERC20/extensions/ERC4626Upgradeable.sol";
 
-5: import {SafeERC20} from "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol";
+5: import {Initializable} from "@openzeppelin/contracts/proxy/utils/Initializable.sol";
 
-6: import {Math} from "@openzeppelin/contracts/utils/math/Math.sol";
+6: import {SafeERC20} from "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol";
 
-7: import {ReentrancyGuard} from "@openzeppelin/contracts/utils/ReentrancyGuard.sol";
+7: import {Math} from "@openzeppelin/contracts/utils/math/Math.sol";
 
-8: import {PausableUpgradeable} from "@openzeppelin/contracts-upgradeable/utils/PausableUpgradeable.sol";
+8: import {ReentrancyGuard} from "@openzeppelin/contracts/utils/ReentrancyGuard.sol";
 
-9: import {OwnableUpgradeable} from "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol";
+9: import {PausableUpgradeable} from "@openzeppelin/contracts-upgradeable/utils/PausableUpgradeable.sol";
 
-10: import {Errors} from "../interfaces/Errors.sol";
+10: import {OwnableUpgradeable} from "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol";
 
-11: import {ReturnedRewards} from "../interfaces/IStrategy.sol";
+11: import {Errors} from "../interfaces/Errors.sol";
 
-12: import {IStrategy, ReturnedRewards} from "../interfaces/IStrategy.sol";
+12: import {ReturnedRewards} from "../interfaces/IStrategy.sol";
 
-14: import {TokenHelper} from "@blueprint-finance/hub-and-spokes-libraries/src/libraries/TokenHelper.sol";
+13: import {VaultFees, VaultInitParams, Strategy, IConcreteMultiStrategyVault} from "../interfaces/IConcreteMultiStrategyVault.sol";
 
-103:                     i++;
+94:                     i++;
 
-117:         _decimals = IERC20Metadata(address(baseAsset_)).decimals() + DECIMAL_OFFSET;
+108:         _decimals = IERC20Metadata(address(baseAsset_)).decimals() + DECIMAL_OFFSET;
 
-182:         return IERC20(asset()).balanceOf(address(this)) + _totalAssets();
+173:         return IERC20(asset()).balanceOf(address(this)) + _totalAssets();
 
-223:         rewardTokens[_getIndex(address(rewardToken_.token))] = rewardTokens[rewardTokens.length - 1];
+218:         for (uint256 i = index; i < rewardTokens.length - 1; ) {
 
-294:         return rewardTokens; // Return the array of configured reward tokens.
+219:             rewardTokens[index] = rewardTokens[rewardTokens.length - 1];
 
-309:                 index = i; // Set the index if the token is found.
+221:                 i++;
 
-310:                 break; // Exit the loop once the token is found.
+296:         return rewardTokens; // Return the array of configured reward tokens.
 
-313:                 ++i;
+311:                 index = i; // Set the index if the token is found.
 
-329:                 ++i;
+312:                 break; // Exit the loop once the token is found.
 
-352:                     rewardTokens[i].accumulatedFeeAccounted += collectedFee;
+315:                 ++i;
 
-353:                     netReward = claimedBalance - collectedFee;
+331:                 ++i;
 
-363:                 ++i;
+352:                 rewardTokens[i].accumulatedFeeAccounted += collectedFee;
 
-375:                 ++i;
+354:                 netReward = claimedBalance - collectedFee;
+
+362:                 ++i;
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/StrategyBase.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/StrategyBase.sol)
 
 ```solidity
 File: src/strategies/compoundV3/CompoundV3Strategy.sol
 
-4: import {IERC20, IERC20Metadata} from "@openzeppelin/contracts/token/ERC20/extensions/ERC4626.sol";
+4: import {ERC20, IERC20, IERC20Metadata, SafeERC20} from "@openzeppelin/contracts/token/ERC20/extensions/ERC4626.sol";
 
-5: import {SafeERC20} from "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol";
+5: import {Math} from "@openzeppelin/contracts/utils/math/Math.sol";
 
-6: import {Math} from "@openzeppelin/contracts/utils/math/Math.sol";
+7: import {StrategyBase, RewardToken} from "../StrategyBase.sol";
 
-8: import {StrategyBase} from "../StrategyBase.sol";
+8: import {ICToken, ICometRewarder, IGovernor, IAdmin, ICometConfigurator, RewardConfig} from "./ICompoundV3.sol";
 
-9: import {ICToken, ICometRewarder, RewardConfig} from "./ICompoundV3.sol";
+9: import {IStrategy, ReturnedRewards} from "../../interfaces/IStrategy.sol";
 
 50:             string.concat("ctCM3-", metaERC20.symbol()),
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/compoundV3/CompoundV3Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/compoundV3/CompoundV3Strategy.sol)
 
 ```solidity
 File: src/swapper/OraclePlug.sol
@@ -1365,7 +1362,7 @@ File: src/swapper/OraclePlug.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/swapper/OraclePlug.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/swapper/OraclePlug.sol)
 
 ```solidity
 File: src/swapper/Swapper.sol
@@ -1398,12 +1395,12 @@ File: src/swapper/Swapper.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/swapper/Swapper.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/swapper/Swapper.sol)
 
 ```solidity
 File: src/vault/ConcreteMultiStrategyVault.sol
 
-4: import {ERC4626Upgradeable, IERC20, IERC20Metadata} from "@openzeppelin/contracts-upgradeable/token/ERC20/extensions/ERC4626Upgradeable.sol";
+4: import {ERC4626Upgradeable, ERC20Upgradeable as ERC20, IERC20, IERC20Metadata} from "@openzeppelin/contracts-upgradeable/token/ERC20/extensions/ERC4626Upgradeable.sol";
 
 5: import {ReentrancyGuard} from "@openzeppelin/contracts/utils/ReentrancyGuard.sol";
 
@@ -1411,172 +1408,198 @@ File: src/vault/ConcreteMultiStrategyVault.sol
 
 7: import {SafeERC20} from "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol";
 
-8: import {PausableUpgradeable} from "@openzeppelin/contracts-upgradeable/utils/PausableUpgradeable.sol";
+8: import {ContextUpgradeable} from "@openzeppelin/contracts-upgradeable/utils/ContextUpgradeable.sol";
 
-9: import {Math} from "@openzeppelin/contracts/utils/math/Math.sol";
+9: import {PausableUpgradeable} from "@openzeppelin/contracts-upgradeable/utils/PausableUpgradeable.sol";
 
-10: import {VaultFees, Strategy, IConcreteMultiStrategyVault, Allocation} from "../interfaces/IConcreteMultiStrategyVault.sol";
+10: import {Math} from "@openzeppelin/contracts/utils/math/Math.sol";
 
-11: import {Errors} from "../interfaces/Errors.sol";
+11: import {VaultFees, VaultInitParams, Strategy, IConcreteMultiStrategyVault, Allocation} from "../interfaces/IConcreteMultiStrategyVault.sol";
 
-12: import {IStrategy, ReturnedRewards} from "../interfaces/IStrategy.sol";
+12: import {Errors} from "../interfaces/Errors.sol";
 
-13: import {IWithdrawalQueue} from "../interfaces/IWithdrawalQueue.sol";
+13: import {IStrategy, ReturnedRewards} from "../interfaces/IStrategy.sol";
 
-14: import {MultiStrategyVaultHelper} from "../libraries/MultiStrategyVaultHelper.sol";
-
-15: import {MAX_BASIS_POINTS} from "../utils/Constants.sol";
+14: import {IWithdrawalQueue} from "../interfaces/IWithdrawalQueue.sol";
 
 105:         uint256 totalFee = accruedProtocolFee() + accruedPerformanceFee();
 
 115:                 : totalFee.mulDiv(supply, _totalAssets - totalFee, Math.Rounding.Floor);
 
-172:         highWaterMark = 1e9; // Set the initial high water mark for performance fee calculation.
+185:                 i++;
 
-242:         shares = _convertToShares(assets_, Math.Rounding.Floor) - feeShares;
+189:         _decimals = IERC20Metadata(address(baseAsset_)).decimals() + decimalOffset;
 
-263:                     i++;
+205:                 i++;
 
-300:         uint256 feeShares = shares_.mulDiv(MAX_BASIS_POINTS, MAX_BASIS_POINTS - depositFee, Math.Rounding.Floor) -
+213:         highWaterMark = 1e9; // Set the initial high water mark for performance fee calculation.
 
-304:         assets = _convertToAssets(shares_ + feeShares, Math.Rounding.Ceil);
+287:         shares = _convertToShares(assets_, Math.Rounding.Floor) - feeShares;
 
-326:                     i++;
+308:                     i++;
 
-362:         assets = _convertToAssets(shares_ - feeShares, Math.Rounding.Floor);
+349:         uint256 feeShares = shares_.mulDiv(MAX_BASIS_POINTS, MAX_BASIS_POINTS - depositFee, Math.Rounding.Floor) -
 
-401:             ? shares.mulDiv(MAX_BASIS_POINTS, MAX_BASIS_POINTS - withdrawalFee, Math.Rounding.Floor) - shares
+353:         assets = _convertToAssets(shares_ + feeShares, Math.Rounding.Ceil);
 
-403:         shares += feeShares;
+375:                     i++;
 
-421:             _approve(owner_, msg.sender, allowance(owner_, msg.sender) - shares);
+411:         assets = _convertToAssets(shares_ - feeShares, Math.Rounding.Floor);
 
-453:             uint256 diff = amount_ - float;
+450:             ? shares.mulDiv(MAX_BASIS_POINTS, MAX_BASIS_POINTS - withdrawalFee, Math.Rounding.Floor) - shares
 
-462:                     revert InsufficientFunds(strategy.strategy, diff * strategy.allocation.amount, withdrawable);
+452:         shares += feeShares;
 
-472:                 totalWithdrawn += amountToWithdraw;
+470:             _approve(owner_, msg.sender, allowance(owner_, msg.sender) - shares);
 
-474:                     i++;
+502:             uint256 diff = amount_ - float;
 
-478:             if (totalWithdrawn < amount_ && amount_ - totalWithdrawn <= float) {
+511:                     revert InsufficientFunds(strategy.strategy, diff * strategy.allocation.amount, withdrawable);
 
-479:                 asset_.safeTransfer(receiver_, amount_ - totalWithdrawn);
+521:                 totalWithdrawn += amountToWithdraw;
 
-518:             totalAvailable += strategy.strategy.getAvailableAssetsForWithdrawal();
+523:                     i++;
 
-520:                 i++;
+527:             if (totalWithdrawn < amount_ && amount_ - totalWithdrawn <= float) {
 
-538:             uint256 calculatedRewards = (tokenRewardIndex - userRewardIndex[userAddress][rewardAddresses[i]]).mulDiv(
+528:                 asset_.safeTransfer(receiver_, amount_ - totalWithdrawn);
 
-545:                 i++;
+567:             totalAvailable += strategy.strategy.getAvailableAssetsForWithdrawal();
 
-561:                 i++;
+569:                 i++;
 
-578:             total += strategies[i].strategy.convertToAssets(strategies[i].strategy.balanceOf(address(this)));
+588:             uint256 calculatedRewards = (tokenRewardIndex - userRewardIndex[userAddress][rewardAddresses[i]]).mulDiv(
 
-580:                 i++;
+595:                 i++;
 
-591:         total -= unfinalized;
+611:                 i++;
 
-601:         uint256 netAssets = assets_ -
+629:             total += strategies[i].strategy.convertToAssets(strategies[i].strategy.balanceOf(address(this)));
 
-617:         uint256 grossShares = shares_.mulDiv(MAX_BASIS_POINTS, MAX_BASIS_POINTS - fees.depositFee, Math.Rounding.Floor);
+631:                 i++;
 
-630:             ? shares.mulDiv(MAX_BASIS_POINTS, MAX_BASIS_POINTS - fees.withdrawalFee, Math.Rounding.Floor)
+642:         total -= unfinalized;
 
-641:         uint256 netShares = shares_ -
+652:         uint256 netAssets = assets_ -
 
-658:         return (paused() || totalAssets() >= depositLimit) ? 0 : depositLimit - totalAssets();
+668:         uint256 grossShares = shares_.mulDiv(MAX_BASIS_POINTS, MAX_BASIS_POINTS - fees.depositFee, Math.Rounding.Floor);
 
-669:         shares = assets.mulDiv(totalSupply() + 10 ** decimalOffset, totalAssets() + 1, rounding);
+681:             ? shares.mulDiv(MAX_BASIS_POINTS, MAX_BASIS_POINTS - fees.withdrawalFee, Math.Rounding.Floor)
 
-680:         return shares.mulDiv(totalAssets() + 1, totalSupply() + 10 ** decimalOffset, rounding);
+692:         uint256 netShares = shares_ -
 
-695:                     totalAssets() * (block.timestamp - feesUpdatedAt),
+709:         return (paused() || totalAssets() >= depositLimit) ? 0 : depositLimit - totalAssets();
 
-698:                 ) / 10000; // Normalize the fee percentage
+720:         shares = assets.mulDiv(totalSupply() + 10 ** decimalOffset, totalAssets() + 1, rounding);
 
-745:         fees = newFees_; // Update the fee structure
+731:         return shares.mulDiv(totalAssets() + 1, totalSupply() + 10 ** decimalOffset, rounding);
 
-746:         feesUpdatedAt = block.timestamp; // Record the time of the fee update
+746:                     totalAssets() * (block.timestamp - feesUpdatedAt),
 
-761:         feeRecipient = newRecipient_; // Update the fee recipient
+749:                 ) / 10000; // Normalize the fee percentage
 
-778:         withdrawalQueue = IWithdrawalQueue(withdrawalQueue_); // Update the fee recipient
+769:             uint256 diff = uint256(shareValue.mulDiv(MAX_BASIS_POINTS, highWaterMark, Math.Rounding.Floor)) -
 
-845:         strategies[index_] = strategies[len - 1];
+774:                         ((shareValue - highWaterMark) * totalSupply()).mulDiv(
 
-875:             allotmentTotals += allocations_[i].amount;
+778:                         ) /
 
-878:                 i++;
+782:                     i++;
 
-916:                 i++;
+813:         fees = newFees_; // Update the fee structure
 
-1000:             for (uint256 k = 0; k < indices.length; k++) {
+814:         feesUpdatedAt = block.timestamp; // Record the time of the fee update
 
-1014:                     rewardIndex[rewardToken] += amount.mulDiv(PRECISION, totalSupply, Math.Rounding.Floor);
+829:         feeRecipient = newRecipient_; // Update the fee recipient
 
-1017:                     j++;
+846:         withdrawalQueue = IWithdrawalQueue(withdrawalQueue_); // Update the fee recipient
 
-1021:                 i++;
+887:             allotmentTotals += strategies[i].allocation.amount;
 
-1040:                 uint256 rewardsToTransfer = (tokenRewardIndex - userRewardIndex[userAddress][rewardAddresses[i]])
+889:                 i++;
 
-1043:                     totalRewardsClaimed[userAddress][rewardAddresses[i]] += rewardsToTransfer;
+895:             if (allotmentTotals - strategies[index_].allocation.amount + newStrategy_.allocation.amount > 10000) {
 
-1049:                 i++;
+903:             if (allotmentTotals + newStrategy_.allocation.amount > 10000) {
 
-1067:         uint256 max = lastCreatedId < lastFinalizedId + maxRequests ? lastCreatedId : lastFinalizedId + maxRequests;
+931:         strategies[index_] = strategies[len - 1];
 
-1069:         for (uint256 i = lastFinalizedId + 1; i <= max; ) {
+983:             allotmentTotals += allocations_[i].amount;
 
-1077:                 i++;
+986:                 i++;
+
+1015:                 i++;
+
+1033:                 i++;
+
+1120:                     rewardIndex[rewardToken] += amount.mulDiv(PRECISION, totalSupply(), Math.Rounding.Floor);
+
+1123:                     j++;
+
+1127:                 i++;
+
+1146:                 uint256 rewardsToTransfer = (tokenRewardIndex - userRewardIndex[userAddress][rewardAddresses[i]])
+
+1149:                     totalRewardsClaimed[userAddress][rewardAddresses[i]] += rewardsToTransfer;
+
+1155:                 i++;
+
+1173:         uint256 max = lastCreatedId < lastFinalizedId + maxRequests ? lastCreatedId : lastFinalizedId + maxRequests;
+
+1175:         for (uint256 i = lastFinalizedId + 1; i <= max; ) {
+
+1183:                 i++;
+
+1211:             for (uint256 i; i < len; i++) {
+
+1218:                 uint256 pending = amount - acumulated;
+
+1232:                 acumulated += toWithdraw;
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
 
 ### <a name="GAS-9"></a>[GAS-9] Avoid contract existence checks by using low level calls
 
 Prior to 0.8.10 the compiler inserted extra code, including `EXTCODESIZE` (**100 gas**), to check for contract existence for external function calls. In more recent solidity versions, the compiler will not insert these checks if the external call has a return value. Similar behavior can be achieved in earlier versions by using low-level calls, since low level calls never check for contract existence
 
-*Instances (25)*:
+*Instances (27)*:
 
 ```solidity
 File: src/strategies/Aave/AaveV3Strategy.sol
 
-63:         return aToken.balanceOf(address(this));
+64:         return aToken.balanceOf(address(this));
 
-71:         return aToken.balanceOf(address(this));
+72:         return aToken.balanceOf(address(this));
 
-113:         _protocolWithdraw(aToken.balanceOf(address(this)), 0);
+110:         _protocolWithdraw(aToken.balanceOf(address(this)), 0);
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Aave/AaveV3Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Aave/AaveV3Strategy.sol)
 
 ```solidity
 File: src/strategies/ProtectStrategy/ProtectStrategy.sol
 
-83:         return IERC20(asset()).balanceOf(address(this));
+86:         return IERC20(asset()).balanceOf(address(this));
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/ProtectStrategy/ProtectStrategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/ProtectStrategy/ProtectStrategy.sol)
 
 ```solidity
 File: src/strategies/Radiant/RadiantV2Strategy.sol
 
-70:         return rToken.balanceOf(address(this));
+71:         return rToken.balanceOf(address(this));
 
-78:         return rToken.balanceOf(address(this));
+79:         return rToken.balanceOf(address(this));
 
-123:         uint256 amountToWithdraw = rToken.balanceOf(address(this));
+121:         uint256 amountToWithdraw = rToken.balanceOf(address(this));
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Radiant/RadiantV2Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Radiant/RadiantV2Strategy.sol)
 
 ```solidity
 File: src/strategies/Silo/SiloV1Strategy.sol
@@ -1585,22 +1608,22 @@ File: src/strategies/Silo/SiloV1Strategy.sol
 
 123:         uint256 shares = collateralToken.balanceOf(address(this));
 
-170:         uint256 shares = collateralToken.balanceOf(address(this));
+167:         uint256 shares = collateralToken.balanceOf(address(this));
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Silo/SiloV1Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Silo/SiloV1Strategy.sol)
 
 ```solidity
 File: src/strategies/StrategyBase.sol
 
-182:         return IERC20(asset()).balanceOf(address(this)) + _totalAssets();
+173:         return IERC20(asset()).balanceOf(address(this)) + _totalAssets();
 
 347:             uint256 claimedBalance = rewardAddress.balanceOf(address(this));
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/StrategyBase.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/StrategyBase.sol)
 
 ```solidity
 File: src/strategies/compoundV3/CompoundV3Strategy.sol
@@ -1609,11 +1632,11 @@ File: src/strategies/compoundV3/CompoundV3Strategy.sol
 
 76:         return cToken.balanceOf(address(this));
 
-116:         _protocolWithdraw(cToken.balanceOf(address(this)), 0);
+108:         _protocolWithdraw(cToken.balanceOf(address(this)), 0);
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/compoundV3/CompoundV3Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/compoundV3/CompoundV3Strategy.sol)
 
 ```solidity
 File: src/swapper/Swapper.sol
@@ -1622,32 +1645,36 @@ File: src/swapper/Swapper.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/swapper/Swapper.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/swapper/Swapper.sol)
 
 ```solidity
 File: src/vault/ConcreteMultiStrategyVault.sol
 
-448:         uint256 float = asset_.balanceOf(address(this));
+497:         uint256 float = asset_.balanceOf(address(this));
 
-460:                 uint256 withdrawable = strategy.strategy.previewRedeem(strategy.strategy.balanceOf(address(this)));
+509:                 uint256 withdrawable = strategy.strategy.previewRedeem(strategy.strategy.balanceOf(address(this)));
 
-512:         totalAvailable = IERC20(asset()).balanceOf(address(this));
+561:         totalAvailable = IERC20(asset()).balanceOf(address(this));
 
-574:         total = IERC20(asset()).balanceOf(address(this));
+624:         total = IERC20(asset()).balanceOf(address(this));
 
-578:             total += strategies[i].strategy.convertToAssets(strategies[i].strategy.balanceOf(address(this)));
+629:             total += strategies[i].strategy.convertToAssets(strategies[i].strategy.balanceOf(address(this)));
 
-897:         uint256 _totalAssets = IERC20(asset()).balanceOf(address(this));
+947:             stratToBeRemoved_.redeem(stratToBeRemoved_.balanceOf(address(this)), address(this), address(this));
 
-937:         strategy.redeem(strategy.balanceOf(address(this)), address(this), address(this));
+1005:         uint256 _totalAssets = IERC20(asset()).balanceOf(address(this));
 
-946:         uint256 _totalAssets = IERC20(asset()).balanceOf(address(this));
+1054:         strategy.redeem(strategy.balanceOf(address(this)), address(this), address(this));
 
-966:         uint256 balance = IERC20(asset()).balanceOf(address(this));
+1063:         uint256 _totalAssets = IERC20(asset()).balanceOf(address(this));
+
+1083:         uint256 balance = IERC20(asset()).balanceOf(address(this));
+
+1206:         uint256 availableAssets = IERC20(asset()).balanceOf(address(this));
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
 
 ### <a name="GAS-10"></a>[GAS-10] State variables only set in the constructor should be declared `immutable`
 
@@ -1666,7 +1693,7 @@ File: src/managers/DeploymentManager.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/managers/DeploymentManager.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/managers/DeploymentManager.sol)
 
 ```solidity
 File: src/registries/TokenRegistry.sol
@@ -1675,35 +1702,35 @@ File: src/registries/TokenRegistry.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/registries/TokenRegistry.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/registries/TokenRegistry.sol)
 
 ```solidity
 File: src/strategies/Aave/AaveV3Strategy.sol
 
-36:         aToken = IAToken(_aToken);
+37:         aToken = IAToken(_aToken);
 
-41:         aaveIncentives = IAaveIncentives(aToken.getIncentivesController());
+42:         aaveIncentives = IAaveIncentives(aToken.getIncentivesController());
 
-42:         lendingPool = ILendingPool(aToken.POOL());
+43:         lendingPool = ILendingPool(aToken.POOL());
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Aave/AaveV3Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Aave/AaveV3Strategy.sol)
 
 ```solidity
 File: src/strategies/Radiant/RadiantV2Strategy.sol
 
-41:         addressesProvider = ILendingPoolAddressesProvider(addressesProvider_);
+42:         addressesProvider = ILendingPoolAddressesProvider(addressesProvider_);
 
-42:         lendingPool = ILendingPool(addressesProvider.getLendingPool());
+43:         lendingPool = ILendingPool(addressesProvider.getLendingPool());
 
-44:         rToken = IAToken(reserveData.aTokenAddress);
+45:         rToken = IAToken(reserveData.aTokenAddress);
 
-48:         incentiveController = IChefIncentivesController(rToken.getIncentivesController());
+49:         incentiveController = IChefIncentivesController(rToken.getIncentivesController());
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Radiant/RadiantV2Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Radiant/RadiantV2Strategy.sol)
 
 ```solidity
 File: src/strategies/Silo/SiloV1Strategy.sol
@@ -1718,7 +1745,7 @@ File: src/strategies/Silo/SiloV1Strategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Silo/SiloV1Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Silo/SiloV1Strategy.sol)
 
 ```solidity
 File: src/strategies/compoundV3/CompoundV3Strategy.sol
@@ -1729,7 +1756,7 @@ File: src/strategies/compoundV3/CompoundV3Strategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/compoundV3/CompoundV3Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/compoundV3/CompoundV3Strategy.sol)
 
 ```solidity
 File: src/swapper/OraclePlug.sol
@@ -1738,7 +1765,7 @@ File: src/swapper/OraclePlug.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/swapper/OraclePlug.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/swapper/OraclePlug.sol)
 
 ```solidity
 File: src/swapper/Swapper.sol
@@ -1747,13 +1774,13 @@ File: src/swapper/Swapper.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/swapper/Swapper.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/swapper/Swapper.sol)
 
 ### <a name="GAS-11"></a>[GAS-11] Functions guaranteed to revert when called by normal users can be marked `payable`
 
 If a function modifier such as `onlyOwner` is used, the function will revert if a normal user tries to pay the function. Marking the function as `payable` will lower the gas cost for legitimate callers because the compiler will not include checks for whether a payment was provided.
 
-*Instances (76)*:
+*Instances (78)*:
 
 ```solidity
 File: src/claimRouter/ClaimRouter.sol
@@ -1766,7 +1793,7 @@ File: src/claimRouter/ClaimRouter.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/claimRouter/ClaimRouter.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/claimRouter/ClaimRouter.sol)
 
 ```solidity
 File: src/managers/DeploymentManager.sol
@@ -1785,7 +1812,7 @@ File: src/managers/DeploymentManager.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/managers/DeploymentManager.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/managers/DeploymentManager.sol)
 
 ```solidity
 File: src/managers/RewardManager.sol
@@ -1810,7 +1837,7 @@ File: src/managers/RewardManager.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/managers/RewardManager.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/managers/RewardManager.sol)
 
 ```solidity
 File: src/managers/VaultManager.sol
@@ -1851,7 +1878,7 @@ File: src/managers/VaultManager.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/managers/VaultManager.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/managers/VaultManager.sol)
 
 ```solidity
 File: src/queue/WithdrawalQueue.sol
@@ -1864,7 +1891,7 @@ File: src/queue/WithdrawalQueue.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/queue/WithdrawalQueue.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/queue/WithdrawalQueue.sol)
 
 ```solidity
 File: src/registries/ImplementationRegistry.sol
@@ -1875,7 +1902,7 @@ File: src/registries/ImplementationRegistry.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/registries/ImplementationRegistry.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/registries/ImplementationRegistry.sol)
 
 ```solidity
 File: src/registries/TokenRegistry.sol
@@ -1884,7 +1911,7 @@ File: src/registries/TokenRegistry.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/registries/TokenRegistry.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/registries/TokenRegistry.sol)
 
 ```solidity
 File: src/registries/VaultRegistry.sol
@@ -1899,75 +1926,79 @@ File: src/registries/VaultRegistry.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/registries/VaultRegistry.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/registries/VaultRegistry.sol)
 
 ```solidity
 File: src/strategies/Aave/AaveV3Strategy.sol
 
-111:     function retireStrategy() external onlyOwner {
+109:     function retireStrategy() external onlyOwner {
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Aave/AaveV3Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Aave/AaveV3Strategy.sol)
 
 ```solidity
 File: src/strategies/ProtectStrategy/ProtectStrategy.sol
 
-89:     function setClaimRouter(address claimRouter_) external onlyOwner {
+92:     function setClaimRouter(address claimRouter_) external onlyOwner {
 
-117:     function updateBorrowDebt(uint256 amount) external override onlyClaimRouter {
+120:     function updateBorrowDebt(uint256 amount) external override onlyClaimRouter {
 
-131:     function executeBorrowClaim(uint256 amount, address recipient) external override onlyClaimRouter {
+134:     function executeBorrowClaim(uint256 amount, address recipient) external override onlyClaimRouter {
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/ProtectStrategy/ProtectStrategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/ProtectStrategy/ProtectStrategy.sol)
 
 ```solidity
 File: src/strategies/Radiant/RadiantV2Strategy.sol
 
-121:     function retireStrategy() external onlyOwner {
+119:     function retireStrategy() external onlyOwner {
 
-144:     function setEnableRewards(bool _rewardsEnabled) external onlyOwner {
+142:     function setEnableRewards(bool _rewardsEnabled) external onlyOwner {
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Radiant/RadiantV2Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Radiant/RadiantV2Strategy.sol)
 
 ```solidity
 File: src/strategies/Silo/SiloV1Strategy.sol
 
-168:     function retireStrategy() external onlyOwner {
+165:     function retireStrategy() external onlyOwner {
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Silo/SiloV1Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Silo/SiloV1Strategy.sol)
 
 ```solidity
 File: src/strategies/StrategyBase.sol
 
-191:     function addRewardToken(RewardToken calldata rewardToken_) external onlyOwner nonReentrant {
+182:     function addRewardToken(RewardToken calldata rewardToken_) external onlyOwner nonReentrant {
 
-217:     function removeRewardToken(RewardToken calldata rewardToken_) external onlyOwner {
+208:     function removeRewardToken(RewardToken calldata rewardToken_) external onlyOwner {
 
 236:     function modifyRewardFeeForRewardToken(uint256 newFee_, RewardToken calldata rewardToken_) external onlyOwner {
 
-261:     function setFeeRecipient(address feeRecipient_) external onlyOwner {
+263:     function setFeeRecipient(address feeRecipient_) external onlyOwner {
 
-273:     function setDepositLimit(uint256 depositLimit_) external onlyOwner {
+275:     function setDepositLimit(uint256 depositLimit_) external onlyOwner {
+
+339:     function harvestRewards() public virtual onlyVault returns (ReturnedRewards[] memory) {
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/StrategyBase.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/StrategyBase.sol)
 
 ```solidity
 File: src/strategies/compoundV3/CompoundV3Strategy.sol
 
-114:     function retireStrategy() external onlyOwner {
+106:     function retireStrategy() external onlyOwner {
+
+111:     function harvestRewards() public override(StrategyBase, IStrategy) onlyVault returns (ReturnedRewards[] memory) {
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/compoundV3/CompoundV3Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/compoundV3/CompoundV3Strategy.sol)
 
 ```solidity
 File: src/swapper/Swapper.sol
@@ -1978,46 +2009,46 @@ File: src/swapper/Swapper.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/swapper/Swapper.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/swapper/Swapper.sol)
 
 ```solidity
 File: src/vault/ConcreteMultiStrategyVault.sol
 
-194:     function pause() public onlyOwner {
+235:     function pause() public onlyOwner {
 
-202:     function unpause() public onlyOwner {
+243:     function unpause() public onlyOwner {
 
-744:     function setVaultFees(VaultFees calldata newFees_) external takeFees onlyOwner {
+812:     function setVaultFees(VaultFees calldata newFees_) external takeFees onlyOwner {
 
-754:     function setFeeRecipient(address newRecipient_) external onlyOwner {
+822:     function setFeeRecipient(address newRecipient_) external onlyOwner {
 
-769:     function setWithdrawalQueue(address withdrawalQueue_) external onlyOwner {
+837:     function setWithdrawalQueue(address withdrawalQueue_) external onlyOwner {
 
-795:     function toggleVaultIdle() external onlyOwner {
+863:     function toggleVaultIdle() external onlyOwner {
 
-837:     function removeStrategy(uint256 index_) external nonReentrant onlyOwner takeFees {
+924:     function removeStrategy(uint256 index_) external nonReentrant onlyOwner takeFees {
 
-895:     function pushFundsToStrategies() public onlyOwner {
+1003:     function pushFundsToStrategies() public onlyOwner {
 
-910:     function pullFundsFromStrategies() public onlyOwner {
+1027:     function pullFundsFromStrategies() public onlyOwner {
 
-930:     function pullFundsFromSingleStrategy(uint256 index_) public onlyOwner {
+1047:     function pullFundsFromSingleStrategy(uint256 index_) public onlyOwner {
 
-945:     function pushFundsIntoSingleStrategy(uint256 index_) external onlyOwner {
+1062:     function pushFundsIntoSingleStrategy(uint256 index_) external onlyOwner {
 
-965:     function pushFundsIntoSingleStrategy(uint256 index_, uint256 amount) external onlyOwner {
+1082:     function pushFundsIntoSingleStrategy(uint256 index_, uint256 amount) external onlyOwner {
 
-978:     function setDepositLimit(uint256 newLimit_) external onlyOwner {
+1095:     function setDepositLimit(uint256 newLimit_) external onlyOwner {
 
-989:     function harvestRewards(bytes memory encodedData) external onlyOwner nonReentrant {
+1106:     function harvestRewards() external onlyOwner nonReentrant {
 
-1059:     function batchClaimWithdrawal(uint256 maxRequests) external onlyOwner nonReentrant {
+1165:     function batchClaimWithdrawal(uint256 maxRequests) external onlyOwner nonReentrant {
 
-1098:     function requestFunds(uint256 amount) external onlyProtect {
+1204:     function requestFunds(uint256 amount) external onlyProtect {
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
 
 ### <a name="GAS-12"></a>[GAS-12] `++i` costs less gas compared to `i++` or `i += 1` (same for `--i` vs `i--` or `i -= 1`)
 
@@ -2059,7 +2090,7 @@ Consider using pre-increments and pre-decrements where they are relevant (meanin
 
 *Saves 5 gas per instance*
 
-*Instances (43)*:
+*Instances (49)*:
 
 ```solidity
 File: src/claimRouter/ClaimRouter.sol
@@ -2094,7 +2125,7 @@ File: src/claimRouter/ClaimRouter.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/claimRouter/ClaimRouter.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/claimRouter/ClaimRouter.sol)
 
 ```solidity
 File: src/managers/VaultManager.sol
@@ -2105,7 +2136,7 @@ File: src/managers/VaultManager.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/managers/VaultManager.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/managers/VaultManager.sol)
 
 ```solidity
 File: src/queue/WithdrawalQueue.sol
@@ -2114,7 +2145,7 @@ File: src/queue/WithdrawalQueue.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/queue/WithdrawalQueue.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/queue/WithdrawalQueue.sol)
 
 ```solidity
 File: src/registries/ImplementationRegistry.sol
@@ -2123,7 +2154,7 @@ File: src/registries/ImplementationRegistry.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/registries/ImplementationRegistry.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/registries/ImplementationRegistry.sol)
 
 ```solidity
 File: src/registries/TokenRegistry.sol
@@ -2142,7 +2173,7 @@ File: src/registries/TokenRegistry.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/registries/TokenRegistry.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/registries/TokenRegistry.sol)
 
 ```solidity
 File: src/registries/VaultRegistry.sol
@@ -2151,16 +2182,16 @@ File: src/registries/VaultRegistry.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/registries/VaultRegistry.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/registries/VaultRegistry.sol)
 
 ```solidity
 File: src/strategies/Silo/EasyMathV2.sol
 
-108:                 i++;
+107:                 i++;
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Silo/EasyMathV2.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Silo/EasyMathV2.sol)
 
 ```solidity
 File: src/strategies/Silo/SiloV1Strategy.sol
@@ -2171,51 +2202,63 @@ File: src/strategies/Silo/SiloV1Strategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Silo/SiloV1Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Silo/SiloV1Strategy.sol)
 
 ```solidity
 File: src/strategies/StrategyBase.sol
 
-103:                     i++;
+94:                     i++;
+
+221:                 i++;
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/StrategyBase.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/StrategyBase.sol)
 
 ```solidity
 File: src/vault/ConcreteMultiStrategyVault.sol
 
-263:                     i++;
+185:                 i++;
 
-326:                     i++;
+205:                 i++;
 
-474:                     i++;
+308:                     i++;
 
-520:                 i++;
+375:                     i++;
 
-545:                 i++;
+523:                     i++;
 
-561:                 i++;
+569:                 i++;
 
-580:                 i++;
+595:                 i++;
 
-878:                 i++;
+611:                 i++;
 
-916:                 i++;
+631:                 i++;
 
-1000:             for (uint256 k = 0; k < indices.length; k++) {
+782:                     i++;
 
-1017:                     j++;
+889:                 i++;
 
-1021:                 i++;
+986:                 i++;
 
-1049:                 i++;
+1015:                 i++;
 
-1077:                 i++;
+1033:                 i++;
+
+1123:                     j++;
+
+1127:                 i++;
+
+1155:                 i++;
+
+1183:                 i++;
+
+1211:             for (uint256 i; i < len; i++) {
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
 
 ### <a name="GAS-13"></a>[GAS-13] Using `private` rather than `public` for constants, saves gas
 
@@ -2230,7 +2273,7 @@ File: src/claimRouter/ClaimRouter.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/claimRouter/ClaimRouter.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/claimRouter/ClaimRouter.sol)
 
 ```solidity
 File: src/managers/VaultManager.sol
@@ -2239,16 +2282,16 @@ File: src/managers/VaultManager.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/managers/VaultManager.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/managers/VaultManager.sol)
 
 ```solidity
 File: src/strategies/StrategyBase.sol
 
-46:     uint8 public constant DECIMAL_OFFSET = 9;
+37:     uint8 public constant DECIMAL_OFFSET = 9;
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/StrategyBase.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/StrategyBase.sol)
 
 ```solidity
 File: src/vault/ConcreteMultiStrategyVault.sol
@@ -2257,7 +2300,7 @@ File: src/vault/ConcreteMultiStrategyVault.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
 
 ### <a name="GAS-14"></a>[GAS-14] Superfluous event fields
 
@@ -2272,7 +2315,7 @@ File: src/queue/WithdrawalQueue.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/queue/WithdrawalQueue.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/queue/WithdrawalQueue.sol)
 
 ### <a name="GAS-15"></a>[GAS-15] Increments/decrements can be unchecked in for-loops
 
@@ -2301,15 +2344,15 @@ The risk of overflow is non-existent for `uint256`.
 ```solidity
 File: src/vault/ConcreteMultiStrategyVault.sol
 
-1000:             for (uint256 k = 0; k < indices.length; k++) {
+1211:             for (uint256 i; i < len; i++) {
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
 
 ### <a name="GAS-16"></a>[GAS-16] Use != 0 instead of > 0 for unsigned integer comparison
 
-*Instances (13)*:
+*Instances (14)*:
 
 ```solidity
 File: src/strategies/Aave/DataTypes.sol
@@ -2318,7 +2361,7 @@ File: src/strategies/Aave/DataTypes.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Aave/DataTypes.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Aave/DataTypes.sol)
 
 ```solidity
 File: src/strategies/Radiant/DataTypes.sol
@@ -2327,16 +2370,16 @@ File: src/strategies/Radiant/DataTypes.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Radiant/DataTypes.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Radiant/DataTypes.sol)
 
 ```solidity
 File: src/strategies/Radiant/RadiantV2Strategy.sol
 
-124:         if (amountToWithdraw > 0) {
+122:         if (amountToWithdraw > 0) {
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Radiant/RadiantV2Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Radiant/RadiantV2Strategy.sol)
 
 ```solidity
 File: src/strategies/Silo/EasyMathV2.sol
@@ -2345,7 +2388,7 @@ File: src/strategies/Silo/EasyMathV2.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Silo/EasyMathV2.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Silo/EasyMathV2.sol)
 
 ```solidity
 File: src/strategies/Silo/IBaseSiloV1.sol
@@ -2354,7 +2397,7 @@ File: src/strategies/Silo/IBaseSiloV1.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Silo/IBaseSiloV1.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Silo/IBaseSiloV1.sol)
 
 ```solidity
 File: src/strategies/Silo/ISiloV1.sol
@@ -2363,35 +2406,37 @@ File: src/strategies/Silo/ISiloV1.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Silo/ISiloV1.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Silo/ISiloV1.sol)
 
 ```solidity
 File: src/strategies/Silo/SiloV1Strategy.sol
 
-172:         if (amountToWithdraw > 0) {
+169:         if (amountToWithdraw > 0) {
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Silo/SiloV1Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Silo/SiloV1Strategy.sol)
 
 ```solidity
 File: src/vault/ConcreteMultiStrategyVault.sol
 
 111:         if (totalFee > 0 && _totalAssets > 0) {
 
-246:         if (feeShares > 0) _mint(feeRecipient, feeShares);
+291:         if (feeShares > 0) _mint(feeRecipient, feeShares);
 
-309:         if (feeShares > 0) _mint(feeRecipient, feeShares);
+358:         if (feeShares > 0) _mint(feeRecipient, feeShares);
 
-424:         if (feeShares > 0) _mint(feeRecipient, feeShares);
+473:         if (feeShares > 0) _mint(feeRecipient, feeShares);
 
-691:         if (fees.protocolFee > 0) {
+742:         if (fees.protocolFee > 0) {
 
-715:         if (fees.performanceFee.length > 0 && shareValue > highWaterMark) {
+768:         if (fees.performanceFee.length > 0 && shareValue > highWaterMark) {
+
+945:         if (stratToBeRemoved_.totalAssets() > 0) {
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
 
 ### <a name="GAS-17"></a>[GAS-17] `internal` functions not called by the contract should be removed
 
@@ -2412,13 +2457,13 @@ File: src/strategies/Silo/EasyMathV2.sol
 
 91:     function toValue(
 
-104:     function sum(uint256[] memory _numbers) internal pure returns (uint256 s) {
+103:     function sum(uint256[] memory _numbers) internal pure returns (uint256 s) {
 
-122:     function calculateUtilization(
+121:     function calculateUtilization(
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Silo/EasyMathV2.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Silo/EasyMathV2.sol)
 
 ```solidity
 File: src/swapper/OraclePlug.sol
@@ -2427,7 +2472,7 @@ File: src/swapper/OraclePlug.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/swapper/OraclePlug.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/swapper/OraclePlug.sol)
 
 ## Non Critical Issues
 
@@ -2437,11 +2482,11 @@ File: src/swapper/OraclePlug.sol
 | [NC-2](#NC-2) | Array indices should be referenced via `enum`s rather than via numeric literals | 8 |
 | [NC-3](#NC-3) | `require()` should be used instead of `assert()` | 4 |
 | [NC-4](#NC-4) | Constants should be in CONSTANT_CASE | 1 |
-| [NC-5](#NC-5) | `constant`s should be defined rather than using magic numbers | 13 |
-| [NC-6](#NC-6) | Control structures do not follow the Solidity Style Guide | 110 |
+| [NC-5](#NC-5) | `constant`s should be defined rather than using magic numbers | 16 |
+| [NC-6](#NC-6) | Control structures do not follow the Solidity Style Guide | 120 |
 | [NC-7](#NC-7) | Critical Changes Should Use Two-step Procedure | 2 |
 | [NC-8](#NC-8) | Default Visibility for constants | 2 |
-| [NC-9](#NC-9) | Consider disabling `renounceOwnership()` | 8 |
+| [NC-9](#NC-9) | Consider disabling `renounceOwnership()` | 9 |
 | [NC-10](#NC-10) | Unused `error` definition | 1 |
 | [NC-11](#NC-11) | Event is never emitted | 27 |
 | [NC-12](#NC-12) | Events should use parameters to convey information | 4 |
@@ -2451,23 +2496,24 @@ File: src/swapper/OraclePlug.sol
 | [NC-16](#NC-16) | Functions should not be longer than 50 lines | 318 |
 | [NC-17](#NC-17) | Interfaces should be defined in separate files from their usage | 19 |
 | [NC-18](#NC-18) | Lack of checks in setters | 14 |
-| [NC-19](#NC-19) | Missing Event for critical parameters change | 11 |
-| [NC-20](#NC-20) | NatSpec is completely non-existent on functions that should have them | 26 |
-| [NC-21](#NC-21) | Incomplete NatSpec: `@param` is missing on actually documented functions | 6 |
-| [NC-22](#NC-22) | Incomplete NatSpec: `@return` is missing on actually documented functions | 2 |
-| [NC-23](#NC-23) | Use a `modifier` instead of a `require/if` statement for a special `msg.sender` actor | 2 |
-| [NC-24](#NC-24) | Consider using named mappings | 15 |
-| [NC-25](#NC-25) | Owner can renounce while system is paused | 2 |
-| [NC-26](#NC-26) | Adding a `return` statement when the function defines a named return variable, is redundant | 10 |
-| [NC-27](#NC-27) | `require()` / `revert()` statements should have descriptive reason strings | 27 |
-| [NC-28](#NC-28) | Take advantage of Custom Error's return value property | 86 |
-| [NC-29](#NC-29) | Contract does not follow the Solidity style guide's suggested layout ordering | 10 |
-| [NC-30](#NC-30) | TODO Left in the code | 1 |
-| [NC-31](#NC-31) | Use Underscores for Number Literals (add an underscore every 3 digits) | 4 |
-| [NC-32](#NC-32) | Internal and private variables and functions names should begin with an underscore | 16 |
-| [NC-33](#NC-33) | Event is missing `indexed` fields | 39 |
-| [NC-34](#NC-34) | `public` functions not called by the contract should be declared `external` instead | 10 |
-| [NC-35](#NC-35) | Variables need not be initialized to zero | 22 |
+| [NC-19](#NC-19) | Lines are too long | 2 |
+| [NC-20](#NC-20) | Missing Event for critical parameters change | 11 |
+| [NC-21](#NC-21) | NatSpec is completely non-existent on functions that should have them | 27 |
+| [NC-22](#NC-22) | Incomplete NatSpec: `@param` is missing on actually documented functions | 5 |
+| [NC-23](#NC-23) | Incomplete NatSpec: `@return` is missing on actually documented functions | 2 |
+| [NC-24](#NC-24) | Use a `modifier` instead of a `require/if` statement for a special `msg.sender` actor | 2 |
+| [NC-25](#NC-25) | Consider using named mappings | 15 |
+| [NC-26](#NC-26) | Owner can renounce while system is paused | 2 |
+| [NC-27](#NC-27) | Adding a `return` statement when the function defines a named return variable, is redundant | 10 |
+| [NC-28](#NC-28) | `require()` / `revert()` statements should have descriptive reason strings | 27 |
+| [NC-29](#NC-29) | Take advantage of Custom Error's return value property | 96 |
+| [NC-30](#NC-30) | Contract does not follow the Solidity style guide's suggested layout ordering | 10 |
+| [NC-31](#NC-31) | TODO Left in the code | 1 |
+| [NC-32](#NC-32) | Use Underscores for Number Literals (add an underscore every 3 digits) | 7 |
+| [NC-33](#NC-33) | Internal and private variables and functions names should begin with an underscore | 16 |
+| [NC-34](#NC-34) | Event is missing `indexed` fields | 39 |
+| [NC-35](#NC-35) | `public` functions not called by the contract should be declared `external` instead | 10 |
+| [NC-36](#NC-36) | Variables need not be initialized to zero | 22 |
 
 ### <a name="NC-1"></a>[NC-1] Missing checks for `address(0)` when assigning values to address state variables
 
@@ -2476,20 +2522,20 @@ File: src/swapper/OraclePlug.sol
 ```solidity
 File: src/strategies/ProtectStrategy/ProtectStrategy.sol
 
-33:         claimRouter = claimRouter_;
+36:         claimRouter = claimRouter_;
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/ProtectStrategy/ProtectStrategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/ProtectStrategy/ProtectStrategy.sol)
 
 ```solidity
 File: src/strategies/StrategyBase.sol
 
-118:         _vault = vault_;
+109:         _vault = vault_;
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/StrategyBase.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/StrategyBase.sol)
 
 ### <a name="NC-2"></a>[NC-2] Array indices should be referenced via `enum`s rather than via numeric literals
 
@@ -2498,22 +2544,22 @@ File: src/strategies/StrategyBase.sol
 ```solidity
 File: src/strategies/Aave/AaveV3Strategy.sol
 
-120:         _assets[0] = address(aToken);
+117:         _assets[0] = address(aToken);
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Aave/AaveV3Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Aave/AaveV3Strategy.sol)
 
 ```solidity
 File: src/strategies/Radiant/RadiantV2Strategy.sol
 
-88:         _rewardTokens[0] = incentiveController.rdntToken();
+89:         _rewardTokens[0] = incentiveController.rdntToken();
 
-133:         _assets[0] = address(rToken);
+131:         _assets[0] = address(rToken);
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Radiant/RadiantV2Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Radiant/RadiantV2Strategy.sol)
 
 ```solidity
 File: src/strategies/Silo/SiloV1Strategy.sol
@@ -2524,11 +2570,11 @@ File: src/strategies/Silo/SiloV1Strategy.sol
 
 134:         _rewardTokens[0] = siloIncentivesController.REWARD_TOKEN();
 
-180:         _assets[0] = address(collateralToken);
+177:         _assets[0] = address(collateralToken);
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Silo/SiloV1Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Silo/SiloV1Strategy.sol)
 
 ```solidity
 File: src/strategies/compoundV3/CompoundV3Strategy.sol
@@ -2537,7 +2583,7 @@ File: src/strategies/compoundV3/CompoundV3Strategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/compoundV3/CompoundV3Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/compoundV3/CompoundV3Strategy.sol)
 
 ### <a name="NC-3"></a>[NC-3] `require()` should be used instead of `assert()`
 
@@ -2554,7 +2600,7 @@ File: src/queue/WithdrawalQueue.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/queue/WithdrawalQueue.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/queue/WithdrawalQueue.sol)
 
 ```solidity
 File: src/registries/VaultRegistry.sol
@@ -2565,7 +2611,7 @@ File: src/registries/VaultRegistry.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/registries/VaultRegistry.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/registries/VaultRegistry.sol)
 
 ### <a name="NC-4"></a>[NC-4] Constants should be in CONSTANT_CASE
 
@@ -2580,13 +2626,13 @@ File: src/vault/ConcreteMultiStrategyVault.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
 
 ### <a name="NC-5"></a>[NC-5] `constant`s should be defined rather than using magic numbers
 
 Even [assembly](https://github.com/code-423n4/2022-05-opensea-seaport/blob/9d7ce4d08bf3c3010304a0476a785c70c0e90ae7/contracts/lib/TokenTransferrer.sol#L35-L39) can benefit from using readable constants instead of hex/numeric literals
 
-*Instances (13)*:
+*Instances (16)*:
 
 ```solidity
 File: src/registries/VaultRegistry.sol
@@ -2597,7 +2643,7 @@ File: src/registries/VaultRegistry.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/registries/VaultRegistry.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/registries/VaultRegistry.sol)
 
 ```solidity
 File: src/strategies/Silo/EasyMathV2.sol
@@ -2606,7 +2652,7 @@ File: src/strategies/Silo/EasyMathV2.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Silo/EasyMathV2.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Silo/EasyMathV2.sol)
 
 ```solidity
 File: src/strategies/StrategyBase.sol
@@ -2615,7 +2661,7 @@ File: src/strategies/StrategyBase.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/StrategyBase.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/StrategyBase.sol)
 
 ```solidity
 File: src/swapper/OraclePlug.sol
@@ -2632,28 +2678,34 @@ File: src/swapper/OraclePlug.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/swapper/OraclePlug.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/swapper/OraclePlug.sol)
 
 ```solidity
 File: src/vault/ConcreteMultiStrategyVault.sol
 
-669:         shares = assets.mulDiv(totalSupply() + 10 ** decimalOffset, totalAssets() + 1, rounding);
+720:         shares = assets.mulDiv(totalSupply() + 10 ** decimalOffset, totalAssets() + 1, rounding);
 
-680:         return shares.mulDiv(totalAssets() + 1, totalSupply() + 10 ** decimalOffset, rounding);
+731:         return shares.mulDiv(totalAssets() + 1, totalSupply() + 10 ** decimalOffset, rounding);
 
-698:                 ) / 10000; // Normalize the fee percentage
+749:                 ) / 10000; // Normalize the fee percentage
 
-881:         if (allotmentTotals != 10000) revert AllotmentTotalTooHigh();
+776:                             10000,
+
+895:             if (allotmentTotals - strategies[index_].allocation.amount + newStrategy_.allocation.amount > 10000) {
+
+903:             if (allotmentTotals + newStrategy_.allocation.amount > 10000) {
+
+989:         if (allotmentTotals != 10000) revert AllotmentTotalTooHigh();
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
 
 ### <a name="NC-6"></a>[NC-6] Control structures do not follow the Solidity Style Guide
 
 See the [control structures](https://docs.soliditylang.org/en/latest/style-guide.html#control-structures) section of the Solidity Style Guide
 
-*Instances (110)*:
+*Instances (120)*:
 
 ```solidity
 File: src/claimRouter/ClaimRouter.sol
@@ -2674,7 +2726,7 @@ File: src/claimRouter/ClaimRouter.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/claimRouter/ClaimRouter.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/claimRouter/ClaimRouter.sol)
 
 ```solidity
 File: src/managers/RewardManager.sol
@@ -2715,7 +2767,7 @@ File: src/managers/RewardManager.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/managers/RewardManager.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/managers/RewardManager.sol)
 
 ```solidity
 File: src/queue/WithdrawalQueue.sol
@@ -2732,7 +2784,7 @@ File: src/queue/WithdrawalQueue.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/queue/WithdrawalQueue.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/queue/WithdrawalQueue.sol)
 
 ```solidity
 File: src/registries/TokenRegistry.sol
@@ -2751,7 +2803,7 @@ File: src/registries/TokenRegistry.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/registries/TokenRegistry.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/registries/TokenRegistry.sol)
 
 ```solidity
 File: src/registries/VaultRegistry.sol
@@ -2764,59 +2816,59 @@ File: src/registries/VaultRegistry.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/registries/VaultRegistry.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/registries/VaultRegistry.sol)
 
 ```solidity
 File: src/strategies/Aave/AaveV3Strategy.sol
 
-117:         if (address(aaveIncentives) == address(0)) return;
+114:         if (address(aaveIncentives) == address(0)) return;
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Aave/AaveV3Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Aave/AaveV3Strategy.sol)
 
 ```solidity
 File: src/strategies/ProtectStrategy/ProtectStrategy.sol
 
-69:         if (totalSupply_ == 0) return 1;
+72:         if (totalSupply_ == 0) return 1;
 
-90:         if (claimRouter_ == address(0)) revert InvalidClaimRouterAddress();
+93:         if (claimRouter_ == address(0)) revert InvalidClaimRouterAddress();
 
-118:         if (borrowDebt < amount) revert InvalidSubstraction();
+121:         if (borrowDebt < amount) revert InvalidSubstraction();
 
-132:         if (amount == 0) revert ZeroAmount();
+135:         if (amount == 0) revert ZeroAmount();
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/ProtectStrategy/ProtectStrategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/ProtectStrategy/ProtectStrategy.sol)
 
 ```solidity
 File: src/strategies/Radiant/RadiantV2Strategy.sol
 
-37:         if (addressesProvider_ == address(0)) revert ZeroAddress();
+38:         if (addressesProvider_ == address(0)) revert ZeroAddress();
 
-45:         if (rToken.UNDERLYING_ASSET_ADDRESS() != address(baseAsset_)) revert AssetDivergence();
+46:         if (rToken.UNDERLYING_ASSET_ADDRESS() != address(baseAsset_)) revert AssetDivergence();
 
-86:         if (!rewardsEnabled) return new address[](0);
+87:         if (!rewardsEnabled) return new address[](0);
 
-130:         if (!rewardsEnabled) return;
+128:         if (!rewardsEnabled) return;
 
-131:         if (address(incentiveController) == address(0)) return;
+129:         if (address(incentiveController) == address(0)) return;
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Radiant/RadiantV2Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Radiant/RadiantV2Strategy.sol)
 
 ```solidity
 File: src/strategies/Silo/EasyMathV2.sol
 
-127:         if (_totalDeposits == 0 || _totalBorrowAmount == 0) return 0;
+126:         if (_totalDeposits == 0 || _totalBorrowAmount == 0) return 0;
 
-136:         if (utilization > _dp) utilization = _dp;
+135:         if (utilization > _dp) utilization = _dp;
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Silo/EasyMathV2.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Silo/EasyMathV2.sol)
 
 ```solidity
 File: src/strategies/Silo/SiloV1Strategy.sol
@@ -2831,38 +2883,38 @@ File: src/strategies/Silo/SiloV1Strategy.sol
 
 92:         if (address(collateralToken) == address(0)) revert InvalidAssetAddress();
 
-178:         if (address(siloIncentivesController) == address(0)) return;
+175:         if (address(siloIncentivesController) == address(0)) return;
 
-183:         if (rewardAmount == 0) return;
+180:         if (rewardAmount == 0) return;
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Silo/SiloV1Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Silo/SiloV1Strategy.sol)
 
 ```solidity
 File: src/strategies/StrategyBase.sol
 
-54:         if (msg.sender != _vault) revert OnlyVault(msg.sender);
+45:         if (msg.sender != _vault) revert OnlyVault(msg.sender);
 
-98:                 if (!rewardTokens_[i].token.approve(address(this), type(uint256).max)) revert ERC20ApproveFail();
+89:                 if (!rewardTokens_[i].token.approve(address(this), type(uint256).max)) revert ERC20ApproveFail();
 
-109:         if (feeRecipient_ == address(0)) revert InvalidFeeRecipient();
+100:         if (feeRecipient_ == address(0)) revert InvalidFeeRecipient();
 
-113:         if (depositLimit_ == 0) revert InvalidDepositLimit();
+104:         if (depositLimit_ == 0) revert InvalidDepositLimit();
 
-135:         if (shares_ == 0 || assets_ == 0) revert ZeroAmount();
+126:         if (shares_ == 0 || assets_ == 0) revert ZeroAmount();
 
-163:         if (shares_ == 0 || assets_ == 0) revert ZeroAmount();
+154:         if (shares_ == 0 || assets_ == 0) revert ZeroAmount();
 
-262:         if (feeRecipient_ == address(0)) revert InvalidFeeRecipient();
+264:         if (feeRecipient_ == address(0)) revert InvalidFeeRecipient();
 
-274:         if (depositLimit_ == 0) revert InvalidDepositLimit();
+276:         if (depositLimit_ == 0) revert InvalidDepositLimit();
 
-309:                 index = i; // Set the index if the token is found.
+311:                 index = i; // Set the index if the token is found.
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/StrategyBase.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/StrategyBase.sol)
 
 ```solidity
 File: src/strategies/compoundV3/CompoundV3Strategy.sol
@@ -2875,7 +2927,7 @@ File: src/strategies/compoundV3/CompoundV3Strategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/compoundV3/CompoundV3Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/compoundV3/CompoundV3Strategy.sol)
 
 ```solidity
 File: src/swapper/OraclePlug.sol
@@ -2884,7 +2936,7 @@ File: src/swapper/OraclePlug.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/swapper/OraclePlug.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/swapper/OraclePlug.sol)
 
 ```solidity
 File: src/swapper/Swapper.sol
@@ -2897,88 +2949,108 @@ File: src/swapper/Swapper.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/swapper/Swapper.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/swapper/Swapper.sol)
 
 ```solidity
 File: src/vault/ConcreteMultiStrategyVault.sol
 
 109:         if (shareValue > highWaterMark) highWaterMark = shareValue;
 
-156:         if (address(baseAsset_) == address(0)) revert InvalidAssetAddress();
+161:         if (address(baseAsset_) == address(0)) revert InvalidAssetAddress();
 
-233:         if (assets_ > maxDeposit(receiver_) || assets_ > depositLimit) revert MaxError();
+175:                 if (protectStrategy != address(0x0)) revert MultipleProtectStrat();
 
-243:         if (shares <= DUST) revert ZeroAmount();
+192:         if (
 
-246:         if (feeShares > 0) _mint(feeRecipient, feeShares);
+210:         if (feeRecipient_ == address(0)) revert InvalidFeeRecipient();
 
-296:         if (shares_ == 0) revert ZeroAmount();
+272:         if (receiver_ == address(0)) revert InvalidRecipient();
 
-306:         if (assets > maxMint(receiver_)) revert MaxError();
+273:         if (assets_ > maxDeposit(receiver_) || assets_ > depositLimit) revert MaxError();
 
-309:         if (feeShares > 0) _mint(feeRecipient, feeShares);
+274:         if (totalSupply() == 0) feesUpdatedAt = block.timestamp;
 
-356:         if (receiver_ == address(0)) revert InvalidRecipient();
+288:         if (shares <= DUST) revert ZeroAmount();
 
-357:         if (shares_ == 0) revert ZeroAmount();
+291:         if (feeShares > 0) _mint(feeRecipient, feeShares);
 
-358:         if (shares_ > maxRedeem(owner_)) revert MaxError();
+339:         if (receiver_ == address(0)) revert InvalidRecipient();
 
-393:         if (receiver_ == address(0)) revert InvalidRecipient();
+340:         if (shares_ == 0) revert ZeroAmount();
 
-394:         if (assets_ > maxWithdraw(owner_)) revert MaxError();
+341:         if (totalSupply() == 0) feesUpdatedAt = block.timestamp;
 
-396:         if (shares <= DUST) revert ZeroAmount();
+355:         if (assets > maxMint(receiver_)) revert MaxError();
 
-424:         if (feeShares > 0) _mint(feeRecipient, feeShares);
+358:         if (feeShares > 0) _mint(feeRecipient, feeShares);
 
-453:             uint256 diff = amount_ - float;
+405:         if (receiver_ == address(0)) revert InvalidRecipient();
 
-462:                     revert InsufficientFunds(strategy.strategy, diff * strategy.allocation.amount, withdrawable);
+406:         if (shares_ == 0) revert ZeroAmount();
 
-590:         if (total < unfinalized) revert InvalidSubstraction();
+407:         if (shares_ > maxRedeem(owner_)) revert MaxError();
 
-756:         if (newRecipient_ == address(0)) revert InvalidFeeRecipient();
+442:         if (receiver_ == address(0)) revert InvalidRecipient();
 
-771:         if (withdrawalQueue_ == address(0)) revert InvalidWithdrawlQueue();
+443:         if (assets_ > maxWithdraw(owner_)) revert MaxError();
 
-773:             if (withdrawalQueue.unfinalizedAmount() != 0) revert UnfinalizedWithdrawl(address(withdrawalQueue));
+445:         if (shares <= DUST) revert ZeroAmount();
 
-825:         if (address(removedStrategy) != address(0)) emit StrategyRemoved(address(removedStrategy));
+473:         if (feeShares > 0) _mint(feeRecipient, feeShares);
 
-839:         if (index_ >= len) revert InvalidIndex(index_);
+502:             uint256 diff = amount_ - float;
 
-853:         if (from != address(0)) updateUserRewardsToCurrent(from);
+511:                     revert InsufficientFunds(strategy.strategy, diff * strategy.allocation.amount, withdrawable);
 
-854:         if (to != address(0)) updateUserRewardsToCurrent(to);
+641:         if (total < unfinalized) revert InvalidSubstraction();
 
-871:         if (len != strategies.length) revert InvalidLength(len, strategies.length);
+769:             uint256 diff = uint256(shareValue.mulDiv(MAX_BASIS_POINTS, highWaterMark, Math.Rounding.Floor)) -
 
-881:         if (allotmentTotals != 10000) revert AllotmentTotalTooHigh();
+824:         if (newRecipient_ == address(0)) revert InvalidFeeRecipient();
 
-896:         if (vaultIdle) revert VaultIsIdle();
+839:         if (withdrawalQueue_ == address(0)) revert InvalidWithdrawlQueue();
 
-948:         if (index_ >= strategies.length) revert InvalidIndex(index_);
+841:             if (withdrawalQueue.unfinalizedAmount() != 0) revert UnfinalizedWithdrawl(address(withdrawalQueue));
 
-950:         if (vaultIdle) revert VaultIsIdle();
+893:             if (index_ >= len) revert InvalidIndex(index_);
 
-967:         if (amount > balance) revert InsufficientVaultFunds(address(this), amount, balance);
+909:             if (protectStrategy != address(0x0)) revert MultipleProtectStrat();
 
-968:         if (vaultIdle) revert VaultIsIdle();
+912:         if (!IERC20(asset()).approve(address(newStrategy_.strategy), type(uint256).max)) revert ERC20ApproveFail();
 
-1013:                     if (rewardIndex[rewardToken] == 0) rewardAddresses.push(rewardToken);
+926:         if (index_ >= len) revert InvalidIndex(index_);
 
-1060:         if (address(withdrawalQueue) == address(0)) revert QueueNotSet();
+950:         if (protectStrategy == address(stratToBeRemoved_)) protectStrategy = address(0x0);
 
-1072:             if (newAvailiableAssets == availableAssets) break;
+954:         if (!IERC20(asset()).approve(address(stratToBeRemoved_), 0)) revert ERC20ApproveFail();
 
-1113:         if (receiver_ == address(0)) revert InvalidRecipient();
+961:         if (from != address(0)) updateUserRewardsToCurrent(from);
 
-1114:         if (totalSupply() == 0) feesUpdatedAt = block.timestamp;
+962:         if (to != address(0)) updateUserRewardsToCurrent(to);
+
+979:         if (len != strategies.length) revert InvalidLength(len, strategies.length);
+
+989:         if (allotmentTotals != 10000) revert AllotmentTotalTooHigh();
+
+1004:         if (vaultIdle) revert VaultIsIdle();
+
+1065:         if (index_ >= strategies.length) revert InvalidIndex(index_);
+
+1067:         if (vaultIdle) revert VaultIsIdle();
+
+1084:         if (amount > balance) revert InsufficientVaultFunds(address(this), amount, balance);
+
+1085:         if (vaultIdle) revert VaultIsIdle();
+
+1119:                     if (rewardIndex[rewardToken] == 0) rewardAddresses.push(rewardToken);
+
+1166:         if (address(withdrawalQueue) == address(0)) revert QueueNotSet();
+
+1178:             if (newAvailiableAssets == availableAssets) break;
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
 
 ### <a name="NC-7"></a>[NC-7] Critical Changes Should Use Two-step Procedure
 
@@ -3001,7 +3073,7 @@ File: src/claimRouter/ClaimRouter.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/claimRouter/ClaimRouter.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/claimRouter/ClaimRouter.sol)
 
 ### <a name="NC-8"></a>[NC-8] Default Visibility for constants
 
@@ -3018,13 +3090,13 @@ File: src/interfaces/Constants.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/interfaces/Constants.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/interfaces/Constants.sol)
 
 ### <a name="NC-9"></a>[NC-9] Consider disabling `renounceOwnership()`
 
 If the plan for your project does not include eventually giving up all ownership control, consider overwriting OpenZeppelin's `Ownable`'s `renounceOwnership()` function in order to disable it.
 
-*Instances (8)*:
+*Instances (9)*:
 
 ```solidity
 File: src/factories/VaultFactory.sol
@@ -3033,7 +3105,7 @@ File: src/factories/VaultFactory.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/factories/VaultFactory.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/factories/VaultFactory.sol)
 
 ```solidity
 File: src/managers/DeploymentManager.sol
@@ -3042,7 +3114,7 @@ File: src/managers/DeploymentManager.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/managers/DeploymentManager.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/managers/DeploymentManager.sol)
 
 ```solidity
 File: src/managers/RewardManager.sol
@@ -3051,7 +3123,7 @@ File: src/managers/RewardManager.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/managers/RewardManager.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/managers/RewardManager.sol)
 
 ```solidity
 File: src/queue/WithdrawalQueue.sol
@@ -3060,7 +3132,7 @@ File: src/queue/WithdrawalQueue.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/queue/WithdrawalQueue.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/queue/WithdrawalQueue.sol)
 
 ```solidity
 File: src/registries/ImplementationRegistry.sol
@@ -3069,7 +3141,7 @@ File: src/registries/ImplementationRegistry.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/registries/ImplementationRegistry.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/registries/ImplementationRegistry.sol)
 
 ```solidity
 File: src/registries/TokenRegistry.sol
@@ -3078,7 +3150,7 @@ File: src/registries/TokenRegistry.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/registries/TokenRegistry.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/registries/TokenRegistry.sol)
 
 ```solidity
 File: src/registries/VaultRegistry.sol
@@ -3087,7 +3159,16 @@ File: src/registries/VaultRegistry.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/registries/VaultRegistry.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/registries/VaultRegistry.sol)
+
+```solidity
+File: src/strategies/StrategyBase.sol
+
+21: abstract contract StrategyBase is ERC4626Upgradeable, ReentrancyGuard, OwnableUpgradeable, Errors, PausableUpgradeable {
+
+```
+
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/StrategyBase.sol)
 
 ```solidity
 File: src/swapper/Swapper.sol
@@ -3096,7 +3177,7 @@ File: src/swapper/Swapper.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/swapper/Swapper.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/swapper/Swapper.sol)
 
 ### <a name="NC-10"></a>[NC-10] Unused `error` definition
 
@@ -3111,7 +3192,7 @@ File: src/queue/WithdrawalQueue.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/queue/WithdrawalQueue.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/queue/WithdrawalQueue.sol)
 
 ### <a name="NC-11"></a>[NC-11] Event is never emitted
 
@@ -3138,7 +3219,7 @@ File: src/claimRouter/ClaimRouter.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/claimRouter/ClaimRouter.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/claimRouter/ClaimRouter.sol)
 
 ```solidity
 File: src/managers/RewardManager.sol
@@ -3163,7 +3244,7 @@ File: src/managers/RewardManager.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/managers/RewardManager.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/managers/RewardManager.sol)
 
 ```solidity
 File: src/registries/TokenRegistry.sol
@@ -3180,20 +3261,20 @@ File: src/registries/TokenRegistry.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/registries/TokenRegistry.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/registries/TokenRegistry.sol)
 
 ```solidity
 File: src/strategies/ProtectStrategy/ProtectStrategy.sol
 
-12:     event BorrowDebtRepayed(uint256 prevAmount, uint256 substractedAmount);
+15:     event BorrowDebtRepayed(uint256 prevAmount, uint256 substractedAmount);
 
-13:     event BorrowClaimExecuted(uint256 amount, address recipient);
+16:     event BorrowClaimExecuted(uint256 amount, address recipient);
 
-14:     event ClaimRouterAddressUpdated(address claimRouter);
+17:     event ClaimRouterAddressUpdated(address claimRouter);
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/ProtectStrategy/ProtectStrategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/ProtectStrategy/ProtectStrategy.sol)
 
 ```solidity
 File: src/swapper/Swapper.sol
@@ -3206,7 +3287,7 @@ File: src/swapper/Swapper.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/swapper/Swapper.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/swapper/Swapper.sol)
 
 ### <a name="NC-12"></a>[NC-12] Events should use parameters to convey information
 
@@ -3221,7 +3302,7 @@ File: src/claimRouter/ClaimRouter.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/claimRouter/ClaimRouter.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/claimRouter/ClaimRouter.sol)
 
 ```solidity
 File: src/managers/VaultManager.sol
@@ -3232,7 +3313,7 @@ File: src/managers/VaultManager.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/managers/VaultManager.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/managers/VaultManager.sol)
 
 ```solidity
 File: src/vault/ConcreteMultiStrategyVault.sol
@@ -3241,7 +3322,7 @@ File: src/vault/ConcreteMultiStrategyVault.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
 
 ### <a name="NC-13"></a>[NC-13] Event missing indexed field
 
@@ -3258,7 +3339,7 @@ File: src/claimRouter/ClaimRouter.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/claimRouter/ClaimRouter.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/claimRouter/ClaimRouter.sol)
 
 ```solidity
 File: src/interfaces/IBeraOracle.sol
@@ -3269,26 +3350,26 @@ File: src/interfaces/IBeraOracle.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/interfaces/IBeraOracle.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/interfaces/IBeraOracle.sol)
 
 ```solidity
 File: src/interfaces/IConcreteMultiStrategyVault.sol
 
-42:     event ToggleVaultIdle(bool pastValue, bool newValue);
+43:     event ToggleVaultIdle(bool pastValue, bool newValue);
 
-43:     event StrategyAdded(address newStrategy);
+44:     event StrategyAdded(address newStrategy);
 
-44:     event StrategyRemoved(address oldStrategy);
+45:     event StrategyRemoved(address oldStrategy);
 
-45:     event DepositLimitSet(uint256 limit);
+46:     event DepositLimitSet(uint256 limit);
 
-46:     event StrategyAllocationsChanged(Allocation[] newAllocations);
+47:     event StrategyAllocationsChanged(Allocation[] newAllocations);
 
-47:     event WithdrawalQueueUpdated(address oldQueue, address newQueue);
+48:     event WithdrawalQueueUpdated(address oldQueue, address newQueue);
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/interfaces/IConcreteMultiStrategyVault.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/interfaces/IConcreteMultiStrategyVault.sol)
 
 ```solidity
 File: src/managers/RewardManager.sol
@@ -3313,20 +3394,20 @@ File: src/managers/RewardManager.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/managers/RewardManager.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/managers/RewardManager.sol)
 
 ```solidity
 File: src/strategies/ProtectStrategy/ProtectStrategy.sol
 
-12:     event BorrowDebtRepayed(uint256 prevAmount, uint256 substractedAmount);
+15:     event BorrowDebtRepayed(uint256 prevAmount, uint256 substractedAmount);
 
-13:     event BorrowClaimExecuted(uint256 amount, address recipient);
+16:     event BorrowClaimExecuted(uint256 amount, address recipient);
 
-14:     event ClaimRouterAddressUpdated(address claimRouter);
+17:     event ClaimRouterAddressUpdated(address claimRouter);
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/ProtectStrategy/ProtectStrategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/ProtectStrategy/ProtectStrategy.sol)
 
 ```solidity
 File: src/swapper/Swapper.sol
@@ -3337,7 +3418,7 @@ File: src/swapper/Swapper.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/swapper/Swapper.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/swapper/Swapper.sol)
 
 ### <a name="NC-14"></a>[NC-14] Events that mark critical parameter changes should contain both the old and the new value
 
@@ -3360,7 +3441,7 @@ File: src/claimRouter/ClaimRouter.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/claimRouter/ClaimRouter.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/claimRouter/ClaimRouter.sol)
 
 ```solidity
 File: src/managers/RewardManager.sol
@@ -3420,7 +3501,7 @@ File: src/managers/RewardManager.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/managers/RewardManager.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/managers/RewardManager.sol)
 
 ```solidity
 File: src/registries/TokenRegistry.sol
@@ -3448,34 +3529,34 @@ File: src/registries/TokenRegistry.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/registries/TokenRegistry.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/registries/TokenRegistry.sol)
 
 ```solidity
 File: src/strategies/ProtectStrategy/ProtectStrategy.sol
 
-89:     function setClaimRouter(address claimRouter_) external onlyOwner {
+92:     function setClaimRouter(address claimRouter_) external onlyOwner {
             if (claimRouter_ == address(0)) revert InvalidClaimRouterAddress();
             claimRouter = claimRouter_;
             emit ClaimRouterAddressUpdated(claimRouter_);
 
-117:     function updateBorrowDebt(uint256 amount) external override onlyClaimRouter {
+120:     function updateBorrowDebt(uint256 amount) external override onlyClaimRouter {
              if (borrowDebt < amount) revert InvalidSubstraction();
              emit BorrowDebtRepayed(borrowDebt, amount);
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/ProtectStrategy/ProtectStrategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/ProtectStrategy/ProtectStrategy.sol)
 
 ```solidity
 File: src/strategies/Radiant/RadiantV2Strategy.sol
 
-144:     function setEnableRewards(bool _rewardsEnabled) external onlyOwner {
+142:     function setEnableRewards(bool _rewardsEnabled) external onlyOwner {
              rewardsEnabled = _rewardsEnabled;
              emit SetEnableRewards(msg.sender, _rewardsEnabled);
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Radiant/RadiantV2Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Radiant/RadiantV2Strategy.sol)
 
 ```solidity
 File: src/swapper/Swapper.sol
@@ -3486,19 +3567,19 @@ File: src/swapper/Swapper.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/swapper/Swapper.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/swapper/Swapper.sol)
 
 ```solidity
 File: src/vault/ConcreteMultiStrategyVault.sol
 
-754:     function setFeeRecipient(address newRecipient_) external onlyOwner {
+822:     function setFeeRecipient(address newRecipient_) external onlyOwner {
              // Validate the new recipient address
              if (newRecipient_ == address(0)) revert InvalidFeeRecipient();
      
              // Emit an event for the fee recipient update
              emit FeeRecipientUpdated(feeRecipient, newRecipient_);
 
-769:     function setWithdrawalQueue(address withdrawalQueue_) external onlyOwner {
+837:     function setWithdrawalQueue(address withdrawalQueue_) external onlyOwner {
              // Validate the new recipient address
              if (withdrawalQueue_ == address(0)) revert InvalidWithdrawlQueue();
              if (address(withdrawalQueue) != address(0)) {
@@ -3507,13 +3588,13 @@ File: src/vault/ConcreteMultiStrategyVault.sol
              // Emit an event for the fee recipient update
              emit WithdrawalQueueUpdated(address(withdrawalQueue), withdrawalQueue_);
 
-978:     function setDepositLimit(uint256 newLimit_) external onlyOwner {
-             depositLimit = newLimit_;
-             emit DepositLimitSet(newLimit_);
+1095:     function setDepositLimit(uint256 newLimit_) external onlyOwner {
+              depositLimit = newLimit_;
+              emit DepositLimitSet(newLimit_);
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
 
 ### <a name="NC-15"></a>[NC-15] Function ordering does not follow the Solidity style guide
 
@@ -3551,7 +3632,7 @@ File: src/claimRouter/ClaimRouter.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/claimRouter/ClaimRouter.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/claimRouter/ClaimRouter.sol)
 
 ```solidity
 File: src/queue/WithdrawalQueue.sol
@@ -3583,7 +3664,7 @@ File: src/queue/WithdrawalQueue.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/queue/WithdrawalQueue.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/queue/WithdrawalQueue.sol)
 
 ```solidity
 File: src/registries/TokenRegistry.sol
@@ -3617,7 +3698,7 @@ File: src/registries/TokenRegistry.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/registries/TokenRegistry.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/registries/TokenRegistry.sol)
 
 ```solidity
 File: src/registries/VaultRegistry.sol
@@ -3645,7 +3726,7 @@ File: src/registries/VaultRegistry.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/registries/VaultRegistry.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/registries/VaultRegistry.sol)
 
 ```solidity
 File: src/strategies/Aave/AaveV3Strategy.sol
@@ -3656,9 +3737,9 @@ File: src/strategies/Aave/AaveV3Strategy.sol
    external getAvailableAssetsForWithdrawal
    internal _totalAssets
    public getRewardTokenAddresses
+   public harvestRewards
    internal _protocolDeposit
    internal _protocolWithdraw
-   internal _handleRewardsOnWithdraw
    external retireStrategy
    internal _getRewardsToStrategy
    
@@ -3667,15 +3748,15 @@ File: src/strategies/Aave/AaveV3Strategy.sol
    external getAvailableAssetsForWithdrawal
    external retireStrategy
    public getRewardTokenAddresses
+   public harvestRewards
    internal _totalAssets
    internal _protocolDeposit
    internal _protocolWithdraw
-   internal _handleRewardsOnWithdraw
    internal _getRewardsToStrategy
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Aave/AaveV3Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Aave/AaveV3Strategy.sol)
 
 ```solidity
 File: src/strategies/ProtectStrategy/ProtectStrategy.sol
@@ -3684,6 +3765,7 @@ File: src/strategies/ProtectStrategy/ProtectStrategy.sol
    Current order:
    external isProtectStrategy
    external highWatermark
+   public harvestRewards
    public getAvailableAssetsForWithdrawal
    external setClaimRouter
    internal _totalAssets
@@ -3691,7 +3773,6 @@ File: src/strategies/ProtectStrategy/ProtectStrategy.sol
    external updateBorrowDebt
    external executeBorrowClaim
    private _requestFromVault
-   internal _handleRewardsOnWithdraw
    internal _getRewardsToStrategy
    public getRewardTokenAddresses
    
@@ -3702,16 +3783,16 @@ File: src/strategies/ProtectStrategy/ProtectStrategy.sol
    external getBorrowDebt
    external updateBorrowDebt
    external executeBorrowClaim
+   public harvestRewards
    public getAvailableAssetsForWithdrawal
    public getRewardTokenAddresses
    internal _totalAssets
-   internal _handleRewardsOnWithdraw
    internal _getRewardsToStrategy
    private _requestFromVault
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/ProtectStrategy/ProtectStrategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/ProtectStrategy/ProtectStrategy.sol)
 
 ```solidity
 File: src/strategies/Radiant/RadiantV2Strategy.sol
@@ -3722,9 +3803,9 @@ File: src/strategies/Radiant/RadiantV2Strategy.sol
    external getAvailableAssetsForWithdrawal
    internal _totalAssets
    public getRewardTokenAddresses
+   public harvestRewards
    internal _protocolDeposit
    internal _protocolWithdraw
-   internal _handleRewardsOnWithdraw
    external retireStrategy
    internal _getRewardsToStrategy
    external setEnableRewards
@@ -3735,15 +3816,15 @@ File: src/strategies/Radiant/RadiantV2Strategy.sol
    external retireStrategy
    external setEnableRewards
    public getRewardTokenAddresses
+   public harvestRewards
    internal _totalAssets
    internal _protocolDeposit
    internal _protocolWithdraw
-   internal _handleRewardsOnWithdraw
    internal _getRewardsToStrategy
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Radiant/RadiantV2Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Radiant/RadiantV2Strategy.sol)
 
 ```solidity
 File: src/strategies/Silo/SiloV1Strategy.sol
@@ -3754,9 +3835,9 @@ File: src/strategies/Silo/SiloV1Strategy.sol
    external getAvailableAssetsForWithdrawal
    internal _totalAssets
    public getRewardTokenAddresses
+   public harvestRewards
    internal _protocolDeposit
    internal _protocolWithdraw
-   internal _handleRewardsOnWithdraw
    external retireStrategy
    internal _getRewardsToStrategy
    public balanceOfUnderlying
@@ -3766,16 +3847,16 @@ File: src/strategies/Silo/SiloV1Strategy.sol
    external getAvailableAssetsForWithdrawal
    external retireStrategy
    public getRewardTokenAddresses
+   public harvestRewards
    public balanceOfUnderlying
    internal _totalAssets
    internal _protocolDeposit
    internal _protocolWithdraw
-   internal _handleRewardsOnWithdraw
    internal _getRewardsToStrategy
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Silo/SiloV1Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Silo/SiloV1Strategy.sol)
 
 ```solidity
 File: src/strategies/StrategyBase.sol
@@ -3796,11 +3877,11 @@ File: src/strategies/StrategyBase.sol
    internal _getIndex
    internal _getRewardTokens
    public harvestRewards
-   public getRewardTokenAddresses
    internal _protocolDeposit
    internal _protocolWithdraw
    internal _totalAssets
    internal _getRewardsToStrategy
+   public getRewardTokenAddresses
    
    Suggested order:
    external addRewardToken
@@ -3825,7 +3906,7 @@ File: src/strategies/StrategyBase.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/StrategyBase.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/StrategyBase.sol)
 
 ```solidity
 File: src/strategies/compoundV3/CompoundV3Strategy.sol
@@ -3839,23 +3920,23 @@ File: src/strategies/compoundV3/CompoundV3Strategy.sol
    internal _protocolDeposit
    internal _protocolWithdraw
    internal _getRewardsToStrategy
-   internal _handleRewardsOnWithdraw
    external retireStrategy
+   public harvestRewards
    
    Suggested order:
    external isProtectStrategy
    external getAvailableAssetsForWithdrawal
    external retireStrategy
    public getRewardTokenAddresses
+   public harvestRewards
    internal _totalAssets
    internal _protocolDeposit
    internal _protocolWithdraw
    internal _getRewardsToStrategy
-   internal _handleRewardsOnWithdraw
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/compoundV3/CompoundV3Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/compoundV3/CompoundV3Strategy.sol)
 
 ```solidity
 File: src/swapper/OraclePlug.sol
@@ -3879,7 +3960,7 @@ File: src/swapper/OraclePlug.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/swapper/OraclePlug.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/swapper/OraclePlug.sol)
 
 ```solidity
 File: src/vault/ConcreteMultiStrategyVault.sol
@@ -3924,6 +4005,7 @@ File: src/vault/ConcreteMultiStrategyVault.sol
    external toggleVaultIdle
    external addStrategy
    external removeStrategy
+   private _removeStrategy
    internal _update
    external changeAllocations
    public pushFundsToStrategies
@@ -3937,7 +4019,6 @@ File: src/vault/ConcreteMultiStrategyVault.sol
    external batchClaimWithdrawal
    external claimRewards
    external requestFunds
-   private _validateAndUpdateDepositTimestamps
    
    Suggested order:
    external initialize
@@ -3990,12 +4071,12 @@ File: src/vault/ConcreteMultiStrategyVault.sol
    private _withdraw
    private _withdrawStrategyFunds
    private claimWithdrawal
+   private _removeStrategy
    private updateUserRewardsToCurrent
-   private _validateAndUpdateDepositTimestamps
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
 
 ### <a name="NC-16"></a>[NC-16] Functions should not be longer than 50 lines
 
@@ -4024,7 +4105,7 @@ File: src/claimRouter/ClaimRouter.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/claimRouter/ClaimRouter.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/claimRouter/ClaimRouter.sol)
 
 ```solidity
 File: src/interfaces/IBeraOracle.sol
@@ -4043,7 +4124,7 @@ File: src/interfaces/IBeraOracle.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/interfaces/IBeraOracle.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/interfaces/IBeraOracle.sol)
 
 ```solidity
 File: src/interfaces/IClaimRouter.sol
@@ -4054,38 +4135,38 @@ File: src/interfaces/IClaimRouter.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/interfaces/IClaimRouter.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/interfaces/IClaimRouter.sol)
 
 ```solidity
 File: src/interfaces/IConcreteMultiStrategyVault.sol
 
-51:     function setVaultFees(VaultFees calldata newFees_) external;
+52:     function setVaultFees(VaultFees calldata newFees_) external;
 
-52:     function setFeeRecipient(address newRecipient_) external;
+53:     function setFeeRecipient(address newRecipient_) external;
 
-54:     function addStrategy(uint256 index_, bool replace_, Strategy calldata newStrategy_) external;
+55:     function addStrategy(uint256 index_, bool replace_, Strategy calldata newStrategy_) external;
 
-56:     function changeAllocations(Allocation[] calldata allocations_, bool redistribute_) external;
+57:     function changeAllocations(Allocation[] calldata allocations_, bool redistribute_) external;
 
-57:     function setDepositLimit(uint256 limit_) external;
+58:     function setDepositLimit(uint256 limit_) external;
 
-59:     function pushFundsIntoSingleStrategy(uint256 index_, uint256 amount) external;
+60:     function pushFundsIntoSingleStrategy(uint256 index_, uint256 amount) external;
 
-60:     function pushFundsIntoSingleStrategy(uint256 index_) external;
+61:     function pushFundsIntoSingleStrategy(uint256 index_) external;
 
-62:     function pullFundsFromSingleStrategy(uint256 index_) external;
+63:     function pullFundsFromSingleStrategy(uint256 index_) external;
 
-63:     function protectStrategy() external view returns (address);
+64:     function protectStrategy() external view returns (address);
 
-64:     function getAvailableAssetsForWithdrawal() external view returns (uint256);
+65:     function getAvailableAssetsForWithdrawal() external view returns (uint256);
 
-66:     function setWithdrawalQueue(address withdrawalQueue_) external;
+67:     function setWithdrawalQueue(address withdrawalQueue_) external;
 
-67:     function batchClaimWithdrawal(uint256 maxRequests) external;
+68:     function batchClaimWithdrawal(uint256 maxRequests) external;
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/interfaces/IConcreteMultiStrategyVault.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/interfaces/IConcreteMultiStrategyVault.sol)
 
 ```solidity
 File: src/interfaces/IImplementationRegistry.sol
@@ -4098,7 +4179,7 @@ File: src/interfaces/IImplementationRegistry.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/interfaces/IImplementationRegistry.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/interfaces/IImplementationRegistry.sol)
 
 ```solidity
 File: src/interfaces/IMockProtectStrategy.sol
@@ -4115,7 +4196,7 @@ File: src/interfaces/IMockProtectStrategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/interfaces/IMockProtectStrategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/interfaces/IMockProtectStrategy.sol)
 
 ```solidity
 File: src/interfaces/IMockStrategy.sol
@@ -4132,7 +4213,7 @@ File: src/interfaces/IMockStrategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/interfaces/IMockStrategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/interfaces/IMockStrategy.sol)
 
 ```solidity
 File: src/interfaces/IProtectStrategy.sol
@@ -4151,7 +4232,7 @@ File: src/interfaces/IProtectStrategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/interfaces/IProtectStrategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/interfaces/IProtectStrategy.sol)
 
 ```solidity
 File: src/interfaces/IRewardManager.sol
@@ -4168,7 +4249,7 @@ File: src/interfaces/IRewardManager.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/interfaces/IRewardManager.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/interfaces/IRewardManager.sol)
 
 ```solidity
 File: src/interfaces/IStrategy.sol
@@ -4177,11 +4258,11 @@ File: src/interfaces/IStrategy.sol
 
 14:     function isProtectStrategy() external returns (bool);
 
-16:     function harvestRewards(bytes memory) external returns (ReturnedRewards[] memory);
+16:     function harvestRewards() external returns (ReturnedRewards[] memory);
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/interfaces/IStrategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/interfaces/IStrategy.sol)
 
 ```solidity
 File: src/interfaces/ISwapper.sol
@@ -4194,7 +4275,7 @@ File: src/interfaces/ISwapper.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/interfaces/ISwapper.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/interfaces/ISwapper.sol)
 
 ```solidity
 File: src/interfaces/ITokenRegistry.sol
@@ -4217,7 +4298,7 @@ File: src/interfaces/ITokenRegistry.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/interfaces/ITokenRegistry.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/interfaces/ITokenRegistry.sol)
 
 ```solidity
 File: src/interfaces/IVaultDeploymentManager.sol
@@ -4236,7 +4317,7 @@ File: src/interfaces/IVaultDeploymentManager.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/interfaces/IVaultDeploymentManager.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/interfaces/IVaultDeploymentManager.sol)
 
 ```solidity
 File: src/interfaces/IVaultRegistry.sol
@@ -4257,7 +4338,7 @@ File: src/interfaces/IVaultRegistry.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/interfaces/IVaultRegistry.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/interfaces/IVaultRegistry.sol)
 
 ```solidity
 File: src/interfaces/IWithdrawalQueue.sol
@@ -4274,7 +4355,7 @@ File: src/interfaces/IWithdrawalQueue.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/interfaces/IWithdrawalQueue.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/interfaces/IWithdrawalQueue.sol)
 
 ```solidity
 File: src/managers/DeploymentManager.sol
@@ -4293,7 +4374,7 @@ File: src/managers/DeploymentManager.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/managers/DeploymentManager.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/managers/DeploymentManager.sol)
 
 ```solidity
 File: src/managers/RewardManager.sol
@@ -4336,7 +4417,7 @@ File: src/managers/RewardManager.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/managers/RewardManager.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/managers/RewardManager.sol)
 
 ```solidity
 File: src/managers/VaultManager.sol
@@ -4377,7 +4458,7 @@ File: src/managers/VaultManager.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/managers/VaultManager.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/managers/VaultManager.sol)
 
 ```solidity
 File: src/queue/WithdrawalQueue.sol
@@ -4400,7 +4481,7 @@ File: src/queue/WithdrawalQueue.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/queue/WithdrawalQueue.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/queue/WithdrawalQueue.sol)
 
 ```solidity
 File: src/registries/ImplementationRegistry.sol
@@ -4415,7 +4496,7 @@ File: src/registries/ImplementationRegistry.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/registries/ImplementationRegistry.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/registries/ImplementationRegistry.sol)
 
 ```solidity
 File: src/registries/TokenRegistry.sol
@@ -4432,7 +4513,7 @@ File: src/registries/TokenRegistry.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/registries/TokenRegistry.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/registries/TokenRegistry.sol)
 
 ```solidity
 File: src/registries/VaultRegistry.sol
@@ -4455,30 +4536,30 @@ File: src/registries/VaultRegistry.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/registries/VaultRegistry.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/registries/VaultRegistry.sol)
 
 ```solidity
 File: src/strategies/Aave/AaveV3Strategy.sol
 
-58:     function isProtectStrategy() external pure returns (bool) {
+59:     function isProtectStrategy() external pure returns (bool) {
 
-62:     function getAvailableAssetsForWithdrawal() external view returns (uint256) {
+63:     function getAvailableAssetsForWithdrawal() external view returns (uint256) {
 
-70:     function _totalAssets() internal view override returns (uint256) {
+71:     function _totalAssets() internal view override returns (uint256) {
 
-78:     function getRewardTokenAddresses() public view override returns (address[] memory) {
+79:     function getRewardTokenAddresses() public view override returns (address[] memory) {
 
-86:     function _protocolDeposit(uint256 assets_, uint256) internal virtual override {
+83:     function harvestRewards() public virtual override(IStrategy, StrategyBase) returns (ReturnedRewards[] memory) {
 
-94:     function _protocolWithdraw(uint256 assets_, uint256) internal virtual override {
+91:     function _protocolDeposit(uint256 assets_, uint256) internal virtual override {
 
-103:     function _handleRewardsOnWithdraw() internal override {
+99:     function _protocolWithdraw(uint256 assets_, uint256) internal virtual override {
 
-116:     function _getRewardsToStrategy(bytes memory) internal override {
+113:     function _getRewardsToStrategy() internal override {
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Aave/AaveV3Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Aave/AaveV3Strategy.sol)
 
 ```solidity
 File: src/strategies/Aave/IAaveV3.sol
@@ -4527,38 +4608,38 @@ File: src/strategies/Aave/IAaveV3.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Aave/IAaveV3.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Aave/IAaveV3.sol)
 
 ```solidity
 File: src/strategies/ProtectStrategy/ProtectStrategy.sol
 
-62:     function isProtectStrategy() external pure returns (bool) {
+65:     function isProtectStrategy() external pure returns (bool) {
 
-66:     function highWatermark() external view returns (uint256) {
+69:     function highWatermark() external view returns (uint256) {
 
-82:     function getAvailableAssetsForWithdrawal() public view returns (uint256) {
+76:     function harvestRewards() public virtual override(IStrategy, StrategyBase) returns (ReturnedRewards[] memory) {
 
-89:     function setClaimRouter(address claimRouter_) external onlyOwner {
+85:     function getAvailableAssetsForWithdrawal() public view returns (uint256) {
 
-99:     function _totalAssets() internal view override returns (uint256) {
+92:     function setClaimRouter(address claimRouter_) external onlyOwner {
 
-108:     function getBorrowDebt() external view returns (uint256) {
+102:     function _totalAssets() internal view override returns (uint256) {
 
-117:     function updateBorrowDebt(uint256 amount) external override onlyClaimRouter {
+111:     function getBorrowDebt() external view returns (uint256) {
 
-131:     function executeBorrowClaim(uint256 amount, address recipient) external override onlyClaimRouter {
+120:     function updateBorrowDebt(uint256 amount) external override onlyClaimRouter {
 
-150:     function _requestFromVault(uint256 amount_) private {
+134:     function executeBorrowClaim(uint256 amount, address recipient) external override onlyClaimRouter {
 
-154:     function _handleRewardsOnWithdraw() internal override {}
+153:     function _requestFromVault(uint256 amount_) private {
 
-155:     function _getRewardsToStrategy(bytes memory) internal override {}
+157:     function _getRewardsToStrategy() internal override {}
 
-156:     function getRewardTokenAddresses() public view override returns (address[] memory _rewardTokens) {}
+158:     function getRewardTokenAddresses() public view override returns (address[] memory _rewardTokens) {}
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/ProtectStrategy/ProtectStrategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/ProtectStrategy/ProtectStrategy.sol)
 
 ```solidity
 File: src/strategies/Radiant/IRadiantV2.sol
@@ -4589,32 +4670,32 @@ File: src/strategies/Radiant/IRadiantV2.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Radiant/IRadiantV2.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Radiant/IRadiantV2.sol)
 
 ```solidity
 File: src/strategies/Radiant/RadiantV2Strategy.sol
 
-65:     function isProtectStrategy() external pure returns (bool) {
+66:     function isProtectStrategy() external pure returns (bool) {
 
-69:     function getAvailableAssetsForWithdrawal() external view returns (uint256) {
+70:     function getAvailableAssetsForWithdrawal() external view returns (uint256) {
 
-77:     function _totalAssets() internal view override returns (uint256) {
+78:     function _totalAssets() internal view override returns (uint256) {
 
-85:     function getRewardTokenAddresses() public view override returns (address[] memory) {
+86:     function getRewardTokenAddresses() public view override returns (address[] memory) {
 
-96:     function _protocolDeposit(uint256 amount_, uint256) internal virtual override {
+93:     function harvestRewards() public virtual override(IStrategy, StrategyBase) returns (ReturnedRewards[] memory) {
 
-104:     function _protocolWithdraw(uint256 amount_, uint256) internal virtual override {
+101:     function _protocolDeposit(uint256 amount_, uint256) internal virtual override {
 
-113:     function _handleRewardsOnWithdraw() internal override {
+109:     function _protocolWithdraw(uint256 amount_, uint256) internal virtual override {
 
-129:     function _getRewardsToStrategy(bytes memory) internal override {
+127:     function _getRewardsToStrategy() internal override {
 
-144:     function setEnableRewards(bool _rewardsEnabled) external onlyOwner {
+142:     function setEnableRewards(bool _rewardsEnabled) external onlyOwner {
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Radiant/RadiantV2Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Radiant/RadiantV2Strategy.sol)
 
 ```solidity
 File: src/strategies/Silo/EasyMathV2.sol
@@ -4623,11 +4704,11 @@ File: src/strategies/Silo/EasyMathV2.sol
 
 50:     function toAmount(uint256 share, uint256 totalAmount, uint256 totalShares) internal pure returns (uint256 result) {
 
-104:     function sum(uint256[] memory _numbers) internal pure returns (uint256 s) {
+103:     function sum(uint256[] memory _numbers) internal pure returns (uint256 s) {
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Silo/EasyMathV2.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Silo/EasyMathV2.sol)
 
 ```solidity
 File: src/strategies/Silo/IBaseSiloV1.sol
@@ -4640,7 +4721,7 @@ File: src/strategies/Silo/IBaseSiloV1.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Silo/IBaseSiloV1.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Silo/IBaseSiloV1.sol)
 
 ```solidity
 File: src/strategies/Silo/ISiloV1.sol
@@ -4659,7 +4740,7 @@ File: src/strategies/Silo/ISiloV1.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Silo/ISiloV1.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Silo/ISiloV1.sol)
 
 ```solidity
 File: src/strategies/Silo/SiloV1Strategy.sol
@@ -4672,56 +4753,56 @@ File: src/strategies/Silo/SiloV1Strategy.sol
 
 132:     function getRewardTokenAddresses() public view override returns (address[] memory) {
 
-142:     function _protocolDeposit(uint256 amount_, uint256) internal virtual override {
+138:     function harvestRewards() public virtual override(IStrategy, StrategyBase) returns (ReturnedRewards[] memory) {
 
-151:     function _protocolWithdraw(uint256 amount_, uint256) internal virtual override {
+146:     function _protocolDeposit(uint256 amount_, uint256) internal virtual override {
 
-160:     function _handleRewardsOnWithdraw() internal override {
+155:     function _protocolWithdraw(uint256 amount_, uint256) internal virtual override {
 
-177:     function _getRewardsToStrategy(bytes memory) internal override {
+174:     function _getRewardsToStrategy() internal override {
 
-188:     function balanceOfUnderlying(uint256 shares) public view returns (uint256) {
+185:     function balanceOfUnderlying(uint256 shares) public view returns (uint256) {
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Silo/SiloV1Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Silo/SiloV1Strategy.sol)
 
 ```solidity
 File: src/strategies/StrategyBase.sol
 
-178:     function totalAssets() public view override(IERC4626, ERC4626Upgradeable) returns (uint256) {
+169:     function totalAssets() public view override returns (uint256) {
 
-191:     function addRewardToken(RewardToken calldata rewardToken_) external onlyOwner nonReentrant {
+182:     function addRewardToken(RewardToken calldata rewardToken_) external onlyOwner nonReentrant {
 
-217:     function removeRewardToken(RewardToken calldata rewardToken_) external onlyOwner {
+208:     function removeRewardToken(RewardToken calldata rewardToken_) external onlyOwner {
 
 236:     function modifyRewardFeeForRewardToken(uint256 newFee_, RewardToken calldata rewardToken_) external onlyOwner {
 
-254:     function _handleRewardsOnWithdraw() internal virtual;
+263:     function setFeeRecipient(address feeRecipient_) external onlyOwner {
 
-261:     function setFeeRecipient(address feeRecipient_) external onlyOwner {
+275:     function setDepositLimit(uint256 depositLimit_) external onlyOwner {
 
-273:     function setDepositLimit(uint256 depositLimit_) external onlyOwner {
+295:     function getRewardTokens() external view returns (RewardToken[] memory) {
 
-293:     function getRewardTokens() external view returns (RewardToken[] memory) {
+307:     function _getIndex(address token_) internal view returns (uint256 index) {
 
-305:     function _getIndex(address token_) internal view returns (uint256 index) {
+325:     function _getRewardTokens(uint256 rewardFee_) internal view returns (RewardToken[] memory) {
 
-323:     function _getRewardTokens(uint256 rewardFee_) internal view returns (RewardToken[] memory) {
+339:     function harvestRewards() public virtual onlyVault returns (ReturnedRewards[] memory) {
 
-369:     function getRewardTokenAddresses() public view virtual returns (address[] memory) {
+368:     function _protocolDeposit(uint256 assets, uint256 shares) internal virtual {}
 
-381:     function _protocolDeposit(uint256 assets, uint256 shares) internal virtual {}
+369:     function _protocolWithdraw(uint256 assets, uint256 shares) internal virtual {}
 
-382:     function _protocolWithdraw(uint256 assets, uint256 shares) internal virtual {}
+370:     function _totalAssets() internal view virtual returns (uint256);
 
-383:     function _totalAssets() internal view virtual returns (uint256);
+371:     function _getRewardsToStrategy() internal virtual;
 
-384:     function _getRewardsToStrategy(bytes memory data) internal virtual;
+372:     function getRewardTokenAddresses() public view virtual returns (address[] memory _rewardTokens);
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/StrategyBase.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/StrategyBase.sol)
 
 ```solidity
 File: src/strategies/compoundV3/CompoundV3Strategy.sol
@@ -4738,13 +4819,13 @@ File: src/strategies/compoundV3/CompoundV3Strategy.sol
 
 96:     function _protocolWithdraw(uint256 amount_, uint256) internal virtual override {
 
-101:     function _getRewardsToStrategy(bytes memory) internal override {
+101:     function _getRewardsToStrategy() internal override {
 
-109:     function _handleRewardsOnWithdraw() internal override {
+111:     function harvestRewards() public override(StrategyBase, IStrategy) onlyVault returns (ReturnedRewards[] memory) {
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/compoundV3/CompoundV3Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/compoundV3/CompoundV3Strategy.sol)
 
 ```solidity
 File: src/strategies/compoundV3/ICompoundV3.sol
@@ -4775,7 +4856,7 @@ File: src/strategies/compoundV3/ICompoundV3.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/compoundV3/ICompoundV3.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/compoundV3/ICompoundV3.sol)
 
 ```solidity
 File: src/swapper/OraclePlug.sol
@@ -4788,7 +4869,7 @@ File: src/swapper/OraclePlug.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/swapper/OraclePlug.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/swapper/OraclePlug.sol)
 
 ```solidity
 File: src/swapper/Swapper.sol
@@ -4807,96 +4888,96 @@ File: src/swapper/Swapper.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/swapper/Swapper.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/swapper/Swapper.sol)
 
 ```solidity
 File: src/vault/ConcreteMultiStrategyVault.sol
 
-186:     function decimals() public view override returns (uint8) {
+227:     function decimals() public view override returns (uint8) {
 
-213:     function deposit(uint256 assets_) external returns (uint256) {
+254:     function deposit(uint256 assets_) external returns (uint256) {
 
-276:     function mint(uint256 shares_) external returns (uint256) {
+321:     function mint(uint256 shares_) external returns (uint256) {
 
-338:     function redeem(uint256 shares_) external returns (uint256) {
+387:     function redeem(uint256 shares_) external returns (uint256) {
 
-373:     function withdraw(uint256 assets_) external returns (uint256) {
+422:     function withdraw(uint256 assets_) external returns (uint256) {
 
-419:     function _withdraw(uint256 assets_, address receiver_, address owner_, uint256 shares, uint256 feeShares) private {
+468:     function _withdraw(uint256 assets_, address receiver_, address owner_, uint256 shares, uint256 feeShares) private {
 
-444:     function _withdrawStrategyFunds(uint256 amount_, address receiver_) private {
+493:     function _withdrawStrategyFunds(uint256 amount_, address receiver_) private {
 
-495:     function claimWithdrawal(uint256 _requestId, uint256 avaliableAssets) private returns (uint256) {
+544:     function claimWithdrawal(uint256 _requestId, uint256 avaliableAssets) private returns (uint256) {
 
-507:     function getRewardTokens() public view returns (address[] memory) {
+556:     function getRewardTokens() public view returns (address[] memory) {
 
-511:     function getAvailableAssetsForWithdrawal() public view returns (uint256 totalAvailable) {
+560:     function getAvailableAssetsForWithdrawal() public view returns (uint256 totalAvailable) {
 
-532:     function getUserRewards(address userAddress) external view returns (ReturnedRewards[] memory) {
+581:     function getUserRewards(address userAddress) external view returns (ReturnedRewards[] memory) {
 
-552:     function getTotalRewardsClaimed(address userAddress) external view returns (ReturnedRewards[] memory) {
+602:     function getTotalRewardsClaimed(address userAddress) external view returns (ReturnedRewards[] memory) {
 
-573:     function totalAssets() public view override returns (uint256 total) {
+623:     function totalAssets() public view override returns (uint256 total) {
 
-600:     function previewDeposit(uint256 assets_) public view override returns (uint256) {
+651:     function previewDeposit(uint256 assets_) public view override returns (uint256) {
 
-616:     function previewMint(uint256 shares_) public view override returns (uint256) {
+667:     function previewMint(uint256 shares_) public view override returns (uint256) {
 
-627:     function previewWithdraw(uint256 assets_) public view override returns (uint256 shares) {
+678:     function previewWithdraw(uint256 assets_) public view override returns (uint256 shares) {
 
-640:     function previewRedeem(uint256 shares_) public view override returns (uint256) {
+691:     function previewRedeem(uint256 shares_) public view override returns (uint256) {
 
-657:     function maxMint(address) public view override returns (uint256) {
+708:     function maxMint(address) public view override returns (uint256) {
 
-668:     function _convertToShares(uint256 assets, Math.Rounding rounding) internal view override returns (uint256 shares) {
+719:     function _convertToShares(uint256 assets, Math.Rounding rounding) internal view override returns (uint256 shares) {
 
-679:     function _convertToAssets(uint256 shares, Math.Rounding rounding) internal view virtual override returns (uint256) {
+730:     function _convertToAssets(uint256 shares, Math.Rounding rounding) internal view virtual override returns (uint256) {
 
-689:     function accruedProtocolFee() public view returns (uint256) {
+740:     function accruedProtocolFee() public view returns (uint256) {
 
-711:     function accruedPerformanceFee() public view returns (uint256 fee) {
+762:     function accruedPerformanceFee() public view returns (uint256 fee) {
 
-725:     function getVaultFees() public view returns (VaultFees memory) {
+793:     function getVaultFees() public view returns (VaultFees memory) {
 
-735:     function takePortfolioAndProtocolFees() external nonReentrant takeFees {
+803:     function takePortfolioAndProtocolFees() external nonReentrant takeFees {
 
-744:     function setVaultFees(VaultFees calldata newFees_) external takeFees onlyOwner {
+812:     function setVaultFees(VaultFees calldata newFees_) external takeFees onlyOwner {
 
-754:     function setFeeRecipient(address newRecipient_) external onlyOwner {
+822:     function setFeeRecipient(address newRecipient_) external onlyOwner {
 
-769:     function setWithdrawalQueue(address withdrawalQueue_) external onlyOwner {
+837:     function setWithdrawalQueue(address withdrawalQueue_) external onlyOwner {
 
-787:     function getStrategies() external view returns (Strategy[] memory) {
+855:     function getStrategies() external view returns (Strategy[] memory) {
 
-837:     function removeStrategy(uint256 index_) external nonReentrant onlyOwner takeFees {
+924:     function removeStrategy(uint256 index_) external nonReentrant onlyOwner takeFees {
 
-852:     function _update(address from, address to, uint256 value) internal override {
+941:     function _removeStrategy(IStrategy stratToBeRemoved_) private {
 
-895:     function pushFundsToStrategies() public onlyOwner {
+960:     function _update(address from, address to, uint256 value) internal override {
 
-910:     function pullFundsFromStrategies() public onlyOwner {
+1003:     function pushFundsToStrategies() public onlyOwner {
 
-930:     function pullFundsFromSingleStrategy(uint256 index_) public onlyOwner {
+1027:     function pullFundsFromStrategies() public onlyOwner {
 
-945:     function pushFundsIntoSingleStrategy(uint256 index_) external onlyOwner {
+1047:     function pullFundsFromSingleStrategy(uint256 index_) public onlyOwner {
 
-965:     function pushFundsIntoSingleStrategy(uint256 index_, uint256 amount) external onlyOwner {
+1062:     function pushFundsIntoSingleStrategy(uint256 index_) external onlyOwner {
 
-978:     function setDepositLimit(uint256 newLimit_) external onlyOwner {
+1082:     function pushFundsIntoSingleStrategy(uint256 index_, uint256 amount) external onlyOwner {
 
-989:     function harvestRewards(bytes memory encodedData) external onlyOwner nonReentrant {
+1095:     function setDepositLimit(uint256 newLimit_) external onlyOwner {
 
-1033:     function updateUserRewardsToCurrent(address userAddress) private {
+1106:     function harvestRewards() external onlyOwner nonReentrant {
 
-1059:     function batchClaimWithdrawal(uint256 maxRequests) external onlyOwner nonReentrant {
+1139:     function updateUserRewardsToCurrent(address userAddress) private {
 
-1098:     function requestFunds(uint256 amount) external onlyProtect {
+1165:     function batchClaimWithdrawal(uint256 maxRequests) external onlyOwner nonReentrant {
 
-1112:     function _validateAndUpdateDepositTimestamps(address receiver_) private {
+1204:     function requestFunds(uint256 amount) external onlyProtect {
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
 
 ### <a name="NC-17"></a>[NC-17] Interfaces should be defined in separate files from their usage
 
@@ -4923,7 +5004,7 @@ File: src/strategies/Aave/IAaveV3.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Aave/IAaveV3.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Aave/IAaveV3.sol)
 
 ```solidity
 File: src/strategies/Radiant/IRadiantV2.sol
@@ -4940,7 +5021,7 @@ File: src/strategies/Radiant/IRadiantV2.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Radiant/IRadiantV2.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Radiant/IRadiantV2.sol)
 
 ```solidity
 File: src/strategies/Silo/ISiloV1.sol
@@ -4951,7 +5032,7 @@ File: src/strategies/Silo/ISiloV1.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Silo/ISiloV1.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Silo/ISiloV1.sol)
 
 ```solidity
 File: src/strategies/compoundV3/ICompoundV3.sol
@@ -4968,7 +5049,7 @@ File: src/strategies/compoundV3/ICompoundV3.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/compoundV3/ICompoundV3.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/compoundV3/ICompoundV3.sol)
 
 ### <a name="NC-18"></a>[NC-18] Lack of checks in setters
 
@@ -4986,7 +5067,7 @@ File: src/claimRouter/ClaimRouter.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/claimRouter/ClaimRouter.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/claimRouter/ClaimRouter.sol)
 
 ```solidity
 File: src/managers/DeploymentManager.sol
@@ -4999,7 +5080,7 @@ File: src/managers/DeploymentManager.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/managers/DeploymentManager.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/managers/DeploymentManager.sol)
 
 ```solidity
 File: src/managers/RewardManager.sol
@@ -5010,7 +5091,7 @@ File: src/managers/RewardManager.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/managers/RewardManager.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/managers/RewardManager.sol)
 
 ```solidity
 File: src/managers/VaultManager.sol
@@ -5029,7 +5110,7 @@ File: src/managers/VaultManager.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/managers/VaultManager.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/managers/VaultManager.sol)
 
 ```solidity
 File: src/registries/TokenRegistry.sol
@@ -5050,7 +5131,7 @@ File: src/registries/TokenRegistry.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/registries/TokenRegistry.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/registries/TokenRegistry.sol)
 
 ```solidity
 File: src/registries/VaultRegistry.sol
@@ -5060,18 +5141,18 @@ File: src/registries/VaultRegistry.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/registries/VaultRegistry.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/registries/VaultRegistry.sol)
 
 ```solidity
 File: src/strategies/Radiant/RadiantV2Strategy.sol
 
-144:     function setEnableRewards(bool _rewardsEnabled) external onlyOwner {
+142:     function setEnableRewards(bool _rewardsEnabled) external onlyOwner {
              rewardsEnabled = _rewardsEnabled;
              emit SetEnableRewards(msg.sender, _rewardsEnabled);
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Radiant/RadiantV2Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Radiant/RadiantV2Strategy.sol)
 
 ```solidity
 File: src/swapper/Swapper.sol
@@ -5082,24 +5163,48 @@ File: src/swapper/Swapper.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/swapper/Swapper.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/swapper/Swapper.sol)
 
 ```solidity
 File: src/vault/ConcreteMultiStrategyVault.sol
 
-744:     function setVaultFees(VaultFees calldata newFees_) external takeFees onlyOwner {
+812:     function setVaultFees(VaultFees calldata newFees_) external takeFees onlyOwner {
              fees = newFees_; // Update the fee structure
              feesUpdatedAt = block.timestamp; // Record the time of the fee update
 
-978:     function setDepositLimit(uint256 newLimit_) external onlyOwner {
-             depositLimit = newLimit_;
-             emit DepositLimitSet(newLimit_);
+1095:     function setDepositLimit(uint256 newLimit_) external onlyOwner {
+              depositLimit = newLimit_;
+              emit DepositLimitSet(newLimit_);
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
 
-### <a name="NC-19"></a>[NC-19] Missing Event for critical parameters change
+### <a name="NC-19"></a>[NC-19] Lines are too long
+
+Usually lines in source code are limited to [80](https://softwareengineering.stackexchange.com/questions/148677/why-is-80-characters-the-standard-limit-for-code-width) characters. Today's screens are much larger so it's reasonable to stretch this in some cases. Since the files will most likely reside in GitHub, and GitHub starts using a scroll bar in all cases when the length is over [164](https://github.com/aizatto/character-length) characters, the lines below should be split when they reach that length
+
+*Instances (2)*:
+
+```solidity
+File: src/strategies/StrategyBase.sol
+
+4: import {ERC4626Upgradeable, ERC20Upgradeable as ERC20, IERC20, IERC20Metadata, IERC4626} from "@openzeppelin/contracts-upgradeable/token/ERC20/extensions/ERC4626Upgradeable.sol";
+
+```
+
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/StrategyBase.sol)
+
+```solidity
+File: src/vault/ConcreteMultiStrategyVault.sol
+
+4: import {ERC4626Upgradeable, ERC20Upgradeable as ERC20, IERC20, IERC20Metadata} from "@openzeppelin/contracts-upgradeable/token/ERC20/extensions/ERC4626Upgradeable.sol";
+
+```
+
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
+
+### <a name="NC-20"></a>[NC-20] Missing Event for critical parameters change
 
 Events help non-contract tools to track changes, and events prevent users from being surprised by changes.
 
@@ -5116,7 +5221,7 @@ File: src/managers/DeploymentManager.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/managers/DeploymentManager.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/managers/DeploymentManager.sol)
 
 ```solidity
 File: src/managers/VaultManager.sol
@@ -5135,7 +5240,7 @@ File: src/managers/VaultManager.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/managers/VaultManager.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/managers/VaultManager.sol)
 
 ```solidity
 File: src/registries/VaultRegistry.sol
@@ -5149,39 +5254,39 @@ File: src/registries/VaultRegistry.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/registries/VaultRegistry.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/registries/VaultRegistry.sol)
 
 ```solidity
 File: src/strategies/StrategyBase.sol
 
-261:     function setFeeRecipient(address feeRecipient_) external onlyOwner {
+263:     function setFeeRecipient(address feeRecipient_) external onlyOwner {
              if (feeRecipient_ == address(0)) revert InvalidFeeRecipient();
              feeRecipient = feeRecipient_;
 
-273:     function setDepositLimit(uint256 depositLimit_) external onlyOwner {
+275:     function setDepositLimit(uint256 depositLimit_) external onlyOwner {
              if (depositLimit_ == 0) revert InvalidDepositLimit();
              depositLimit = depositLimit_;
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/StrategyBase.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/StrategyBase.sol)
 
 ```solidity
 File: src/vault/ConcreteMultiStrategyVault.sol
 
-744:     function setVaultFees(VaultFees calldata newFees_) external takeFees onlyOwner {
+812:     function setVaultFees(VaultFees calldata newFees_) external takeFees onlyOwner {
              fees = newFees_; // Update the fee structure
              feesUpdatedAt = block.timestamp; // Record the time of the fee update
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
 
-### <a name="NC-20"></a>[NC-20] NatSpec is completely non-existent on functions that should have them
+### <a name="NC-21"></a>[NC-21] NatSpec is completely non-existent on functions that should have them
 
 Public and external functions that aren't view or pure should have NatSpec comments
 
-*Instances (26)*:
+*Instances (27)*:
 
 ```solidity
 File: src/managers/DeploymentManager.sol
@@ -5190,7 +5295,7 @@ File: src/managers/DeploymentManager.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/managers/DeploymentManager.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/managers/DeploymentManager.sol)
 
 ```solidity
 File: src/managers/VaultManager.sol
@@ -5243,7 +5348,7 @@ File: src/managers/VaultManager.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/managers/VaultManager.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/managers/VaultManager.sol)
 
 ```solidity
 File: src/registries/VaultRegistry.sol
@@ -5252,22 +5357,31 @@ File: src/registries/VaultRegistry.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/registries/VaultRegistry.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/registries/VaultRegistry.sol)
+
+```solidity
+File: src/strategies/compoundV3/CompoundV3Strategy.sol
+
+111:     function harvestRewards() public override(StrategyBase, IStrategy) onlyVault returns (ReturnedRewards[] memory) {
+
+```
+
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/compoundV3/CompoundV3Strategy.sol)
 
 ```solidity
 File: src/vault/ConcreteMultiStrategyVault.sol
 
-1086:     function claimRewards() external {
+1192:     function claimRewards() external {
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
 
-### <a name="NC-21"></a>[NC-21] Incomplete NatSpec: `@param` is missing on actually documented functions
+### <a name="NC-22"></a>[NC-22] Incomplete NatSpec: `@param` is missing on actually documented functions
 
 The following functions are missing `@param` NatSpec comments.
 
-*Instances (6)*:
+*Instances (5)*:
 
 ```solidity
 File: src/claimRouter/ClaimRouter.sol
@@ -5285,7 +5399,7 @@ File: src/claimRouter/ClaimRouter.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/claimRouter/ClaimRouter.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/claimRouter/ClaimRouter.sol)
 
 ```solidity
 File: src/factories/VaultFactory.sol
@@ -5302,7 +5416,7 @@ File: src/factories/VaultFactory.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/factories/VaultFactory.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/factories/VaultFactory.sol)
 
 ```solidity
 File: src/queue/WithdrawalQueue.sol
@@ -5322,12 +5436,12 @@ File: src/queue/WithdrawalQueue.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/queue/WithdrawalQueue.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/queue/WithdrawalQueue.sol)
 
 ```solidity
 File: src/strategies/Radiant/RadiantV2Strategy.sol
 
-139:     /**
+137:     /**
           * @dev by setting rewardsEnabled to true the strategy will be able to handle rdnt rewards.
           * check the eligibility criteria before enabling rewards here:
           * https://docs.radiant.capital/radiant/project-info/dlp/eligibility
@@ -5336,24 +5450,9 @@ File: src/strategies/Radiant/RadiantV2Strategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Radiant/RadiantV2Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Radiant/RadiantV2Strategy.sol)
 
-```solidity
-File: src/vault/ConcreteMultiStrategyVault.sol
-
-983:     /**
-          * @notice Harvest rewards on every strategy.
-          * @dev Calculates de reward index for each reward found.
-          */
-         //we control the external call
-         //slither-disable-next-line unused-return,calls-loop,reentrancy-no-eth
-         function harvestRewards(bytes memory encodedData) external onlyOwner nonReentrant {
-
-```
-
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
-
-### <a name="NC-22"></a>[NC-22] Incomplete NatSpec: `@return` is missing on actually documented functions
+### <a name="NC-23"></a>[NC-23] Incomplete NatSpec: `@return` is missing on actually documented functions
 
 The following functions are missing `@return` NatSpec comments.
 
@@ -5371,7 +5470,7 @@ File: src/managers/DeploymentManager.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/managers/DeploymentManager.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/managers/DeploymentManager.sol)
 
 ```solidity
 File: src/queue/WithdrawalQueue.sol
@@ -5387,9 +5486,9 @@ File: src/queue/WithdrawalQueue.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/queue/WithdrawalQueue.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/queue/WithdrawalQueue.sol)
 
-### <a name="NC-23"></a>[NC-23] Use a `modifier` instead of a `require/if` statement for a special `msg.sender` actor
+### <a name="NC-24"></a>[NC-24] Use a `modifier` instead of a `require/if` statement for a special `msg.sender` actor
 
 If a function is supposed to be access-controlled, a `modifier` should be used instead of a `require/if` statement for more readability.
 
@@ -5398,22 +5497,22 @@ If a function is supposed to be access-controlled, a `modifier` should be used i
 ```solidity
 File: src/strategies/StrategyBase.sol
 
-54:         if (msg.sender != _vault) revert OnlyVault(msg.sender);
+45:         if (msg.sender != _vault) revert OnlyVault(msg.sender);
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/StrategyBase.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/StrategyBase.sol)
 
 ```solidity
 File: src/vault/ConcreteMultiStrategyVault.sol
 
-420:         if (msg.sender != owner_) {
+469:         if (msg.sender != owner_) {
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
 
-### <a name="NC-24"></a>[NC-24] Consider using named mappings
+### <a name="NC-25"></a>[NC-25] Consider using named mappings
 
 Consider moving to solidity version 0.8.18 or later, and using [named mappings](https://ethereum.stackexchange.com/questions/51629/how-to-name-the-arguments-in-mapping/145555#145555) to make it easier to understand the purpose of each mapping
 
@@ -5430,7 +5529,7 @@ File: src/managers/RewardManager.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/managers/RewardManager.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/managers/RewardManager.sol)
 
 ```solidity
 File: src/queue/WithdrawalQueue.sol
@@ -5439,7 +5538,7 @@ File: src/queue/WithdrawalQueue.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/queue/WithdrawalQueue.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/queue/WithdrawalQueue.sol)
 
 ```solidity
 File: src/registries/ImplementationRegistry.sol
@@ -5450,7 +5549,7 @@ File: src/registries/ImplementationRegistry.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/registries/ImplementationRegistry.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/registries/ImplementationRegistry.sol)
 
 ```solidity
 File: src/registries/TokenRegistry.sol
@@ -5459,7 +5558,7 @@ File: src/registries/TokenRegistry.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/registries/TokenRegistry.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/registries/TokenRegistry.sol)
 
 ```solidity
 File: src/registries/VaultRegistry.sol
@@ -5472,16 +5571,16 @@ File: src/registries/VaultRegistry.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/registries/VaultRegistry.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/registries/VaultRegistry.sol)
 
 ```solidity
 File: src/strategies/StrategyBase.sol
 
-49:     mapping(address => bool) public rewardTokenApproved;
+40:     mapping(address => bool) public rewardTokenApproved;
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/StrategyBase.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/StrategyBase.sol)
 
 ```solidity
 File: src/swapper/Swapper.sol
@@ -5490,7 +5589,7 @@ File: src/swapper/Swapper.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/swapper/Swapper.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/swapper/Swapper.sol)
 
 ```solidity
 File: src/vault/ConcreteMultiStrategyVault.sol
@@ -5503,9 +5602,9 @@ File: src/vault/ConcreteMultiStrategyVault.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
 
-### <a name="NC-25"></a>[NC-25] Owner can renounce while system is paused
+### <a name="NC-26"></a>[NC-26] Owner can renounce while system is paused
 
 The contract owner or single user with a role is not prevented from renouncing the role/ownership while the contract is paused, which would cause any user assets stored in the protocol, to be locked indefinitely.
 
@@ -5514,15 +5613,15 @@ The contract owner or single user with a role is not prevented from renouncing t
 ```solidity
 File: src/vault/ConcreteMultiStrategyVault.sol
 
-194:     function pause() public onlyOwner {
+235:     function pause() public onlyOwner {
 
-202:     function unpause() public onlyOwner {
+243:     function unpause() public onlyOwner {
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
 
-### <a name="NC-26"></a>[NC-26] Adding a `return` statement when the function defines a named return variable, is redundant
+### <a name="NC-27"></a>[NC-27] Adding a `return` statement when the function defines a named return variable, is redundant
 
 *Instances (10)*:
 
@@ -5553,7 +5652,7 @@ File: src/claimRouter/ClaimRouter.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/claimRouter/ClaimRouter.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/claimRouter/ClaimRouter.sol)
 
 ```solidity
 File: src/queue/WithdrawalQueue.sol
@@ -5563,7 +5662,7 @@ File: src/queue/WithdrawalQueue.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/queue/WithdrawalQueue.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/queue/WithdrawalQueue.sol)
 
 ```solidity
 File: src/registries/VaultRegistry.sol
@@ -5573,7 +5672,7 @@ File: src/registries/VaultRegistry.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/registries/VaultRegistry.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/registries/VaultRegistry.sol)
 
 ```solidity
 File: src/strategies/Silo/EasyMathV2.sol
@@ -5602,7 +5701,7 @@ File: src/strategies/Silo/EasyMathV2.sol
             if (totalShares == 0 || totalAmount == 0) {
                 return 0;
 
-113:     /// @notice Calculates fraction between borrowed and deposited amount of tokens denominated in percentage
+112:     /// @notice Calculates fraction between borrowed and deposited amount of tokens denominated in percentage
          /// @dev It assumes `_dp` = 100%.
          /// @param _dp decimal points used by model
          /// @param _totalDeposits current total deposits for assets
@@ -5620,7 +5719,7 @@ File: src/strategies/Silo/EasyMathV2.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Silo/EasyMathV2.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Silo/EasyMathV2.sol)
 
 ```solidity
 File: src/swapper/Swapper.sol
@@ -5643,12 +5742,12 @@ File: src/swapper/Swapper.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/swapper/Swapper.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/swapper/Swapper.sol)
 
 ```solidity
 File: src/vault/ConcreteMultiStrategyVault.sol
 
-511:     function getAvailableAssetsForWithdrawal() public view returns (uint256 totalAvailable) {
+560:     function getAvailableAssetsForWithdrawal() public view returns (uint256 totalAvailable) {
              totalAvailable = IERC20(asset()).balanceOf(address(this));
              uint256 len = strategies.length;
              for (uint256 i; i < len; ) {
@@ -5664,9 +5763,9 @@ File: src/vault/ConcreteMultiStrategyVault.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
 
-### <a name="NC-27"></a>[NC-27] `require()` / `revert()` statements should have descriptive reason strings
+### <a name="NC-28"></a>[NC-28] `require()` / `revert()` statements should have descriptive reason strings
 
 *Instances (27)*:
 
@@ -5709,7 +5808,7 @@ File: src/managers/RewardManager.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/managers/RewardManager.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/managers/RewardManager.sol)
 
 ```solidity
 File: src/registries/TokenRegistry.sol
@@ -5728,7 +5827,7 @@ File: src/registries/TokenRegistry.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/registries/TokenRegistry.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/registries/TokenRegistry.sol)
 
 ```solidity
 File: src/swapper/OraclePlug.sol
@@ -5737,7 +5836,7 @@ File: src/swapper/OraclePlug.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/swapper/OraclePlug.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/swapper/OraclePlug.sol)
 
 ```solidity
 File: src/swapper/Swapper.sol
@@ -5750,13 +5849,13 @@ File: src/swapper/Swapper.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/swapper/Swapper.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/swapper/Swapper.sol)
 
-### <a name="NC-28"></a>[NC-28] Take advantage of Custom Error's return value property
+### <a name="NC-29"></a>[NC-29] Take advantage of Custom Error's return value property
 
 An important feature of Custom Error is that values such as address, tokenID, msg.value can be written inside the () sign, this kind of approach provides a serious advantage in debugging and examining the revert details of dapps such as tenderly.
 
-*Instances (86)*:
+*Instances (96)*:
 
 ```solidity
 File: src/claimRouter/ClaimRouter.sol
@@ -5777,7 +5876,7 @@ File: src/claimRouter/ClaimRouter.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/claimRouter/ClaimRouter.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/claimRouter/ClaimRouter.sol)
 
 ```solidity
 File: src/factories/VaultFactory.sol
@@ -5786,7 +5885,7 @@ File: src/factories/VaultFactory.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/factories/VaultFactory.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/factories/VaultFactory.sol)
 
 ```solidity
 File: src/managers/RewardManager.sol
@@ -5827,7 +5926,7 @@ File: src/managers/RewardManager.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/managers/RewardManager.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/managers/RewardManager.sol)
 
 ```solidity
 File: src/registries/TokenRegistry.sol
@@ -5840,7 +5939,7 @@ File: src/registries/TokenRegistry.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/registries/TokenRegistry.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/registries/TokenRegistry.sol)
 
 ```solidity
 File: src/registries/VaultRegistry.sol
@@ -5853,42 +5952,42 @@ File: src/registries/VaultRegistry.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/registries/VaultRegistry.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/registries/VaultRegistry.sol)
 
 ```solidity
 File: src/strategies/Aave/AaveV3Strategy.sol
 
-38:             revert AssetDivergence();
+39:             revert AssetDivergence();
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Aave/AaveV3Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Aave/AaveV3Strategy.sol)
 
 ```solidity
 File: src/strategies/ProtectStrategy/ProtectStrategy.sol
 
-52:             revert ClaimRouterUnauthorizedAccount(_msgSender());
+55:             revert ClaimRouterUnauthorizedAccount(_msgSender());
 
-90:         if (claimRouter_ == address(0)) revert InvalidClaimRouterAddress();
+93:         if (claimRouter_ == address(0)) revert InvalidClaimRouterAddress();
 
-118:         if (borrowDebt < amount) revert InvalidSubstraction();
+121:         if (borrowDebt < amount) revert InvalidSubstraction();
 
-132:         if (amount == 0) revert ZeroAmount();
+135:         if (amount == 0) revert ZeroAmount();
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/ProtectStrategy/ProtectStrategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/ProtectStrategy/ProtectStrategy.sol)
 
 ```solidity
 File: src/strategies/Radiant/RadiantV2Strategy.sol
 
-37:         if (addressesProvider_ == address(0)) revert ZeroAddress();
+38:         if (addressesProvider_ == address(0)) revert ZeroAddress();
 
-45:         if (rToken.UNDERLYING_ASSET_ADDRESS() != address(baseAsset_)) revert AssetDivergence();
+46:         if (rToken.UNDERLYING_ASSET_ADDRESS() != address(baseAsset_)) revert AssetDivergence();
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Radiant/RadiantV2Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Radiant/RadiantV2Strategy.sol)
 
 ```solidity
 File: src/strategies/Silo/EasyMathV2.sol
@@ -5899,7 +5998,7 @@ File: src/strategies/Silo/EasyMathV2.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Silo/EasyMathV2.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Silo/EasyMathV2.sol)
 
 ```solidity
 File: src/strategies/Silo/SiloV1Strategy.sol
@@ -5916,44 +6015,44 @@ File: src/strategies/Silo/SiloV1Strategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Silo/SiloV1Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Silo/SiloV1Strategy.sol)
 
 ```solidity
 File: src/strategies/StrategyBase.sol
 
-91:                     revert InvalidRewardTokenAddress();
+82:                     revert InvalidRewardTokenAddress();
 
-94:                     revert AccumulatedFeeAccountedMustBeZero();
+85:                     revert AccumulatedFeeAccountedMustBeZero();
 
-98:                 if (!rewardTokens_[i].token.approve(address(this), type(uint256).max)) revert ERC20ApproveFail();
+89:                 if (!rewardTokens_[i].token.approve(address(this), type(uint256).max)) revert ERC20ApproveFail();
 
-109:         if (feeRecipient_ == address(0)) revert InvalidFeeRecipient();
+100:         if (feeRecipient_ == address(0)) revert InvalidFeeRecipient();
 
-113:         if (depositLimit_ == 0) revert InvalidDepositLimit();
+104:         if (depositLimit_ == 0) revert InvalidDepositLimit();
 
-135:         if (shares_ == 0 || assets_ == 0) revert ZeroAmount();
+126:         if (shares_ == 0 || assets_ == 0) revert ZeroAmount();
 
-163:         if (shares_ == 0 || assets_ == 0) revert ZeroAmount();
+154:         if (shares_ == 0 || assets_ == 0) revert ZeroAmount();
 
-194:             revert InvalidRewardTokenAddress();
+185:             revert InvalidRewardTokenAddress();
 
-197:             revert RewardTokenAlreadyApproved();
+188:             revert RewardTokenAlreadyApproved();
 
-200:             revert AccumulatedFeeAccountedMustBeZero();
+191:             revert AccumulatedFeeAccountedMustBeZero();
 
-207:             revert ERC20ApproveFail();
+198:             revert ERC20ApproveFail();
 
-220:             revert RewardTokenNotApproved();
+211:             revert RewardTokenNotApproved();
 
 239:             revert RewardTokenNotApproved();
 
-262:         if (feeRecipient_ == address(0)) revert InvalidFeeRecipient();
+264:         if (feeRecipient_ == address(0)) revert InvalidFeeRecipient();
 
-274:         if (depositLimit_ == 0) revert InvalidDepositLimit();
+276:         if (depositLimit_ == 0) revert InvalidDepositLimit();
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/StrategyBase.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/StrategyBase.sol)
 
 ```solidity
 File: src/strategies/compoundV3/CompoundV3Strategy.sol
@@ -5964,7 +6063,7 @@ File: src/strategies/compoundV3/CompoundV3Strategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/compoundV3/CompoundV3Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/compoundV3/CompoundV3Strategy.sol)
 
 ```solidity
 File: src/swapper/OraclePlug.sol
@@ -5973,7 +6072,7 @@ File: src/swapper/OraclePlug.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/swapper/OraclePlug.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/swapper/OraclePlug.sol)
 
 ```solidity
 File: src/swapper/Swapper.sol
@@ -5982,60 +6081,80 @@ File: src/swapper/Swapper.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/swapper/Swapper.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/swapper/Swapper.sol)
 
 ```solidity
 File: src/vault/ConcreteMultiStrategyVault.sol
 
 98:             revert ProtectUnauthorizedAccount(_msgSender());
 
-156:         if (address(baseAsset_) == address(0)) revert InvalidAssetAddress();
+161:         if (address(baseAsset_) == address(0)) revert InvalidAssetAddress();
 
-168:             revert InvalidFeeRecipient();
+172:                 revert VaultAssetMismatch();
 
-233:         if (assets_ > maxDeposit(receiver_) || assets_ > depositLimit) revert MaxError();
+175:                 if (protectStrategy != address(0x0)) revert MultipleProtectStrat();
 
-243:         if (shares <= DUST) revert ZeroAmount();
+182:                 revert ERC20ApproveFail();
 
-296:         if (shares_ == 0) revert ZeroAmount();
+196:         ) revert InvalidVaultFees();
 
-306:         if (assets > maxMint(receiver_)) revert MaxError();
+210:         if (feeRecipient_ == address(0)) revert InvalidFeeRecipient();
 
-356:         if (receiver_ == address(0)) revert InvalidRecipient();
+272:         if (receiver_ == address(0)) revert InvalidRecipient();
 
-357:         if (shares_ == 0) revert ZeroAmount();
+273:         if (assets_ > maxDeposit(receiver_) || assets_ > depositLimit) revert MaxError();
 
-358:         if (shares_ > maxRedeem(owner_)) revert MaxError();
+288:         if (shares <= DUST) revert ZeroAmount();
 
-393:         if (receiver_ == address(0)) revert InvalidRecipient();
+339:         if (receiver_ == address(0)) revert InvalidRecipient();
 
-394:         if (assets_ > maxWithdraw(owner_)) revert MaxError();
+340:         if (shares_ == 0) revert ZeroAmount();
 
-396:         if (shares <= DUST) revert ZeroAmount();
+355:         if (assets > maxMint(receiver_)) revert MaxError();
 
-590:         if (total < unfinalized) revert InvalidSubstraction();
+405:         if (receiver_ == address(0)) revert InvalidRecipient();
 
-756:         if (newRecipient_ == address(0)) revert InvalidFeeRecipient();
+406:         if (shares_ == 0) revert ZeroAmount();
 
-771:         if (withdrawalQueue_ == address(0)) revert InvalidWithdrawlQueue();
+407:         if (shares_ > maxRedeem(owner_)) revert MaxError();
 
-881:         if (allotmentTotals != 10000) revert AllotmentTotalTooHigh();
+442:         if (receiver_ == address(0)) revert InvalidRecipient();
 
-896:         if (vaultIdle) revert VaultIsIdle();
+443:         if (assets_ > maxWithdraw(owner_)) revert MaxError();
 
-950:         if (vaultIdle) revert VaultIsIdle();
+445:         if (shares <= DUST) revert ZeroAmount();
 
-968:         if (vaultIdle) revert VaultIsIdle();
+641:         if (total < unfinalized) revert InvalidSubstraction();
 
-1060:         if (address(withdrawalQueue) == address(0)) revert QueueNotSet();
+824:         if (newRecipient_ == address(0)) revert InvalidFeeRecipient();
 
-1113:         if (receiver_ == address(0)) revert InvalidRecipient();
+839:         if (withdrawalQueue_ == address(0)) revert InvalidWithdrawlQueue();
+
+896:                 revert AllotmentTotalTooHigh();
+
+904:                 revert AllotmentTotalTooHigh();
+
+909:             if (protectStrategy != address(0x0)) revert MultipleProtectStrat();
+
+912:         if (!IERC20(asset()).approve(address(newStrategy_.strategy), type(uint256).max)) revert ERC20ApproveFail();
+
+954:         if (!IERC20(asset()).approve(address(stratToBeRemoved_), 0)) revert ERC20ApproveFail();
+
+989:         if (allotmentTotals != 10000) revert AllotmentTotalTooHigh();
+
+1004:         if (vaultIdle) revert VaultIsIdle();
+
+1067:         if (vaultIdle) revert VaultIsIdle();
+
+1085:         if (vaultIdle) revert VaultIsIdle();
+
+1166:         if (address(withdrawalQueue) == address(0)) revert QueueNotSet();
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
 
-### <a name="NC-29"></a>[NC-29] Contract does not follow the Solidity style guide's suggested layout ordering
+### <a name="NC-30"></a>[NC-30] Contract does not follow the Solidity style guide's suggested layout ordering
 
 The [style guide](https://docs.soliditylang.org/en/v0.8.16/style-guide.html#order-of-layout) says that, within a contract, the ordering should be:
 
@@ -6107,7 +6226,7 @@ File: src/claimRouter/ClaimRouter.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/claimRouter/ClaimRouter.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/claimRouter/ClaimRouter.sol)
 
 ```solidity
 File: src/interfaces/IBeraOracle.sol
@@ -6135,7 +6254,7 @@ File: src/interfaces/IBeraOracle.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/interfaces/IBeraOracle.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/interfaces/IBeraOracle.sol)
 
 ```solidity
 File: src/managers/RewardManager.sol
@@ -6217,7 +6336,7 @@ File: src/managers/RewardManager.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/managers/RewardManager.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/managers/RewardManager.sol)
 
 ```solidity
 File: src/queue/WithdrawalQueue.sol
@@ -6279,7 +6398,7 @@ File: src/queue/WithdrawalQueue.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/queue/WithdrawalQueue.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/queue/WithdrawalQueue.sol)
 
 ```solidity
 File: src/registries/TokenRegistry.sol
@@ -6335,7 +6454,7 @@ File: src/registries/TokenRegistry.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/registries/TokenRegistry.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/registries/TokenRegistry.sol)
 
 ```solidity
 File: src/strategies/Aave/DataTypes.sol
@@ -6357,7 +6476,7 @@ File: src/strategies/Aave/DataTypes.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Aave/DataTypes.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Aave/DataTypes.sol)
 
 ```solidity
 File: src/strategies/ProtectStrategy/ProtectStrategy.sol
@@ -6375,6 +6494,7 @@ File: src/strategies/ProtectStrategy/ProtectStrategy.sol
    ModifierDefinition.onlyClaimRouter
    FunctionDefinition.isProtectStrategy
    FunctionDefinition.highWatermark
+   FunctionDefinition.harvestRewards
    FunctionDefinition.getAvailableAssetsForWithdrawal
    FunctionDefinition.setClaimRouter
    FunctionDefinition._totalAssets
@@ -6382,7 +6502,6 @@ File: src/strategies/ProtectStrategy/ProtectStrategy.sol
    FunctionDefinition.updateBorrowDebt
    FunctionDefinition.executeBorrowClaim
    FunctionDefinition._requestFromVault
-   FunctionDefinition._handleRewardsOnWithdraw
    FunctionDefinition._getRewardsToStrategy
    FunctionDefinition.getRewardTokenAddresses
    
@@ -6398,6 +6517,7 @@ File: src/strategies/ProtectStrategy/ProtectStrategy.sol
    FunctionDefinition.constructor
    FunctionDefinition.isProtectStrategy
    FunctionDefinition.highWatermark
+   FunctionDefinition.harvestRewards
    FunctionDefinition.getAvailableAssetsForWithdrawal
    FunctionDefinition.setClaimRouter
    FunctionDefinition._totalAssets
@@ -6405,13 +6525,12 @@ File: src/strategies/ProtectStrategy/ProtectStrategy.sol
    FunctionDefinition.updateBorrowDebt
    FunctionDefinition.executeBorrowClaim
    FunctionDefinition._requestFromVault
-   FunctionDefinition._handleRewardsOnWithdraw
    FunctionDefinition._getRewardsToStrategy
    FunctionDefinition.getRewardTokenAddresses
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/ProtectStrategy/ProtectStrategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/ProtectStrategy/ProtectStrategy.sol)
 
 ```solidity
 File: src/strategies/Radiant/DataTypes.sol
@@ -6431,7 +6550,7 @@ File: src/strategies/Radiant/DataTypes.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Radiant/DataTypes.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Radiant/DataTypes.sol)
 
 ```solidity
 File: src/strategies/compoundV3/ICompoundV3.sol
@@ -6475,7 +6594,7 @@ File: src/strategies/compoundV3/ICompoundV3.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/compoundV3/ICompoundV3.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/compoundV3/ICompoundV3.sol)
 
 ```solidity
 File: src/swapper/Swapper.sol
@@ -6523,9 +6642,9 @@ File: src/swapper/Swapper.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/swapper/Swapper.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/swapper/Swapper.sol)
 
-### <a name="NC-30"></a>[NC-30] TODO Left in the code
+### <a name="NC-31"></a>[NC-31] TODO Left in the code
 
 TODOs may signal that a feature is missing or not ready for audit, consider resolving the issue and removing the TODO comment
 
@@ -6534,15 +6653,15 @@ TODOs may signal that a feature is missing or not ready for audit, consider reso
 ```solidity
 File: src/interfaces/IConcreteMultiStrategyVault.sol
 
-29:     IStrategy strategy; //TODO: Create interface for real Strategy and implement here
+30:     IStrategy strategy; //TODO: Create interface for real Strategy and implement here
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/interfaces/IConcreteMultiStrategyVault.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/interfaces/IConcreteMultiStrategyVault.sol)
 
-### <a name="NC-31"></a>[NC-31] Use Underscores for Number Literals (add an underscore every 3 digits)
+### <a name="NC-32"></a>[NC-32] Use Underscores for Number Literals (add an underscore every 3 digits)
 
-*Instances (4)*:
+*Instances (7)*:
 
 ```solidity
 File: src/registries/VaultRegistry.sol
@@ -6551,7 +6670,7 @@ File: src/registries/VaultRegistry.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/registries/VaultRegistry.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/registries/VaultRegistry.sol)
 
 ```solidity
 File: src/strategies/StrategyBase.sol
@@ -6560,20 +6679,26 @@ File: src/strategies/StrategyBase.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/StrategyBase.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/StrategyBase.sol)
 
 ```solidity
 File: src/vault/ConcreteMultiStrategyVault.sol
 
-698:                 ) / 10000; // Normalize the fee percentage
+749:                 ) / 10000; // Normalize the fee percentage
 
-881:         if (allotmentTotals != 10000) revert AllotmentTotalTooHigh();
+776:                             10000,
+
+895:             if (allotmentTotals - strategies[index_].allocation.amount + newStrategy_.allocation.amount > 10000) {
+
+903:             if (allotmentTotals + newStrategy_.allocation.amount > 10000) {
+
+989:         if (allotmentTotals != 10000) revert AllotmentTotalTooHigh();
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
 
-### <a name="NC-32"></a>[NC-32] Internal and private variables and functions names should begin with an underscore
+### <a name="NC-33"></a>[NC-33] Internal and private variables and functions names should begin with an underscore
 
 According to the Solidity Style Guide, Non-`external` variable and function names should begin with an [underscore](https://docs.soliditylang.org/en/latest/style-guide.html#underscore-prefix-for-non-external-functions-and-variables)
 
@@ -6588,7 +6713,7 @@ File: src/queue/WithdrawalQueue.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/queue/WithdrawalQueue.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/queue/WithdrawalQueue.sol)
 
 ```solidity
 File: src/registries/VaultRegistry.sol
@@ -6597,16 +6722,16 @@ File: src/registries/VaultRegistry.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/registries/VaultRegistry.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/registries/VaultRegistry.sol)
 
 ```solidity
 File: src/strategies/ProtectStrategy/ProtectStrategy.sol
 
-25:     uint256 private borrowDebt = 0;
+28:     uint256 private borrowDebt = 0;
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/ProtectStrategy/ProtectStrategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/ProtectStrategy/ProtectStrategy.sol)
 
 ```solidity
 File: src/strategies/Silo/EasyMathV2.sol
@@ -6621,32 +6746,32 @@ File: src/strategies/Silo/EasyMathV2.sol
 
 91:     function toValue(
 
-104:     function sum(uint256[] memory _numbers) internal pure returns (uint256 s) {
+103:     function sum(uint256[] memory _numbers) internal pure returns (uint256 s) {
 
-122:     function calculateUtilization(
+121:     function calculateUtilization(
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Silo/EasyMathV2.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Silo/EasyMathV2.sol)
 
 ```solidity
 File: src/vault/ConcreteMultiStrategyVault.sol
 
-68:     Strategy[] internal strategies;
+68:     Strategy[] private strategies;
 
 71:     VaultFees private fees;
 
 77:     address[] private rewardAddresses;
 
-495:     function claimWithdrawal(uint256 _requestId, uint256 avaliableAssets) private returns (uint256) {
+544:     function claimWithdrawal(uint256 _requestId, uint256 avaliableAssets) private returns (uint256) {
 
-1033:     function updateUserRewardsToCurrent(address userAddress) private {
+1139:     function updateUserRewardsToCurrent(address userAddress) private {
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
 
-### <a name="NC-33"></a>[NC-33] Event is missing `indexed` fields
+### <a name="NC-34"></a>[NC-34] Event is missing `indexed` fields
 
 Index event fields make the field more quickly accessible to off-chain tools that parse events. However, note that each index field costs extra gas during emission, so it's not necessarily best to index the maximum allowed per event (three fields). Each event should use three indexed fields if there are three or more fields, and gas usage is not particularly of concern for the events in question. If there are fewer than three fields, all of the fields should be indexed.
 
@@ -6669,7 +6794,7 @@ File: src/claimRouter/ClaimRouter.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/claimRouter/ClaimRouter.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/claimRouter/ClaimRouter.sol)
 
 ```solidity
 File: src/interfaces/IBeraOracle.sol
@@ -6680,26 +6805,26 @@ File: src/interfaces/IBeraOracle.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/interfaces/IBeraOracle.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/interfaces/IBeraOracle.sol)
 
 ```solidity
 File: src/interfaces/IConcreteMultiStrategyVault.sol
 
-42:     event ToggleVaultIdle(bool pastValue, bool newValue);
+43:     event ToggleVaultIdle(bool pastValue, bool newValue);
 
-43:     event StrategyAdded(address newStrategy);
+44:     event StrategyAdded(address newStrategy);
 
-44:     event StrategyRemoved(address oldStrategy);
+45:     event StrategyRemoved(address oldStrategy);
 
-45:     event DepositLimitSet(uint256 limit);
+46:     event DepositLimitSet(uint256 limit);
 
-46:     event StrategyAllocationsChanged(Allocation[] newAllocations);
+47:     event StrategyAllocationsChanged(Allocation[] newAllocations);
 
-47:     event WithdrawalQueueUpdated(address oldQueue, address newQueue);
+48:     event WithdrawalQueueUpdated(address oldQueue, address newQueue);
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/interfaces/IConcreteMultiStrategyVault.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/interfaces/IConcreteMultiStrategyVault.sol)
 
 ```solidity
 File: src/managers/RewardManager.sol
@@ -6724,7 +6849,7 @@ File: src/managers/RewardManager.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/managers/RewardManager.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/managers/RewardManager.sol)
 
 ```solidity
 File: src/queue/WithdrawalQueue.sol
@@ -6735,7 +6860,7 @@ File: src/queue/WithdrawalQueue.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/queue/WithdrawalQueue.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/queue/WithdrawalQueue.sol)
 
 ```solidity
 File: src/registries/ImplementationRegistry.sol
@@ -6746,7 +6871,7 @@ File: src/registries/ImplementationRegistry.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/registries/ImplementationRegistry.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/registries/ImplementationRegistry.sol)
 
 ```solidity
 File: src/registries/TokenRegistry.sol
@@ -6759,38 +6884,38 @@ File: src/registries/TokenRegistry.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/registries/TokenRegistry.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/registries/TokenRegistry.sol)
 
 ```solidity
 File: src/strategies/ProtectStrategy/ProtectStrategy.sol
 
-12:     event BorrowDebtRepayed(uint256 prevAmount, uint256 substractedAmount);
+15:     event BorrowDebtRepayed(uint256 prevAmount, uint256 substractedAmount);
 
-13:     event BorrowClaimExecuted(uint256 amount, address recipient);
+16:     event BorrowClaimExecuted(uint256 amount, address recipient);
 
-14:     event ClaimRouterAddressUpdated(address claimRouter);
+17:     event ClaimRouterAddressUpdated(address claimRouter);
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/ProtectStrategy/ProtectStrategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/ProtectStrategy/ProtectStrategy.sol)
 
 ```solidity
 File: src/strategies/Radiant/RadiantV2Strategy.sol
 
-27:     event SetEnableRewards(address indexed sender, bool rewardsEnabled);
+28:     event SetEnableRewards(address indexed sender, bool rewardsEnabled);
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Radiant/RadiantV2Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Radiant/RadiantV2Strategy.sol)
 
 ```solidity
 File: src/strategies/StrategyBase.sol
 
-51:     event Harvested(address indexed harvester, uint256 tvl);
+42:     event Harvested(address indexed harvester, uint256 tvl);
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/StrategyBase.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/StrategyBase.sol)
 
 ```solidity
 File: src/swapper/Swapper.sol
@@ -6803,7 +6928,7 @@ File: src/swapper/Swapper.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/swapper/Swapper.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/swapper/Swapper.sol)
 
 ```solidity
 File: src/vault/ConcreteMultiStrategyVault.sol
@@ -6812,9 +6937,9 @@ File: src/vault/ConcreteMultiStrategyVault.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
 
-### <a name="NC-34"></a>[NC-34] `public` functions not called by the contract should be declared `external` instead
+### <a name="NC-35"></a>[NC-35] `public` functions not called by the contract should be declared `external` instead
 
 *Instances (10)*:
 
@@ -6825,7 +6950,7 @@ File: src/registries/TokenRegistry.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/registries/TokenRegistry.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/registries/TokenRegistry.sol)
 
 ```solidity
 File: src/swapper/OraclePlug.sol
@@ -6834,7 +6959,7 @@ File: src/swapper/OraclePlug.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/swapper/OraclePlug.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/swapper/OraclePlug.sol)
 
 ```solidity
 File: src/swapper/Swapper.sol
@@ -6849,24 +6974,24 @@ File: src/swapper/Swapper.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/swapper/Swapper.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/swapper/Swapper.sol)
 
 ```solidity
 File: src/vault/ConcreteMultiStrategyVault.sol
 
-194:     function pause() public onlyOwner {
+235:     function pause() public onlyOwner {
 
-202:     function unpause() public onlyOwner {
+243:     function unpause() public onlyOwner {
 
-507:     function getRewardTokens() public view returns (address[] memory) {
+556:     function getRewardTokens() public view returns (address[] memory) {
 
-725:     function getVaultFees() public view returns (VaultFees memory) {
+793:     function getVaultFees() public view returns (VaultFees memory) {
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
 
-### <a name="NC-35"></a>[NC-35] Variables need not be initialized to zero
+### <a name="NC-36"></a>[NC-36] Variables need not be initialized to zero
 
 The default value for variables is zero, so initializing them to zero is superfluous.
 
@@ -6883,7 +7008,7 @@ File: src/claimRouter/ClaimRouter.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/claimRouter/ClaimRouter.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/claimRouter/ClaimRouter.sol)
 
 ```solidity
 File: src/managers/VaultManager.sol
@@ -6894,7 +7019,7 @@ File: src/managers/VaultManager.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/managers/VaultManager.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/managers/VaultManager.sol)
 
 ```solidity
 File: src/queue/WithdrawalQueue.sol
@@ -6903,7 +7028,7 @@ File: src/queue/WithdrawalQueue.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/queue/WithdrawalQueue.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/queue/WithdrawalQueue.sol)
 
 ```solidity
 File: src/registries/ImplementationRegistry.sol
@@ -6914,7 +7039,7 @@ File: src/registries/ImplementationRegistry.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/registries/ImplementationRegistry.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/registries/ImplementationRegistry.sol)
 
 ```solidity
 File: src/registries/TokenRegistry.sol
@@ -6927,7 +7052,7 @@ File: src/registries/TokenRegistry.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/registries/TokenRegistry.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/registries/TokenRegistry.sol)
 
 ```solidity
 File: src/registries/VaultRegistry.sol
@@ -6936,63 +7061,63 @@ File: src/registries/VaultRegistry.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/registries/VaultRegistry.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/registries/VaultRegistry.sol)
 
 ```solidity
 File: src/strategies/ProtectStrategy/ProtectStrategy.sol
 
-25:     uint256 private borrowDebt = 0;
+28:     uint256 private borrowDebt = 0;
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/ProtectStrategy/ProtectStrategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/ProtectStrategy/ProtectStrategy.sol)
 
 ```solidity
 File: src/strategies/StrategyBase.sol
 
-326:         for (uint256 i = 0; i < rewards.length; ) {
+328:         for (uint256 i = 0; i < rewards.length; ) {
 
 343:         for (uint256 i = 0; i < len; ) {
 
 346:             uint256 netReward = 0;
 
-372:         for (uint256 i = 0; i < len; ) {
-
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/StrategyBase.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/StrategyBase.sol)
 
 ```solidity
 File: src/vault/ConcreteMultiStrategyVault.sol
 
 40:     uint256 public firstDeposit = 0;
 
-454:             uint256 totalWithdrawn = 0;
+503:             uint256 totalWithdrawn = 0;
 
-583:         uint256 unfinalized = 0;
+634:         uint256 unfinalized = 0;
 
-873:         uint256 allotmentTotals = 0;
+771:             for (uint256 i = 0; i < fees.performanceFee.length; ) {
 
-1000:             for (uint256 k = 0; k < indices.length; k++) {
+884:         uint256 allotmentTotals = 0;
+
+981:         uint256 allotmentTotals = 0;
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
 
 ## Low Issues
 
 | |Issue|Instances|
 |-|:-|:-:|
-| [L-1](#L-1) | `approve()`/`safeApprove()` may revert if the current approval is not zero | 4 |
-| [L-2](#L-2) | Use a 2-step ownership transfer pattern | 8 |
-| [L-3](#L-3) | Some tokens may revert when zero value transfers are made | 12 |
+| [L-1](#L-1) | `approve()`/`safeApprove()` may revert if the current approval is not zero | 7 |
+| [L-2](#L-2) | Use a 2-step ownership transfer pattern | 9 |
+| [L-3](#L-3) | Some tokens may revert when zero value transfers are made | 14 |
 | [L-4](#L-4) | Missing checks for `address(0)` when assigning values to address state variables | 2 |
-| [L-5](#L-5) | `decimals()` is not a part of the ERC-20 standard | 3 |
+| [L-5](#L-5) | `decimals()` is not a part of the ERC-20 standard | 4 |
 | [L-6](#L-6) | `decimals()` should be of type `uint8` | 2 |
-| [L-7](#L-7) | Deprecated approve() function | 2 |
+| [L-7](#L-7) | Deprecated approve() function | 5 |
 | [L-8](#L-8) | Division by zero not prevented | 2 |
 | [L-9](#L-9) | Duplicate import statements | 6 |
-| [L-10](#L-10) | Empty Function Body - Consider commenting why | 3 |
+| [L-10](#L-10) | Empty Function Body - Consider commenting why | 2 |
 | [L-11](#L-11) | External call recipient may consume all transaction gas | 1 |
 | [L-12](#L-12) | Initializers could be front-run | 16 |
 | [L-13](#L-13) | Prevent accidentally burning tokens | 10 |
@@ -7002,10 +7127,10 @@ File: src/vault/ConcreteMultiStrategyVault.sol
 | [L-17](#L-17) | Solidity version 0.8.20+ may not work on other chains due to `PUSH0` | 22 |
 | [L-18](#L-18) | Use `Ownable2Step.transferOwnership` instead of `Ownable.transferOwnership` | 10 |
 | [L-19](#L-19) | `symbol()` is not a part of the ERC-20 standard | 10 |
-| [L-20](#L-20) | Unsafe ERC20 operation(s) | 4 |
+| [L-20](#L-20) | Unsafe ERC20 operation(s) | 7 |
 | [L-21](#L-21) | Unspecific compiler version pragma | 5 |
-| [L-22](#L-22) | Upgradeable contract is missing a `__gap[50]` storage variable to allow for new storage variables in later versions | 19 |
-| [L-23](#L-23) | Upgradeable contract not initialized | 38 |
+| [L-22](#L-22) | Upgradeable contract is missing a `__gap[50]` storage variable to allow for new storage variables in later versions | 15 |
+| [L-23](#L-23) | Upgradeable contract not initialized | 34 |
 | [L-24](#L-24) | Use `initializer` for public-facing functions only. Replace with `onlyInitializing` on internal functions. | 1 |
 | [L-25](#L-25) | A year is not always 365 days | 1 |
 
@@ -7016,27 +7141,27 @@ File: src/vault/ConcreteMultiStrategyVault.sol
 
 Set the allowance to zero immediately before each of the existing allowance calls
 
-*Instances (4)*:
+*Instances (7)*:
 
 ```solidity
 File: src/strategies/Aave/AaveV3Strategy.sol
 
-55:         baseAsset_.approve(address(lendingPool), type(uint256).max);
+56:         baseAsset_.approve(address(lendingPool), type(uint256).max);
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Aave/AaveV3Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Aave/AaveV3Strategy.sol)
 
 ```solidity
 File: src/strategies/StrategyBase.sol
 
-98:                 if (!rewardTokens_[i].token.approve(address(this), type(uint256).max)) revert ERC20ApproveFail();
+89:                 if (!rewardTokens_[i].token.approve(address(this), type(uint256).max)) revert ERC20ApproveFail();
 
-206:         if (!rewardToken_.token.approve(address(this), type(uint256).max)) {
+197:         if (!rewardToken_.token.approve(address(this), type(uint256).max)) {
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/StrategyBase.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/StrategyBase.sol)
 
 ```solidity
 File: src/strategies/compoundV3/CompoundV3Strategy.sol
@@ -7045,13 +7170,26 @@ File: src/strategies/compoundV3/CompoundV3Strategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/compoundV3/CompoundV3Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/compoundV3/CompoundV3Strategy.sol)
+
+```solidity
+File: src/vault/ConcreteMultiStrategyVault.sol
+
+181:             if (!baseAsset_.approve(address(currentStrategy), type(uint256).max)) {
+
+912:         if (!IERC20(asset()).approve(address(newStrategy_.strategy), type(uint256).max)) revert ERC20ApproveFail();
+
+954:         if (!IERC20(asset()).approve(address(stratToBeRemoved_), 0)) revert ERC20ApproveFail();
+
+```
+
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
 
 ### <a name="L-2"></a>[L-2] Use a 2-step ownership transfer pattern
 
 Recommend considering implementing a two step process where the owner or admin nominates an account and the nominated account needs to call an `acceptOwnership()` function for the transfer of ownership to fully succeed. This ensures the nominated EOA account is a valid and active account. Lack of two-step procedure for critical operations leaves them error-prone. Consider adding two step procedure on the critical functions.
 
-*Instances (8)*:
+*Instances (9)*:
 
 ```solidity
 File: src/factories/VaultFactory.sol
@@ -7060,7 +7198,7 @@ File: src/factories/VaultFactory.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/factories/VaultFactory.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/factories/VaultFactory.sol)
 
 ```solidity
 File: src/managers/DeploymentManager.sol
@@ -7069,7 +7207,7 @@ File: src/managers/DeploymentManager.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/managers/DeploymentManager.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/managers/DeploymentManager.sol)
 
 ```solidity
 File: src/managers/RewardManager.sol
@@ -7078,7 +7216,7 @@ File: src/managers/RewardManager.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/managers/RewardManager.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/managers/RewardManager.sol)
 
 ```solidity
 File: src/queue/WithdrawalQueue.sol
@@ -7087,7 +7225,7 @@ File: src/queue/WithdrawalQueue.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/queue/WithdrawalQueue.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/queue/WithdrawalQueue.sol)
 
 ```solidity
 File: src/registries/ImplementationRegistry.sol
@@ -7096,7 +7234,7 @@ File: src/registries/ImplementationRegistry.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/registries/ImplementationRegistry.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/registries/ImplementationRegistry.sol)
 
 ```solidity
 File: src/registries/TokenRegistry.sol
@@ -7105,7 +7243,7 @@ File: src/registries/TokenRegistry.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/registries/TokenRegistry.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/registries/TokenRegistry.sol)
 
 ```solidity
 File: src/registries/VaultRegistry.sol
@@ -7114,7 +7252,16 @@ File: src/registries/VaultRegistry.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/registries/VaultRegistry.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/registries/VaultRegistry.sol)
+
+```solidity
+File: src/strategies/StrategyBase.sol
+
+21: abstract contract StrategyBase is ERC4626Upgradeable, ReentrancyGuard, OwnableUpgradeable, Errors, PausableUpgradeable {
+
+```
+
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/StrategyBase.sol)
 
 ```solidity
 File: src/swapper/Swapper.sol
@@ -7123,7 +7270,7 @@ File: src/swapper/Swapper.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/swapper/Swapper.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/swapper/Swapper.sol)
 
 ### <a name="L-3"></a>[L-3] Some tokens may revert when zero value transfers are made
 
@@ -7131,7 +7278,7 @@ Example: <https://github.com/d-xo/weird-erc20#revert-on-zero-value-transfers>.
 
 In spite of the fact that EIP-20 [states](https://github.com/ethereum/EIPs/blob/46b9b698815abbfa628cd1097311deee77dd45c5/EIPS/eip-20.md?plain=1#L116) that zero-valued transfers must be accepted, some tokens, such as LEND will revert if this is attempted, which may cause transactions that involve other tokens (such as batch operations) to fully revert. Consider skipping the transfer if the amount is zero, which will also save gas.
 
-*Instances (12)*:
+*Instances (14)*:
 
 ```solidity
 File: src/claimRouter/ClaimRouter.sol
@@ -7142,27 +7289,31 @@ File: src/claimRouter/ClaimRouter.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/claimRouter/ClaimRouter.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/claimRouter/ClaimRouter.sol)
 
 ```solidity
 File: src/strategies/ProtectStrategy/ProtectStrategy.sol
 
-141:         IERC20(asset()).safeTransfer(recipient, amount);
+144:         IERC20(asset()).safeTransfer(recipient, amount);
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/ProtectStrategy/ProtectStrategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/ProtectStrategy/ProtectStrategy.sol)
 
 ```solidity
 File: src/strategies/StrategyBase.sol
 
-136:         IERC20(asset()).safeTransferFrom(caller_, address(this), assets_);
+127:         IERC20(asset()).safeTransferFrom(caller_, address(this), assets_);
 
-169:         IERC20(asset()).safeTransfer(receiver_, assets_);
+160:         IERC20(asset()).safeTransfer(receiver_, assets_);
+
+351:                 rewardAddress.safeTransfer(feeRecipient, collectedFee);
+
+357:                 rewardAddress.safeTransfer(_vault, netReward);
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/StrategyBase.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/StrategyBase.sol)
 
 ```solidity
 File: src/swapper/Swapper.sol
@@ -7173,24 +7324,24 @@ File: src/swapper/Swapper.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/swapper/Swapper.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/swapper/Swapper.sol)
 
 ```solidity
 File: src/vault/ConcreteMultiStrategyVault.sol
 
-250:         IERC20(asset()).safeTransferFrom(msg.sender, address(this), assets_);
+295:         IERC20(asset()).safeTransferFrom(msg.sender, address(this), assets_);
 
-313:         IERC20(asset()).safeTransferFrom(msg.sender, address(this), assets);
+362:         IERC20(asset()).safeTransferFrom(msg.sender, address(this), assets);
 
-451:             asset_.safeTransfer(receiver_, amount_);
+500:             asset_.safeTransfer(receiver_, amount_);
 
-479:                 asset_.safeTransfer(receiver_, amount_ - totalWithdrawn);
+528:                 asset_.safeTransfer(receiver_, amount_ - totalWithdrawn);
 
-1044:                     IERC20(rewardAddresses[i]).safeTransfer(userAddress, rewardsToTransfer);
+1150:                     IERC20(rewardAddresses[i]).safeTransfer(userAddress, rewardsToTransfer);
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
 
 ### <a name="L-4"></a>[L-4] Missing checks for `address(0)` when assigning values to address state variables
 
@@ -7199,35 +7350,35 @@ File: src/vault/ConcreteMultiStrategyVault.sol
 ```solidity
 File: src/strategies/ProtectStrategy/ProtectStrategy.sol
 
-33:         claimRouter = claimRouter_;
+36:         claimRouter = claimRouter_;
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/ProtectStrategy/ProtectStrategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/ProtectStrategy/ProtectStrategy.sol)
 
 ```solidity
 File: src/strategies/StrategyBase.sol
 
-118:         _vault = vault_;
+109:         _vault = vault_;
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/StrategyBase.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/StrategyBase.sol)
 
 ### <a name="L-5"></a>[L-5] `decimals()` is not a part of the ERC-20 standard
 
 The `decimals()` function is not a part of the [ERC-20 standard](https://eips.ethereum.org/EIPS/eip-20), and was added later as an [optional extension](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC20/extensions/IERC20Metadata.sol). As such, some valid ERC20 tokens do not support this interface, so it is unsafe to blindly cast all tokens to this interface, and then call this function.
 
-*Instances (3)*:
+*Instances (4)*:
 
 ```solidity
 File: src/strategies/StrategyBase.sol
 
-117:         _decimals = IERC20Metadata(address(baseAsset_)).decimals() + DECIMAL_OFFSET;
+108:         _decimals = IERC20Metadata(address(baseAsset_)).decimals() + DECIMAL_OFFSET;
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/StrategyBase.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/StrategyBase.sol)
 
 ```solidity
 File: src/swapper/OraclePlug.sol
@@ -7238,7 +7389,16 @@ File: src/swapper/OraclePlug.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/swapper/OraclePlug.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/swapper/OraclePlug.sol)
+
+```solidity
+File: src/vault/ConcreteMultiStrategyVault.sol
+
+189:         _decimals = IERC20Metadata(address(baseAsset_)).decimals() + decimalOffset;
+
+```
+
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
 
 ### <a name="L-6"></a>[L-6] `decimals()` should be of type `uint8`
 
@@ -7251,7 +7411,7 @@ File: src/strategies/Silo/EasyMathV2.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Silo/EasyMathV2.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Silo/EasyMathV2.sol)
 
 ```solidity
 File: src/swapper/OraclePlug.sol
@@ -7260,24 +7420,37 @@ File: src/swapper/OraclePlug.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/swapper/OraclePlug.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/swapper/OraclePlug.sol)
 
 ### <a name="L-7"></a>[L-7] Deprecated approve() function
 
 Due to the inheritance of ERC20's approve function, there's a vulnerability to the ERC20 approve and double spend front running attack. Briefly, an authorized spender could spend both allowances by front running an allowance-changing transaction. Consider implementing OpenZeppelin's `.safeApprove()` function to help mitigate this.
 
-*Instances (2)*:
+*Instances (5)*:
 
 ```solidity
 File: src/strategies/StrategyBase.sol
 
-98:                 if (!rewardTokens_[i].token.approve(address(this), type(uint256).max)) revert ERC20ApproveFail();
+89:                 if (!rewardTokens_[i].token.approve(address(this), type(uint256).max)) revert ERC20ApproveFail();
 
-206:         if (!rewardToken_.token.approve(address(this), type(uint256).max)) {
+197:         if (!rewardToken_.token.approve(address(this), type(uint256).max)) {
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/StrategyBase.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/StrategyBase.sol)
+
+```solidity
+File: src/vault/ConcreteMultiStrategyVault.sol
+
+181:             if (!baseAsset_.approve(address(currentStrategy), type(uint256).max)) {
+
+912:         if (!IERC20(asset()).approve(address(newStrategy_.strategy), type(uint256).max)) revert ERC20ApproveFail();
+
+954:         if (!IERC20(asset()).approve(address(stratToBeRemoved_), 0)) revert ERC20ApproveFail();
+
+```
+
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
 
 ### <a name="L-8"></a>[L-8] Division by zero not prevented
 
@@ -7294,7 +7467,7 @@ File: src/strategies/Silo/EasyMathV2.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Silo/EasyMathV2.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Silo/EasyMathV2.sol)
 
 ### <a name="L-9"></a>[L-9] Duplicate import statements
 
@@ -7309,7 +7482,7 @@ File: src/claimRouter/ClaimRouter.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/claimRouter/ClaimRouter.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/claimRouter/ClaimRouter.sol)
 
 ```solidity
 File: src/registries/ImplementationRegistry.sol
@@ -7320,35 +7493,33 @@ File: src/registries/ImplementationRegistry.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/registries/ImplementationRegistry.sol)
-
-```solidity
-File: src/strategies/StrategyBase.sol
-
-11: import {ReturnedRewards} from "../interfaces/IStrategy.sol";
-
-12: import {IStrategy, ReturnedRewards} from "../interfaces/IStrategy.sol";
-
-```
-
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/StrategyBase.sol)
-
-### <a name="L-10"></a>[L-10] Empty Function Body - Consider commenting why
-
-*Instances (3)*:
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/registries/ImplementationRegistry.sol)
 
 ```solidity
 File: src/strategies/ProtectStrategy/ProtectStrategy.sol
 
-154:     function _handleRewardsOnWithdraw() internal override {}
+9: import {IStrategy} from "../../interfaces/IStrategy.sol";
 
-155:     function _getRewardsToStrategy(bytes memory) internal override {}
-
-156:     function getRewardTokenAddresses() public view override returns (address[] memory _rewardTokens) {}
+10: import {ReturnedRewards} from "../../interfaces/IStrategy.sol";
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/ProtectStrategy/ProtectStrategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/ProtectStrategy/ProtectStrategy.sol)
+
+### <a name="L-10"></a>[L-10] Empty Function Body - Consider commenting why
+
+*Instances (2)*:
+
+```solidity
+File: src/strategies/ProtectStrategy/ProtectStrategy.sol
+
+157:     function _getRewardsToStrategy() internal override {}
+
+158:     function getRewardTokenAddresses() public view override returns (address[] memory _rewardTokens) {}
+
+```
+
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/ProtectStrategy/ProtectStrategy.sol)
 
 ### <a name="L-11"></a>[L-11] External call recipient may consume all transaction gas
 
@@ -7363,7 +7534,7 @@ File: src/factories/VaultFactory.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/factories/VaultFactory.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/factories/VaultFactory.sol)
 
 ### <a name="L-12"></a>[L-12] Initializers could be front-run
 
@@ -7374,29 +7545,29 @@ Initializers could be front-run, allowing an attacker to either set their own va
 ```solidity
 File: src/strategies/Aave/AaveV3Strategy.sol
 
-44:         __StrategyBase_init(
+45:         __StrategyBase_init(
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Aave/AaveV3Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Aave/AaveV3Strategy.sol)
 
 ```solidity
 File: src/strategies/ProtectStrategy/ProtectStrategy.sol
 
-36:         __StrategyBase_init(
+39:         __StrategyBase_init(
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/ProtectStrategy/ProtectStrategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/ProtectStrategy/ProtectStrategy.sol)
 
 ```solidity
 File: src/strategies/Radiant/RadiantV2Strategy.sol
 
-50:         __StrategyBase_init(
+51:         __StrategyBase_init(
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Radiant/RadiantV2Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Radiant/RadiantV2Strategy.sol)
 
 ```solidity
 File: src/strategies/Silo/SiloV1Strategy.sol
@@ -7405,24 +7576,24 @@ File: src/strategies/Silo/SiloV1Strategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Silo/SiloV1Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Silo/SiloV1Strategy.sol)
 
 ```solidity
 File: src/strategies/StrategyBase.sol
 
-71:     function __StrategyBase_init(
+62:     function __StrategyBase_init(
 
-80:     ) internal initializer nonReentrant {
+71:     ) internal initializer nonReentrant {
 
-82:         __ERC4626_init(IERC20Metadata(address(baseAsset_)));
+73:         __ERC4626_init(IERC20Metadata(address(baseAsset_)));
 
-83:         __ERC20_init(shareName_, shareSymbol_);
+74:         __ERC20_init(shareName_, shareSymbol_);
 
-84:         __Ownable_init(owner_);
+75:         __Ownable_init(owner_);
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/StrategyBase.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/StrategyBase.sol)
 
 ```solidity
 File: src/strategies/compoundV3/CompoundV3Strategy.sol
@@ -7431,26 +7602,26 @@ File: src/strategies/compoundV3/CompoundV3Strategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/compoundV3/CompoundV3Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/compoundV3/CompoundV3Strategy.sol)
 
 ```solidity
 File: src/vault/ConcreteMultiStrategyVault.sol
 
 141:     function initialize(
 
-150:     ) external initializer nonReentrant {
+153:         initializer
 
-151:         __Pausable_init();
+156:         __Pausable_init();
 
-152:         __ERC4626_init(baseAsset_);
+157:         __ERC4626_init(baseAsset_);
 
-153:         __ERC20_init(shareName_, shareSymbol_);
+158:         __ERC20_init(shareName_, shareSymbol_);
 
-154:         __Ownable_init(owner_);
+159:         __Ownable_init(owner_);
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
 
 ### <a name="L-13"></a>[L-13] Prevent accidentally burning tokens
 
@@ -7461,36 +7632,36 @@ Minting and burning tokens to address(0) prevention
 ```solidity
 File: src/strategies/StrategyBase.sol
 
-140:         _mint(receiver_, shares_);
+131:         _mint(receiver_, shares_);
 
-167:         _burn(owner_, shares_);
+158:         _burn(owner_, shares_);
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/StrategyBase.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/StrategyBase.sol)
 
 ```solidity
 File: src/vault/ConcreteMultiStrategyVault.sol
 
 116:             _mint(feeRecipient, feeInShare);
 
-246:         if (feeShares > 0) _mint(feeRecipient, feeShares);
+291:         if (feeShares > 0) _mint(feeRecipient, feeShares);
 
-247:         _mint(receiver_, shares);
+292:         _mint(receiver_, shares);
 
-277:         return mint(shares_, msg.sender);
+322:         return mint(shares_, msg.sender);
 
-309:         if (feeShares > 0) _mint(feeRecipient, feeShares);
+358:         if (feeShares > 0) _mint(feeRecipient, feeShares);
 
-310:         _mint(receiver_, shares_);
+359:         _mint(receiver_, shares_);
 
-423:         _burn(owner_, shares);
+472:         _burn(owner_, shares);
 
-424:         if (feeShares > 0) _mint(feeRecipient, feeShares);
+473:         if (feeShares > 0) _mint(feeRecipient, feeShares);
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
 
 ### <a name="L-14"></a>[L-14] Owner can renounce while system is paused
 
@@ -7501,13 +7672,13 @@ The contract owner or single user with a role is not prevented from renouncing t
 ```solidity
 File: src/vault/ConcreteMultiStrategyVault.sol
 
-194:     function pause() public onlyOwner {
+235:     function pause() public onlyOwner {
 
-202:     function unpause() public onlyOwner {
+243:     function unpause() public onlyOwner {
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
 
 ### <a name="L-15"></a>[L-15] Possible rounding issue
 
@@ -7524,7 +7695,7 @@ File: src/strategies/Silo/EasyMathV2.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Silo/EasyMathV2.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Silo/EasyMathV2.sol)
 
 ### <a name="L-16"></a>[L-16] Loss of precision
 
@@ -7541,7 +7712,7 @@ File: src/strategies/Silo/EasyMathV2.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Silo/EasyMathV2.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Silo/EasyMathV2.sol)
 
 ### <a name="L-17"></a>[L-17] Solidity version 0.8.20+ may not work on other chains due to `PUSH0`
 
@@ -7556,7 +7727,7 @@ File: src/claimRouter/ClaimRouter.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/claimRouter/ClaimRouter.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/claimRouter/ClaimRouter.sol)
 
 ```solidity
 File: src/factories/VaultFactory.sol
@@ -7565,7 +7736,7 @@ File: src/factories/VaultFactory.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/factories/VaultFactory.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/factories/VaultFactory.sol)
 
 ```solidity
 File: src/interfaces/Constants.sol
@@ -7574,7 +7745,7 @@ File: src/interfaces/Constants.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/interfaces/Constants.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/interfaces/Constants.sol)
 
 ```solidity
 File: src/interfaces/DataTypes.sol
@@ -7583,7 +7754,7 @@ File: src/interfaces/DataTypes.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/interfaces/DataTypes.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/interfaces/DataTypes.sol)
 
 ```solidity
 File: src/managers/DeploymentManager.sol
@@ -7592,7 +7763,7 @@ File: src/managers/DeploymentManager.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/managers/DeploymentManager.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/managers/DeploymentManager.sol)
 
 ```solidity
 File: src/managers/RewardManager.sol
@@ -7601,7 +7772,7 @@ File: src/managers/RewardManager.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/managers/RewardManager.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/managers/RewardManager.sol)
 
 ```solidity
 File: src/managers/VaultManager.sol
@@ -7610,7 +7781,7 @@ File: src/managers/VaultManager.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/managers/VaultManager.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/managers/VaultManager.sol)
 
 ```solidity
 File: src/queue/WithdrawalQueue.sol
@@ -7619,7 +7790,7 @@ File: src/queue/WithdrawalQueue.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/queue/WithdrawalQueue.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/queue/WithdrawalQueue.sol)
 
 ```solidity
 File: src/registries/ImplementationRegistry.sol
@@ -7628,7 +7799,7 @@ File: src/registries/ImplementationRegistry.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/registries/ImplementationRegistry.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/registries/ImplementationRegistry.sol)
 
 ```solidity
 File: src/registries/TokenRegistry.sol
@@ -7637,7 +7808,7 @@ File: src/registries/TokenRegistry.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/registries/TokenRegistry.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/registries/TokenRegistry.sol)
 
 ```solidity
 File: src/registries/VaultRegistry.sol
@@ -7646,7 +7817,7 @@ File: src/registries/VaultRegistry.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/registries/VaultRegistry.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/registries/VaultRegistry.sol)
 
 ```solidity
 File: src/strategies/Aave/AaveV3Strategy.sol
@@ -7655,7 +7826,7 @@ File: src/strategies/Aave/AaveV3Strategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Aave/AaveV3Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Aave/AaveV3Strategy.sol)
 
 ```solidity
 File: src/strategies/Aave/DataTypes.sol
@@ -7664,7 +7835,7 @@ File: src/strategies/Aave/DataTypes.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Aave/DataTypes.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Aave/DataTypes.sol)
 
 ```solidity
 File: src/strategies/ProtectStrategy/ProtectStrategy.sol
@@ -7673,7 +7844,7 @@ File: src/strategies/ProtectStrategy/ProtectStrategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/ProtectStrategy/ProtectStrategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/ProtectStrategy/ProtectStrategy.sol)
 
 ```solidity
 File: src/strategies/Radiant/DataTypes.sol
@@ -7682,7 +7853,7 @@ File: src/strategies/Radiant/DataTypes.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Radiant/DataTypes.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Radiant/DataTypes.sol)
 
 ```solidity
 File: src/strategies/Radiant/RadiantV2Strategy.sol
@@ -7691,7 +7862,7 @@ File: src/strategies/Radiant/RadiantV2Strategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Radiant/RadiantV2Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Radiant/RadiantV2Strategy.sol)
 
 ```solidity
 File: src/strategies/Silo/EasyMathV2.sol
@@ -7700,7 +7871,7 @@ File: src/strategies/Silo/EasyMathV2.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Silo/EasyMathV2.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Silo/EasyMathV2.sol)
 
 ```solidity
 File: src/strategies/Silo/SiloV1Strategy.sol
@@ -7709,7 +7880,7 @@ File: src/strategies/Silo/SiloV1Strategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Silo/SiloV1Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Silo/SiloV1Strategy.sol)
 
 ```solidity
 File: src/strategies/compoundV3/CompoundV3Strategy.sol
@@ -7718,7 +7889,7 @@ File: src/strategies/compoundV3/CompoundV3Strategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/compoundV3/CompoundV3Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/compoundV3/CompoundV3Strategy.sol)
 
 ```solidity
 File: src/swapper/OraclePlug.sol
@@ -7727,7 +7898,7 @@ File: src/swapper/OraclePlug.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/swapper/OraclePlug.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/swapper/OraclePlug.sol)
 
 ```solidity
 File: src/swapper/Swapper.sol
@@ -7736,7 +7907,7 @@ File: src/swapper/Swapper.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/swapper/Swapper.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/swapper/Swapper.sol)
 
 ```solidity
 File: src/vault/ConcreteMultiStrategyVault.sol
@@ -7745,7 +7916,7 @@ File: src/vault/ConcreteMultiStrategyVault.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
 
 ### <a name="L-18"></a>[L-18] Use `Ownable2Step.transferOwnership` instead of `Ownable.transferOwnership`
 
@@ -7772,7 +7943,7 @@ File: src/factories/VaultFactory.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/factories/VaultFactory.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/factories/VaultFactory.sol)
 
 ```solidity
 File: src/managers/DeploymentManager.sol
@@ -7781,7 +7952,7 @@ File: src/managers/DeploymentManager.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/managers/DeploymentManager.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/managers/DeploymentManager.sol)
 
 ```solidity
 File: src/managers/RewardManager.sol
@@ -7790,7 +7961,7 @@ File: src/managers/RewardManager.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/managers/RewardManager.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/managers/RewardManager.sol)
 
 ```solidity
 File: src/queue/WithdrawalQueue.sol
@@ -7799,7 +7970,7 @@ File: src/queue/WithdrawalQueue.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/queue/WithdrawalQueue.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/queue/WithdrawalQueue.sol)
 
 ```solidity
 File: src/registries/ImplementationRegistry.sol
@@ -7808,7 +7979,7 @@ File: src/registries/ImplementationRegistry.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/registries/ImplementationRegistry.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/registries/ImplementationRegistry.sol)
 
 ```solidity
 File: src/registries/TokenRegistry.sol
@@ -7817,7 +7988,7 @@ File: src/registries/TokenRegistry.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/registries/TokenRegistry.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/registries/TokenRegistry.sol)
 
 ```solidity
 File: src/registries/VaultRegistry.sol
@@ -7826,16 +7997,16 @@ File: src/registries/VaultRegistry.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/registries/VaultRegistry.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/registries/VaultRegistry.sol)
 
 ```solidity
 File: src/strategies/StrategyBase.sol
 
-9: import {OwnableUpgradeable} from "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol";
+10: import {OwnableUpgradeable} from "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol";
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/StrategyBase.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/StrategyBase.sol)
 
 ```solidity
 File: src/swapper/Swapper.sol
@@ -7844,7 +8015,7 @@ File: src/swapper/Swapper.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/swapper/Swapper.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/swapper/Swapper.sol)
 
 ```solidity
 File: src/vault/ConcreteMultiStrategyVault.sol
@@ -7853,7 +8024,7 @@ File: src/vault/ConcreteMultiStrategyVault.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
 
 ### <a name="L-19"></a>[L-19] `symbol()` is not a part of the ERC-20 standard
 
@@ -7864,35 +8035,35 @@ The `symbol()` function is not a part of the [ERC-20 standard](https://eips.ethe
 ```solidity
 File: src/strategies/Aave/AaveV3Strategy.sol
 
-46:             string.concat("Concrete Earn AaveV3 ", metaERC20.symbol(), " Strategy"),
+47:             string.concat("Concrete Earn AaveV3 ", metaERC20.symbol(), " Strategy"),
 
-47:             string.concat("ctAv3-", metaERC20.symbol()),
+48:             string.concat("ctAv3-", metaERC20.symbol()),
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Aave/AaveV3Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Aave/AaveV3Strategy.sol)
 
 ```solidity
 File: src/strategies/ProtectStrategy/ProtectStrategy.sol
 
-38:             string.concat("Concrete Earn Protect ", metaERC20.symbol(), " Strategy"),
+41:             string.concat("Concrete Earn Protect ", metaERC20.symbol(), " Strategy"),
 
-39:             string.concat("ctPct-", metaERC20.symbol()),
+42:             string.concat("ctPct-", metaERC20.symbol()),
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/ProtectStrategy/ProtectStrategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/ProtectStrategy/ProtectStrategy.sol)
 
 ```solidity
 File: src/strategies/Radiant/RadiantV2Strategy.sol
 
-52:             string.concat("Concrete Earn RadiantV2 ", metaERC20.symbol(), " Strategy"),
+53:             string.concat("Concrete Earn RadiantV2 ", metaERC20.symbol(), " Strategy"),
 
-53:             string.concat("ctRdV2-", metaERC20.symbol()),
+54:             string.concat("ctRdV2-", metaERC20.symbol()),
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Radiant/RadiantV2Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Radiant/RadiantV2Strategy.sol)
 
 ```solidity
 File: src/strategies/Silo/SiloV1Strategy.sol
@@ -7903,7 +8074,7 @@ File: src/strategies/Silo/SiloV1Strategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Silo/SiloV1Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Silo/SiloV1Strategy.sol)
 
 ```solidity
 File: src/strategies/compoundV3/CompoundV3Strategy.sol
@@ -7914,31 +8085,31 @@ File: src/strategies/compoundV3/CompoundV3Strategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/compoundV3/CompoundV3Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/compoundV3/CompoundV3Strategy.sol)
 
 ### <a name="L-20"></a>[L-20] Unsafe ERC20 operation(s)
 
-*Instances (4)*:
+*Instances (7)*:
 
 ```solidity
 File: src/strategies/Aave/AaveV3Strategy.sol
 
-55:         baseAsset_.approve(address(lendingPool), type(uint256).max);
+56:         baseAsset_.approve(address(lendingPool), type(uint256).max);
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Aave/AaveV3Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Aave/AaveV3Strategy.sol)
 
 ```solidity
 File: src/strategies/StrategyBase.sol
 
-98:                 if (!rewardTokens_[i].token.approve(address(this), type(uint256).max)) revert ERC20ApproveFail();
+89:                 if (!rewardTokens_[i].token.approve(address(this), type(uint256).max)) revert ERC20ApproveFail();
 
-206:         if (!rewardToken_.token.approve(address(this), type(uint256).max)) {
+197:         if (!rewardToken_.token.approve(address(this), type(uint256).max)) {
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/StrategyBase.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/StrategyBase.sol)
 
 ```solidity
 File: src/strategies/compoundV3/CompoundV3Strategy.sol
@@ -7947,7 +8118,20 @@ File: src/strategies/compoundV3/CompoundV3Strategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/compoundV3/CompoundV3Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/compoundV3/CompoundV3Strategy.sol)
+
+```solidity
+File: src/vault/ConcreteMultiStrategyVault.sol
+
+181:             if (!baseAsset_.approve(address(currentStrategy), type(uint256).max)) {
+
+912:         if (!IERC20(asset()).approve(address(newStrategy_.strategy), type(uint256).max)) revert ERC20ApproveFail();
+
+954:         if (!IERC20(asset()).approve(address(stratToBeRemoved_), 0)) revert ERC20ApproveFail();
+
+```
+
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
 
 ### <a name="L-21"></a>[L-21] Unspecific compiler version pragma
 
@@ -7960,7 +8144,7 @@ File: src/strategies/Aave/DataTypes.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Aave/DataTypes.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Aave/DataTypes.sol)
 
 ```solidity
 File: src/strategies/Radiant/DataTypes.sol
@@ -7969,7 +8153,7 @@ File: src/strategies/Radiant/DataTypes.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Radiant/DataTypes.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Radiant/DataTypes.sol)
 
 ```solidity
 File: src/strategies/Silo/EasyMathV2.sol
@@ -7978,7 +8162,7 @@ File: src/strategies/Silo/EasyMathV2.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Silo/EasyMathV2.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Silo/EasyMathV2.sol)
 
 ```solidity
 File: src/strategies/Silo/IBaseSiloV1.sol
@@ -7987,7 +8171,7 @@ File: src/strategies/Silo/IBaseSiloV1.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Silo/IBaseSiloV1.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Silo/IBaseSiloV1.sol)
 
 ```solidity
 File: src/strategies/Silo/ISiloV1.sol
@@ -7996,13 +8180,13 @@ File: src/strategies/Silo/ISiloV1.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Silo/ISiloV1.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Silo/ISiloV1.sol)
 
 ### <a name="L-22"></a>[L-22] Upgradeable contract is missing a `__gap[50]` storage variable to allow for new storage variables in later versions
 
 See [this](https://docs.openzeppelin.com/contracts/4.x/upgradeable#storage_gaps) link for a description of this storage variable. While some contracts may not currently be sub-classed, adding the variable now protects against forgetting to add it in the future.
 
-*Instances (19)*:
+*Instances (15)*:
 
 ```solidity
 File: src/strategies/Aave/IAaveV3.sol
@@ -8011,7 +8195,7 @@ File: src/strategies/Aave/IAaveV3.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Aave/IAaveV3.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Aave/IAaveV3.sol)
 
 ```solidity
 File: src/strategies/Radiant/IRadiantV2.sol
@@ -8020,7 +8204,7 @@ File: src/strategies/Radiant/IRadiantV2.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Radiant/IRadiantV2.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Radiant/IRadiantV2.sol)
 
 ```solidity
 File: src/strategies/Silo/IBaseSiloV1.sol
@@ -8029,32 +8213,22 @@ File: src/strategies/Silo/IBaseSiloV1.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Silo/IBaseSiloV1.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Silo/IBaseSiloV1.sol)
 
 ```solidity
 File: src/strategies/StrategyBase.sol
 
-4: import {ERC4626Upgradeable, IERC20, IERC20Metadata, IERC4626} from "@openzeppelin/contracts-upgradeable/token/ERC20/extensions/ERC4626Upgradeable.sol";
+4: import {ERC4626Upgradeable, ERC20Upgradeable as ERC20, IERC20, IERC20Metadata, IERC4626} from "@openzeppelin/contracts-upgradeable/token/ERC20/extensions/ERC4626Upgradeable.sol";
 
-8: import {PausableUpgradeable} from "@openzeppelin/contracts-upgradeable/utils/PausableUpgradeable.sol";
+9: import {PausableUpgradeable} from "@openzeppelin/contracts-upgradeable/utils/PausableUpgradeable.sol";
 
-9: import {OwnableUpgradeable} from "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol";
+10: import {OwnableUpgradeable} from "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol";
 
-25:     ERC4626Upgradeable,
-
-27:     OwnableUpgradeable,
-
-29:     PausableUpgradeable
-
-133:     ) internal virtual override(ERC4626Upgradeable) whenNotPaused onlyVault {
-
-161:     ) internal virtual override(ERC4626Upgradeable) whenNotPaused onlyVault {
-
-178:     function totalAssets() public view override(IERC4626, ERC4626Upgradeable) returns (uint256) {
+21: abstract contract StrategyBase is ERC4626Upgradeable, ReentrancyGuard, OwnableUpgradeable, Errors, PausableUpgradeable {
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/StrategyBase.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/StrategyBase.sol)
 
 ```solidity
 File: src/swapper/OraclePlug.sol
@@ -8063,41 +8237,43 @@ File: src/swapper/OraclePlug.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/swapper/OraclePlug.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/swapper/OraclePlug.sol)
 
 ```solidity
 File: src/vault/ConcreteMultiStrategyVault.sol
 
-4: import {ERC4626Upgradeable, IERC20, IERC20Metadata} from "@openzeppelin/contracts-upgradeable/token/ERC20/extensions/ERC4626Upgradeable.sol";
+4: import {ERC4626Upgradeable, ERC20Upgradeable as ERC20, IERC20, IERC20Metadata} from "@openzeppelin/contracts-upgradeable/token/ERC20/extensions/ERC4626Upgradeable.sol";
 
 6: import {OwnableUpgradeable} from "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol";
 
-8: import {PausableUpgradeable} from "@openzeppelin/contracts-upgradeable/utils/PausableUpgradeable.sol";
+8: import {ContextUpgradeable} from "@openzeppelin/contracts-upgradeable/utils/ContextUpgradeable.sol";
 
-28:     ERC4626Upgradeable,
+9: import {PausableUpgradeable} from "@openzeppelin/contracts-upgradeable/utils/PausableUpgradeable.sol";
 
-31:     PausableUpgradeable,
+27:     ERC4626Upgradeable,
 
-32:     OwnableUpgradeable,
+30:     PausableUpgradeable,
+
+31:     OwnableUpgradeable,
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
 
 ### <a name="L-23"></a>[L-23] Upgradeable contract not initialized
 
 Upgradeable contracts are initialized via an initializer function rather than by a constructor. Leaving such a contract uninitialized may lead to it being taken over by a malicious user
 
-*Instances (38)*:
+*Instances (34)*:
 
 ```solidity
 File: src/strategies/Aave/AaveV3Strategy.sol
 
-44:         __StrategyBase_init(
+45:         __StrategyBase_init(
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Aave/AaveV3Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Aave/AaveV3Strategy.sol)
 
 ```solidity
 File: src/strategies/Aave/IAaveV3.sol
@@ -8106,16 +8282,16 @@ File: src/strategies/Aave/IAaveV3.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Aave/IAaveV3.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Aave/IAaveV3.sol)
 
 ```solidity
 File: src/strategies/ProtectStrategy/ProtectStrategy.sol
 
-36:         __StrategyBase_init(
+39:         __StrategyBase_init(
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/ProtectStrategy/ProtectStrategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/ProtectStrategy/ProtectStrategy.sol)
 
 ```solidity
 File: src/strategies/Radiant/IRadiantV2.sol
@@ -8124,16 +8300,16 @@ File: src/strategies/Radiant/IRadiantV2.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Radiant/IRadiantV2.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Radiant/IRadiantV2.sol)
 
 ```solidity
 File: src/strategies/Radiant/RadiantV2Strategy.sol
 
-50:         __StrategyBase_init(
+51:         __StrategyBase_init(
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Radiant/RadiantV2Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Radiant/RadiantV2Strategy.sol)
 
 ```solidity
 File: src/strategies/Silo/IBaseSiloV1.sol
@@ -8142,7 +8318,7 @@ File: src/strategies/Silo/IBaseSiloV1.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Silo/IBaseSiloV1.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Silo/IBaseSiloV1.sol)
 
 ```solidity
 File: src/strategies/Silo/SiloV1Strategy.sol
@@ -8151,42 +8327,32 @@ File: src/strategies/Silo/SiloV1Strategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Silo/SiloV1Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Silo/SiloV1Strategy.sol)
 
 ```solidity
 File: src/strategies/StrategyBase.sol
 
-4: import {ERC4626Upgradeable, IERC20, IERC20Metadata, IERC4626} from "@openzeppelin/contracts-upgradeable/token/ERC20/extensions/ERC4626Upgradeable.sol";
+4: import {ERC4626Upgradeable, ERC20Upgradeable as ERC20, IERC20, IERC20Metadata, IERC4626} from "@openzeppelin/contracts-upgradeable/token/ERC20/extensions/ERC4626Upgradeable.sol";
 
-8: import {PausableUpgradeable} from "@openzeppelin/contracts-upgradeable/utils/PausableUpgradeable.sol";
+9: import {PausableUpgradeable} from "@openzeppelin/contracts-upgradeable/utils/PausableUpgradeable.sol";
 
-9: import {OwnableUpgradeable} from "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol";
+10: import {OwnableUpgradeable} from "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol";
 
-25:     ERC4626Upgradeable,
+21: abstract contract StrategyBase is ERC4626Upgradeable, ReentrancyGuard, OwnableUpgradeable, Errors, PausableUpgradeable {
 
-27:     OwnableUpgradeable,
+62:     function __StrategyBase_init(
 
-29:     PausableUpgradeable
+71:     ) internal initializer nonReentrant {
 
-71:     function __StrategyBase_init(
+73:         __ERC4626_init(IERC20Metadata(address(baseAsset_)));
 
-80:     ) internal initializer nonReentrant {
+74:         __ERC20_init(shareName_, shareSymbol_);
 
-82:         __ERC4626_init(IERC20Metadata(address(baseAsset_)));
-
-83:         __ERC20_init(shareName_, shareSymbol_);
-
-84:         __Ownable_init(owner_);
-
-133:     ) internal virtual override(ERC4626Upgradeable) whenNotPaused onlyVault {
-
-161:     ) internal virtual override(ERC4626Upgradeable) whenNotPaused onlyVault {
-
-178:     function totalAssets() public view override(IERC4626, ERC4626Upgradeable) returns (uint256) {
+75:         __Ownable_init(owner_);
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/StrategyBase.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/StrategyBase.sol)
 
 ```solidity
 File: src/strategies/compoundV3/CompoundV3Strategy.sol
@@ -8195,7 +8361,7 @@ File: src/strategies/compoundV3/CompoundV3Strategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/compoundV3/CompoundV3Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/compoundV3/CompoundV3Strategy.sol)
 
 ```solidity
 File: src/swapper/OraclePlug.sol
@@ -8204,22 +8370,24 @@ File: src/swapper/OraclePlug.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/swapper/OraclePlug.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/swapper/OraclePlug.sol)
 
 ```solidity
 File: src/vault/ConcreteMultiStrategyVault.sol
 
-4: import {ERC4626Upgradeable, IERC20, IERC20Metadata} from "@openzeppelin/contracts-upgradeable/token/ERC20/extensions/ERC4626Upgradeable.sol";
+4: import {ERC4626Upgradeable, ERC20Upgradeable as ERC20, IERC20, IERC20Metadata} from "@openzeppelin/contracts-upgradeable/token/ERC20/extensions/ERC4626Upgradeable.sol";
 
 6: import {OwnableUpgradeable} from "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol";
 
-8: import {PausableUpgradeable} from "@openzeppelin/contracts-upgradeable/utils/PausableUpgradeable.sol";
+8: import {ContextUpgradeable} from "@openzeppelin/contracts-upgradeable/utils/ContextUpgradeable.sol";
 
-28:     ERC4626Upgradeable,
+9: import {PausableUpgradeable} from "@openzeppelin/contracts-upgradeable/utils/PausableUpgradeable.sol";
 
-31:     PausableUpgradeable,
+27:     ERC4626Upgradeable,
 
-32:     OwnableUpgradeable,
+30:     PausableUpgradeable,
+
+31:     OwnableUpgradeable,
 
 88:     event Initialized(address indexed vaultName, address indexed underlyingAsset);
 
@@ -8227,21 +8395,21 @@ File: src/vault/ConcreteMultiStrategyVault.sol
 
 141:     function initialize(
 
-150:     ) external initializer nonReentrant {
+153:         initializer
 
-151:         __Pausable_init();
+156:         __Pausable_init();
 
-152:         __ERC4626_init(baseAsset_);
+157:         __ERC4626_init(baseAsset_);
 
-153:         __ERC20_init(shareName_, shareSymbol_);
+158:         __ERC20_init(shareName_, shareSymbol_);
 
-154:         __Ownable_init(owner_);
+159:         __Ownable_init(owner_);
 
-178:         emit Initialized(address(this), address(baseAsset_));
+219:         emit Initialized(address(this), address(baseAsset_));
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
 
 ### <a name="L-24"></a>[L-24] Use `initializer` for public-facing functions only. Replace with `onlyInitializing` on internal functions
 
@@ -8252,11 +8420,11 @@ See [What's the difference between onlyInitializing and initializer](https://for
 ```solidity
 File: src/strategies/StrategyBase.sol
 
-80:     ) internal initializer nonReentrant {
+71:     ) internal initializer nonReentrant {
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/StrategyBase.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/StrategyBase.sol)
 
 ### <a name="L-25"></a>[L-25] A year is not always 365 days
 
@@ -8271,7 +8439,7 @@ File: src/vault/ConcreteMultiStrategyVault.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
 
 ## Medium Issues
 
@@ -8280,7 +8448,7 @@ File: src/vault/ConcreteMultiStrategyVault.sol
 | [M-1](#M-1) | Contracts are vulnerable to fee-on-transfer accounting-related issues | 3 |
 | [M-2](#M-2) | Centralization Risk for trusted owners | 108 |
 | [M-3](#M-3) | `increaseAllowance/decreaseAllowance` won't work on mainnet for USDT | 2 |
-| [M-4](#M-4) | Unsafe use of `transfer()`/`transferFrom()`/`approve()`/ with `IERC20` | 2 |
+| [M-4](#M-4) | Unsafe use of `transfer()`/`transferFrom()`/`approve()`/ with `IERC20` | 5 |
 
 ### <a name="M-1"></a>[M-1] Contracts are vulnerable to fee-on-transfer accounting-related issues
 
@@ -8294,22 +8462,22 @@ Use the balance before and after the transfer to calculate the received amount i
 ```solidity
 File: src/strategies/StrategyBase.sol
 
-136:         IERC20(asset()).safeTransferFrom(caller_, address(this), assets_);
+127:         IERC20(asset()).safeTransferFrom(caller_, address(this), assets_);
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/StrategyBase.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/StrategyBase.sol)
 
 ```solidity
 File: src/vault/ConcreteMultiStrategyVault.sol
 
-250:         IERC20(asset()).safeTransferFrom(msg.sender, address(this), assets_);
+295:         IERC20(asset()).safeTransferFrom(msg.sender, address(this), assets_);
 
-313:         IERC20(asset()).safeTransferFrom(msg.sender, address(this), assets);
+362:         IERC20(asset()).safeTransferFrom(msg.sender, address(this), assets);
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
 
 ### <a name="M-2"></a>[M-2] Centralization Risk for trusted owners
 
@@ -8336,7 +8504,7 @@ File: src/claimRouter/ClaimRouter.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/claimRouter/ClaimRouter.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/claimRouter/ClaimRouter.sol)
 
 ```solidity
 File: src/factories/VaultFactory.sol
@@ -8349,7 +8517,7 @@ File: src/factories/VaultFactory.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/factories/VaultFactory.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/factories/VaultFactory.sol)
 
 ```solidity
 File: src/managers/DeploymentManager.sol
@@ -8372,7 +8540,7 @@ File: src/managers/DeploymentManager.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/managers/DeploymentManager.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/managers/DeploymentManager.sol)
 
 ```solidity
 File: src/managers/RewardManager.sol
@@ -8403,7 +8571,7 @@ File: src/managers/RewardManager.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/managers/RewardManager.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/managers/RewardManager.sol)
 
 ```solidity
 File: src/managers/VaultManager.sol
@@ -8458,7 +8626,7 @@ File: src/managers/VaultManager.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/managers/VaultManager.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/managers/VaultManager.sol)
 
 ```solidity
 File: src/queue/WithdrawalQueue.sol
@@ -8477,7 +8645,7 @@ File: src/queue/WithdrawalQueue.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/queue/WithdrawalQueue.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/queue/WithdrawalQueue.sol)
 
 ```solidity
 File: src/registries/ImplementationRegistry.sol
@@ -8492,7 +8660,7 @@ File: src/registries/ImplementationRegistry.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/registries/ImplementationRegistry.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/registries/ImplementationRegistry.sol)
 
 ```solidity
 File: src/registries/TokenRegistry.sol
@@ -8513,7 +8681,7 @@ File: src/registries/TokenRegistry.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/registries/TokenRegistry.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/registries/TokenRegistry.sol)
 
 ```solidity
 File: src/registries/VaultRegistry.sol
@@ -8532,71 +8700,71 @@ File: src/registries/VaultRegistry.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/registries/VaultRegistry.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/registries/VaultRegistry.sol)
 
 ```solidity
 File: src/strategies/Aave/AaveV3Strategy.sol
 
-111:     function retireStrategy() external onlyOwner {
+109:     function retireStrategy() external onlyOwner {
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Aave/AaveV3Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Aave/AaveV3Strategy.sol)
 
 ```solidity
 File: src/strategies/ProtectStrategy/ProtectStrategy.sol
 
-89:     function setClaimRouter(address claimRouter_) external onlyOwner {
+92:     function setClaimRouter(address claimRouter_) external onlyOwner {
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/ProtectStrategy/ProtectStrategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/ProtectStrategy/ProtectStrategy.sol)
 
 ```solidity
 File: src/strategies/Radiant/RadiantV2Strategy.sol
 
-121:     function retireStrategy() external onlyOwner {
+119:     function retireStrategy() external onlyOwner {
 
-144:     function setEnableRewards(bool _rewardsEnabled) external onlyOwner {
+142:     function setEnableRewards(bool _rewardsEnabled) external onlyOwner {
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Radiant/RadiantV2Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Radiant/RadiantV2Strategy.sol)
 
 ```solidity
 File: src/strategies/Silo/SiloV1Strategy.sol
 
-168:     function retireStrategy() external onlyOwner {
+165:     function retireStrategy() external onlyOwner {
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Silo/SiloV1Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Silo/SiloV1Strategy.sol)
 
 ```solidity
 File: src/strategies/StrategyBase.sol
 
-191:     function addRewardToken(RewardToken calldata rewardToken_) external onlyOwner nonReentrant {
+182:     function addRewardToken(RewardToken calldata rewardToken_) external onlyOwner nonReentrant {
 
-217:     function removeRewardToken(RewardToken calldata rewardToken_) external onlyOwner {
+208:     function removeRewardToken(RewardToken calldata rewardToken_) external onlyOwner {
 
 236:     function modifyRewardFeeForRewardToken(uint256 newFee_, RewardToken calldata rewardToken_) external onlyOwner {
 
-261:     function setFeeRecipient(address feeRecipient_) external onlyOwner {
+263:     function setFeeRecipient(address feeRecipient_) external onlyOwner {
 
-273:     function setDepositLimit(uint256 depositLimit_) external onlyOwner {
+275:     function setDepositLimit(uint256 depositLimit_) external onlyOwner {
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/StrategyBase.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/StrategyBase.sol)
 
 ```solidity
 File: src/strategies/compoundV3/CompoundV3Strategy.sol
 
-114:     function retireStrategy() external onlyOwner {
+106:     function retireStrategy() external onlyOwner {
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/compoundV3/CompoundV3Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/compoundV3/CompoundV3Strategy.sol)
 
 ```solidity
 File: src/swapper/Swapper.sol
@@ -8611,48 +8779,48 @@ File: src/swapper/Swapper.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/swapper/Swapper.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/swapper/Swapper.sol)
 
 ```solidity
 File: src/vault/ConcreteMultiStrategyVault.sol
 
-194:     function pause() public onlyOwner {
+235:     function pause() public onlyOwner {
 
-202:     function unpause() public onlyOwner {
+243:     function unpause() public onlyOwner {
 
-744:     function setVaultFees(VaultFees calldata newFees_) external takeFees onlyOwner {
+812:     function setVaultFees(VaultFees calldata newFees_) external takeFees onlyOwner {
 
-754:     function setFeeRecipient(address newRecipient_) external onlyOwner {
+822:     function setFeeRecipient(address newRecipient_) external onlyOwner {
 
-769:     function setWithdrawalQueue(address withdrawalQueue_) external onlyOwner {
+837:     function setWithdrawalQueue(address withdrawalQueue_) external onlyOwner {
 
-795:     function toggleVaultIdle() external onlyOwner {
+863:     function toggleVaultIdle() external onlyOwner {
 
-814:     ) external nonReentrant onlyOwner takeFees {
+882:     ) external nonReentrant onlyOwner takeFees {
 
-837:     function removeStrategy(uint256 index_) external nonReentrant onlyOwner takeFees {
+924:     function removeStrategy(uint256 index_) external nonReentrant onlyOwner takeFees {
 
-868:     ) external nonReentrant onlyOwner takeFees {
+976:     ) external nonReentrant onlyOwner takeFees {
 
-895:     function pushFundsToStrategies() public onlyOwner {
+1003:     function pushFundsToStrategies() public onlyOwner {
 
-910:     function pullFundsFromStrategies() public onlyOwner {
+1027:     function pullFundsFromStrategies() public onlyOwner {
 
-930:     function pullFundsFromSingleStrategy(uint256 index_) public onlyOwner {
+1047:     function pullFundsFromSingleStrategy(uint256 index_) public onlyOwner {
 
-945:     function pushFundsIntoSingleStrategy(uint256 index_) external onlyOwner {
+1062:     function pushFundsIntoSingleStrategy(uint256 index_) external onlyOwner {
 
-965:     function pushFundsIntoSingleStrategy(uint256 index_, uint256 amount) external onlyOwner {
+1082:     function pushFundsIntoSingleStrategy(uint256 index_, uint256 amount) external onlyOwner {
 
-978:     function setDepositLimit(uint256 newLimit_) external onlyOwner {
+1095:     function setDepositLimit(uint256 newLimit_) external onlyOwner {
 
-989:     function harvestRewards(bytes memory encodedData) external onlyOwner nonReentrant {
+1106:     function harvestRewards() external onlyOwner nonReentrant {
 
-1059:     function batchClaimWithdrawal(uint256 maxRequests) external onlyOwner nonReentrant {
+1165:     function batchClaimWithdrawal(uint256 maxRequests) external onlyOwner nonReentrant {
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
 
 ### <a name="M-3"></a>[M-3] `increaseAllowance/decreaseAllowance` won't work on mainnet for USDT
 
@@ -8663,11 +8831,11 @@ On mainnet, the mitigation to be compatible with `increaseAllowance/decreaseAllo
 ```solidity
 File: src/strategies/Radiant/RadiantV2Strategy.sol
 
-62:         baseAsset_.safeIncreaseAllowance(address(lendingPool), type(uint256).max);
+63:         baseAsset_.safeIncreaseAllowance(address(lendingPool), type(uint256).max);
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Radiant/RadiantV2Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Radiant/RadiantV2Strategy.sol)
 
 ```solidity
 File: src/strategies/Silo/SiloV1Strategy.sol
@@ -8676,22 +8844,22 @@ File: src/strategies/Silo/SiloV1Strategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Silo/SiloV1Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Silo/SiloV1Strategy.sol)
 
 ### <a name="M-4"></a>[M-4] Unsafe use of `transfer()`/`transferFrom()`/`approve()`/ with `IERC20`
 
 Some tokens do not implement the ERC20 standard properly but are still accepted by most code that accepts ERC20 tokens.  For example Tether (USDT)'s `transfer()` and `transferFrom()` functions on L1 do not return booleans as the specification requires, and instead have no return value. When these sorts of tokens are cast to `IERC20`, their [function signatures](https://medium.com/coinmonks/missing-return-value-bug-at-least-130-tokens-affected-d67bf08521ca) do not match and therefore the calls made, revert (see [this](https://gist.github.com/IllIllI000/2b00a32e8f0559e8f386ea4f1800abc5) link for a test case). Use OpenZeppelin's `SafeERC20`'s `safeTransfer()`/`safeTransferFrom()` instead
 
-*Instances (2)*:
+*Instances (5)*:
 
 ```solidity
 File: src/strategies/Aave/AaveV3Strategy.sol
 
-55:         baseAsset_.approve(address(lendingPool), type(uint256).max);
+56:         baseAsset_.approve(address(lendingPool), type(uint256).max);
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Aave/AaveV3Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Aave/AaveV3Strategy.sol)
 
 ```solidity
 File: src/strategies/compoundV3/CompoundV3Strategy.sol
@@ -8700,27 +8868,53 @@ File: src/strategies/compoundV3/CompoundV3Strategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/compoundV3/CompoundV3Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/compoundV3/CompoundV3Strategy.sol)
+
+```solidity
+File: src/vault/ConcreteMultiStrategyVault.sol
+
+181:             if (!baseAsset_.approve(address(currentStrategy), type(uint256).max)) {
+
+912:         if (!IERC20(asset()).approve(address(newStrategy_.strategy), type(uint256).max)) revert ERC20ApproveFail();
+
+954:         if (!IERC20(asset()).approve(address(stratToBeRemoved_), 0)) revert ERC20ApproveFail();
+
+```
+
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
 
 ## High Issues
 
 | |Issue|Instances|
 |-|:-|:-:|
-| [H-1](#H-1) | IERC20.approve() will revert for USDT | 2 |
+| [H-1](#H-1) | IERC20.approve() will revert for USDT | 5 |
 
 ### <a name="H-1"></a>[H-1] IERC20.approve() will revert for USDT
 
 Use forceApprove() from SafeERC20
 
-*Instances (2)*:
+*Instances (5)*:
 
 ```solidity
 File: src/strategies/StrategyBase.sol
 
-98:                 if (!rewardTokens_[i].token.approve(address(this), type(uint256).max)) revert ERC20ApproveFail();
+89:                 if (!rewardTokens_[i].token.approve(address(this), type(uint256).max)) revert ERC20ApproveFail();
 
-206:         if (!rewardToken_.token.approve(address(this), type(uint256).max)) {
+197:         if (!rewardToken_.token.approve(address(this), type(uint256).max)) {
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/StrategyBase.sol)
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/StrategyBase.sol)
+
+```solidity
+File: src/vault/ConcreteMultiStrategyVault.sol
+
+181:             if (!baseAsset_.approve(address(currentStrategy), type(uint256).max)) {
+
+912:         if (!IERC20(asset()).approve(address(newStrategy_.strategy), type(uint256).max)) revert ERC20ApproveFail();
+
+954:         if (!IERC20(asset()).approve(address(stratToBeRemoved_), 0)) revert ERC20ApproveFail();
+
+```
+
+[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/vault/ConcreteMultiStrategyVault.sol)

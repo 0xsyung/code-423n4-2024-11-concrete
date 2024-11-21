@@ -78,8 +78,8 @@ Reentrancy in ConcreteMultiStrategyVault.changeAllocations(Allocation[],bool) (s
 	- ConcreteMultiStrategyVault.mint(uint256,address) (src/vault/ConcreteMultiStrategyVault.sol#290-330)
 	- ConcreteMultiStrategyVault.pullFundsFromSingleStrategy(uint256) (src/vault/ConcreteMultiStrategyVault.sol#930-938)
 	- ConcreteMultiStrategyVault.pullFundsFromStrategies() (src/vault/ConcreteMultiStrategyVault.sol#910-919)
-	- ConcreteMultiStrategyVault.pushFundsIntoSingleStrategy(uint256) (src/vault/ConcreteMultiStrategyVault.sol#945-957)
 	- ConcreteMultiStrategyVault.pushFundsIntoSingleStrategy(uint256,uint256) (src/vault/ConcreteMultiStrategyVault.sol#965-971)
+	- ConcreteMultiStrategyVault.pushFundsIntoSingleStrategy(uint256) (src/vault/ConcreteMultiStrategyVault.sol#945-957)
 	- ConcreteMultiStrategyVault.pushFundsToStrategies() (src/vault/ConcreteMultiStrategyVault.sol#895-901)
 	- ConcreteMultiStrategyVault.requestFunds(uint256) (src/vault/ConcreteMultiStrategyVault.sol#1098-1108)
 	- ConcreteMultiStrategyVault.totalAssets() (src/vault/ConcreteMultiStrategyVault.sol#573-592)
@@ -159,8 +159,8 @@ Reentrancy in ConcreteMultiStrategyVault.removeStrategy(uint256) (src/vault/Conc
 	- ConcreteMultiStrategyVault.mint(uint256,address) (src/vault/ConcreteMultiStrategyVault.sol#290-330)
 	- ConcreteMultiStrategyVault.pullFundsFromSingleStrategy(uint256) (src/vault/ConcreteMultiStrategyVault.sol#930-938)
 	- ConcreteMultiStrategyVault.pullFundsFromStrategies() (src/vault/ConcreteMultiStrategyVault.sol#910-919)
-	- ConcreteMultiStrategyVault.pushFundsIntoSingleStrategy(uint256) (src/vault/ConcreteMultiStrategyVault.sol#945-957)
 	- ConcreteMultiStrategyVault.pushFundsIntoSingleStrategy(uint256,uint256) (src/vault/ConcreteMultiStrategyVault.sol#965-971)
+	- ConcreteMultiStrategyVault.pushFundsIntoSingleStrategy(uint256) (src/vault/ConcreteMultiStrategyVault.sol#945-957)
 	- ConcreteMultiStrategyVault.pushFundsToStrategies() (src/vault/ConcreteMultiStrategyVault.sol#895-901)
 	- ConcreteMultiStrategyVault.requestFunds(uint256) (src/vault/ConcreteMultiStrategyVault.sol#1098-1108)
 	- ConcreteMultiStrategyVault.totalAssets() (src/vault/ConcreteMultiStrategyVault.sol#573-592)
@@ -173,8 +173,8 @@ Reentrancy in ConcreteMultiStrategyVault.removeStrategy(uint256) (src/vault/Conc
 	- ConcreteMultiStrategyVault.mint(uint256,address) (src/vault/ConcreteMultiStrategyVault.sol#290-330)
 	- ConcreteMultiStrategyVault.pullFundsFromSingleStrategy(uint256) (src/vault/ConcreteMultiStrategyVault.sol#930-938)
 	- ConcreteMultiStrategyVault.pullFundsFromStrategies() (src/vault/ConcreteMultiStrategyVault.sol#910-919)
-	- ConcreteMultiStrategyVault.pushFundsIntoSingleStrategy(uint256) (src/vault/ConcreteMultiStrategyVault.sol#945-957)
 	- ConcreteMultiStrategyVault.pushFundsIntoSingleStrategy(uint256,uint256) (src/vault/ConcreteMultiStrategyVault.sol#965-971)
+	- ConcreteMultiStrategyVault.pushFundsIntoSingleStrategy(uint256) (src/vault/ConcreteMultiStrategyVault.sol#945-957)
 	- ConcreteMultiStrategyVault.pushFundsToStrategies() (src/vault/ConcreteMultiStrategyVault.sol#895-901)
 	- ConcreteMultiStrategyVault.requestFunds(uint256) (src/vault/ConcreteMultiStrategyVault.sol#1098-1108)
 	- ConcreteMultiStrategyVault.totalAssets() (src/vault/ConcreteMultiStrategyVault.sol#573-592)
@@ -367,8 +367,8 @@ The following unused import(s) in src/swapper/Swapper.sol should be removed:
 	-import {SwapperRewards} from "../interfaces/DataTypes.sol"; (src/swapper/Swapper.sol#17)
 Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#unused-imports
 INFO:Detectors:
-Loop condition i < strategies.length (src/vault/ConcreteMultiStrategyVault.sol#997) should use cached array length instead of referencing `length` member of the storage array.
- Loop condition i < strategies.length (src/vault/ConcreteMultiStrategyVault.sol#575) should use cached array length instead of referencing `length` member of the storage array.
+Loop condition i < strategies.length (src/vault/ConcreteMultiStrategyVault.sol#575) should use cached array length instead of referencing `length` member of the storage array.
+ Loop condition i < strategies.length (src/vault/ConcreteMultiStrategyVault.sol#997) should use cached array length instead of referencing `length` member of the storage array.
  Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#cache-array-length
 INFO:Detectors:
 MorphoVaultStrategy._morphoVault (src/strategies/Morpho/MorphoVaultStrategy.sol#16) should be immutable 

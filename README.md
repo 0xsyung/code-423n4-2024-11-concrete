@@ -41,54 +41,56 @@ Concrete is a blockchain protocol that allows DeFi users to optimize on capital 
 
 ### Files in scope
 
-
-| File   | Logic Contracts | Interfaces | nSLOC | Purpose | Libraries used |
-| ------ | --------------- | ---------- | ----- | -----   | ------------ |
-| /src/claimRouter/ClaimRouter.sol | 2| **** | 237 | |@openzeppelin/contracts/access/AccessControl.sol<br>@openzeppelin/contracts/utils/math/Math.sol<br>@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol<br>@openzeppelin/contracts/interfaces/IERC20.sol|
-| /src/factories/VaultFactory.sol | 1| **** | 21 | |@openzeppelin/contracts/proxy/Clones.sol<br>@openzeppelin/contracts/access/Ownable.sol|
-| /src/interfaces/Constants.sol | ****| **** | 3 | ||
-| /src/interfaces/DataTypes.sol | ****| **** | 23 | ||
-| /src/interfaces/Errors.sol | ****| 1 | 67 | |@openzeppelin/contracts/interfaces/IERC4626.sol|
-| /src/interfaces/IBeraOracle.sol | ****| 1 | 3 | ||
-| /src/interfaces/IClaimRouter.sol | ****| 1 | 10 | ||
-| /src/interfaces/IConcreteMultiStrategyVault.sol | ****| 1 | 36 | ||
-| /src/interfaces/IImplementationRegistry.sol | ****| 1 | 7 | ||
-| /src/interfaces/IMockProtectStrategy.sol | ****| 1 | 4 | ||
-| /src/interfaces/IMockStrategy.sol | ****| 1 | 4 | |@openzeppelin/contracts/token/ERC20/extensions/ERC4626.sol|
-| /src/interfaces/IProtectStrategy.sol | ****| 1 | 4 | ||
-| /src/interfaces/IRewardManager.sol | ****| 1 | 3 | ||
-| /src/interfaces/IStrategy.sol | ****| 1 | 8 | |@openzeppelin/contracts/token/ERC20/extensions/ERC4626.sol|
-| /src/interfaces/ISwapper.sol | ****| 1 | 3 | ||
-| /src/interfaces/ITokenRegistry.sol | ****| 1 | 4 | ||
-| /src/interfaces/IVaultDeploymentManager.sol | ****| 1 | 4 | ||
-| /src/interfaces/IVaultFactory.sol | ****| 1 | 4 | ||
-| /src/interfaces/IVaultRegistry.sol | ****| 1 | 3 | ||
-| /src/interfaces/IWithdrawalQueue.sol | ****| 1 | 3 | ||
-| /src/managers/DeploymentManager.sol | 1| **** | 50 | |@openzeppelin/contracts/access/Ownable.sol|
-| /src/managers/RewardManager.sol | 2| **** | 172 | |@openzeppelin/contracts/access/Ownable.sol<br>@openzeppelin/contracts/utils/math/SafeCast.sol<br>@openzeppelin/contracts/utils/math/Math.sol|
-| /src/managers/VaultManager.sol | 1| **** | 106 | |@openzeppelin/contracts/access/AccessControl.sol|
-| /src/queue/WithdrawalQueue.sol | 1| **** | 117 | |@openzeppelin/contracts/utils/structs/EnumerableSet.sol<br>@openzeppelin/contracts/utils/math/SafeCast.sol<br>@openzeppelin/contracts/access/Ownable.sol|
-| /src/registries/ImplementationRegistry.sol | 1| **** | 50 | |@openzeppelin/contracts/access/Ownable.sol|
-| /src/registries/TokenRegistry.sol | 2| **** | 106 | |@openzeppelin/contracts/access/Ownable.sol<br>@openzeppelin/contracts/utils/structs/EnumerableSet.sol|
-| /src/registries/VaultRegistry.sol | 1| **** | 74 | |@openzeppelin/contracts/access/Ownable.sol<br>@openzeppelin/contracts/utils/structs/EnumerableSet.sol<br>@openzeppelin/contracts/token/ERC20/extensions/ERC4626.sol|
-| /src/strategies/Aave/AaveV3Strategy.sol | 1| **** | 73 | |@openzeppelin/contracts/token/ERC20/extensions/ERC4626.sol<br>@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol<br>@openzeppelin/contracts/utils/math/Math.sol|
-| /src/strategies/Aave/DataTypes.sol | 1| **** | 45 | ||
-| /src/strategies/Aave/IAaveV3.sol | ****| 7 | 11 | |@openzeppelin/contracts-upgradeable/token/ERC20/extensions/ERC4626Upgradeable.sol|
-| /src/strategies/ProtectStrategy/ProtectStrategy.sol | 2| **** | 82 | |@openzeppelin/contracts/token/ERC20/extensions/ERC4626.sol<br>@openzeppelin/contracts/utils/math/Math.sol|
-| /src/strategies/Radiant/DataTypes.sol | 1| **** | 28 | ||
-| /src/strategies/Radiant/IRadiantV2.sol | ****| 5 | 9 | |@openzeppelin/contracts-upgradeable/token/ERC20/extensions/ERC4626Upgradeable.sol|
-| /src/strategies/Radiant/RadiantV2Strategy.sol | 1| **** | 89 | |@openzeppelin/contracts/token/ERC20/extensions/ERC4626.sol<br>@openzeppelin/contracts/utils/math/Math.sol|
-| /src/strategies/Silo/EasyMathV2.sol | 1| **** | 79 | ||
-| /src/strategies/Silo/IBaseSiloV1.sol | ****| 1 | 12 | |@openzeppelin/contracts-upgradeable/token/ERC20/extensions/ERC4626Upgradeable.sol|
-| /src/strategies/Silo/ISiloV1.sol | ****| 3 | 6 | ||
-| /src/strategies/Silo/SiloV1Strategy.sol | 1| **** | 130 | |@openzeppelin/contracts/token/ERC20/extensions/ERC4626.sol<br>@openzeppelin/contracts/utils/math/Math.sol|
-| /src/strategies/StrategyBase.sol | 1| **** | 187 | |@openzeppelin/contracts-upgradeable/token/ERC20/extensions/ERC4626Upgradeable.sol<br>@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol<br>@openzeppelin/contracts/utils/math/Math.sol<br>@openzeppelin/contracts/utils/ReentrancyGuard.sol<br>@openzeppelin/contracts-upgradeable/utils/PausableUpgradeable.sol<br>@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol<br>@blueprint-finance/hub-and-spokes-libraries/src/libraries/TokenHelper.sol|
-| /src/strategies/compoundV3/CompoundV3Strategy.sol | 1| **** | 73 | |@openzeppelin/contracts/token/ERC20/extensions/ERC4626.sol<br>@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol<br>@openzeppelin/contracts/utils/math/Math.sol|
-| /src/strategies/compoundV3/ICompoundV3.sol | ****| 5 | 44 | ||
-| /src/swapper/OraclePlug.sol | 1| **** | 60 | |@openzeppelin/contracts/utils/math/Math.sol<br>@openzeppelin/contracts/token/ERC20/extensions/IERC20Metadata.sol<br>@openzeppelin/contracts-upgradeable/token/ERC20/extensions/ERC4626Upgradeable.sol<br>@openzeppelin/contracts/utils/math/SafeCast.sol|
-| /src/swapper/Swapper.sol | 2| **** | 92 | |@openzeppelin/contracts/utils/math/Math.sol<br>@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol<br>@openzeppelin/contracts/utils/ReentrancyGuard.sol<br>@openzeppelin/contracts/token/ERC20/IERC20.sol<br>@openzeppelin/contracts/token/ERC20/extensions/ERC4626.sol<br>@openzeppelin/contracts/access/Ownable.sol|
-| /src/vault/ConcreteMultiStrategyVault.sol | 1| **** | 568 | |@openzeppelin/contracts-upgradeable/token/ERC20/extensions/ERC4626Upgradeable.sol<br>@openzeppelin/contracts/utils/ReentrancyGuard.sol<br>@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol<br>@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol<br>@openzeppelin/contracts-upgradeable/utils/PausableUpgradeable.sol<br>@openzeppelin/contracts/utils/math/Math.sol|
-| **Totals** | **26** | **37** | **2714** | | |
+File                                                      |     code
+----------------------------------------------------------|---------
+src/vault/ConcreteMultiStrategyVault.sol                  |      598
+src/claimRouter/ClaimRouter.sol                           |      246
+src/strategies/StrategyBase.sol                           |      212
+src/libraries/MultiStrategyVaultHelper.sol                |      209
+src/managers/RewardManager.sol                            |      184
+src/strategies/Silo/SiloV1Strategy.sol                    |      130
+src/managers/VaultManager.sol                             |      128
+src/registries/TokenRegistry.sol                          |      125
+src/queue/WithdrawalQueue.sol                             |      122
+src/swapper/Swapper.sol                                   |      104
+src/strategies/Silo/EasyMathV2.sol                        |       95
+src/strategies/Radiant/RadiantV2Strategy.sol              |       89
+src/strategies/ProtectStrategy/ProtectStrategy.sol        |       82
+src/registries/VaultRegistry.sol                          |       74
+src/strategies/Aave/IAaveV3.sol                           |       74
+src/strategies/Aave/AaveV3Strategy.sol                    |       73
+src/strategies/compoundV3/CompoundV3Strategy.sol          |       73
+src/strategies/Morpho/MorphoVaultStrategy.sol             |       68
+src/swapper/OraclePlug.sol                                |       68
+src/interfaces/Errors.sol                                 |       67
+src/strategies/compoundV3/ICompoundV3.sol                 |       62
+src/interfaces/IConcreteMultiStrategyVault.sol            |       55
+src/managers/DeploymentManager.sol                        |       50
+src/registries/ImplementationRegistry.sol                 |       50
+src/strategies/Aave/DataTypes.sol                         |       45
+src/strategies/Radiant/DataTypes.sol                      |       28
+src/strategies/Radiant/IRadiantV2.sol                     |       26
+src/factories/VaultFactory.sol                            |       25
+src/interfaces/ITokenRegistry.sol                         |       25
+src/strategies/Silo/ISiloV1.sol                           |       24
+src/interfaces/DataTypes.sol                              |       23
+src/interfaces/IClaimRouter.sol                           |       18
+src/strategies/Silo/IBaseSiloV1.sol                       |       15
+src/interfaces/IRewardManager.sol                         |       14
+src/interfaces/IWithdrawalQueue.sol                       |       12
+src/interfaces/IBeraOracle.sol                            |       11
+src/interfaces/IStrategy.sol                              |       11
+src/interfaces/ISwapper.sol                               |       11
+src/interfaces/IImplementationRegistry.sol                |       10
+src/interfaces/IProtectStrategy.sol                       |       10
+src/interfaces/IVaultDeploymentManager.sol                |       10
+src/interfaces/IVaultRegistry.sol                         |       10
+src/interfaces/IMockProtectStrategy.sol                   |        9
+src/interfaces/IMockStrategy.sol                          |        9
+src/interfaces/IVaultFactory.sol                          |        9
+src/interfaces/Constants.sol                              |        3
+SUM:                                                      |     3396
+          
 
 ### Files out of scope
 
