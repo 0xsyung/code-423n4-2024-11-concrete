@@ -126,7 +126,7 @@ File: src/managers/RewardManager.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/managers/RewardManager.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/managers/RewardManager.sol)
 
 ```solidity
 File: src/strategies/ProtectStrategy/ProtectStrategy.sol
@@ -137,7 +137,7 @@ File: src/strategies/ProtectStrategy/ProtectStrategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/ProtectStrategy/ProtectStrategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/ProtectStrategy/ProtectStrategy.sol)
 
 ```solidity
 File: src/vault/ConcreteMultiStrategyVault.sol
@@ -148,7 +148,7 @@ File: src/vault/ConcreteMultiStrategyVault.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
 
 ### <a name="GAS-2"></a>[GAS-2] `a = a + b` is more gas effective than `a += b` for state variables (excluding arrays and mappings)
 
@@ -167,7 +167,7 @@ File: src/claimRouter/ClaimRouter.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/claimRouter/ClaimRouter.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/claimRouter/ClaimRouter.sol)
 
 ```solidity
 File: src/managers/RewardManager.sol
@@ -182,7 +182,7 @@ File: src/managers/RewardManager.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/managers/RewardManager.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/managers/RewardManager.sol)
 
 ```solidity
 File: src/strategies/ProtectStrategy/ProtectStrategy.sol
@@ -191,7 +191,7 @@ File: src/strategies/ProtectStrategy/ProtectStrategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/ProtectStrategy/ProtectStrategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/ProtectStrategy/ProtectStrategy.sol)
 
 ```solidity
 File: src/strategies/Silo/EasyMathV2.sol
@@ -204,7 +204,7 @@ File: src/strategies/Silo/EasyMathV2.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Silo/EasyMathV2.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Silo/EasyMathV2.sol)
 
 ```solidity
 File: src/strategies/StrategyBase.sol
@@ -213,7 +213,7 @@ File: src/strategies/StrategyBase.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/StrategyBase.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/StrategyBase.sol)
 
 ```solidity
 File: src/vault/ConcreteMultiStrategyVault.sol
@@ -238,7 +238,7 @@ File: src/vault/ConcreteMultiStrategyVault.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
 
 ### <a name="GAS-3"></a>[GAS-3] Use assembly to check for `address(0)`
 
@@ -259,7 +259,7 @@ File: src/claimRouter/ClaimRouter.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/claimRouter/ClaimRouter.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/claimRouter/ClaimRouter.sol)
 
 ```solidity
 File: src/managers/DeploymentManager.sol
@@ -268,7 +268,7 @@ File: src/managers/DeploymentManager.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/managers/DeploymentManager.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/managers/DeploymentManager.sol)
 
 ```solidity
 File: src/managers/RewardManager.sol
@@ -277,7 +277,7 @@ File: src/managers/RewardManager.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/managers/RewardManager.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/managers/RewardManager.sol)
 
 ```solidity
 File: src/registries/TokenRegistry.sol
@@ -286,7 +286,7 @@ File: src/registries/TokenRegistry.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/registries/TokenRegistry.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/registries/TokenRegistry.sol)
 
 ```solidity
 File: src/registries/VaultRegistry.sol
@@ -295,7 +295,7 @@ File: src/registries/VaultRegistry.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/registries/VaultRegistry.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/registries/VaultRegistry.sol)
 
 ```solidity
 File: src/strategies/Aave/AaveV3Strategy.sol
@@ -304,7 +304,7 @@ File: src/strategies/Aave/AaveV3Strategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Aave/AaveV3Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Aave/AaveV3Strategy.sol)
 
 ```solidity
 File: src/strategies/ProtectStrategy/ProtectStrategy.sol
@@ -313,7 +313,7 @@ File: src/strategies/ProtectStrategy/ProtectStrategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/ProtectStrategy/ProtectStrategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/ProtectStrategy/ProtectStrategy.sol)
 
 ```solidity
 File: src/strategies/Radiant/RadiantV2Strategy.sol
@@ -324,7 +324,7 @@ File: src/strategies/Radiant/RadiantV2Strategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Radiant/RadiantV2Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Radiant/RadiantV2Strategy.sol)
 
 ```solidity
 File: src/strategies/Silo/SiloV1Strategy.sol
@@ -341,7 +341,7 @@ File: src/strategies/Silo/SiloV1Strategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Silo/SiloV1Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Silo/SiloV1Strategy.sol)
 
 ```solidity
 File: src/strategies/StrategyBase.sol
@@ -356,7 +356,7 @@ File: src/strategies/StrategyBase.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/StrategyBase.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/StrategyBase.sol)
 
 ```solidity
 File: src/swapper/OraclePlug.sol
@@ -365,7 +365,7 @@ File: src/swapper/OraclePlug.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/swapper/OraclePlug.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/swapper/OraclePlug.sol)
 
 ```solidity
 File: src/swapper/Swapper.sol
@@ -374,7 +374,7 @@ File: src/swapper/Swapper.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/swapper/Swapper.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/swapper/Swapper.sol)
 
 ```solidity
 File: src/vault/ConcreteMultiStrategyVault.sol
@@ -409,7 +409,7 @@ File: src/vault/ConcreteMultiStrategyVault.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
 
 ### <a name="GAS-4"></a>[GAS-4] Using bools for storage incurs overhead
 
@@ -428,7 +428,7 @@ File: src/managers/RewardManager.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/managers/RewardManager.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/managers/RewardManager.sol)
 
 ```solidity
 File: src/registries/ImplementationRegistry.sol
@@ -437,7 +437,7 @@ File: src/registries/ImplementationRegistry.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/registries/ImplementationRegistry.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/registries/ImplementationRegistry.sol)
 
 ```solidity
 File: src/registries/VaultRegistry.sol
@@ -446,7 +446,7 @@ File: src/registries/VaultRegistry.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/registries/VaultRegistry.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/registries/VaultRegistry.sol)
 
 ```solidity
 File: src/strategies/Radiant/RadiantV2Strategy.sol
@@ -455,7 +455,7 @@ File: src/strategies/Radiant/RadiantV2Strategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Radiant/RadiantV2Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Radiant/RadiantV2Strategy.sol)
 
 ```solidity
 File: src/strategies/StrategyBase.sol
@@ -464,7 +464,7 @@ File: src/strategies/StrategyBase.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/StrategyBase.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/StrategyBase.sol)
 
 ```solidity
 File: src/swapper/Swapper.sol
@@ -473,7 +473,7 @@ File: src/swapper/Swapper.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/swapper/Swapper.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/swapper/Swapper.sol)
 
 ```solidity
 File: src/vault/ConcreteMultiStrategyVault.sol
@@ -482,7 +482,7 @@ File: src/vault/ConcreteMultiStrategyVault.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
 
 ### <a name="GAS-5"></a>[GAS-5] Cache array length outside of loop
 
@@ -497,7 +497,7 @@ File: src/claimRouter/ClaimRouter.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/claimRouter/ClaimRouter.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/claimRouter/ClaimRouter.sol)
 
 ```solidity
 File: src/queue/WithdrawalQueue.sol
@@ -506,7 +506,7 @@ File: src/queue/WithdrawalQueue.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/queue/WithdrawalQueue.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/queue/WithdrawalQueue.sol)
 
 ```solidity
 File: src/registries/TokenRegistry.sol
@@ -517,7 +517,7 @@ File: src/registries/TokenRegistry.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/registries/TokenRegistry.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/registries/TokenRegistry.sol)
 
 ```solidity
 File: src/strategies/Silo/EasyMathV2.sol
@@ -526,7 +526,7 @@ File: src/strategies/Silo/EasyMathV2.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Silo/EasyMathV2.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Silo/EasyMathV2.sol)
 
 ```solidity
 File: src/strategies/Silo/SiloV1Strategy.sol
@@ -535,7 +535,7 @@ File: src/strategies/Silo/SiloV1Strategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Silo/SiloV1Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Silo/SiloV1Strategy.sol)
 
 ```solidity
 File: src/strategies/StrategyBase.sol
@@ -548,7 +548,7 @@ File: src/strategies/StrategyBase.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/StrategyBase.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/StrategyBase.sol)
 
 ```solidity
 File: src/vault/ConcreteMultiStrategyVault.sol
@@ -557,7 +557,7 @@ File: src/vault/ConcreteMultiStrategyVault.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
 
 ### <a name="GAS-6"></a>[GAS-6] State variables should be cached in stack variables rather than re-reading them from storage
 
@@ -574,7 +574,7 @@ File: src/strategies/Silo/SiloV1Strategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Silo/SiloV1Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Silo/SiloV1Strategy.sol)
 
 ```solidity
 File: src/strategies/StrategyBase.sol
@@ -583,7 +583,7 @@ File: src/strategies/StrategyBase.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/StrategyBase.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/StrategyBase.sol)
 
 ```solidity
 File: src/swapper/Swapper.sol
@@ -592,7 +592,7 @@ File: src/swapper/Swapper.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/swapper/Swapper.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/swapper/Swapper.sol)
 
 ```solidity
 File: src/vault/ConcreteMultiStrategyVault.sol
@@ -603,7 +603,7 @@ File: src/vault/ConcreteMultiStrategyVault.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
 
 ### <a name="GAS-7"></a>[GAS-7] Use calldata instead of memory for function arguments that do not get mutated
 
@@ -622,7 +622,7 @@ File: src/claimRouter/ClaimRouter.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/claimRouter/ClaimRouter.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/claimRouter/ClaimRouter.sol)
 
 ```solidity
 File: src/interfaces/ITokenRegistry.sol
@@ -633,7 +633,7 @@ File: src/interfaces/ITokenRegistry.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/interfaces/ITokenRegistry.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/interfaces/ITokenRegistry.sol)
 
 ```solidity
 File: src/managers/DeploymentManager.sol
@@ -642,7 +642,7 @@ File: src/managers/DeploymentManager.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/managers/DeploymentManager.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/managers/DeploymentManager.sol)
 
 ```solidity
 File: src/managers/VaultManager.sol
@@ -651,7 +651,7 @@ File: src/managers/VaultManager.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/managers/VaultManager.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/managers/VaultManager.sol)
 
 ```solidity
 File: src/registries/ImplementationRegistry.sol
@@ -660,7 +660,7 @@ File: src/registries/ImplementationRegistry.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/registries/ImplementationRegistry.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/registries/ImplementationRegistry.sol)
 
 ```solidity
 File: src/registries/TokenRegistry.sol
@@ -671,7 +671,7 @@ File: src/registries/TokenRegistry.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/registries/TokenRegistry.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/registries/TokenRegistry.sol)
 
 ```solidity
 File: src/strategies/Aave/IAaveV3.sol
@@ -686,7 +686,7 @@ File: src/strategies/Aave/IAaveV3.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Aave/IAaveV3.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Aave/IAaveV3.sol)
 
 ```solidity
 File: src/vault/ConcreteMultiStrategyVault.sol
@@ -701,7 +701,7 @@ File: src/vault/ConcreteMultiStrategyVault.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
 
 ### <a name="GAS-8"></a>[GAS-8] For Operations that will not overflow, you could use unchecked
 
@@ -774,7 +774,7 @@ File: src/claimRouter/ClaimRouter.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/claimRouter/ClaimRouter.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/claimRouter/ClaimRouter.sol)
 
 ```solidity
 File: src/factories/VaultFactory.sol
@@ -793,7 +793,7 @@ File: src/factories/VaultFactory.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/factories/VaultFactory.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/factories/VaultFactory.sol)
 
 ```solidity
 File: src/interfaces/DataTypes.sol
@@ -802,7 +802,7 @@ File: src/interfaces/DataTypes.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/interfaces/DataTypes.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/interfaces/DataTypes.sol)
 
 ```solidity
 File: src/interfaces/Errors.sol
@@ -811,7 +811,7 @@ File: src/interfaces/Errors.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/interfaces/Errors.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/interfaces/Errors.sol)
 
 ```solidity
 File: src/interfaces/IConcreteMultiStrategyVault.sol
@@ -826,7 +826,7 @@ File: src/interfaces/IConcreteMultiStrategyVault.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/interfaces/IConcreteMultiStrategyVault.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/interfaces/IConcreteMultiStrategyVault.sol)
 
 ```solidity
 File: src/interfaces/IMockProtectStrategy.sol
@@ -835,7 +835,7 @@ File: src/interfaces/IMockProtectStrategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/interfaces/IMockProtectStrategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/interfaces/IMockProtectStrategy.sol)
 
 ```solidity
 File: src/interfaces/IMockStrategy.sol
@@ -844,7 +844,7 @@ File: src/interfaces/IMockStrategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/interfaces/IMockStrategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/interfaces/IMockStrategy.sol)
 
 ```solidity
 File: src/interfaces/IProtectStrategy.sol
@@ -853,7 +853,7 @@ File: src/interfaces/IProtectStrategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/interfaces/IProtectStrategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/interfaces/IProtectStrategy.sol)
 
 ```solidity
 File: src/interfaces/IStrategy.sol
@@ -862,7 +862,7 @@ File: src/interfaces/IStrategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/interfaces/IStrategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/interfaces/IStrategy.sol)
 
 ```solidity
 File: src/interfaces/ITokenRegistry.sol
@@ -871,7 +871,7 @@ File: src/interfaces/ITokenRegistry.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/interfaces/ITokenRegistry.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/interfaces/ITokenRegistry.sol)
 
 ```solidity
 File: src/interfaces/IVaultDeploymentManager.sol
@@ -880,7 +880,7 @@ File: src/interfaces/IVaultDeploymentManager.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/interfaces/IVaultDeploymentManager.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/interfaces/IVaultDeploymentManager.sol)
 
 ```solidity
 File: src/interfaces/IVaultFactory.sol
@@ -889,7 +889,7 @@ File: src/interfaces/IVaultFactory.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/interfaces/IVaultFactory.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/interfaces/IVaultFactory.sol)
 
 ```solidity
 File: src/managers/DeploymentManager.sol
@@ -910,7 +910,7 @@ File: src/managers/DeploymentManager.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/managers/DeploymentManager.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/managers/DeploymentManager.sol)
 
 ```solidity
 File: src/managers/RewardManager.sol
@@ -937,7 +937,7 @@ File: src/managers/RewardManager.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/managers/RewardManager.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/managers/RewardManager.sol)
 
 ```solidity
 File: src/managers/VaultManager.sol
@@ -960,7 +960,7 @@ File: src/managers/VaultManager.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/managers/VaultManager.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/managers/VaultManager.sol)
 
 ```solidity
 File: src/queue/WithdrawalQueue.sol
@@ -997,7 +997,7 @@ File: src/queue/WithdrawalQueue.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/queue/WithdrawalQueue.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/queue/WithdrawalQueue.sol)
 
 ```solidity
 File: src/registries/ImplementationRegistry.sol
@@ -1016,7 +1016,7 @@ File: src/registries/ImplementationRegistry.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/registries/ImplementationRegistry.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/registries/ImplementationRegistry.sol)
 
 ```solidity
 File: src/registries/TokenRegistry.sol
@@ -1047,7 +1047,7 @@ File: src/registries/TokenRegistry.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/registries/TokenRegistry.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/registries/TokenRegistry.sol)
 
 ```solidity
 File: src/registries/VaultRegistry.sol
@@ -1070,7 +1070,7 @@ File: src/registries/VaultRegistry.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/registries/VaultRegistry.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/registries/VaultRegistry.sol)
 
 ```solidity
 File: src/strategies/Aave/AaveV3Strategy.sol
@@ -1091,7 +1091,7 @@ File: src/strategies/Aave/AaveV3Strategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Aave/AaveV3Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Aave/AaveV3Strategy.sol)
 
 ```solidity
 File: src/strategies/Aave/IAaveV3.sol
@@ -1102,7 +1102,7 @@ File: src/strategies/Aave/IAaveV3.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Aave/IAaveV3.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Aave/IAaveV3.sol)
 
 ```solidity
 File: src/strategies/ProtectStrategy/ProtectStrategy.sol
@@ -1135,7 +1135,7 @@ File: src/strategies/ProtectStrategy/ProtectStrategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/ProtectStrategy/ProtectStrategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/ProtectStrategy/ProtectStrategy.sol)
 
 ```solidity
 File: src/strategies/Radiant/IRadiantV2.sol
@@ -1146,7 +1146,7 @@ File: src/strategies/Radiant/IRadiantV2.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Radiant/IRadiantV2.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Radiant/IRadiantV2.sol)
 
 ```solidity
 File: src/strategies/Radiant/RadiantV2Strategy.sol
@@ -1167,7 +1167,7 @@ File: src/strategies/Radiant/RadiantV2Strategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Radiant/RadiantV2Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Radiant/RadiantV2Strategy.sol)
 
 ```solidity
 File: src/strategies/Silo/EasyMathV2.sol
@@ -1206,7 +1206,7 @@ File: src/strategies/Silo/EasyMathV2.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Silo/EasyMathV2.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Silo/EasyMathV2.sol)
 
 ```solidity
 File: src/strategies/Silo/IBaseSiloV1.sol
@@ -1215,7 +1215,7 @@ File: src/strategies/Silo/IBaseSiloV1.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Silo/IBaseSiloV1.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Silo/IBaseSiloV1.sol)
 
 ```solidity
 File: src/strategies/Silo/ISiloV1.sol
@@ -1224,7 +1224,7 @@ File: src/strategies/Silo/ISiloV1.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Silo/ISiloV1.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Silo/ISiloV1.sol)
 
 ```solidity
 File: src/strategies/Silo/SiloV1Strategy.sol
@@ -1253,7 +1253,7 @@ File: src/strategies/Silo/SiloV1Strategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Silo/SiloV1Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Silo/SiloV1Strategy.sol)
 
 ```solidity
 File: src/strategies/StrategyBase.sol
@@ -1308,7 +1308,7 @@ File: src/strategies/StrategyBase.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/StrategyBase.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/StrategyBase.sol)
 
 ```solidity
 File: src/strategies/compoundV3/CompoundV3Strategy.sol
@@ -1327,7 +1327,7 @@ File: src/strategies/compoundV3/CompoundV3Strategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/compoundV3/CompoundV3Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/compoundV3/CompoundV3Strategy.sol)
 
 ```solidity
 File: src/swapper/OraclePlug.sol
@@ -1362,7 +1362,7 @@ File: src/swapper/OraclePlug.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/swapper/OraclePlug.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/swapper/OraclePlug.sol)
 
 ```solidity
 File: src/swapper/Swapper.sol
@@ -1395,7 +1395,7 @@ File: src/swapper/Swapper.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/swapper/Swapper.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/swapper/Swapper.sol)
 
 ```solidity
 File: src/vault/ConcreteMultiStrategyVault.sol
@@ -1558,7 +1558,7 @@ File: src/vault/ConcreteMultiStrategyVault.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
 
 ### <a name="GAS-9"></a>[GAS-9] Avoid contract existence checks by using low level calls
 
@@ -1577,7 +1577,7 @@ File: src/strategies/Aave/AaveV3Strategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Aave/AaveV3Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Aave/AaveV3Strategy.sol)
 
 ```solidity
 File: src/strategies/ProtectStrategy/ProtectStrategy.sol
@@ -1586,7 +1586,7 @@ File: src/strategies/ProtectStrategy/ProtectStrategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/ProtectStrategy/ProtectStrategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/ProtectStrategy/ProtectStrategy.sol)
 
 ```solidity
 File: src/strategies/Radiant/RadiantV2Strategy.sol
@@ -1599,7 +1599,7 @@ File: src/strategies/Radiant/RadiantV2Strategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Radiant/RadiantV2Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Radiant/RadiantV2Strategy.sol)
 
 ```solidity
 File: src/strategies/Silo/SiloV1Strategy.sol
@@ -1612,7 +1612,7 @@ File: src/strategies/Silo/SiloV1Strategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Silo/SiloV1Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Silo/SiloV1Strategy.sol)
 
 ```solidity
 File: src/strategies/StrategyBase.sol
@@ -1623,7 +1623,7 @@ File: src/strategies/StrategyBase.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/StrategyBase.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/StrategyBase.sol)
 
 ```solidity
 File: src/strategies/compoundV3/CompoundV3Strategy.sol
@@ -1636,7 +1636,7 @@ File: src/strategies/compoundV3/CompoundV3Strategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/compoundV3/CompoundV3Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/compoundV3/CompoundV3Strategy.sol)
 
 ```solidity
 File: src/swapper/Swapper.sol
@@ -1645,7 +1645,7 @@ File: src/swapper/Swapper.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/swapper/Swapper.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/swapper/Swapper.sol)
 
 ```solidity
 File: src/vault/ConcreteMultiStrategyVault.sol
@@ -1674,7 +1674,7 @@ File: src/vault/ConcreteMultiStrategyVault.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
 
 ### <a name="GAS-10"></a>[GAS-10] State variables only set in the constructor should be declared `immutable`
 
@@ -1693,7 +1693,7 @@ File: src/managers/DeploymentManager.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/managers/DeploymentManager.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/managers/DeploymentManager.sol)
 
 ```solidity
 File: src/registries/TokenRegistry.sol
@@ -1702,7 +1702,7 @@ File: src/registries/TokenRegistry.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/registries/TokenRegistry.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/registries/TokenRegistry.sol)
 
 ```solidity
 File: src/strategies/Aave/AaveV3Strategy.sol
@@ -1715,7 +1715,7 @@ File: src/strategies/Aave/AaveV3Strategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Aave/AaveV3Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Aave/AaveV3Strategy.sol)
 
 ```solidity
 File: src/strategies/Radiant/RadiantV2Strategy.sol
@@ -1730,7 +1730,7 @@ File: src/strategies/Radiant/RadiantV2Strategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Radiant/RadiantV2Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Radiant/RadiantV2Strategy.sol)
 
 ```solidity
 File: src/strategies/Silo/SiloV1Strategy.sol
@@ -1745,7 +1745,7 @@ File: src/strategies/Silo/SiloV1Strategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Silo/SiloV1Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Silo/SiloV1Strategy.sol)
 
 ```solidity
 File: src/strategies/compoundV3/CompoundV3Strategy.sol
@@ -1756,7 +1756,7 @@ File: src/strategies/compoundV3/CompoundV3Strategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/compoundV3/CompoundV3Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/compoundV3/CompoundV3Strategy.sol)
 
 ```solidity
 File: src/swapper/OraclePlug.sol
@@ -1765,7 +1765,7 @@ File: src/swapper/OraclePlug.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/swapper/OraclePlug.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/swapper/OraclePlug.sol)
 
 ```solidity
 File: src/swapper/Swapper.sol
@@ -1774,7 +1774,7 @@ File: src/swapper/Swapper.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/swapper/Swapper.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/swapper/Swapper.sol)
 
 ### <a name="GAS-11"></a>[GAS-11] Functions guaranteed to revert when called by normal users can be marked `payable`
 
@@ -1793,7 +1793,7 @@ File: src/claimRouter/ClaimRouter.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/claimRouter/ClaimRouter.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/claimRouter/ClaimRouter.sol)
 
 ```solidity
 File: src/managers/DeploymentManager.sol
@@ -1812,7 +1812,7 @@ File: src/managers/DeploymentManager.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/managers/DeploymentManager.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/managers/DeploymentManager.sol)
 
 ```solidity
 File: src/managers/RewardManager.sol
@@ -1837,7 +1837,7 @@ File: src/managers/RewardManager.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/managers/RewardManager.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/managers/RewardManager.sol)
 
 ```solidity
 File: src/managers/VaultManager.sol
@@ -1878,7 +1878,7 @@ File: src/managers/VaultManager.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/managers/VaultManager.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/managers/VaultManager.sol)
 
 ```solidity
 File: src/queue/WithdrawalQueue.sol
@@ -1891,7 +1891,7 @@ File: src/queue/WithdrawalQueue.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/queue/WithdrawalQueue.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/queue/WithdrawalQueue.sol)
 
 ```solidity
 File: src/registries/ImplementationRegistry.sol
@@ -1902,7 +1902,7 @@ File: src/registries/ImplementationRegistry.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/registries/ImplementationRegistry.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/registries/ImplementationRegistry.sol)
 
 ```solidity
 File: src/registries/TokenRegistry.sol
@@ -1911,7 +1911,7 @@ File: src/registries/TokenRegistry.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/registries/TokenRegistry.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/registries/TokenRegistry.sol)
 
 ```solidity
 File: src/registries/VaultRegistry.sol
@@ -1926,7 +1926,7 @@ File: src/registries/VaultRegistry.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/registries/VaultRegistry.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/registries/VaultRegistry.sol)
 
 ```solidity
 File: src/strategies/Aave/AaveV3Strategy.sol
@@ -1935,7 +1935,7 @@ File: src/strategies/Aave/AaveV3Strategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Aave/AaveV3Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Aave/AaveV3Strategy.sol)
 
 ```solidity
 File: src/strategies/ProtectStrategy/ProtectStrategy.sol
@@ -1948,7 +1948,7 @@ File: src/strategies/ProtectStrategy/ProtectStrategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/ProtectStrategy/ProtectStrategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/ProtectStrategy/ProtectStrategy.sol)
 
 ```solidity
 File: src/strategies/Radiant/RadiantV2Strategy.sol
@@ -1959,7 +1959,7 @@ File: src/strategies/Radiant/RadiantV2Strategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Radiant/RadiantV2Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Radiant/RadiantV2Strategy.sol)
 
 ```solidity
 File: src/strategies/Silo/SiloV1Strategy.sol
@@ -1968,7 +1968,7 @@ File: src/strategies/Silo/SiloV1Strategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Silo/SiloV1Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Silo/SiloV1Strategy.sol)
 
 ```solidity
 File: src/strategies/StrategyBase.sol
@@ -1987,7 +1987,7 @@ File: src/strategies/StrategyBase.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/StrategyBase.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/StrategyBase.sol)
 
 ```solidity
 File: src/strategies/compoundV3/CompoundV3Strategy.sol
@@ -1998,7 +1998,7 @@ File: src/strategies/compoundV3/CompoundV3Strategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/compoundV3/CompoundV3Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/compoundV3/CompoundV3Strategy.sol)
 
 ```solidity
 File: src/swapper/Swapper.sol
@@ -2009,7 +2009,7 @@ File: src/swapper/Swapper.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/swapper/Swapper.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/swapper/Swapper.sol)
 
 ```solidity
 File: src/vault/ConcreteMultiStrategyVault.sol
@@ -2048,7 +2048,7 @@ File: src/vault/ConcreteMultiStrategyVault.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
 
 ### <a name="GAS-12"></a>[GAS-12] `++i` costs less gas compared to `i++` or `i += 1` (same for `--i` vs `i--` or `i -= 1`)
 
@@ -2125,7 +2125,7 @@ File: src/claimRouter/ClaimRouter.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/claimRouter/ClaimRouter.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/claimRouter/ClaimRouter.sol)
 
 ```solidity
 File: src/managers/VaultManager.sol
@@ -2136,7 +2136,7 @@ File: src/managers/VaultManager.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/managers/VaultManager.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/managers/VaultManager.sol)
 
 ```solidity
 File: src/queue/WithdrawalQueue.sol
@@ -2145,7 +2145,7 @@ File: src/queue/WithdrawalQueue.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/queue/WithdrawalQueue.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/queue/WithdrawalQueue.sol)
 
 ```solidity
 File: src/registries/ImplementationRegistry.sol
@@ -2154,7 +2154,7 @@ File: src/registries/ImplementationRegistry.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/registries/ImplementationRegistry.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/registries/ImplementationRegistry.sol)
 
 ```solidity
 File: src/registries/TokenRegistry.sol
@@ -2173,7 +2173,7 @@ File: src/registries/TokenRegistry.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/registries/TokenRegistry.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/registries/TokenRegistry.sol)
 
 ```solidity
 File: src/registries/VaultRegistry.sol
@@ -2182,7 +2182,7 @@ File: src/registries/VaultRegistry.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/registries/VaultRegistry.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/registries/VaultRegistry.sol)
 
 ```solidity
 File: src/strategies/Silo/EasyMathV2.sol
@@ -2191,7 +2191,7 @@ File: src/strategies/Silo/EasyMathV2.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Silo/EasyMathV2.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Silo/EasyMathV2.sol)
 
 ```solidity
 File: src/strategies/Silo/SiloV1Strategy.sol
@@ -2202,7 +2202,7 @@ File: src/strategies/Silo/SiloV1Strategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Silo/SiloV1Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Silo/SiloV1Strategy.sol)
 
 ```solidity
 File: src/strategies/StrategyBase.sol
@@ -2213,7 +2213,7 @@ File: src/strategies/StrategyBase.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/StrategyBase.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/StrategyBase.sol)
 
 ```solidity
 File: src/vault/ConcreteMultiStrategyVault.sol
@@ -2258,7 +2258,7 @@ File: src/vault/ConcreteMultiStrategyVault.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
 
 ### <a name="GAS-13"></a>[GAS-13] Using `private` rather than `public` for constants, saves gas
 
@@ -2273,7 +2273,7 @@ File: src/claimRouter/ClaimRouter.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/claimRouter/ClaimRouter.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/claimRouter/ClaimRouter.sol)
 
 ```solidity
 File: src/managers/VaultManager.sol
@@ -2282,7 +2282,7 @@ File: src/managers/VaultManager.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/managers/VaultManager.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/managers/VaultManager.sol)
 
 ```solidity
 File: src/strategies/StrategyBase.sol
@@ -2291,7 +2291,7 @@ File: src/strategies/StrategyBase.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/StrategyBase.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/StrategyBase.sol)
 
 ```solidity
 File: src/vault/ConcreteMultiStrategyVault.sol
@@ -2300,7 +2300,7 @@ File: src/vault/ConcreteMultiStrategyVault.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
 
 ### <a name="GAS-14"></a>[GAS-14] Superfluous event fields
 
@@ -2315,7 +2315,7 @@ File: src/queue/WithdrawalQueue.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/queue/WithdrawalQueue.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/queue/WithdrawalQueue.sol)
 
 ### <a name="GAS-15"></a>[GAS-15] Increments/decrements can be unchecked in for-loops
 
@@ -2348,7 +2348,7 @@ File: src/vault/ConcreteMultiStrategyVault.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
 
 ### <a name="GAS-16"></a>[GAS-16] Use != 0 instead of > 0 for unsigned integer comparison
 
@@ -2361,7 +2361,7 @@ File: src/strategies/Aave/DataTypes.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Aave/DataTypes.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Aave/DataTypes.sol)
 
 ```solidity
 File: src/strategies/Radiant/DataTypes.sol
@@ -2370,7 +2370,7 @@ File: src/strategies/Radiant/DataTypes.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Radiant/DataTypes.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Radiant/DataTypes.sol)
 
 ```solidity
 File: src/strategies/Radiant/RadiantV2Strategy.sol
@@ -2379,7 +2379,7 @@ File: src/strategies/Radiant/RadiantV2Strategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Radiant/RadiantV2Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Radiant/RadiantV2Strategy.sol)
 
 ```solidity
 File: src/strategies/Silo/EasyMathV2.sol
@@ -2388,7 +2388,7 @@ File: src/strategies/Silo/EasyMathV2.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Silo/EasyMathV2.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Silo/EasyMathV2.sol)
 
 ```solidity
 File: src/strategies/Silo/IBaseSiloV1.sol
@@ -2397,7 +2397,7 @@ File: src/strategies/Silo/IBaseSiloV1.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Silo/IBaseSiloV1.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Silo/IBaseSiloV1.sol)
 
 ```solidity
 File: src/strategies/Silo/ISiloV1.sol
@@ -2406,7 +2406,7 @@ File: src/strategies/Silo/ISiloV1.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Silo/ISiloV1.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Silo/ISiloV1.sol)
 
 ```solidity
 File: src/strategies/Silo/SiloV1Strategy.sol
@@ -2415,7 +2415,7 @@ File: src/strategies/Silo/SiloV1Strategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Silo/SiloV1Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Silo/SiloV1Strategy.sol)
 
 ```solidity
 File: src/vault/ConcreteMultiStrategyVault.sol
@@ -2436,7 +2436,7 @@ File: src/vault/ConcreteMultiStrategyVault.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
 
 ### <a name="GAS-17"></a>[GAS-17] `internal` functions not called by the contract should be removed
 
@@ -2463,7 +2463,7 @@ File: src/strategies/Silo/EasyMathV2.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Silo/EasyMathV2.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Silo/EasyMathV2.sol)
 
 ```solidity
 File: src/swapper/OraclePlug.sol
@@ -2472,7 +2472,7 @@ File: src/swapper/OraclePlug.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/swapper/OraclePlug.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/swapper/OraclePlug.sol)
 
 ## Non Critical Issues
 
@@ -2526,7 +2526,7 @@ File: src/strategies/ProtectStrategy/ProtectStrategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/ProtectStrategy/ProtectStrategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/ProtectStrategy/ProtectStrategy.sol)
 
 ```solidity
 File: src/strategies/StrategyBase.sol
@@ -2535,7 +2535,7 @@ File: src/strategies/StrategyBase.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/StrategyBase.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/StrategyBase.sol)
 
 ### <a name="NC-2"></a>[NC-2] Array indices should be referenced via `enum`s rather than via numeric literals
 
@@ -2548,7 +2548,7 @@ File: src/strategies/Aave/AaveV3Strategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Aave/AaveV3Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Aave/AaveV3Strategy.sol)
 
 ```solidity
 File: src/strategies/Radiant/RadiantV2Strategy.sol
@@ -2559,7 +2559,7 @@ File: src/strategies/Radiant/RadiantV2Strategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Radiant/RadiantV2Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Radiant/RadiantV2Strategy.sol)
 
 ```solidity
 File: src/strategies/Silo/SiloV1Strategy.sol
@@ -2574,7 +2574,7 @@ File: src/strategies/Silo/SiloV1Strategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Silo/SiloV1Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Silo/SiloV1Strategy.sol)
 
 ```solidity
 File: src/strategies/compoundV3/CompoundV3Strategy.sol
@@ -2583,7 +2583,7 @@ File: src/strategies/compoundV3/CompoundV3Strategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/compoundV3/CompoundV3Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/compoundV3/CompoundV3Strategy.sol)
 
 ### <a name="NC-3"></a>[NC-3] `require()` should be used instead of `assert()`
 
@@ -2600,7 +2600,7 @@ File: src/queue/WithdrawalQueue.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/queue/WithdrawalQueue.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/queue/WithdrawalQueue.sol)
 
 ```solidity
 File: src/registries/VaultRegistry.sol
@@ -2611,7 +2611,7 @@ File: src/registries/VaultRegistry.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/registries/VaultRegistry.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/registries/VaultRegistry.sol)
 
 ### <a name="NC-4"></a>[NC-4] Constants should be in CONSTANT_CASE
 
@@ -2626,7 +2626,7 @@ File: src/vault/ConcreteMultiStrategyVault.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
 
 ### <a name="NC-5"></a>[NC-5] `constant`s should be defined rather than using magic numbers
 
@@ -2643,7 +2643,7 @@ File: src/registries/VaultRegistry.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/registries/VaultRegistry.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/registries/VaultRegistry.sol)
 
 ```solidity
 File: src/strategies/Silo/EasyMathV2.sol
@@ -2652,7 +2652,7 @@ File: src/strategies/Silo/EasyMathV2.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Silo/EasyMathV2.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Silo/EasyMathV2.sol)
 
 ```solidity
 File: src/strategies/StrategyBase.sol
@@ -2661,7 +2661,7 @@ File: src/strategies/StrategyBase.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/StrategyBase.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/StrategyBase.sol)
 
 ```solidity
 File: src/swapper/OraclePlug.sol
@@ -2678,7 +2678,7 @@ File: src/swapper/OraclePlug.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/swapper/OraclePlug.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/swapper/OraclePlug.sol)
 
 ```solidity
 File: src/vault/ConcreteMultiStrategyVault.sol
@@ -2699,7 +2699,7 @@ File: src/vault/ConcreteMultiStrategyVault.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
 
 ### <a name="NC-6"></a>[NC-6] Control structures do not follow the Solidity Style Guide
 
@@ -2726,7 +2726,7 @@ File: src/claimRouter/ClaimRouter.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/claimRouter/ClaimRouter.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/claimRouter/ClaimRouter.sol)
 
 ```solidity
 File: src/managers/RewardManager.sol
@@ -2767,7 +2767,7 @@ File: src/managers/RewardManager.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/managers/RewardManager.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/managers/RewardManager.sol)
 
 ```solidity
 File: src/queue/WithdrawalQueue.sol
@@ -2784,7 +2784,7 @@ File: src/queue/WithdrawalQueue.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/queue/WithdrawalQueue.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/queue/WithdrawalQueue.sol)
 
 ```solidity
 File: src/registries/TokenRegistry.sol
@@ -2803,7 +2803,7 @@ File: src/registries/TokenRegistry.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/registries/TokenRegistry.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/registries/TokenRegistry.sol)
 
 ```solidity
 File: src/registries/VaultRegistry.sol
@@ -2816,7 +2816,7 @@ File: src/registries/VaultRegistry.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/registries/VaultRegistry.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/registries/VaultRegistry.sol)
 
 ```solidity
 File: src/strategies/Aave/AaveV3Strategy.sol
@@ -2825,7 +2825,7 @@ File: src/strategies/Aave/AaveV3Strategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Aave/AaveV3Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Aave/AaveV3Strategy.sol)
 
 ```solidity
 File: src/strategies/ProtectStrategy/ProtectStrategy.sol
@@ -2840,7 +2840,7 @@ File: src/strategies/ProtectStrategy/ProtectStrategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/ProtectStrategy/ProtectStrategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/ProtectStrategy/ProtectStrategy.sol)
 
 ```solidity
 File: src/strategies/Radiant/RadiantV2Strategy.sol
@@ -2857,7 +2857,7 @@ File: src/strategies/Radiant/RadiantV2Strategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Radiant/RadiantV2Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Radiant/RadiantV2Strategy.sol)
 
 ```solidity
 File: src/strategies/Silo/EasyMathV2.sol
@@ -2868,7 +2868,7 @@ File: src/strategies/Silo/EasyMathV2.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Silo/EasyMathV2.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Silo/EasyMathV2.sol)
 
 ```solidity
 File: src/strategies/Silo/SiloV1Strategy.sol
@@ -2889,7 +2889,7 @@ File: src/strategies/Silo/SiloV1Strategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Silo/SiloV1Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Silo/SiloV1Strategy.sol)
 
 ```solidity
 File: src/strategies/StrategyBase.sol
@@ -2914,7 +2914,7 @@ File: src/strategies/StrategyBase.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/StrategyBase.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/StrategyBase.sol)
 
 ```solidity
 File: src/strategies/compoundV3/CompoundV3Strategy.sol
@@ -2927,7 +2927,7 @@ File: src/strategies/compoundV3/CompoundV3Strategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/compoundV3/CompoundV3Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/compoundV3/CompoundV3Strategy.sol)
 
 ```solidity
 File: src/swapper/OraclePlug.sol
@@ -2936,7 +2936,7 @@ File: src/swapper/OraclePlug.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/swapper/OraclePlug.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/swapper/OraclePlug.sol)
 
 ```solidity
 File: src/swapper/Swapper.sol
@@ -2949,7 +2949,7 @@ File: src/swapper/Swapper.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/swapper/Swapper.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/swapper/Swapper.sol)
 
 ```solidity
 File: src/vault/ConcreteMultiStrategyVault.sol
@@ -3050,7 +3050,7 @@ File: src/vault/ConcreteMultiStrategyVault.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
 
 ### <a name="NC-7"></a>[NC-7] Critical Changes Should Use Two-step Procedure
 
@@ -3073,7 +3073,7 @@ File: src/claimRouter/ClaimRouter.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/claimRouter/ClaimRouter.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/claimRouter/ClaimRouter.sol)
 
 ### <a name="NC-8"></a>[NC-8] Default Visibility for constants
 
@@ -3090,7 +3090,7 @@ File: src/interfaces/Constants.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/interfaces/Constants.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/interfaces/Constants.sol)
 
 ### <a name="NC-9"></a>[NC-9] Consider disabling `renounceOwnership()`
 
@@ -3105,7 +3105,7 @@ File: src/factories/VaultFactory.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/factories/VaultFactory.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/factories/VaultFactory.sol)
 
 ```solidity
 File: src/managers/DeploymentManager.sol
@@ -3114,7 +3114,7 @@ File: src/managers/DeploymentManager.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/managers/DeploymentManager.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/managers/DeploymentManager.sol)
 
 ```solidity
 File: src/managers/RewardManager.sol
@@ -3123,7 +3123,7 @@ File: src/managers/RewardManager.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/managers/RewardManager.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/managers/RewardManager.sol)
 
 ```solidity
 File: src/queue/WithdrawalQueue.sol
@@ -3132,7 +3132,7 @@ File: src/queue/WithdrawalQueue.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/queue/WithdrawalQueue.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/queue/WithdrawalQueue.sol)
 
 ```solidity
 File: src/registries/ImplementationRegistry.sol
@@ -3141,7 +3141,7 @@ File: src/registries/ImplementationRegistry.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/registries/ImplementationRegistry.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/registries/ImplementationRegistry.sol)
 
 ```solidity
 File: src/registries/TokenRegistry.sol
@@ -3150,7 +3150,7 @@ File: src/registries/TokenRegistry.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/registries/TokenRegistry.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/registries/TokenRegistry.sol)
 
 ```solidity
 File: src/registries/VaultRegistry.sol
@@ -3159,7 +3159,7 @@ File: src/registries/VaultRegistry.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/registries/VaultRegistry.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/registries/VaultRegistry.sol)
 
 ```solidity
 File: src/strategies/StrategyBase.sol
@@ -3168,7 +3168,7 @@ File: src/strategies/StrategyBase.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/StrategyBase.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/StrategyBase.sol)
 
 ```solidity
 File: src/swapper/Swapper.sol
@@ -3177,7 +3177,7 @@ File: src/swapper/Swapper.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/swapper/Swapper.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/swapper/Swapper.sol)
 
 ### <a name="NC-10"></a>[NC-10] Unused `error` definition
 
@@ -3192,7 +3192,7 @@ File: src/queue/WithdrawalQueue.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/queue/WithdrawalQueue.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/queue/WithdrawalQueue.sol)
 
 ### <a name="NC-11"></a>[NC-11] Event is never emitted
 
@@ -3219,7 +3219,7 @@ File: src/claimRouter/ClaimRouter.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/claimRouter/ClaimRouter.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/claimRouter/ClaimRouter.sol)
 
 ```solidity
 File: src/managers/RewardManager.sol
@@ -3244,7 +3244,7 @@ File: src/managers/RewardManager.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/managers/RewardManager.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/managers/RewardManager.sol)
 
 ```solidity
 File: src/registries/TokenRegistry.sol
@@ -3261,7 +3261,7 @@ File: src/registries/TokenRegistry.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/registries/TokenRegistry.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/registries/TokenRegistry.sol)
 
 ```solidity
 File: src/strategies/ProtectStrategy/ProtectStrategy.sol
@@ -3274,7 +3274,7 @@ File: src/strategies/ProtectStrategy/ProtectStrategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/ProtectStrategy/ProtectStrategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/ProtectStrategy/ProtectStrategy.sol)
 
 ```solidity
 File: src/swapper/Swapper.sol
@@ -3287,7 +3287,7 @@ File: src/swapper/Swapper.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/swapper/Swapper.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/swapper/Swapper.sol)
 
 ### <a name="NC-12"></a>[NC-12] Events should use parameters to convey information
 
@@ -3302,7 +3302,7 @@ File: src/claimRouter/ClaimRouter.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/claimRouter/ClaimRouter.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/claimRouter/ClaimRouter.sol)
 
 ```solidity
 File: src/managers/VaultManager.sol
@@ -3313,7 +3313,7 @@ File: src/managers/VaultManager.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/managers/VaultManager.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/managers/VaultManager.sol)
 
 ```solidity
 File: src/vault/ConcreteMultiStrategyVault.sol
@@ -3322,7 +3322,7 @@ File: src/vault/ConcreteMultiStrategyVault.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
 
 ### <a name="NC-13"></a>[NC-13] Event missing indexed field
 
@@ -3339,7 +3339,7 @@ File: src/claimRouter/ClaimRouter.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/claimRouter/ClaimRouter.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/claimRouter/ClaimRouter.sol)
 
 ```solidity
 File: src/interfaces/IBeraOracle.sol
@@ -3350,7 +3350,7 @@ File: src/interfaces/IBeraOracle.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/interfaces/IBeraOracle.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/interfaces/IBeraOracle.sol)
 
 ```solidity
 File: src/interfaces/IConcreteMultiStrategyVault.sol
@@ -3369,7 +3369,7 @@ File: src/interfaces/IConcreteMultiStrategyVault.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/interfaces/IConcreteMultiStrategyVault.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/interfaces/IConcreteMultiStrategyVault.sol)
 
 ```solidity
 File: src/managers/RewardManager.sol
@@ -3394,7 +3394,7 @@ File: src/managers/RewardManager.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/managers/RewardManager.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/managers/RewardManager.sol)
 
 ```solidity
 File: src/strategies/ProtectStrategy/ProtectStrategy.sol
@@ -3407,7 +3407,7 @@ File: src/strategies/ProtectStrategy/ProtectStrategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/ProtectStrategy/ProtectStrategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/ProtectStrategy/ProtectStrategy.sol)
 
 ```solidity
 File: src/swapper/Swapper.sol
@@ -3418,7 +3418,7 @@ File: src/swapper/Swapper.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/swapper/Swapper.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/swapper/Swapper.sol)
 
 ### <a name="NC-14"></a>[NC-14] Events that mark critical parameter changes should contain both the old and the new value
 
@@ -3441,7 +3441,7 @@ File: src/claimRouter/ClaimRouter.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/claimRouter/ClaimRouter.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/claimRouter/ClaimRouter.sol)
 
 ```solidity
 File: src/managers/RewardManager.sol
@@ -3501,7 +3501,7 @@ File: src/managers/RewardManager.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/managers/RewardManager.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/managers/RewardManager.sol)
 
 ```solidity
 File: src/registries/TokenRegistry.sol
@@ -3529,7 +3529,7 @@ File: src/registries/TokenRegistry.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/registries/TokenRegistry.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/registries/TokenRegistry.sol)
 
 ```solidity
 File: src/strategies/ProtectStrategy/ProtectStrategy.sol
@@ -3545,7 +3545,7 @@ File: src/strategies/ProtectStrategy/ProtectStrategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/ProtectStrategy/ProtectStrategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/ProtectStrategy/ProtectStrategy.sol)
 
 ```solidity
 File: src/strategies/Radiant/RadiantV2Strategy.sol
@@ -3556,7 +3556,7 @@ File: src/strategies/Radiant/RadiantV2Strategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Radiant/RadiantV2Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Radiant/RadiantV2Strategy.sol)
 
 ```solidity
 File: src/swapper/Swapper.sol
@@ -3567,7 +3567,7 @@ File: src/swapper/Swapper.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/swapper/Swapper.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/swapper/Swapper.sol)
 
 ```solidity
 File: src/vault/ConcreteMultiStrategyVault.sol
@@ -3594,7 +3594,7 @@ File: src/vault/ConcreteMultiStrategyVault.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
 
 ### <a name="NC-15"></a>[NC-15] Function ordering does not follow the Solidity style guide
 
@@ -3632,7 +3632,7 @@ File: src/claimRouter/ClaimRouter.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/claimRouter/ClaimRouter.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/claimRouter/ClaimRouter.sol)
 
 ```solidity
 File: src/queue/WithdrawalQueue.sol
@@ -3664,7 +3664,7 @@ File: src/queue/WithdrawalQueue.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/queue/WithdrawalQueue.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/queue/WithdrawalQueue.sol)
 
 ```solidity
 File: src/registries/TokenRegistry.sol
@@ -3698,7 +3698,7 @@ File: src/registries/TokenRegistry.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/registries/TokenRegistry.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/registries/TokenRegistry.sol)
 
 ```solidity
 File: src/registries/VaultRegistry.sol
@@ -3726,7 +3726,7 @@ File: src/registries/VaultRegistry.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/registries/VaultRegistry.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/registries/VaultRegistry.sol)
 
 ```solidity
 File: src/strategies/Aave/AaveV3Strategy.sol
@@ -3756,7 +3756,7 @@ File: src/strategies/Aave/AaveV3Strategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Aave/AaveV3Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Aave/AaveV3Strategy.sol)
 
 ```solidity
 File: src/strategies/ProtectStrategy/ProtectStrategy.sol
@@ -3792,7 +3792,7 @@ File: src/strategies/ProtectStrategy/ProtectStrategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/ProtectStrategy/ProtectStrategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/ProtectStrategy/ProtectStrategy.sol)
 
 ```solidity
 File: src/strategies/Radiant/RadiantV2Strategy.sol
@@ -3824,7 +3824,7 @@ File: src/strategies/Radiant/RadiantV2Strategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Radiant/RadiantV2Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Radiant/RadiantV2Strategy.sol)
 
 ```solidity
 File: src/strategies/Silo/SiloV1Strategy.sol
@@ -3856,7 +3856,7 @@ File: src/strategies/Silo/SiloV1Strategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Silo/SiloV1Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Silo/SiloV1Strategy.sol)
 
 ```solidity
 File: src/strategies/StrategyBase.sol
@@ -3906,7 +3906,7 @@ File: src/strategies/StrategyBase.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/StrategyBase.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/StrategyBase.sol)
 
 ```solidity
 File: src/strategies/compoundV3/CompoundV3Strategy.sol
@@ -3936,7 +3936,7 @@ File: src/strategies/compoundV3/CompoundV3Strategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/compoundV3/CompoundV3Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/compoundV3/CompoundV3Strategy.sol)
 
 ```solidity
 File: src/swapper/OraclePlug.sol
@@ -3960,7 +3960,7 @@ File: src/swapper/OraclePlug.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/swapper/OraclePlug.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/swapper/OraclePlug.sol)
 
 ```solidity
 File: src/vault/ConcreteMultiStrategyVault.sol
@@ -4076,7 +4076,7 @@ File: src/vault/ConcreteMultiStrategyVault.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
 
 ### <a name="NC-16"></a>[NC-16] Functions should not be longer than 50 lines
 
@@ -4105,7 +4105,7 @@ File: src/claimRouter/ClaimRouter.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/claimRouter/ClaimRouter.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/claimRouter/ClaimRouter.sol)
 
 ```solidity
 File: src/interfaces/IBeraOracle.sol
@@ -4124,7 +4124,7 @@ File: src/interfaces/IBeraOracle.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/interfaces/IBeraOracle.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/interfaces/IBeraOracle.sol)
 
 ```solidity
 File: src/interfaces/IClaimRouter.sol
@@ -4135,7 +4135,7 @@ File: src/interfaces/IClaimRouter.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/interfaces/IClaimRouter.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/interfaces/IClaimRouter.sol)
 
 ```solidity
 File: src/interfaces/IConcreteMultiStrategyVault.sol
@@ -4166,7 +4166,7 @@ File: src/interfaces/IConcreteMultiStrategyVault.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/interfaces/IConcreteMultiStrategyVault.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/interfaces/IConcreteMultiStrategyVault.sol)
 
 ```solidity
 File: src/interfaces/IImplementationRegistry.sol
@@ -4179,7 +4179,7 @@ File: src/interfaces/IImplementationRegistry.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/interfaces/IImplementationRegistry.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/interfaces/IImplementationRegistry.sol)
 
 ```solidity
 File: src/interfaces/IMockProtectStrategy.sol
@@ -4196,7 +4196,7 @@ File: src/interfaces/IMockProtectStrategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/interfaces/IMockProtectStrategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/interfaces/IMockProtectStrategy.sol)
 
 ```solidity
 File: src/interfaces/IMockStrategy.sol
@@ -4213,7 +4213,7 @@ File: src/interfaces/IMockStrategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/interfaces/IMockStrategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/interfaces/IMockStrategy.sol)
 
 ```solidity
 File: src/interfaces/IProtectStrategy.sol
@@ -4232,7 +4232,7 @@ File: src/interfaces/IProtectStrategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/interfaces/IProtectStrategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/interfaces/IProtectStrategy.sol)
 
 ```solidity
 File: src/interfaces/IRewardManager.sol
@@ -4249,7 +4249,7 @@ File: src/interfaces/IRewardManager.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/interfaces/IRewardManager.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/interfaces/IRewardManager.sol)
 
 ```solidity
 File: src/interfaces/IStrategy.sol
@@ -4262,7 +4262,7 @@ File: src/interfaces/IStrategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/interfaces/IStrategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/interfaces/IStrategy.sol)
 
 ```solidity
 File: src/interfaces/ISwapper.sol
@@ -4275,7 +4275,7 @@ File: src/interfaces/ISwapper.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/interfaces/ISwapper.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/interfaces/ISwapper.sol)
 
 ```solidity
 File: src/interfaces/ITokenRegistry.sol
@@ -4298,7 +4298,7 @@ File: src/interfaces/ITokenRegistry.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/interfaces/ITokenRegistry.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/interfaces/ITokenRegistry.sol)
 
 ```solidity
 File: src/interfaces/IVaultDeploymentManager.sol
@@ -4317,7 +4317,7 @@ File: src/interfaces/IVaultDeploymentManager.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/interfaces/IVaultDeploymentManager.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/interfaces/IVaultDeploymentManager.sol)
 
 ```solidity
 File: src/interfaces/IVaultRegistry.sol
@@ -4338,7 +4338,7 @@ File: src/interfaces/IVaultRegistry.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/interfaces/IVaultRegistry.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/interfaces/IVaultRegistry.sol)
 
 ```solidity
 File: src/interfaces/IWithdrawalQueue.sol
@@ -4355,7 +4355,7 @@ File: src/interfaces/IWithdrawalQueue.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/interfaces/IWithdrawalQueue.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/interfaces/IWithdrawalQueue.sol)
 
 ```solidity
 File: src/managers/DeploymentManager.sol
@@ -4374,7 +4374,7 @@ File: src/managers/DeploymentManager.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/managers/DeploymentManager.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/managers/DeploymentManager.sol)
 
 ```solidity
 File: src/managers/RewardManager.sol
@@ -4417,7 +4417,7 @@ File: src/managers/RewardManager.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/managers/RewardManager.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/managers/RewardManager.sol)
 
 ```solidity
 File: src/managers/VaultManager.sol
@@ -4458,7 +4458,7 @@ File: src/managers/VaultManager.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/managers/VaultManager.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/managers/VaultManager.sol)
 
 ```solidity
 File: src/queue/WithdrawalQueue.sol
@@ -4481,7 +4481,7 @@ File: src/queue/WithdrawalQueue.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/queue/WithdrawalQueue.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/queue/WithdrawalQueue.sol)
 
 ```solidity
 File: src/registries/ImplementationRegistry.sol
@@ -4496,7 +4496,7 @@ File: src/registries/ImplementationRegistry.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/registries/ImplementationRegistry.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/registries/ImplementationRegistry.sol)
 
 ```solidity
 File: src/registries/TokenRegistry.sol
@@ -4513,7 +4513,7 @@ File: src/registries/TokenRegistry.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/registries/TokenRegistry.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/registries/TokenRegistry.sol)
 
 ```solidity
 File: src/registries/VaultRegistry.sol
@@ -4536,7 +4536,7 @@ File: src/registries/VaultRegistry.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/registries/VaultRegistry.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/registries/VaultRegistry.sol)
 
 ```solidity
 File: src/strategies/Aave/AaveV3Strategy.sol
@@ -4559,7 +4559,7 @@ File: src/strategies/Aave/AaveV3Strategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Aave/AaveV3Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Aave/AaveV3Strategy.sol)
 
 ```solidity
 File: src/strategies/Aave/IAaveV3.sol
@@ -4608,7 +4608,7 @@ File: src/strategies/Aave/IAaveV3.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Aave/IAaveV3.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Aave/IAaveV3.sol)
 
 ```solidity
 File: src/strategies/ProtectStrategy/ProtectStrategy.sol
@@ -4639,7 +4639,7 @@ File: src/strategies/ProtectStrategy/ProtectStrategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/ProtectStrategy/ProtectStrategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/ProtectStrategy/ProtectStrategy.sol)
 
 ```solidity
 File: src/strategies/Radiant/IRadiantV2.sol
@@ -4670,7 +4670,7 @@ File: src/strategies/Radiant/IRadiantV2.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Radiant/IRadiantV2.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Radiant/IRadiantV2.sol)
 
 ```solidity
 File: src/strategies/Radiant/RadiantV2Strategy.sol
@@ -4695,7 +4695,7 @@ File: src/strategies/Radiant/RadiantV2Strategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Radiant/RadiantV2Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Radiant/RadiantV2Strategy.sol)
 
 ```solidity
 File: src/strategies/Silo/EasyMathV2.sol
@@ -4708,7 +4708,7 @@ File: src/strategies/Silo/EasyMathV2.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Silo/EasyMathV2.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Silo/EasyMathV2.sol)
 
 ```solidity
 File: src/strategies/Silo/IBaseSiloV1.sol
@@ -4721,7 +4721,7 @@ File: src/strategies/Silo/IBaseSiloV1.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Silo/IBaseSiloV1.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Silo/IBaseSiloV1.sol)
 
 ```solidity
 File: src/strategies/Silo/ISiloV1.sol
@@ -4740,7 +4740,7 @@ File: src/strategies/Silo/ISiloV1.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Silo/ISiloV1.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Silo/ISiloV1.sol)
 
 ```solidity
 File: src/strategies/Silo/SiloV1Strategy.sol
@@ -4765,7 +4765,7 @@ File: src/strategies/Silo/SiloV1Strategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Silo/SiloV1Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Silo/SiloV1Strategy.sol)
 
 ```solidity
 File: src/strategies/StrategyBase.sol
@@ -4802,7 +4802,7 @@ File: src/strategies/StrategyBase.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/StrategyBase.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/StrategyBase.sol)
 
 ```solidity
 File: src/strategies/compoundV3/CompoundV3Strategy.sol
@@ -4825,7 +4825,7 @@ File: src/strategies/compoundV3/CompoundV3Strategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/compoundV3/CompoundV3Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/compoundV3/CompoundV3Strategy.sol)
 
 ```solidity
 File: src/strategies/compoundV3/ICompoundV3.sol
@@ -4856,7 +4856,7 @@ File: src/strategies/compoundV3/ICompoundV3.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/compoundV3/ICompoundV3.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/compoundV3/ICompoundV3.sol)
 
 ```solidity
 File: src/swapper/OraclePlug.sol
@@ -4869,7 +4869,7 @@ File: src/swapper/OraclePlug.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/swapper/OraclePlug.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/swapper/OraclePlug.sol)
 
 ```solidity
 File: src/swapper/Swapper.sol
@@ -4888,7 +4888,7 @@ File: src/swapper/Swapper.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/swapper/Swapper.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/swapper/Swapper.sol)
 
 ```solidity
 File: src/vault/ConcreteMultiStrategyVault.sol
@@ -4977,7 +4977,7 @@ File: src/vault/ConcreteMultiStrategyVault.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
 
 ### <a name="NC-17"></a>[NC-17] Interfaces should be defined in separate files from their usage
 
@@ -5004,7 +5004,7 @@ File: src/strategies/Aave/IAaveV3.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Aave/IAaveV3.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Aave/IAaveV3.sol)
 
 ```solidity
 File: src/strategies/Radiant/IRadiantV2.sol
@@ -5021,7 +5021,7 @@ File: src/strategies/Radiant/IRadiantV2.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Radiant/IRadiantV2.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Radiant/IRadiantV2.sol)
 
 ```solidity
 File: src/strategies/Silo/ISiloV1.sol
@@ -5032,7 +5032,7 @@ File: src/strategies/Silo/ISiloV1.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Silo/ISiloV1.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Silo/ISiloV1.sol)
 
 ```solidity
 File: src/strategies/compoundV3/ICompoundV3.sol
@@ -5049,7 +5049,7 @@ File: src/strategies/compoundV3/ICompoundV3.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/compoundV3/ICompoundV3.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/compoundV3/ICompoundV3.sol)
 
 ### <a name="NC-18"></a>[NC-18] Lack of checks in setters
 
@@ -5067,7 +5067,7 @@ File: src/claimRouter/ClaimRouter.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/claimRouter/ClaimRouter.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/claimRouter/ClaimRouter.sol)
 
 ```solidity
 File: src/managers/DeploymentManager.sol
@@ -5080,7 +5080,7 @@ File: src/managers/DeploymentManager.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/managers/DeploymentManager.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/managers/DeploymentManager.sol)
 
 ```solidity
 File: src/managers/RewardManager.sol
@@ -5091,7 +5091,7 @@ File: src/managers/RewardManager.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/managers/RewardManager.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/managers/RewardManager.sol)
 
 ```solidity
 File: src/managers/VaultManager.sol
@@ -5110,7 +5110,7 @@ File: src/managers/VaultManager.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/managers/VaultManager.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/managers/VaultManager.sol)
 
 ```solidity
 File: src/registries/TokenRegistry.sol
@@ -5131,7 +5131,7 @@ File: src/registries/TokenRegistry.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/registries/TokenRegistry.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/registries/TokenRegistry.sol)
 
 ```solidity
 File: src/registries/VaultRegistry.sol
@@ -5141,7 +5141,7 @@ File: src/registries/VaultRegistry.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/registries/VaultRegistry.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/registries/VaultRegistry.sol)
 
 ```solidity
 File: src/strategies/Radiant/RadiantV2Strategy.sol
@@ -5152,7 +5152,7 @@ File: src/strategies/Radiant/RadiantV2Strategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Radiant/RadiantV2Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Radiant/RadiantV2Strategy.sol)
 
 ```solidity
 File: src/swapper/Swapper.sol
@@ -5163,7 +5163,7 @@ File: src/swapper/Swapper.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/swapper/Swapper.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/swapper/Swapper.sol)
 
 ```solidity
 File: src/vault/ConcreteMultiStrategyVault.sol
@@ -5178,7 +5178,7 @@ File: src/vault/ConcreteMultiStrategyVault.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
 
 ### <a name="NC-19"></a>[NC-19] Lines are too long
 
@@ -5193,7 +5193,7 @@ File: src/strategies/StrategyBase.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/StrategyBase.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/StrategyBase.sol)
 
 ```solidity
 File: src/vault/ConcreteMultiStrategyVault.sol
@@ -5202,7 +5202,7 @@ File: src/vault/ConcreteMultiStrategyVault.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
 
 ### <a name="NC-20"></a>[NC-20] Missing Event for critical parameters change
 
@@ -5221,7 +5221,7 @@ File: src/managers/DeploymentManager.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/managers/DeploymentManager.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/managers/DeploymentManager.sol)
 
 ```solidity
 File: src/managers/VaultManager.sol
@@ -5240,7 +5240,7 @@ File: src/managers/VaultManager.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/managers/VaultManager.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/managers/VaultManager.sol)
 
 ```solidity
 File: src/registries/VaultRegistry.sol
@@ -5254,7 +5254,7 @@ File: src/registries/VaultRegistry.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/registries/VaultRegistry.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/registries/VaultRegistry.sol)
 
 ```solidity
 File: src/strategies/StrategyBase.sol
@@ -5269,7 +5269,7 @@ File: src/strategies/StrategyBase.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/StrategyBase.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/StrategyBase.sol)
 
 ```solidity
 File: src/vault/ConcreteMultiStrategyVault.sol
@@ -5280,7 +5280,7 @@ File: src/vault/ConcreteMultiStrategyVault.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
 
 ### <a name="NC-21"></a>[NC-21] NatSpec is completely non-existent on functions that should have them
 
@@ -5295,7 +5295,7 @@ File: src/managers/DeploymentManager.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/managers/DeploymentManager.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/managers/DeploymentManager.sol)
 
 ```solidity
 File: src/managers/VaultManager.sol
@@ -5348,7 +5348,7 @@ File: src/managers/VaultManager.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/managers/VaultManager.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/managers/VaultManager.sol)
 
 ```solidity
 File: src/registries/VaultRegistry.sol
@@ -5357,7 +5357,7 @@ File: src/registries/VaultRegistry.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/registries/VaultRegistry.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/registries/VaultRegistry.sol)
 
 ```solidity
 File: src/strategies/compoundV3/CompoundV3Strategy.sol
@@ -5366,7 +5366,7 @@ File: src/strategies/compoundV3/CompoundV3Strategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/compoundV3/CompoundV3Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/compoundV3/CompoundV3Strategy.sol)
 
 ```solidity
 File: src/vault/ConcreteMultiStrategyVault.sol
@@ -5375,7 +5375,7 @@ File: src/vault/ConcreteMultiStrategyVault.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
 
 ### <a name="NC-22"></a>[NC-22] Incomplete NatSpec: `@param` is missing on actually documented functions
 
@@ -5399,7 +5399,7 @@ File: src/claimRouter/ClaimRouter.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/claimRouter/ClaimRouter.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/claimRouter/ClaimRouter.sol)
 
 ```solidity
 File: src/factories/VaultFactory.sol
@@ -5416,7 +5416,7 @@ File: src/factories/VaultFactory.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/factories/VaultFactory.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/factories/VaultFactory.sol)
 
 ```solidity
 File: src/queue/WithdrawalQueue.sol
@@ -5436,7 +5436,7 @@ File: src/queue/WithdrawalQueue.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/queue/WithdrawalQueue.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/queue/WithdrawalQueue.sol)
 
 ```solidity
 File: src/strategies/Radiant/RadiantV2Strategy.sol
@@ -5450,7 +5450,7 @@ File: src/strategies/Radiant/RadiantV2Strategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Radiant/RadiantV2Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Radiant/RadiantV2Strategy.sol)
 
 ### <a name="NC-23"></a>[NC-23] Incomplete NatSpec: `@return` is missing on actually documented functions
 
@@ -5470,7 +5470,7 @@ File: src/managers/DeploymentManager.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/managers/DeploymentManager.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/managers/DeploymentManager.sol)
 
 ```solidity
 File: src/queue/WithdrawalQueue.sol
@@ -5486,7 +5486,7 @@ File: src/queue/WithdrawalQueue.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/queue/WithdrawalQueue.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/queue/WithdrawalQueue.sol)
 
 ### <a name="NC-24"></a>[NC-24] Use a `modifier` instead of a `require/if` statement for a special `msg.sender` actor
 
@@ -5501,7 +5501,7 @@ File: src/strategies/StrategyBase.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/StrategyBase.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/StrategyBase.sol)
 
 ```solidity
 File: src/vault/ConcreteMultiStrategyVault.sol
@@ -5510,7 +5510,7 @@ File: src/vault/ConcreteMultiStrategyVault.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
 
 ### <a name="NC-25"></a>[NC-25] Consider using named mappings
 
@@ -5529,7 +5529,7 @@ File: src/managers/RewardManager.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/managers/RewardManager.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/managers/RewardManager.sol)
 
 ```solidity
 File: src/queue/WithdrawalQueue.sol
@@ -5538,7 +5538,7 @@ File: src/queue/WithdrawalQueue.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/queue/WithdrawalQueue.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/queue/WithdrawalQueue.sol)
 
 ```solidity
 File: src/registries/ImplementationRegistry.sol
@@ -5549,7 +5549,7 @@ File: src/registries/ImplementationRegistry.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/registries/ImplementationRegistry.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/registries/ImplementationRegistry.sol)
 
 ```solidity
 File: src/registries/TokenRegistry.sol
@@ -5558,7 +5558,7 @@ File: src/registries/TokenRegistry.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/registries/TokenRegistry.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/registries/TokenRegistry.sol)
 
 ```solidity
 File: src/registries/VaultRegistry.sol
@@ -5571,7 +5571,7 @@ File: src/registries/VaultRegistry.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/registries/VaultRegistry.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/registries/VaultRegistry.sol)
 
 ```solidity
 File: src/strategies/StrategyBase.sol
@@ -5580,7 +5580,7 @@ File: src/strategies/StrategyBase.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/StrategyBase.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/StrategyBase.sol)
 
 ```solidity
 File: src/swapper/Swapper.sol
@@ -5589,7 +5589,7 @@ File: src/swapper/Swapper.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/swapper/Swapper.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/swapper/Swapper.sol)
 
 ```solidity
 File: src/vault/ConcreteMultiStrategyVault.sol
@@ -5602,7 +5602,7 @@ File: src/vault/ConcreteMultiStrategyVault.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
 
 ### <a name="NC-26"></a>[NC-26] Owner can renounce while system is paused
 
@@ -5619,7 +5619,7 @@ File: src/vault/ConcreteMultiStrategyVault.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
 
 ### <a name="NC-27"></a>[NC-27] Adding a `return` statement when the function defines a named return variable, is redundant
 
@@ -5652,7 +5652,7 @@ File: src/claimRouter/ClaimRouter.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/claimRouter/ClaimRouter.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/claimRouter/ClaimRouter.sol)
 
 ```solidity
 File: src/queue/WithdrawalQueue.sol
@@ -5662,7 +5662,7 @@ File: src/queue/WithdrawalQueue.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/queue/WithdrawalQueue.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/queue/WithdrawalQueue.sol)
 
 ```solidity
 File: src/registries/VaultRegistry.sol
@@ -5672,7 +5672,7 @@ File: src/registries/VaultRegistry.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/registries/VaultRegistry.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/registries/VaultRegistry.sol)
 
 ```solidity
 File: src/strategies/Silo/EasyMathV2.sol
@@ -5719,7 +5719,7 @@ File: src/strategies/Silo/EasyMathV2.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Silo/EasyMathV2.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Silo/EasyMathV2.sol)
 
 ```solidity
 File: src/swapper/Swapper.sol
@@ -5742,7 +5742,7 @@ File: src/swapper/Swapper.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/swapper/Swapper.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/swapper/Swapper.sol)
 
 ```solidity
 File: src/vault/ConcreteMultiStrategyVault.sol
@@ -5763,7 +5763,7 @@ File: src/vault/ConcreteMultiStrategyVault.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
 
 ### <a name="NC-28"></a>[NC-28] `require()` / `revert()` statements should have descriptive reason strings
 
@@ -5808,7 +5808,7 @@ File: src/managers/RewardManager.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/managers/RewardManager.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/managers/RewardManager.sol)
 
 ```solidity
 File: src/registries/TokenRegistry.sol
@@ -5827,7 +5827,7 @@ File: src/registries/TokenRegistry.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/registries/TokenRegistry.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/registries/TokenRegistry.sol)
 
 ```solidity
 File: src/swapper/OraclePlug.sol
@@ -5836,7 +5836,7 @@ File: src/swapper/OraclePlug.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/swapper/OraclePlug.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/swapper/OraclePlug.sol)
 
 ```solidity
 File: src/swapper/Swapper.sol
@@ -5849,7 +5849,7 @@ File: src/swapper/Swapper.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/swapper/Swapper.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/swapper/Swapper.sol)
 
 ### <a name="NC-29"></a>[NC-29] Take advantage of Custom Error's return value property
 
@@ -5876,7 +5876,7 @@ File: src/claimRouter/ClaimRouter.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/claimRouter/ClaimRouter.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/claimRouter/ClaimRouter.sol)
 
 ```solidity
 File: src/factories/VaultFactory.sol
@@ -5885,7 +5885,7 @@ File: src/factories/VaultFactory.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/factories/VaultFactory.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/factories/VaultFactory.sol)
 
 ```solidity
 File: src/managers/RewardManager.sol
@@ -5926,7 +5926,7 @@ File: src/managers/RewardManager.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/managers/RewardManager.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/managers/RewardManager.sol)
 
 ```solidity
 File: src/registries/TokenRegistry.sol
@@ -5939,7 +5939,7 @@ File: src/registries/TokenRegistry.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/registries/TokenRegistry.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/registries/TokenRegistry.sol)
 
 ```solidity
 File: src/registries/VaultRegistry.sol
@@ -5952,7 +5952,7 @@ File: src/registries/VaultRegistry.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/registries/VaultRegistry.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/registries/VaultRegistry.sol)
 
 ```solidity
 File: src/strategies/Aave/AaveV3Strategy.sol
@@ -5961,7 +5961,7 @@ File: src/strategies/Aave/AaveV3Strategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Aave/AaveV3Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Aave/AaveV3Strategy.sol)
 
 ```solidity
 File: src/strategies/ProtectStrategy/ProtectStrategy.sol
@@ -5976,7 +5976,7 @@ File: src/strategies/ProtectStrategy/ProtectStrategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/ProtectStrategy/ProtectStrategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/ProtectStrategy/ProtectStrategy.sol)
 
 ```solidity
 File: src/strategies/Radiant/RadiantV2Strategy.sol
@@ -5987,7 +5987,7 @@ File: src/strategies/Radiant/RadiantV2Strategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Radiant/RadiantV2Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Radiant/RadiantV2Strategy.sol)
 
 ```solidity
 File: src/strategies/Silo/EasyMathV2.sol
@@ -5998,7 +5998,7 @@ File: src/strategies/Silo/EasyMathV2.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Silo/EasyMathV2.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Silo/EasyMathV2.sol)
 
 ```solidity
 File: src/strategies/Silo/SiloV1Strategy.sol
@@ -6015,7 +6015,7 @@ File: src/strategies/Silo/SiloV1Strategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Silo/SiloV1Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Silo/SiloV1Strategy.sol)
 
 ```solidity
 File: src/strategies/StrategyBase.sol
@@ -6052,7 +6052,7 @@ File: src/strategies/StrategyBase.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/StrategyBase.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/StrategyBase.sol)
 
 ```solidity
 File: src/strategies/compoundV3/CompoundV3Strategy.sol
@@ -6063,7 +6063,7 @@ File: src/strategies/compoundV3/CompoundV3Strategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/compoundV3/CompoundV3Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/compoundV3/CompoundV3Strategy.sol)
 
 ```solidity
 File: src/swapper/OraclePlug.sol
@@ -6072,7 +6072,7 @@ File: src/swapper/OraclePlug.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/swapper/OraclePlug.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/swapper/OraclePlug.sol)
 
 ```solidity
 File: src/swapper/Swapper.sol
@@ -6081,7 +6081,7 @@ File: src/swapper/Swapper.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/swapper/Swapper.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/swapper/Swapper.sol)
 
 ```solidity
 File: src/vault/ConcreteMultiStrategyVault.sol
@@ -6152,7 +6152,7 @@ File: src/vault/ConcreteMultiStrategyVault.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
 
 ### <a name="NC-30"></a>[NC-30] Contract does not follow the Solidity style guide's suggested layout ordering
 
@@ -6226,7 +6226,7 @@ File: src/claimRouter/ClaimRouter.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/claimRouter/ClaimRouter.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/claimRouter/ClaimRouter.sol)
 
 ```solidity
 File: src/interfaces/IBeraOracle.sol
@@ -6254,7 +6254,7 @@ File: src/interfaces/IBeraOracle.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/interfaces/IBeraOracle.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/interfaces/IBeraOracle.sol)
 
 ```solidity
 File: src/managers/RewardManager.sol
@@ -6336,7 +6336,7 @@ File: src/managers/RewardManager.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/managers/RewardManager.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/managers/RewardManager.sol)
 
 ```solidity
 File: src/queue/WithdrawalQueue.sol
@@ -6398,7 +6398,7 @@ File: src/queue/WithdrawalQueue.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/queue/WithdrawalQueue.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/queue/WithdrawalQueue.sol)
 
 ```solidity
 File: src/registries/TokenRegistry.sol
@@ -6454,7 +6454,7 @@ File: src/registries/TokenRegistry.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/registries/TokenRegistry.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/registries/TokenRegistry.sol)
 
 ```solidity
 File: src/strategies/Aave/DataTypes.sol
@@ -6476,7 +6476,7 @@ File: src/strategies/Aave/DataTypes.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Aave/DataTypes.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Aave/DataTypes.sol)
 
 ```solidity
 File: src/strategies/ProtectStrategy/ProtectStrategy.sol
@@ -6530,7 +6530,7 @@ File: src/strategies/ProtectStrategy/ProtectStrategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/ProtectStrategy/ProtectStrategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/ProtectStrategy/ProtectStrategy.sol)
 
 ```solidity
 File: src/strategies/Radiant/DataTypes.sol
@@ -6550,7 +6550,7 @@ File: src/strategies/Radiant/DataTypes.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Radiant/DataTypes.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Radiant/DataTypes.sol)
 
 ```solidity
 File: src/strategies/compoundV3/ICompoundV3.sol
@@ -6594,7 +6594,7 @@ File: src/strategies/compoundV3/ICompoundV3.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/compoundV3/ICompoundV3.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/compoundV3/ICompoundV3.sol)
 
 ```solidity
 File: src/swapper/Swapper.sol
@@ -6642,7 +6642,7 @@ File: src/swapper/Swapper.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/swapper/Swapper.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/swapper/Swapper.sol)
 
 ### <a name="NC-31"></a>[NC-31] TODO Left in the code
 
@@ -6657,7 +6657,7 @@ File: src/interfaces/IConcreteMultiStrategyVault.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/interfaces/IConcreteMultiStrategyVault.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/interfaces/IConcreteMultiStrategyVault.sol)
 
 ### <a name="NC-32"></a>[NC-32] Use Underscores for Number Literals (add an underscore every 3 digits)
 
@@ -6670,7 +6670,7 @@ File: src/registries/VaultRegistry.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/registries/VaultRegistry.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/registries/VaultRegistry.sol)
 
 ```solidity
 File: src/strategies/StrategyBase.sol
@@ -6679,7 +6679,7 @@ File: src/strategies/StrategyBase.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/StrategyBase.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/StrategyBase.sol)
 
 ```solidity
 File: src/vault/ConcreteMultiStrategyVault.sol
@@ -6696,7 +6696,7 @@ File: src/vault/ConcreteMultiStrategyVault.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
 
 ### <a name="NC-33"></a>[NC-33] Internal and private variables and functions names should begin with an underscore
 
@@ -6713,7 +6713,7 @@ File: src/queue/WithdrawalQueue.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/queue/WithdrawalQueue.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/queue/WithdrawalQueue.sol)
 
 ```solidity
 File: src/registries/VaultRegistry.sol
@@ -6722,7 +6722,7 @@ File: src/registries/VaultRegistry.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/registries/VaultRegistry.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/registries/VaultRegistry.sol)
 
 ```solidity
 File: src/strategies/ProtectStrategy/ProtectStrategy.sol
@@ -6731,7 +6731,7 @@ File: src/strategies/ProtectStrategy/ProtectStrategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/ProtectStrategy/ProtectStrategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/ProtectStrategy/ProtectStrategy.sol)
 
 ```solidity
 File: src/strategies/Silo/EasyMathV2.sol
@@ -6752,7 +6752,7 @@ File: src/strategies/Silo/EasyMathV2.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Silo/EasyMathV2.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Silo/EasyMathV2.sol)
 
 ```solidity
 File: src/vault/ConcreteMultiStrategyVault.sol
@@ -6769,7 +6769,7 @@ File: src/vault/ConcreteMultiStrategyVault.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
 
 ### <a name="NC-34"></a>[NC-34] Event is missing `indexed` fields
 
@@ -6794,7 +6794,7 @@ File: src/claimRouter/ClaimRouter.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/claimRouter/ClaimRouter.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/claimRouter/ClaimRouter.sol)
 
 ```solidity
 File: src/interfaces/IBeraOracle.sol
@@ -6805,7 +6805,7 @@ File: src/interfaces/IBeraOracle.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/interfaces/IBeraOracle.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/interfaces/IBeraOracle.sol)
 
 ```solidity
 File: src/interfaces/IConcreteMultiStrategyVault.sol
@@ -6824,7 +6824,7 @@ File: src/interfaces/IConcreteMultiStrategyVault.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/interfaces/IConcreteMultiStrategyVault.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/interfaces/IConcreteMultiStrategyVault.sol)
 
 ```solidity
 File: src/managers/RewardManager.sol
@@ -6849,7 +6849,7 @@ File: src/managers/RewardManager.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/managers/RewardManager.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/managers/RewardManager.sol)
 
 ```solidity
 File: src/queue/WithdrawalQueue.sol
@@ -6860,7 +6860,7 @@ File: src/queue/WithdrawalQueue.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/queue/WithdrawalQueue.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/queue/WithdrawalQueue.sol)
 
 ```solidity
 File: src/registries/ImplementationRegistry.sol
@@ -6871,7 +6871,7 @@ File: src/registries/ImplementationRegistry.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/registries/ImplementationRegistry.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/registries/ImplementationRegistry.sol)
 
 ```solidity
 File: src/registries/TokenRegistry.sol
@@ -6884,7 +6884,7 @@ File: src/registries/TokenRegistry.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/registries/TokenRegistry.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/registries/TokenRegistry.sol)
 
 ```solidity
 File: src/strategies/ProtectStrategy/ProtectStrategy.sol
@@ -6897,7 +6897,7 @@ File: src/strategies/ProtectStrategy/ProtectStrategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/ProtectStrategy/ProtectStrategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/ProtectStrategy/ProtectStrategy.sol)
 
 ```solidity
 File: src/strategies/Radiant/RadiantV2Strategy.sol
@@ -6906,7 +6906,7 @@ File: src/strategies/Radiant/RadiantV2Strategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Radiant/RadiantV2Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Radiant/RadiantV2Strategy.sol)
 
 ```solidity
 File: src/strategies/StrategyBase.sol
@@ -6915,7 +6915,7 @@ File: src/strategies/StrategyBase.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/StrategyBase.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/StrategyBase.sol)
 
 ```solidity
 File: src/swapper/Swapper.sol
@@ -6928,7 +6928,7 @@ File: src/swapper/Swapper.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/swapper/Swapper.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/swapper/Swapper.sol)
 
 ```solidity
 File: src/vault/ConcreteMultiStrategyVault.sol
@@ -6937,7 +6937,7 @@ File: src/vault/ConcreteMultiStrategyVault.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
 
 ### <a name="NC-35"></a>[NC-35] `public` functions not called by the contract should be declared `external` instead
 
@@ -6950,7 +6950,7 @@ File: src/registries/TokenRegistry.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/registries/TokenRegistry.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/registries/TokenRegistry.sol)
 
 ```solidity
 File: src/swapper/OraclePlug.sol
@@ -6959,7 +6959,7 @@ File: src/swapper/OraclePlug.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/swapper/OraclePlug.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/swapper/OraclePlug.sol)
 
 ```solidity
 File: src/swapper/Swapper.sol
@@ -6974,7 +6974,7 @@ File: src/swapper/Swapper.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/swapper/Swapper.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/swapper/Swapper.sol)
 
 ```solidity
 File: src/vault/ConcreteMultiStrategyVault.sol
@@ -6989,7 +6989,7 @@ File: src/vault/ConcreteMultiStrategyVault.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
 
 ### <a name="NC-36"></a>[NC-36] Variables need not be initialized to zero
 
@@ -7008,7 +7008,7 @@ File: src/claimRouter/ClaimRouter.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/claimRouter/ClaimRouter.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/claimRouter/ClaimRouter.sol)
 
 ```solidity
 File: src/managers/VaultManager.sol
@@ -7019,7 +7019,7 @@ File: src/managers/VaultManager.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/managers/VaultManager.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/managers/VaultManager.sol)
 
 ```solidity
 File: src/queue/WithdrawalQueue.sol
@@ -7028,7 +7028,7 @@ File: src/queue/WithdrawalQueue.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/queue/WithdrawalQueue.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/queue/WithdrawalQueue.sol)
 
 ```solidity
 File: src/registries/ImplementationRegistry.sol
@@ -7039,7 +7039,7 @@ File: src/registries/ImplementationRegistry.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/registries/ImplementationRegistry.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/registries/ImplementationRegistry.sol)
 
 ```solidity
 File: src/registries/TokenRegistry.sol
@@ -7052,7 +7052,7 @@ File: src/registries/TokenRegistry.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/registries/TokenRegistry.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/registries/TokenRegistry.sol)
 
 ```solidity
 File: src/registries/VaultRegistry.sol
@@ -7061,7 +7061,7 @@ File: src/registries/VaultRegistry.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/registries/VaultRegistry.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/registries/VaultRegistry.sol)
 
 ```solidity
 File: src/strategies/ProtectStrategy/ProtectStrategy.sol
@@ -7070,7 +7070,7 @@ File: src/strategies/ProtectStrategy/ProtectStrategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/ProtectStrategy/ProtectStrategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/ProtectStrategy/ProtectStrategy.sol)
 
 ```solidity
 File: src/strategies/StrategyBase.sol
@@ -7083,7 +7083,7 @@ File: src/strategies/StrategyBase.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/StrategyBase.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/StrategyBase.sol)
 
 ```solidity
 File: src/vault/ConcreteMultiStrategyVault.sol
@@ -7102,7 +7102,7 @@ File: src/vault/ConcreteMultiStrategyVault.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
 
 ## Low Issues
 
@@ -7150,7 +7150,7 @@ File: src/strategies/Aave/AaveV3Strategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Aave/AaveV3Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Aave/AaveV3Strategy.sol)
 
 ```solidity
 File: src/strategies/StrategyBase.sol
@@ -7161,7 +7161,7 @@ File: src/strategies/StrategyBase.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/StrategyBase.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/StrategyBase.sol)
 
 ```solidity
 File: src/strategies/compoundV3/CompoundV3Strategy.sol
@@ -7170,7 +7170,7 @@ File: src/strategies/compoundV3/CompoundV3Strategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/compoundV3/CompoundV3Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/compoundV3/CompoundV3Strategy.sol)
 
 ```solidity
 File: src/vault/ConcreteMultiStrategyVault.sol
@@ -7183,7 +7183,7 @@ File: src/vault/ConcreteMultiStrategyVault.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
 
 ### <a name="L-2"></a>[L-2] Use a 2-step ownership transfer pattern
 
@@ -7198,7 +7198,7 @@ File: src/factories/VaultFactory.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/factories/VaultFactory.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/factories/VaultFactory.sol)
 
 ```solidity
 File: src/managers/DeploymentManager.sol
@@ -7207,7 +7207,7 @@ File: src/managers/DeploymentManager.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/managers/DeploymentManager.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/managers/DeploymentManager.sol)
 
 ```solidity
 File: src/managers/RewardManager.sol
@@ -7216,7 +7216,7 @@ File: src/managers/RewardManager.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/managers/RewardManager.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/managers/RewardManager.sol)
 
 ```solidity
 File: src/queue/WithdrawalQueue.sol
@@ -7225,7 +7225,7 @@ File: src/queue/WithdrawalQueue.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/queue/WithdrawalQueue.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/queue/WithdrawalQueue.sol)
 
 ```solidity
 File: src/registries/ImplementationRegistry.sol
@@ -7234,7 +7234,7 @@ File: src/registries/ImplementationRegistry.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/registries/ImplementationRegistry.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/registries/ImplementationRegistry.sol)
 
 ```solidity
 File: src/registries/TokenRegistry.sol
@@ -7243,7 +7243,7 @@ File: src/registries/TokenRegistry.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/registries/TokenRegistry.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/registries/TokenRegistry.sol)
 
 ```solidity
 File: src/registries/VaultRegistry.sol
@@ -7252,7 +7252,7 @@ File: src/registries/VaultRegistry.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/registries/VaultRegistry.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/registries/VaultRegistry.sol)
 
 ```solidity
 File: src/strategies/StrategyBase.sol
@@ -7261,7 +7261,7 @@ File: src/strategies/StrategyBase.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/StrategyBase.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/StrategyBase.sol)
 
 ```solidity
 File: src/swapper/Swapper.sol
@@ -7270,7 +7270,7 @@ File: src/swapper/Swapper.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/swapper/Swapper.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/swapper/Swapper.sol)
 
 ### <a name="L-3"></a>[L-3] Some tokens may revert when zero value transfers are made
 
@@ -7289,7 +7289,7 @@ File: src/claimRouter/ClaimRouter.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/claimRouter/ClaimRouter.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/claimRouter/ClaimRouter.sol)
 
 ```solidity
 File: src/strategies/ProtectStrategy/ProtectStrategy.sol
@@ -7298,7 +7298,7 @@ File: src/strategies/ProtectStrategy/ProtectStrategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/ProtectStrategy/ProtectStrategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/ProtectStrategy/ProtectStrategy.sol)
 
 ```solidity
 File: src/strategies/StrategyBase.sol
@@ -7313,7 +7313,7 @@ File: src/strategies/StrategyBase.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/StrategyBase.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/StrategyBase.sol)
 
 ```solidity
 File: src/swapper/Swapper.sol
@@ -7324,7 +7324,7 @@ File: src/swapper/Swapper.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/swapper/Swapper.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/swapper/Swapper.sol)
 
 ```solidity
 File: src/vault/ConcreteMultiStrategyVault.sol
@@ -7341,7 +7341,7 @@ File: src/vault/ConcreteMultiStrategyVault.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
 
 ### <a name="L-4"></a>[L-4] Missing checks for `address(0)` when assigning values to address state variables
 
@@ -7354,7 +7354,7 @@ File: src/strategies/ProtectStrategy/ProtectStrategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/ProtectStrategy/ProtectStrategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/ProtectStrategy/ProtectStrategy.sol)
 
 ```solidity
 File: src/strategies/StrategyBase.sol
@@ -7363,7 +7363,7 @@ File: src/strategies/StrategyBase.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/StrategyBase.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/StrategyBase.sol)
 
 ### <a name="L-5"></a>[L-5] `decimals()` is not a part of the ERC-20 standard
 
@@ -7378,7 +7378,7 @@ File: src/strategies/StrategyBase.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/StrategyBase.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/StrategyBase.sol)
 
 ```solidity
 File: src/swapper/OraclePlug.sol
@@ -7389,7 +7389,7 @@ File: src/swapper/OraclePlug.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/swapper/OraclePlug.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/swapper/OraclePlug.sol)
 
 ```solidity
 File: src/vault/ConcreteMultiStrategyVault.sol
@@ -7398,7 +7398,7 @@ File: src/vault/ConcreteMultiStrategyVault.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
 
 ### <a name="L-6"></a>[L-6] `decimals()` should be of type `uint8`
 
@@ -7411,7 +7411,7 @@ File: src/strategies/Silo/EasyMathV2.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Silo/EasyMathV2.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Silo/EasyMathV2.sol)
 
 ```solidity
 File: src/swapper/OraclePlug.sol
@@ -7420,7 +7420,7 @@ File: src/swapper/OraclePlug.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/swapper/OraclePlug.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/swapper/OraclePlug.sol)
 
 ### <a name="L-7"></a>[L-7] Deprecated approve() function
 
@@ -7437,7 +7437,7 @@ File: src/strategies/StrategyBase.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/StrategyBase.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/StrategyBase.sol)
 
 ```solidity
 File: src/vault/ConcreteMultiStrategyVault.sol
@@ -7450,7 +7450,7 @@ File: src/vault/ConcreteMultiStrategyVault.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
 
 ### <a name="L-8"></a>[L-8] Division by zero not prevented
 
@@ -7467,7 +7467,7 @@ File: src/strategies/Silo/EasyMathV2.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Silo/EasyMathV2.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Silo/EasyMathV2.sol)
 
 ### <a name="L-9"></a>[L-9] Duplicate import statements
 
@@ -7482,7 +7482,7 @@ File: src/claimRouter/ClaimRouter.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/claimRouter/ClaimRouter.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/claimRouter/ClaimRouter.sol)
 
 ```solidity
 File: src/registries/ImplementationRegistry.sol
@@ -7493,7 +7493,7 @@ File: src/registries/ImplementationRegistry.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/registries/ImplementationRegistry.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/registries/ImplementationRegistry.sol)
 
 ```solidity
 File: src/strategies/ProtectStrategy/ProtectStrategy.sol
@@ -7504,7 +7504,7 @@ File: src/strategies/ProtectStrategy/ProtectStrategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/ProtectStrategy/ProtectStrategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/ProtectStrategy/ProtectStrategy.sol)
 
 ### <a name="L-10"></a>[L-10] Empty Function Body - Consider commenting why
 
@@ -7519,7 +7519,7 @@ File: src/strategies/ProtectStrategy/ProtectStrategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/ProtectStrategy/ProtectStrategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/ProtectStrategy/ProtectStrategy.sol)
 
 ### <a name="L-11"></a>[L-11] External call recipient may consume all transaction gas
 
@@ -7534,7 +7534,7 @@ File: src/factories/VaultFactory.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/factories/VaultFactory.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/factories/VaultFactory.sol)
 
 ### <a name="L-12"></a>[L-12] Initializers could be front-run
 
@@ -7549,7 +7549,7 @@ File: src/strategies/Aave/AaveV3Strategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Aave/AaveV3Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Aave/AaveV3Strategy.sol)
 
 ```solidity
 File: src/strategies/ProtectStrategy/ProtectStrategy.sol
@@ -7558,7 +7558,7 @@ File: src/strategies/ProtectStrategy/ProtectStrategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/ProtectStrategy/ProtectStrategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/ProtectStrategy/ProtectStrategy.sol)
 
 ```solidity
 File: src/strategies/Radiant/RadiantV2Strategy.sol
@@ -7567,7 +7567,7 @@ File: src/strategies/Radiant/RadiantV2Strategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Radiant/RadiantV2Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Radiant/RadiantV2Strategy.sol)
 
 ```solidity
 File: src/strategies/Silo/SiloV1Strategy.sol
@@ -7576,7 +7576,7 @@ File: src/strategies/Silo/SiloV1Strategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Silo/SiloV1Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Silo/SiloV1Strategy.sol)
 
 ```solidity
 File: src/strategies/StrategyBase.sol
@@ -7593,7 +7593,7 @@ File: src/strategies/StrategyBase.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/StrategyBase.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/StrategyBase.sol)
 
 ```solidity
 File: src/strategies/compoundV3/CompoundV3Strategy.sol
@@ -7602,7 +7602,7 @@ File: src/strategies/compoundV3/CompoundV3Strategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/compoundV3/CompoundV3Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/compoundV3/CompoundV3Strategy.sol)
 
 ```solidity
 File: src/vault/ConcreteMultiStrategyVault.sol
@@ -7621,7 +7621,7 @@ File: src/vault/ConcreteMultiStrategyVault.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
 
 ### <a name="L-13"></a>[L-13] Prevent accidentally burning tokens
 
@@ -7638,7 +7638,7 @@ File: src/strategies/StrategyBase.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/StrategyBase.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/StrategyBase.sol)
 
 ```solidity
 File: src/vault/ConcreteMultiStrategyVault.sol
@@ -7661,7 +7661,7 @@ File: src/vault/ConcreteMultiStrategyVault.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
 
 ### <a name="L-14"></a>[L-14] Owner can renounce while system is paused
 
@@ -7678,7 +7678,7 @@ File: src/vault/ConcreteMultiStrategyVault.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
 
 ### <a name="L-15"></a>[L-15] Possible rounding issue
 
@@ -7695,7 +7695,7 @@ File: src/strategies/Silo/EasyMathV2.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Silo/EasyMathV2.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Silo/EasyMathV2.sol)
 
 ### <a name="L-16"></a>[L-16] Loss of precision
 
@@ -7712,7 +7712,7 @@ File: src/strategies/Silo/EasyMathV2.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Silo/EasyMathV2.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Silo/EasyMathV2.sol)
 
 ### <a name="L-17"></a>[L-17] Solidity version 0.8.20+ may not work on other chains due to `PUSH0`
 
@@ -7727,7 +7727,7 @@ File: src/claimRouter/ClaimRouter.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/claimRouter/ClaimRouter.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/claimRouter/ClaimRouter.sol)
 
 ```solidity
 File: src/factories/VaultFactory.sol
@@ -7736,7 +7736,7 @@ File: src/factories/VaultFactory.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/factories/VaultFactory.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/factories/VaultFactory.sol)
 
 ```solidity
 File: src/interfaces/Constants.sol
@@ -7745,7 +7745,7 @@ File: src/interfaces/Constants.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/interfaces/Constants.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/interfaces/Constants.sol)
 
 ```solidity
 File: src/interfaces/DataTypes.sol
@@ -7754,7 +7754,7 @@ File: src/interfaces/DataTypes.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/interfaces/DataTypes.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/interfaces/DataTypes.sol)
 
 ```solidity
 File: src/managers/DeploymentManager.sol
@@ -7763,7 +7763,7 @@ File: src/managers/DeploymentManager.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/managers/DeploymentManager.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/managers/DeploymentManager.sol)
 
 ```solidity
 File: src/managers/RewardManager.sol
@@ -7772,7 +7772,7 @@ File: src/managers/RewardManager.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/managers/RewardManager.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/managers/RewardManager.sol)
 
 ```solidity
 File: src/managers/VaultManager.sol
@@ -7781,7 +7781,7 @@ File: src/managers/VaultManager.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/managers/VaultManager.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/managers/VaultManager.sol)
 
 ```solidity
 File: src/queue/WithdrawalQueue.sol
@@ -7790,7 +7790,7 @@ File: src/queue/WithdrawalQueue.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/queue/WithdrawalQueue.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/queue/WithdrawalQueue.sol)
 
 ```solidity
 File: src/registries/ImplementationRegistry.sol
@@ -7799,7 +7799,7 @@ File: src/registries/ImplementationRegistry.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/registries/ImplementationRegistry.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/registries/ImplementationRegistry.sol)
 
 ```solidity
 File: src/registries/TokenRegistry.sol
@@ -7808,7 +7808,7 @@ File: src/registries/TokenRegistry.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/registries/TokenRegistry.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/registries/TokenRegistry.sol)
 
 ```solidity
 File: src/registries/VaultRegistry.sol
@@ -7817,7 +7817,7 @@ File: src/registries/VaultRegistry.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/registries/VaultRegistry.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/registries/VaultRegistry.sol)
 
 ```solidity
 File: src/strategies/Aave/AaveV3Strategy.sol
@@ -7826,7 +7826,7 @@ File: src/strategies/Aave/AaveV3Strategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Aave/AaveV3Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Aave/AaveV3Strategy.sol)
 
 ```solidity
 File: src/strategies/Aave/DataTypes.sol
@@ -7835,7 +7835,7 @@ File: src/strategies/Aave/DataTypes.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Aave/DataTypes.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Aave/DataTypes.sol)
 
 ```solidity
 File: src/strategies/ProtectStrategy/ProtectStrategy.sol
@@ -7844,7 +7844,7 @@ File: src/strategies/ProtectStrategy/ProtectStrategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/ProtectStrategy/ProtectStrategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/ProtectStrategy/ProtectStrategy.sol)
 
 ```solidity
 File: src/strategies/Radiant/DataTypes.sol
@@ -7853,7 +7853,7 @@ File: src/strategies/Radiant/DataTypes.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Radiant/DataTypes.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Radiant/DataTypes.sol)
 
 ```solidity
 File: src/strategies/Radiant/RadiantV2Strategy.sol
@@ -7862,7 +7862,7 @@ File: src/strategies/Radiant/RadiantV2Strategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Radiant/RadiantV2Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Radiant/RadiantV2Strategy.sol)
 
 ```solidity
 File: src/strategies/Silo/EasyMathV2.sol
@@ -7871,7 +7871,7 @@ File: src/strategies/Silo/EasyMathV2.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Silo/EasyMathV2.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Silo/EasyMathV2.sol)
 
 ```solidity
 File: src/strategies/Silo/SiloV1Strategy.sol
@@ -7880,7 +7880,7 @@ File: src/strategies/Silo/SiloV1Strategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Silo/SiloV1Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Silo/SiloV1Strategy.sol)
 
 ```solidity
 File: src/strategies/compoundV3/CompoundV3Strategy.sol
@@ -7889,7 +7889,7 @@ File: src/strategies/compoundV3/CompoundV3Strategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/compoundV3/CompoundV3Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/compoundV3/CompoundV3Strategy.sol)
 
 ```solidity
 File: src/swapper/OraclePlug.sol
@@ -7898,7 +7898,7 @@ File: src/swapper/OraclePlug.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/swapper/OraclePlug.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/swapper/OraclePlug.sol)
 
 ```solidity
 File: src/swapper/Swapper.sol
@@ -7907,7 +7907,7 @@ File: src/swapper/Swapper.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/swapper/Swapper.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/swapper/Swapper.sol)
 
 ```solidity
 File: src/vault/ConcreteMultiStrategyVault.sol
@@ -7916,7 +7916,7 @@ File: src/vault/ConcreteMultiStrategyVault.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
 
 ### <a name="L-18"></a>[L-18] Use `Ownable2Step.transferOwnership` instead of `Ownable.transferOwnership`
 
@@ -7943,7 +7943,7 @@ File: src/factories/VaultFactory.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/factories/VaultFactory.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/factories/VaultFactory.sol)
 
 ```solidity
 File: src/managers/DeploymentManager.sol
@@ -7952,7 +7952,7 @@ File: src/managers/DeploymentManager.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/managers/DeploymentManager.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/managers/DeploymentManager.sol)
 
 ```solidity
 File: src/managers/RewardManager.sol
@@ -7961,7 +7961,7 @@ File: src/managers/RewardManager.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/managers/RewardManager.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/managers/RewardManager.sol)
 
 ```solidity
 File: src/queue/WithdrawalQueue.sol
@@ -7970,7 +7970,7 @@ File: src/queue/WithdrawalQueue.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/queue/WithdrawalQueue.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/queue/WithdrawalQueue.sol)
 
 ```solidity
 File: src/registries/ImplementationRegistry.sol
@@ -7979,7 +7979,7 @@ File: src/registries/ImplementationRegistry.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/registries/ImplementationRegistry.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/registries/ImplementationRegistry.sol)
 
 ```solidity
 File: src/registries/TokenRegistry.sol
@@ -7988,7 +7988,7 @@ File: src/registries/TokenRegistry.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/registries/TokenRegistry.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/registries/TokenRegistry.sol)
 
 ```solidity
 File: src/registries/VaultRegistry.sol
@@ -7997,7 +7997,7 @@ File: src/registries/VaultRegistry.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/registries/VaultRegistry.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/registries/VaultRegistry.sol)
 
 ```solidity
 File: src/strategies/StrategyBase.sol
@@ -8006,7 +8006,7 @@ File: src/strategies/StrategyBase.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/StrategyBase.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/StrategyBase.sol)
 
 ```solidity
 File: src/swapper/Swapper.sol
@@ -8015,7 +8015,7 @@ File: src/swapper/Swapper.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/swapper/Swapper.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/swapper/Swapper.sol)
 
 ```solidity
 File: src/vault/ConcreteMultiStrategyVault.sol
@@ -8024,7 +8024,7 @@ File: src/vault/ConcreteMultiStrategyVault.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
 
 ### <a name="L-19"></a>[L-19] `symbol()` is not a part of the ERC-20 standard
 
@@ -8041,7 +8041,7 @@ File: src/strategies/Aave/AaveV3Strategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Aave/AaveV3Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Aave/AaveV3Strategy.sol)
 
 ```solidity
 File: src/strategies/ProtectStrategy/ProtectStrategy.sol
@@ -8052,7 +8052,7 @@ File: src/strategies/ProtectStrategy/ProtectStrategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/ProtectStrategy/ProtectStrategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/ProtectStrategy/ProtectStrategy.sol)
 
 ```solidity
 File: src/strategies/Radiant/RadiantV2Strategy.sol
@@ -8063,7 +8063,7 @@ File: src/strategies/Radiant/RadiantV2Strategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Radiant/RadiantV2Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Radiant/RadiantV2Strategy.sol)
 
 ```solidity
 File: src/strategies/Silo/SiloV1Strategy.sol
@@ -8074,7 +8074,7 @@ File: src/strategies/Silo/SiloV1Strategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Silo/SiloV1Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Silo/SiloV1Strategy.sol)
 
 ```solidity
 File: src/strategies/compoundV3/CompoundV3Strategy.sol
@@ -8085,7 +8085,7 @@ File: src/strategies/compoundV3/CompoundV3Strategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/compoundV3/CompoundV3Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/compoundV3/CompoundV3Strategy.sol)
 
 ### <a name="L-20"></a>[L-20] Unsafe ERC20 operation(s)
 
@@ -8098,7 +8098,7 @@ File: src/strategies/Aave/AaveV3Strategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Aave/AaveV3Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Aave/AaveV3Strategy.sol)
 
 ```solidity
 File: src/strategies/StrategyBase.sol
@@ -8109,7 +8109,7 @@ File: src/strategies/StrategyBase.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/StrategyBase.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/StrategyBase.sol)
 
 ```solidity
 File: src/strategies/compoundV3/CompoundV3Strategy.sol
@@ -8118,7 +8118,7 @@ File: src/strategies/compoundV3/CompoundV3Strategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/compoundV3/CompoundV3Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/compoundV3/CompoundV3Strategy.sol)
 
 ```solidity
 File: src/vault/ConcreteMultiStrategyVault.sol
@@ -8131,7 +8131,7 @@ File: src/vault/ConcreteMultiStrategyVault.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
 
 ### <a name="L-21"></a>[L-21] Unspecific compiler version pragma
 
@@ -8144,7 +8144,7 @@ File: src/strategies/Aave/DataTypes.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Aave/DataTypes.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Aave/DataTypes.sol)
 
 ```solidity
 File: src/strategies/Radiant/DataTypes.sol
@@ -8153,7 +8153,7 @@ File: src/strategies/Radiant/DataTypes.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Radiant/DataTypes.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Radiant/DataTypes.sol)
 
 ```solidity
 File: src/strategies/Silo/EasyMathV2.sol
@@ -8162,7 +8162,7 @@ File: src/strategies/Silo/EasyMathV2.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Silo/EasyMathV2.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Silo/EasyMathV2.sol)
 
 ```solidity
 File: src/strategies/Silo/IBaseSiloV1.sol
@@ -8171,7 +8171,7 @@ File: src/strategies/Silo/IBaseSiloV1.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Silo/IBaseSiloV1.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Silo/IBaseSiloV1.sol)
 
 ```solidity
 File: src/strategies/Silo/ISiloV1.sol
@@ -8180,7 +8180,7 @@ File: src/strategies/Silo/ISiloV1.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Silo/ISiloV1.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Silo/ISiloV1.sol)
 
 ### <a name="L-22"></a>[L-22] Upgradeable contract is missing a `__gap[50]` storage variable to allow for new storage variables in later versions
 
@@ -8195,7 +8195,7 @@ File: src/strategies/Aave/IAaveV3.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Aave/IAaveV3.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Aave/IAaveV3.sol)
 
 ```solidity
 File: src/strategies/Radiant/IRadiantV2.sol
@@ -8204,7 +8204,7 @@ File: src/strategies/Radiant/IRadiantV2.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Radiant/IRadiantV2.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Radiant/IRadiantV2.sol)
 
 ```solidity
 File: src/strategies/Silo/IBaseSiloV1.sol
@@ -8213,7 +8213,7 @@ File: src/strategies/Silo/IBaseSiloV1.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Silo/IBaseSiloV1.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Silo/IBaseSiloV1.sol)
 
 ```solidity
 File: src/strategies/StrategyBase.sol
@@ -8228,7 +8228,7 @@ File: src/strategies/StrategyBase.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/StrategyBase.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/StrategyBase.sol)
 
 ```solidity
 File: src/swapper/OraclePlug.sol
@@ -8237,7 +8237,7 @@ File: src/swapper/OraclePlug.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/swapper/OraclePlug.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/swapper/OraclePlug.sol)
 
 ```solidity
 File: src/vault/ConcreteMultiStrategyVault.sol
@@ -8258,7 +8258,7 @@ File: src/vault/ConcreteMultiStrategyVault.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
 
 ### <a name="L-23"></a>[L-23] Upgradeable contract not initialized
 
@@ -8273,7 +8273,7 @@ File: src/strategies/Aave/AaveV3Strategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Aave/AaveV3Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Aave/AaveV3Strategy.sol)
 
 ```solidity
 File: src/strategies/Aave/IAaveV3.sol
@@ -8282,7 +8282,7 @@ File: src/strategies/Aave/IAaveV3.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Aave/IAaveV3.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Aave/IAaveV3.sol)
 
 ```solidity
 File: src/strategies/ProtectStrategy/ProtectStrategy.sol
@@ -8291,7 +8291,7 @@ File: src/strategies/ProtectStrategy/ProtectStrategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/ProtectStrategy/ProtectStrategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/ProtectStrategy/ProtectStrategy.sol)
 
 ```solidity
 File: src/strategies/Radiant/IRadiantV2.sol
@@ -8300,7 +8300,7 @@ File: src/strategies/Radiant/IRadiantV2.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Radiant/IRadiantV2.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Radiant/IRadiantV2.sol)
 
 ```solidity
 File: src/strategies/Radiant/RadiantV2Strategy.sol
@@ -8309,7 +8309,7 @@ File: src/strategies/Radiant/RadiantV2Strategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Radiant/RadiantV2Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Radiant/RadiantV2Strategy.sol)
 
 ```solidity
 File: src/strategies/Silo/IBaseSiloV1.sol
@@ -8318,7 +8318,7 @@ File: src/strategies/Silo/IBaseSiloV1.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Silo/IBaseSiloV1.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Silo/IBaseSiloV1.sol)
 
 ```solidity
 File: src/strategies/Silo/SiloV1Strategy.sol
@@ -8327,7 +8327,7 @@ File: src/strategies/Silo/SiloV1Strategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Silo/SiloV1Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Silo/SiloV1Strategy.sol)
 
 ```solidity
 File: src/strategies/StrategyBase.sol
@@ -8352,7 +8352,7 @@ File: src/strategies/StrategyBase.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/StrategyBase.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/StrategyBase.sol)
 
 ```solidity
 File: src/strategies/compoundV3/CompoundV3Strategy.sol
@@ -8361,7 +8361,7 @@ File: src/strategies/compoundV3/CompoundV3Strategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/compoundV3/CompoundV3Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/compoundV3/CompoundV3Strategy.sol)
 
 ```solidity
 File: src/swapper/OraclePlug.sol
@@ -8370,7 +8370,7 @@ File: src/swapper/OraclePlug.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/swapper/OraclePlug.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/swapper/OraclePlug.sol)
 
 ```solidity
 File: src/vault/ConcreteMultiStrategyVault.sol
@@ -8409,7 +8409,7 @@ File: src/vault/ConcreteMultiStrategyVault.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
 
 ### <a name="L-24"></a>[L-24] Use `initializer` for public-facing functions only. Replace with `onlyInitializing` on internal functions
 
@@ -8424,7 +8424,7 @@ File: src/strategies/StrategyBase.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/StrategyBase.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/StrategyBase.sol)
 
 ### <a name="L-25"></a>[L-25] A year is not always 365 days
 
@@ -8439,7 +8439,7 @@ File: src/vault/ConcreteMultiStrategyVault.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
 
 ## Medium Issues
 
@@ -8466,7 +8466,7 @@ File: src/strategies/StrategyBase.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/StrategyBase.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/StrategyBase.sol)
 
 ```solidity
 File: src/vault/ConcreteMultiStrategyVault.sol
@@ -8477,7 +8477,7 @@ File: src/vault/ConcreteMultiStrategyVault.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
 
 ### <a name="M-2"></a>[M-2] Centralization Risk for trusted owners
 
@@ -8504,7 +8504,7 @@ File: src/claimRouter/ClaimRouter.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/claimRouter/ClaimRouter.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/claimRouter/ClaimRouter.sol)
 
 ```solidity
 File: src/factories/VaultFactory.sol
@@ -8517,7 +8517,7 @@ File: src/factories/VaultFactory.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/factories/VaultFactory.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/factories/VaultFactory.sol)
 
 ```solidity
 File: src/managers/DeploymentManager.sol
@@ -8540,7 +8540,7 @@ File: src/managers/DeploymentManager.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/managers/DeploymentManager.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/managers/DeploymentManager.sol)
 
 ```solidity
 File: src/managers/RewardManager.sol
@@ -8571,7 +8571,7 @@ File: src/managers/RewardManager.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/managers/RewardManager.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/managers/RewardManager.sol)
 
 ```solidity
 File: src/managers/VaultManager.sol
@@ -8626,7 +8626,7 @@ File: src/managers/VaultManager.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/managers/VaultManager.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/managers/VaultManager.sol)
 
 ```solidity
 File: src/queue/WithdrawalQueue.sol
@@ -8645,7 +8645,7 @@ File: src/queue/WithdrawalQueue.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/queue/WithdrawalQueue.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/queue/WithdrawalQueue.sol)
 
 ```solidity
 File: src/registries/ImplementationRegistry.sol
@@ -8660,7 +8660,7 @@ File: src/registries/ImplementationRegistry.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/registries/ImplementationRegistry.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/registries/ImplementationRegistry.sol)
 
 ```solidity
 File: src/registries/TokenRegistry.sol
@@ -8681,7 +8681,7 @@ File: src/registries/TokenRegistry.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/registries/TokenRegistry.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/registries/TokenRegistry.sol)
 
 ```solidity
 File: src/registries/VaultRegistry.sol
@@ -8700,7 +8700,7 @@ File: src/registries/VaultRegistry.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/registries/VaultRegistry.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/registries/VaultRegistry.sol)
 
 ```solidity
 File: src/strategies/Aave/AaveV3Strategy.sol
@@ -8709,7 +8709,7 @@ File: src/strategies/Aave/AaveV3Strategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Aave/AaveV3Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Aave/AaveV3Strategy.sol)
 
 ```solidity
 File: src/strategies/ProtectStrategy/ProtectStrategy.sol
@@ -8718,7 +8718,7 @@ File: src/strategies/ProtectStrategy/ProtectStrategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/ProtectStrategy/ProtectStrategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/ProtectStrategy/ProtectStrategy.sol)
 
 ```solidity
 File: src/strategies/Radiant/RadiantV2Strategy.sol
@@ -8729,7 +8729,7 @@ File: src/strategies/Radiant/RadiantV2Strategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Radiant/RadiantV2Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Radiant/RadiantV2Strategy.sol)
 
 ```solidity
 File: src/strategies/Silo/SiloV1Strategy.sol
@@ -8738,7 +8738,7 @@ File: src/strategies/Silo/SiloV1Strategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Silo/SiloV1Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Silo/SiloV1Strategy.sol)
 
 ```solidity
 File: src/strategies/StrategyBase.sol
@@ -8755,7 +8755,7 @@ File: src/strategies/StrategyBase.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/StrategyBase.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/StrategyBase.sol)
 
 ```solidity
 File: src/strategies/compoundV3/CompoundV3Strategy.sol
@@ -8764,7 +8764,7 @@ File: src/strategies/compoundV3/CompoundV3Strategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/compoundV3/CompoundV3Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/compoundV3/CompoundV3Strategy.sol)
 
 ```solidity
 File: src/swapper/Swapper.sol
@@ -8779,7 +8779,7 @@ File: src/swapper/Swapper.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/swapper/Swapper.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/swapper/Swapper.sol)
 
 ```solidity
 File: src/vault/ConcreteMultiStrategyVault.sol
@@ -8820,7 +8820,7 @@ File: src/vault/ConcreteMultiStrategyVault.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
 
 ### <a name="M-3"></a>[M-3] `increaseAllowance/decreaseAllowance` won't work on mainnet for USDT
 
@@ -8835,7 +8835,7 @@ File: src/strategies/Radiant/RadiantV2Strategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Radiant/RadiantV2Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Radiant/RadiantV2Strategy.sol)
 
 ```solidity
 File: src/strategies/Silo/SiloV1Strategy.sol
@@ -8844,7 +8844,7 @@ File: src/strategies/Silo/SiloV1Strategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Silo/SiloV1Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Silo/SiloV1Strategy.sol)
 
 ### <a name="M-4"></a>[M-4] Unsafe use of `transfer()`/`transferFrom()`/`approve()`/ with `IERC20`
 
@@ -8859,7 +8859,7 @@ File: src/strategies/Aave/AaveV3Strategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/Aave/AaveV3Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/Aave/AaveV3Strategy.sol)
 
 ```solidity
 File: src/strategies/compoundV3/CompoundV3Strategy.sol
@@ -8868,7 +8868,7 @@ File: src/strategies/compoundV3/CompoundV3Strategy.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/compoundV3/CompoundV3Strategy.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/compoundV3/CompoundV3Strategy.sol)
 
 ```solidity
 File: src/vault/ConcreteMultiStrategyVault.sol
@@ -8881,7 +8881,7 @@ File: src/vault/ConcreteMultiStrategyVault.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
 
 ## High Issues
 
@@ -8904,7 +8904,7 @@ File: src/strategies/StrategyBase.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/strategies/StrategyBase.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/strategies/StrategyBase.sol)
 
 ```solidity
 File: src/vault/ConcreteMultiStrategyVault.sol
@@ -8917,4 +8917,4 @@ File: src/vault/ConcreteMultiStrategyVault.sol
 
 ```
 
-[Link to code](https://github.com/code-423n4/2024-11-blueprint/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
+[Link to code](https://github.com/code-423n4/2024-11-concrete/blob/main/src/vault/ConcreteMultiStrategyVault.sol)
