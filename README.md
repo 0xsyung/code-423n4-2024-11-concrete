@@ -13,6 +13,14 @@
 
 ℹ️ This audit will be followed by an update audit focused on fixes from this scope with a total prize pool of &#36;22,500 in USDC.
 
+**Note re: risk level upgrades/downgrades**
+
+Two important notes about judging phase risk adjustments for this audit: 
+- High- or Medium-risk submissions downgraded to Low-risk (QA)) will be ineligible for awards.
+- Upgrading a Low-risk finding from a QA report to a Medium- or High-risk finding is not supported.
+
+As such, wardens are encouraged to select the appropriate risk level carefully during the submission phase.
+
 ## Automated Findings / Publicly Known Issues
 
 The 4naly3er report can be found [here](https://github.com/code-423n4/2024-11-concrete/blob/main/4naly3er-report.md).
