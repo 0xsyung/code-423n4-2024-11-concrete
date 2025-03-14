@@ -1,0 +1,44 @@
+I did `npm install` and:
+
+```
+
+donko@DESKTOP-L2NMHUV:~/2024-11-concrete$ forge install
+Updating dependencies in /home/donko/2024-11-concrete/lib
+Cloning into '/home/donko/2024-11-concrete/lib/openzeppelin-contracts'...
+remote: Enumerating objects: 48489, done.        
+remote: Counting objects: 100% (1301/1301), done.        
+remote: Compressing objects: 100% (756/756), done.        
+error: RPC failed; curl 92 HTTP/2 stream 0 was not closed cleanly: CANCEL (err 8)
+error: 4225 bytes of body are still expected
+fetch-pack: unexpected disconnect while reading sideband packet
+fatal: early EOF
+fatal: fetch-pack: invalid index-pack output
+fatal: clone of 'https://github.com/openzeppelin/openzeppelin-contracts' into submodule path '/home/donko/2024-11-concrete/lib/openzeppelin-contracts' failed
+Failed to clone 'lib/openzeppelin-contracts'. Retry scheduled
+Cloning into '/home/donko/2024-11-concrete/lib/openzeppelin-contracts-upgradeable'...
+remote: Enumerating objects: 53200, done.        
+remote: Counting objects: 100% (10694/10694), done.        
+remote: Compressing objects: 100% (2865/2865), done.        
+error: RPC failed; curl 92 HTTP/2 stream 0 was not closed cleanly: CANCEL (err 8)
+error: 1043 bytes of body are still expected
+fetch-pack: unexpected disconnect while reading sideband packet
+fatal: early EOF
+fatal: fetch-pack: invalid index-pack output
+fatal: clone of 'https://github.com/OpenZeppelin/openzeppelin-contracts-upgradeable' into submodule path '/home/donko/2024-11-concrete/lib/openzeppelin-contracts-upgradeable' failed
+Failed to clone 'lib/openzeppelin-contracts-upgradeable'. Retry scheduled
+Cloning into '/home/donko/2024-11-concrete/lib/openzeppelin-contracts'...
+remote: Enumerating objects: 48489, done.        
+remote: Counting objects: 100% (1301/1301), done.        
+remote: Compressing objects: 100% (756/756), done.        
+error: RPC failed; curl 92 HTTP/2 stream 0 was not closed cleanly: CANCEL (err 8)
+error: 5391 bytes of body are still expected
+fetch-pack: unexpected disconnect while reading sideband packet
+fatal: early EOF
+fatal: fetch-pack: invalid index-pack output
+fatal: clone of 'https://github.com/openzeppelin/openzeppelin-contracts' into submodule path '/home/donko/2024-11-concrete/lib/openzeppelin-contracts' failed
+Failed to clone 'lib/openzeppelin-contracts' a second time, aborting
+Error: 
+git submodule exited with code 1
+donko@DESKTOP-L2NMHUV:~/2024-11-concrete$ 
+
+```

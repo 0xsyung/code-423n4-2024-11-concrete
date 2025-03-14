@@ -1,0 +1,1707 @@
+==============================================================
+Guild: Code4rena
+Channel: ARCHIVE-PUBLIC / concrete-nov15
+==============================================================
+
+[11/14/2024 21:06] kartoonjoy
+👋 Hello and welcome to the **$112,250 in USDC Concrete** audit channel!
+
+📆 Audit opens 11/15/2024 20:00 (20:00 UTC) and runs through 11/29/2024 20:00 (20:00 UTC) (14 days).
+
+Please give a warm welcome to the **Concrete** team, particularly @ThatOneGuy, @leomarlo, and @Germán Suárez, who will be available for questions either here in the channel or via a PRIVATE thread in the EST and CET timezone(s). 
+
+🤖 **Documentation bot assistance:** For general questions about the codebase, give our documentation bot a try, by tagging `@Docs Wolf` in any thread (private or public) and asking your question. The bot will make its best attempt to answer based on the codebase and documentation, and link you to relevant resources.  
+
+We'll be posting relevant links, documentation, etc. here, so if you intend to participate in this audit, consider enabling notifications for this channel. 🐺 ⏰
+
+Audit Page: <https://code4rena.com/audits/2024-11-concrete>
+
+{Reactions}
+🫡 
+
+[11/15/2024 11:09] web3tycoon
+Hello let's gooooo
+
+{Reactions}
+👍🏻 (3) 
+
+[11/15/2024 20:58] pkabhi
+Error: https://registry.yarnpkg.com/@blueprint-finance/hub-and-spokes-libraries/-/hub-and-spokes-libraries-0.1.0.tgz: Request failed "404 Not Found"  getting this error while setup using yarn cmd
+
+
+[11/15/2024 21:01] pkabhi
+any suggestions?
+
+
+[11/15/2024 22:26] poeaudits
+Getting the same
+
+
+[11/15/2024 23:21] ribarcheto
+same issue
+
+
+[11/15/2024 23:25] ivanfitro
+same issue
+
+
+[11/16/2024 00:59] dravee
+Tried from scratch and didn't get the issue. 
+I'll assume you all used the `export NPM_TOKEN=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` command.
+What are you all using as OS?
+Also, what yarn version? `1.22.22` for me
+
+
+[11/16/2024 01:12] ribarcheto
+i am on WSL, yarn version is the same as yours
+
+
+[11/16/2024 01:21] poeaudits
+Tried exporting it and just hardcoding it in the npmrc, same issue.
+
+
+[11/16/2024 01:57] dravee
+Trying to find a solution with the sponsor. Will keep you up to date.
+
+
+[11/16/2024 03:11] proxima_0x
+Will there be a thread contest here too ??🌚
+
+
+[11/16/2024 04:53] m4k2
+Hey I didn't find previous audits report, is it the first one ?
+
+
+[11/16/2024 06:22] lordmarvy
+GMGM
+
+
+[11/16/2024 06:22] lordmarvy
+Lets get froggy on this one
+
+
+[11/16/2024 06:22] lordmarvy
+My first offical audit
+
+{Reactions}
+🔥 (6) 🐸 (2) 
+
+[11/16/2024 06:57] proxima_0x
+A Cyfrin student!?
+Love to see it
+
+{Reactions}
+❤️ (3) 
+
+[11/16/2024 07:57] 0xarmedgoose
+also have this error - is the token valid?
+
+when I do *curl -H "authorization: Bearer my_npm_token"  https://registry.npmjs.org/-/whoami -I * for my own token it gives 200 and username and for contest token its 401
+
+{Reactions}
+➕ 
+
+[11/16/2024 08:56] dravee (pinned)
+Hey there, I've just pushed the dependency that's being an issue.
+Please pull the repo again
+https://github.com/code-423n4/2024-11-concrete/commit/a32913bac502c8f7c092d02824ab50722f89bdc0
+Hopefully this'll fix the issue
+
+{Reactions}
+👍 (4) 
+
+[11/16/2024 08:56] kartoonjoy
+Started a thread.
+
+
+[11/16/2024 08:57] kartoonjoy
+Pinned a message.
+
+
+[11/16/2024 09:46] 0xarmedgoose
+for me **yarn **still returned 404 but instead **npm install** worked - was able to proceed with the remaining foundry commands
+
+{Reactions}
+👍 (4) thankyou 
+
+[11/16/2024 10:19] ivanfitro
+same
+
+
+[11/16/2024 12:20] joseph__hpesoj
+hello, I'm getting same 404 error in `yarn`
+
+
+[11/16/2024 12:40] dravee
+Please try npm install on the latest commit
+
+
+[11/16/2024 12:43] joseph__hpesoj
+still errs
+
+
+[11/16/2024 12:44] joseph__hpesoj
+
+
+{Attachments}
+Code4rena - ARCHIVE-PUBLIC - concrete-nov15 [1306716946313646090].txt_Files/rn_image_picker_lib_temp_e41e7653-0fd9-4b6-0EF50.jpg
+
+
+[11/16/2024 13:24] uniquedivine
+Please use npm rather than yarn
+
+
+[11/16/2024 13:24] uniquedivine
+I've noticed it plays more nicely with the npx command for some reason
+
+
+[11/16/2024 15:16] donkicha
+```
+
+donko@DESKTOP-L2NMHUV:~/2024-11-concrete$ yarn
+➤ YN0000: · Yarn 4.1.1
+➤ YN0000: ┌ Resolution step
+➤ YN0035: │ @blueprint-finance/hub-and-spokes-libraries@npm:^0.1.0: Package not found
+➤ YN0035: │   Response Code: 404 (Not Found)
+➤ YN0035: │   Request Method: GET
+➤ YN0035: │   Request URL: https://registry.yarnpkg.com/@blueprint-finance%2fhub-and-spokes-libraries
+➤ YN0000: └ Completed in 1s 245ms
+➤ YN0000: · Failed with errors in 1s 260ms
+donko@DESKTOP-L2NMHUV:~/2024-11-concrete$ 
+
+```
+
+
+
+Someone else with this error and any solution?
+
+
+[11/16/2024 15:21] uaarrr
+use ``npm install``    or if not remove "@blueprint-finance/hub-and-spokes-libraries" line from package.json   and do it again
+
+
+[11/16/2024 15:22] uaarrr
+but there already is a node_modules with this library in the repo as a mitigation, you only need to do that for morpho lib that is also needed in remappings
+
+
+[11/16/2024 15:30] donkicha
+
+
+{Attachments}
+Code4rena - ARCHIVE-PUBLIC - concrete-nov15 [1306716946313646090].txt_Files/message-643F2.txt
+
+
+[11/16/2024 15:34] uaarrr
+its forge install not npm install as i see in the errors
+
+
+[11/16/2024 15:34] donkicha
+Yes yes, `npm install` was OK
+
+
+[11/16/2024 15:34] uaarrr
+that errors is new to me tbh
+
+{Reactions}
+👍 
+
+[11/16/2024 15:35] uaarrr
+i used yarn as normal but after removing what i said earlier from package.json
+
+
+[11/16/2024 15:35] uaarrr
+and then setting everything in the repo for forge build to work correctly
+
+
+[11/16/2024 16:27] devanas17
+anyone can join this right?
+
+{Reactions}
+10_10 
+
+[11/16/2024 17:05] h4ckc4t
+Started a thread.
+
+
+[11/16/2024 18:16] ivanfitro
+anyone has the docs for Bera Oracle?
+
+
+[11/16/2024 19:26] h4ckc4t
+is docs_wolf work?
+
+
+[11/16/2024 19:27] kartoonjoy
+It should be up by Monday
+
+{Reactions}
+👍 (2) 
+
+[11/16/2024 22:11] jean_pierre_polnaref
+Hello, someone gives me advice on how to change USDT for SOL but when I want to make the change, don't ask me for a SOL rate because I don't have SOL.
+
+
+[11/16/2024 22:40] noro9954
+@kartoonjoy | C4🎇🎇 can i dm you ?
+
+
+[11/16/2024 22:41] kartoonjoy
+You can tag me in a PRIVATE thread. But it's the weekend so I'm only not really online.
+
+
+[11/16/2024 22:46] noro9954
+No rush at all! Just reply whenever you have the time
+
+
+[11/17/2024 09:12] kartoonjoy
+Should be up now.
+
+
+[11/17/2024 19:25] 0xstalin
+@ThatOneGuy @leomarlo @Germán Suárez Is it correct that the Morpho strategy is not part of the audit's scope?
+
+
+[11/18/2024 10:36] leomarlo
+It should be part of it
+
+
+[11/18/2024 11:13] ritik2784
+there are also some unfinished functions in `StrategyBase.sol` @leomarlo  what should we do?
+
+
+[11/18/2024 13:05] germansuarez
+Can you specify the unfinished function @sam ? Thank you!
+
+
+[11/18/2024 13:35] jiri123_eth
+Maybe he is talking about TODO.
+
+
+[11/18/2024 13:39] welith
+Also, the `MultiStrategyVaultHelper` library is not listed in the scope, should it be?
+
+
+[11/18/2024 17:41] g01u
+Yes, it is important to contract not in the scope
+
+
+[11/18/2024 19:28] ribarcheto
+what is the purpose of `firstDeposit` variable in `ConcreteMultiStrategyVault.sol` ? I dont see how is that being used
+
+
+[11/18/2024 23:20] ritik2784
+yes there are some `TODOS` as well and there are some functions like this  `function _protocolWithdraw(uint256 assets, uint256 shares) internal virtual {}` types of empty functions in `StrategyBase.sol` should I consider them just normal interaction functions or are there is implementation yet to be done?
+
+
+[11/19/2024 01:50] prapandey031
+I feel it should be in scope. Could you pls confirm @leomarlo @Germán Suárez @ThatOneGuy
+
+{Reactions}
+➕ 
+
+[11/19/2024 01:51] prapandey031
+@kartoonjoy | C4🎇🎇 could you please add this to scope
+
+{Reactions}
+👀 
+
+[11/19/2024 04:38] 0xstalin
+Yes, pls, double check with the sponsor what other contracts are missing from the scope 🙏
+
+{Reactions}
+👀 
+
+[11/19/2024 09:30] 0x391
+can anybody help me with this error?  🙏  this occurs after running `forge build`.
+```
+Compiler run failed:
+Error (6275): Source "@blueprint-finance/hub-and-spokes-libraries/src/libraries/MorphoV1Helper.sol" not found: File not found. Searched the following locations: "/work/audit/c4/2024-11-concrete".
+ParserError: Source "@blueprint-finance/hub-and-spokes-libraries/src/libraries/MorphoV1Helper.sol" not found: File not found. Searched the following locations: "/work/audit/c4/2024-11-concrete".
+ --> src/strategies/Morpho/MorphoVaultStrategy.sol:8:1:
+  |
+8 | import {MorphoV1Helper} from "@blueprint-finance/hub-and-spokes-libraries/src/libraries/MorphoV1Helper.sol";
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Error (6275): Source "@blueprint-finance/hub-and-spokes-libraries/src/libraries/TokenHelper.sol" not found: File not found. Searched the following locations: "/work/audit/c4/2024-11-concrete".
+ParserError: Source "@blueprint-finance/hub-and-spokes-libraries/src/libraries/TokenHelper.sol" not found: File not found. Searched the following locations: "/work/audit/c4/2024-11-concrete".
+  --> src/strategies/StrategyBase.sol:14:1:
+   |
+14 | import {TokenHelper} from "@blueprint-finance/hub-and-spokes-libraries/src/libraries/TokenHelper.sol";
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+```
+
+
+[11/19/2024 09:53] newspacexyz
+Please check https://discord.com/channels/810916927919620096/1306716946313646090/1307267988721893417 @0xStuart and try to do `export NPM_TOKEN=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 && npm i` if you are using ubuntu
+
+{Reactions}
+🫡 
+
+[11/19/2024 10:17] recursiveeth_70175
+Hey guys @ThatOneGuy @leomarlo @Germán Suárez, can you provide the audit specific docs which explain the system From high level ?
+
+
+[11/19/2024 13:34] bryan_conquer
+why are the contract name different from what in the documentation
+
+
+[11/19/2024 20:15] itsmetechjay (pinned)
+ℹ️ Wardens, wanted to note that the sponsor has pushed a [recent PR](https://github.com/code-423n4/2024-11-concrete/pull/2) that lets you setup the environment without an npm token.
+
+
+[11/19/2024 20:15] itsmetechjay
+Pinned a message.
+
+
+[11/20/2024 03:09] jerry0x32
+@ThatOneGuy @Germán Suárez@leomarlohttps://blueprint-finance.gitbook.io/concrete_protocol/pSPVTC2wbOO8D1NFQXyP/papers/concrete-papers The White paper link returns a 404 error.
+
+
+[11/20/2024 04:13] berndt_
+Anybody interested in opening a private thread for discussing architecture/code/docs (no vuln discussion)? Feel free to DM
+
+
+[11/20/2024 12:47] blutorque
+hey, morpho is expected to be in scope as mentioned here https://discord.com/channels/810916927919620096/1306716946313646090/1308017869480787968, but it has not yet been updated in the contest README
+
+
+[11/20/2024 13:43] prapandey031
+Could the sponsors please confirm this?
+@leomarlo @ThatOneGuy @Germán Suárez
+
+
+[11/20/2024 13:44] kartoonjoy
+We're working with the sponsor to confirm. Please hold.
+
+{Reactions}
+🙏 
+
+[11/20/2024 15:38] 0xauditism
+https://discord.com/channels/810916927919620096/1306716946313646090/1308017869480787968
+
+Wasn't it already confirmed ?
+
+
+[11/20/2024 18:04] superman_i4g
+That’s about the Morpho strategy contract. This one is about the `MultiStrategyVaultHelper` contract.
+
+
+[11/21/2024 16:36] kartoonjoy (pinned)
+Wardens, we'll be adding the `MultiStrategyVaultHelper` and `Morpho` contracts to the scope. I expect it will happen today. We appreciate your patience.
+
+{Reactions}
+👍 (6) 🙏 
+
+[11/21/2024 19:12] codecop_
+@ThatOneGuy @leomarlo @Germán Suárez is this page updated to the contracts given in scope : https://blueprint-finance.gitbook.io/concrete_protocol/pSPVTC2wbOO8D1NFQXyP/protocol/borrow-flow/contracts ???
+
+
+[11/21/2024 22:01] kartoonjoy (pinned)
+The scope is now updated and the 4naly3er and Slither reports have been regenerated.
+
+
+[11/21/2024 22:06] kartoonjoy
+Pinned a message.
+
+
+[11/21/2024 22:06] kartoonjoy
+Pinned a message.
+
+
+[11/22/2024 00:50] berndt_
+Just to have this on the record. Any attacks that require owner privileges or control over a blueprint are invalid right?
+
+
+[11/22/2024 09:01] superman_i4g
+According to the contest’s Attack ideas:
+
+> Exploitation of roles
+
+However Owner is trusted.
+
+
+[11/22/2024 10:54] debof_
+What about inadvertent reverts?
+
+{Attachments}
+Code4rena - ARCHIVE-PUBLIC - concrete-nov15 [1306716946313646090].txt_Files/Screenshot_2024-11-22_at_10.52.19-EE314.png
+
+
+[11/22/2024 10:56] superman_i4g
+Also in scope. Basically any weird revert that shouldn’t occur.
+
+{Reactions}
+👍 
+
+[11/22/2024 10:56] debof_
+Does that include by the owner calling?
+
+
+[11/22/2024 10:57] superman_i4g
+Yeah I guess. If the owner calls a certain function that shouldn’t revert but reverts unexpectedly, then surely something is wrong.
+
+{Reactions}
+👍 
+
+[11/22/2024 13:59] bryan_conquer
+what is the base token for the contract
+
+
+[11/22/2024 18:08] shafouz
+what does `dust in vaults (possible reverts related to that)`mean?
+
+
+[11/22/2024 22:34] debof_
+I do not know. Try asking at docs wolf or one of the team please?
+
+
+[11/23/2024 03:01] blutorque
+@Germán Suárez are the strategies contract specifically built for the concreateMultiStrategyVault? mean should only be used from concreateMultiStrategyVault contract or it is just suppose to be used independently of our concreateMultiStrategyVault also?
+
+{Reactions}
+this 
+
+[11/25/2024 01:47] berndt_
+Can we get a **definite** confirmation that ANY submissions that require the vault owner keys or blueprint role are invalid? I'd rather not submit spam but I also don't want to risk missing anything. @kartoonjoy | C4🎇🎇
+
+
+[11/25/2024 01:48] kartoonjoy
+? Can you ask the sponsor?
+
+
+[11/25/2024 01:49] berndt_
+Sure!  @ThatOneGuy @leomarlo @Germán Suárez
+
+
+[11/25/2024 01:49] kartoonjoy
+Is it listed in the Known issues section?
+
+
+[11/25/2024 01:51] berndt_
+There's this here
+
+{Attachments}
+Code4rena - ARCHIVE-PUBLIC - concrete-nov15 [1306716946313646090].txt_Files/Screenshot_2567-11-25_at_08.50.33-EBDA7.png
+
+
+[11/25/2024 01:57] berndt_
+Blueprints are not directly in scope but there's a couple of functions in the `ClaimRouter` that can only be called by blueprints. There's a comment that says:
+```
+//this function is only called by the blueprint so we can trust the userBlueprint
+```
+So I assume that we're trusting them but I don't see this mentioned in the scope.
+
+
+[11/25/2024 03:02] 0xstalin
+If an issue were to say something like, blueprint calls with malicious data, or smth similar, I think that would be out of scope.
+But if the call is legit, and, because of some error on the code, the execution does something different, or ends up always reverting or doing smth unexpected, then, chances are something like this may be a legit bug
+
+{Reactions}
+👍 (4) 
+
+[11/25/2024 08:16] poeaudits
+Started a thread.
+
+
+[11/25/2024 12:39] cloudellie
+ℹ️ GM wardens - please note that the `README` for this audit has been updated with a note about severity upgrades/downgrades. This relates to the announcement I made on Nov 6: https://discord.com/channels/810916927919620096/810929015509483554/1303756834787688559. 
+
+I apologize for the oversight in not having added this sooner; it escaped my notice until just now. Any questions about this can be posted in the #🐺・wardens channel, as the constraint is not specific to this audit. 🙏
+
+
+[11/26/2024 03:22] coffiasd
+`Ethereum,BSC,Other,ArbitrumCorn`  other chain means ?
+
+
+[11/26/2024 06:49] tigerfrake
+I've noticed that there are no emails from c4 confirming submissions in this contest? I hope this is just okay!
+
+
+[11/26/2024 06:56] superman_i4g
+I think they made announcement on that. They’re phasing that out.
+
+
+[11/26/2024 07:01] tigerfrake
+Thanks pal. Might have missed it
+
+{Reactions}
+👍 (2) 
+
+[11/26/2024 14:11] davidjohn241018
+What is blueprint?
+
+
+[11/27/2024 20:01] 0xstalin
+What assets will be part of the `tokenCascade` list on the ClaimRouter?
+
+
+[11/28/2024 03:42] berndt_
+Can you guys explain the thinking behind the Swapper? I.e. what economic incentives do you want to create. If that's in the docs I couldn't find it
+
+
+[11/28/2024 06:40] superman_i4g
+Read the doc carefully. I think it’s there.
+
+
+[11/28/2024 07:30] 0xstalin
+so, my understanding is that users get a better market rate by swapping their shares of X ConcreteVault for a rewardToken. Instead of withdrawing from the vault, they can get a better rate by swapping their shares for a rewardToken, and the vault's shares swapped by the user are sent to the Treasury. 
+So, for users, opt to swap instead of withdrawing from the vault.
+For the protocol: attracts liquidity to the vaults (because first and foremost, to swap is required to have shares of a vault), and it mitigates withdrawals from the vaults, the already deposited assets are left on the strategies generating yield.
+
+{Reactions}
+👍 (5) 
+
+[11/28/2024 21:53] rbitbytes
+is 3 the minimum number of strategies that can be used, or can I use **stragtegies < 3**
+
+
+[11/28/2024 22:20] 0xstalin
+I don't think there is a minimum number of strategies, I've coded PoCs using 1 and 2 strategies. The only restriction I'm aware of is that each vault can have at most 1 ProtectStrategy.
+
+{Reactions}
+💯 
+
+[11/29/2024 12:33] 0xozovehe
+Can anyone help send the implementation/docs of the Bera oracle on chain? Can't seem to find it anywhere
+
+
+[11/29/2024 18:34] blutorque
+lol, what stopping someone to submit them as low and medium as well, if they are unsure about the severity.
+
+
+[11/29/2024 18:35] blutorque
+any penalties??
+
+
+[11/29/2024 20:02] C4
+**🚨 AUDIT ALERT**
+
+@🐺Wardens The **Concrete** audit is now closed! Huge thanks to everyone who participated 🔍, whether you submitted a finding or not.
+
+What's next: The sponsor team and judge will review the findings over the next couple of weeks.
+
+{Reactions}
+💪 
+
+[11/29/2024 20:05] waydoum
+fun codebase, can't wait to see what I have missed and cry about it
+
+
+[11/29/2024 20:29] deadrosesxyz
+1420 submissions
+
+{Reactions}
+4739_Skeletor (17) 👏🏻 
+
+[11/29/2024 20:29] deadrosesxyz
+gl to the judge
+
+
+[11/29/2024 20:34] samuraii77
+someone ping me in 2025 when PJQA starts please 😵‍💫
+
+{Reactions}
+😂 (10) 
+
+[11/29/2024 20:34] waydoum
+I had hope but you're here now
+
+{Reactions}
+😆 (2) 😹 (2) 
+
+[11/29/2024 22:24] 0xstalin
+Cy all next year for escalations 🥵
+
+{Reactions}
+👋 (5) 😆 
+
+[11/29/2024 22:42] naties29
+Same bro
+
+
+[11/30/2024 02:45] .nnez
+Wake me up when September ends
+
+{Reactions}
+😂 (6) 
+
+[11/30/2024 11:25] olanre_waju
+with all this names I'm seeing, i have forgotten about this contest....💀
+
+{Reactions}
+😅 (3) 😹 
+
+[11/30/2024 11:26] tigerfrake
+Wetin be the problem nah?
+
+{Reactions}
+🫡 😂 (2) 
+
+[11/30/2024 12:27] 4gontuk
+https://tenor.com/view/rip-cat-cat-meme-catcoin-gif-9164440438767075157
+
+{Embed}
+https://tenor.com/view/rip-cat-cat-meme-catcoin-gif-9164440438767075157
+Code4rena - ARCHIVE-PUBLIC - concrete-nov15 [1306716946313646090].txt_Files/rip-cat-9D03C.png
+
+{Reactions}
+😂 (3) 
+
+[11/30/2024 18:49] sakibcy
+Hi,
+Previously i submitted findings on Kleidi (It was public) and Rameses Exchange.
+But previously whenever i went to code4rena's findings section and under Past findings I could not find my submissions.
+
+But now I participated on Concrete contest and under the Past findings I can see my submissions on Concrete.
+
+Can anyone explain me why currently i can see my findings for the Concrete contest which finished last day. But when I was trying to see contest of Kleidi and Rameses Exchange I could not.
+
+
+[11/30/2024 19:13] 0xstalin
+Kleidy and Ramses results were published on GH, Concrete results are on the c4 app.
+On GH you needed the SR/backstage role, maybe on the c4 app that is not a requirement anymore
+
+{Reactions}
+👍 (2) 
+
+[12/01/2024 14:13] donkicha
+Hey!
+
+If I don't have the backstage role, I can not see the findings, yet, right?
+
+
+[12/01/2024 14:13] donkicha
+I mean all of the submitted findings.
+
+
+[12/01/2024 15:34] .nnez
+Yep
+
+{Reactions}
+👍 
+
+[12/01/2024 19:02] tigerfrake
+Wait, can anyone see other warden's submissions?
+
+
+[12/01/2024 20:27] 0xstalin
+I think if you have SR role, you should be able to see all submissions
+
+{Reactions}
+👍 (2) 
+
+[12/01/2024 21:53] 4gontuk
+Nope, I can't.
+
+
+[12/02/2024 05:45] guy_in0xnito
+I can't see the submission of concrete!!
+
+
+[12/02/2024 05:46] guy_in0xnito
+In GH
+None of the 2 repos
+
+
+[12/02/2024 05:53] .nnez
+Check #📢・sr-updates
+
+
+[12/02/2024 19:54] poeaudits
+Reading through many of these submissions makes me think working code PoCs should be required. Gl to judge.
+
+
+[12/03/2024 01:55] tigerfrake
+I guess No Solutions, just Trade-offs.
+
+{Reactions}
+💯 (3) 
+
+[12/10/2024 12:10] yuzadef
+I dont have access to this link
+
+
+[12/10/2024 12:10] yuzadef
+Anyone know why
+
+
+[12/10/2024 12:25] .nnez
+You need SR role
+
+
+[12/10/2024 15:07] mahi_vasisth
+Is any updates about result guys
+
+
+[12/14/2024 18:40] ivanfitro
+How can i answer a comment in a disputed issue? or i need to wait until the escalation process?
+
+{Reactions}
+👍 
+
+[12/14/2024 19:41] thebrittfactor
+Please wait until PJ QA 🙂
+
+{Reactions}
+👍 (3) 
+
+[12/18/2024 21:18] waydoum
+when is PJQA? as usual so unfair been waiting for opening certif verification for months still nothing
+
+{Reactions}
+🧵 (2) 
+
+[12/18/2024 21:39] thebrittfactor
+Started a thread.
+
+
+[12/29/2024 16:50] donkicha
+https://tenor.com/view/waiting-waiting-for-you-waiting-meme-passing-time-waiting-for-the-time-to-pass-gif-580537237252042826
+
+{Embed}
+https://tenor.com/view/waiting-waiting-for-you-waiting-meme-passing-time-waiting-for-the-time-to-pass-gif-580537237252042826
+Code4rena - ARCHIVE-PUBLIC - concrete-nov15 [1306716946313646090].txt_Files/waiting-waiting-for-you-01D03.png
+
+{Reactions}
+👍 (5) 
+
+[01/04/2025 19:04] ifex445
+Any updates?
+
+{Reactions}
+👍 
+
+[01/05/2025 17:34] codertjay
+still waiting also
+
+{Reactions}
+🕐 (7) 
+
+[01/07/2025 09:21] ifex445
+But the judging phase taking quite a lot of time
+
+
+[01/08/2025 01:13] pm_0202
+One of my findings (for which I had the primary issue) has just disappeared completely within the last couple of days. How can I follow this up? Thanks.
+
+
+[01/08/2025 09:30] cloudellie
+Please submit a help desk request: https://code4rena.com/help
+
+{Reactions}
+👍 
+
+[01/08/2025 13:19] t0x1c.c0de
+Hi @thebrittfactor | C4 - Away , had a question regarding this PJQA rule, if you could kindly clarify:
+`QA and Gas reports marked as unsatisfactory by the Validators are NOT eligible.`
+
+It does not apply to a report like this for example (attached), does it? Was raised as `Med`  and then downgraded to `Low` in Triage phase.
+I do not really plan to raise any query under it during the PJQA phase but am curious to understand that in case I found that it was incorrectly invalidated in both the Triage and Judge phases, I can still add a comment for the judge to have a look?
+
+{Attachments}
+Code4rena - ARCHIVE-PUBLIC - concrete-nov15 [1306716946313646090].txt_Files/image-56C60.png
+
+
+[01/08/2025 13:48] cloudellie
+Yes, it's fine to dispute a downgrade in PJQA.
+
+{Reactions}
+thankyou hi5 
+
+[01/08/2025 13:48] t0x1c.c0de
+👍🏻 Thanks!
+
+{Reactions}
+hi5 
+
+[01/08/2025 17:30] deeney3866
+Has the PJQA started.
+
+{Reactions}
+✅ (2) 
+
+[01/08/2025 17:42] deeney3866
+How do we go about it.
+This actually my first contest.
+
+
+[01/08/2025 18:48] donkicha
+When the final result is expected?
+
+
+[01/08/2025 18:49] donkicha
+WDYT?
+
+
+[01/08/2025 21:46] thebrittfactor
+We *could* have results later next week; pending the amount of PJ QA comments and review timing, of course.
+
+{Reactions}
+👍 (4) 
+
+[01/09/2025 18:22] waydoum
+still unfair that C4 is not giving any priority for Kyc verification being open
+
+{Reactions}
+👍 (7) 
+
+[01/13/2025 11:18] donkicha
+https://tenor.com/view/impatient-waiting-im-waiting-still-waiting-waiting-for-you-gif-9715780225379444546
+
+{Embed}
+https://tenor.com/view/impatient-waiting-im-waiting-still-waiting-waiting-for-you-gif-9715780225379444546
+Code4rena - ARCHIVE-PUBLIC - concrete-nov15 [1306716946313646090].txt_Files/impatient-waiting-46884.png
+
+{Reactions}
+😂 (17) 
+
+[01/15/2025 17:42] ifex445
+Why is judging taking so long?
+
+
+[01/15/2025 19:36] 0xstalin
+there were a lot of submissions, r8 now is on post PJQA, judge is going through all escalations, there are many, I think it could take 3-4 weeks
+
+
+[01/15/2025 20:20] gr8tree
+Is there a way for me to see how my submission is being judged before the contest formally ends?
+
+
+[01/15/2025 20:30] 0xstalin
+You need backstage role
+
+
+[01/16/2025 07:14] ifex445
+Wow
+
+
+[01/16/2025 14:32] coffiasd
+:10_10:
+
+
+[01/18/2025 10:59] donkicha
+https://tenor.com/view/toy-story-buzz-lightyear-will-somebody-please-explain-whats-going-on-whats-going-on-what-is-happening-gif-23011882
+
+{Embed}
+https://tenor.com/view/toy-story-buzz-lightyear-will-somebody-please-explain-whats-going-on-whats-going-on-what-is-happening-gif-23011882
+Code4rena - ARCHIVE-PUBLIC - concrete-nov15 [1306716946313646090].txt_Files/toy-story-buzz-lightyear-E04E6.png
+
+{Reactions}
+😂 (4) 
+
+[01/19/2025 20:46] 0xstalin
+50+ escalations pending, will take some more time
+
+{Reactions}
+👀 (2) 
+
+[01/22/2025 18:48] 10ap17
+Any updates?
+
+
+[01/22/2025 19:04] 0xstalin
+49+ escalations pending
+
+{Reactions}
+😱 😅 
+
+[01/22/2025 20:58] zxriptor
+well, I see some progress
+
+{Reactions}
+🤣 
+
+[01/22/2025 21:33] 0xstalin
+Yes, there has been quite a good progress, but still, there are a good number of escalations pending to be resolved 👌
+
+
+[01/23/2025 07:17] ritik2784
+where did u see this?
+
+
+[01/23/2025 17:45] 0xstalin
+C4 app with backstage role
+
+
+[01/23/2025 17:57] ifex445
+How many findings do i need to have a baskstage role
+
+
+[01/23/2025 19:22] waydoum
+even if you have findingds c4 hasn't opened verification in so long so you'll still have to wait
+
+
+[01/23/2025 20:42] zxriptor
+I do have backstage, still can't understand what is going on there, UX sucks. How do you distinguish resolved from pending escalations?
+
+
+[01/23/2025 21:18] 0xstalin
+Based on the judge's reply.
+You can easily tell if the decision is final or if there is room to clarify something.
+
+
+[01/23/2025 21:19] 0xstalin
+And if there is no reply yet, then, that of course is still pending
+
+
+[01/23/2025 21:22] zxriptor
+thanks. I had a hope there is an easier way but we have what we have..
+
+
+[01/24/2025 08:55] acnologiac
+When results
+
+
+[01/24/2025 16:58] ifex445
+next week friday prob
+
+
+[01/24/2025 17:41] donkicha
+https://tenor.com/view/pshenan-persona-shenanigans-personashenanigans-jaker-gif-3178779317627413585
+
+{Embed}
+https://tenor.com/view/pshenan-persona-shenanigans-personashenanigans-jaker-gif-3178779317627413585
+Code4rena - ARCHIVE-PUBLIC - concrete-nov15 [1306716946313646090].txt_Files/pshenan-persona-shenanigans-F2042.png
+
+
+[01/25/2025 19:34] acnologiac
+https://tenor.com/view/when-gif-20190303
+
+{Embed}
+https://tenor.com/view/when-gif-20190303
+Code4rena - ARCHIVE-PUBLIC - concrete-nov15 [1306716946313646090].txt_Files/when-D756B.png
+
+
+[01/27/2025 09:19] donkicha
+https://tenor.com/view/leonardo-dicaprio-come-on-come-on-now-encouragement-you-can-do-it-gif-10062773189471875410
+
+{Embed}
+https://tenor.com/view/leonardo-dicaprio-come-on-come-on-now-encouragement-you-can-do-it-gif-10062773189471875410
+Code4rena - ARCHIVE-PUBLIC - concrete-nov15 [1306716946313646090].txt_Files/leonardo-dicaprio-come-on-311CD.png
+
+
+[01/27/2025 09:43] ritik2784
+https://tenor.com/view/mr-bean-mrbean-bean-mr-bean-holiday-mr-bean-holiday-movie-gif-3228235746377647455
+
+{Embed}
+https://tenor.com/view/mr-bean-mrbean-bean-mr-bean-holiday-mr-bean-holiday-movie-gif-3228235746377647455
+Code4rena - ARCHIVE-PUBLIC - concrete-nov15 [1306716946313646090].txt_Files/mr-bean-mrbean-9624D.png
+
+
+[01/27/2025 20:48] pcprodigy
+
+
+{Attachments}
+Code4rena - ARCHIVE-PUBLIC - concrete-nov15 [1306716946313646090].txt_Files/GzeASHCqjvLbOgD0bC-2C643.gif
+
+
+[01/28/2025 13:40] berndt_
+Are we down to 48 yet?
+
+{Reactions}
+😂 (4) ✅ 
+
+[01/28/2025 14:13] lin_0x9a7a
+https://tenor.com/view/87-years-gif-18840940
+
+{Embed}
+https://tenor.com/view/87-years-gif-18840940
+Code4rena - ARCHIVE-PUBLIC - concrete-nov15 [1306716946313646090].txt_Files/87-years-F8059.png
+
+
+[01/29/2025 01:25] pm_0202
+https://tenor.com/view/savingprivateryan-ww2-old-soldier-matt-damon-gif-4203998
+
+{Embed}
+https://tenor.com/view/savingprivateryan-ww2-old-soldier-matt-damon-gif-4203998
+Matt Damon Aging
+Code4rena - ARCHIVE-PUBLIC - concrete-nov15 [1306716946313646090].txt_Files/savingprivateryan-ww2-E115B.png
+
+
+[01/29/2025 08:55] donkicha
+https://tenor.com/view/shaq-shimmy-excited-smile-gif-2720306399039522286
+
+{Embed}
+https://tenor.com/view/shaq-shimmy-excited-smile-gif-2720306399039522286
+Code4rena - ARCHIVE-PUBLIC - concrete-nov15 [1306716946313646090].txt_Files/shaq-shimmy-D5F85.png
+
+
+[01/29/2025 20:04] willycode20
+Exactly 2 months since this contest ended🤔🤔
+
+{Reactions}
+👀 (2) 
+
+[01/29/2025 21:42] aarif02
+Seems like pjqa still on 🙃. Another contest going on under the 💬
+
+
+[01/31/2025 01:02] theweb3mechanic
+C4 is a place of patience
+
+{Reactions}
+🙏 
+
+[02/01/2025 04:38] acnologiac
+Please how many more
+
+
+[02/01/2025 06:13] tigerfrake
+Lol
+
+
+[02/01/2025 10:30] theweb3mechanic
+Relax
+
+
+[02/03/2025 08:39] donkicha
+https://tenor.com/view/rebecca-jack-black-ill-be-waiting-half-stance-funny-gif-17917419
+
+{Embed}
+https://tenor.com/view/rebecca-jack-black-ill-be-waiting-half-stance-funny-gif-17917419
+Code4rena - ARCHIVE-PUBLIC - concrete-nov15 [1306716946313646090].txt_Files/rebecca-jack-black-CDD1D.png
+
+
+[02/03/2025 14:46] donkicha
+How many escalations?
+
+
+[02/03/2025 20:38] 0xstalin
+almost done
+
+{Reactions}
+😂 (2) 👍 (2) 👀 
+
+[02/04/2025 11:54] zzebra83
+https://tenor.com/view/star-wars-starwars-galaxy-far-gif-8033254
+
+{Embed}
+https://tenor.com/view/star-wars-starwars-galaxy-far-gif-8033254
+Code4rena - ARCHIVE-PUBLIC - concrete-nov15 [1306716946313646090].txt_Files/star-wars-44D7F.png
+
+{Reactions}
+😆 (2) 
+
+[02/04/2025 21:35] acnologiac
+
+
+{Attachments}
+Code4rena - ARCHIVE-PUBLIC - concrete-nov15 [1306716946313646090].txt_Files/image0-5008C.gif
+
+
+[02/05/2025 12:58] donkicha
+https://tenor.com/view/cat-gif-1997181981385277752
+
+{Embed}
+https://tenor.com/view/cat-gif-1997181981385277752
+Code4rena - ARCHIVE-PUBLIC - concrete-nov15 [1306716946313646090].txt_Files/cat-11161.png
+
+{Reactions}
+👍 (4) 
+
+[02/07/2025 15:45] donkicha
+Will someone explain what is happening?
+
+{Reactions}
+😂 
+
+[02/07/2025 16:20] takarez
+in reporting phase also, pjqa seems to have concluded.
+
+
+[02/07/2025 16:30] donkicha
+What this means?
+
+
+[02/07/2025 18:32] takarez
+it means results can be announced anytime from now.
+
+
+[02/07/2025 18:40] samuraii77
+how can you tell escalations are resolved?
+
+
+[02/07/2025 18:42] takarez
+hhhm, dunno, just wen its in reporting phase means no comment can be added i believe.
+
+
+[02/08/2025 21:00] pcprodigy
+It’s kinda funny because Concrete was actually my first contest ever, and since then, I’ve joined 10+ contests, won in 5+, and even got paid multiple times… yet I still have no idea what I did right or wrong in my very first contest because we never got results. 😆
+
+{Reactions}
+😂 (6) 
+
+[02/09/2025 07:33] rexy.eth.
+So you saying you started auditing 2 months ago and won in 5 + contests?
+
+
+[02/09/2025 07:33] rexy.eth.
+In 2 months?
+
+
+[02/09/2025 07:46] willycode20
+Bro entered another realm😅
+
+{Reactions}
+😂 (2) ❤️ 
+
+[02/09/2025 13:12] pcprodigy
+Sounds insane but i did it😅 winning is leaderboard didn't reach top 1 yet my best was top 2 for now.
+
+
+[02/09/2025 13:14] rexy.eth.
+That's impressive 👏
+
+{Reactions}
+❤️ 
+
+[02/09/2025 18:35] donkicha
+https://tenor.com/view/disappointed-disappointed-fan-seriously-what-are-you-doing-judging-you-gif-17485289
+
+{Embed}
+https://tenor.com/view/disappointed-disappointed-fan-seriously-what-are-you-doing-judging-you-gif-17485289
+Code4rena - ARCHIVE-PUBLIC - concrete-nov15 [1306716946313646090].txt_Files/disappointed-disappointed-fan-84C02.png
+
+
+[02/09/2025 19:26] harryjohn5093421
+Hello. You are amazing
+
+{Reactions}
+🫡 
+
+[02/09/2025 21:03] pcprodigy
+Means alot, ty
+
+
+[02/09/2025 21:06] harryjohn5093421
+@PCProdigy  Now I have tried Next-gen project. So once we repost tax document, can we get paid?
+
+
+[02/09/2025 21:08] pcprodigy
+if accepted before results all good if not you get delayed for a month. Usually take couple days dw
+
+{Reactions}
+👍 
+
+[02/09/2025 21:10] harryjohn5093421
+@PCProdigy  Does corena notice me if my tax is accepted correctly?
+
+{Reactions}
+👍 
+
+[02/10/2025 06:51] bryan_conquer
+what other platforms where you on?
+
+
+[02/10/2025 15:28] shawon2212
+Wen!?
+
+
+[02/10/2025 16:34] donkicha
+In another life!
+
+{Reactions}
+10_10 💀 (2) 
+
+[02/11/2025 09:37] acnologiac
+Today is a good day
+
+{Reactions}
+😂 (3) hi5 (2) 
+
+[02/11/2025 11:24] shawon2212
+I can't wait to see my submission getting disputed 🫥
+Any time now...
+
+
+[02/11/2025 14:19] 0x391
+actually, this contest doesn't take that long. in cantina, there is a still-judging contest which ended in October last year. 😂 it has 100+ confirmed H/Ms.
+
+
+[02/11/2025 14:24] superman_i4g
+No way, fr?😅
+
+
+[02/11/2025 14:26] 0x391
+sadly, it's true, and almost of the participants forgot about that competition. 😂
+
+{Reactions}
+😂 
+
+[02/11/2025 14:44] 0x391
+Funnier thing is that, at that moment of competition end, 1 OP was ~$2.5, but now it's ~$1.1. 😢 (The competition rewards is 117,362 OP)
+
+
+[02/11/2025 15:01] superman_i4g
+What a bummer haha 😆
+
+
+[02/11/2025 15:24] donkicha
+Now it is reporting phase, right?
+
+
+[02/11/2025 15:34] 0x391
+probably, yes.
+
+
+[02/11/2025 17:16] kartoonjoy (pinned)
+Hi all! Just a heads-up that we're working on awarding but have hit a bug. We're hoping to have the issue resolved soon and resume with the awards announcement. 
+
+Will provide an update by Friday.
+
+{Reactions}
+🫡 (7) Metapod (3) 
+
+[02/11/2025 17:32] kartoonjoy
+Pinned a message.
+
+
+[02/11/2025 18:04] kartoonjoy
+lets not clog this thread with memes. The update message simply gets lost for other wardens.
+
+{Reactions}
+👍 (7) 
+
+[02/13/2025 15:36] acnologiac
+Hi.  How about the full list @kartoonjoy | C4🎇🎇
+
+
+[02/13/2025 15:36] kartoonjoy
+Its coming
+
+{Reactions}
+🫡 (7) 
+
+[02/13/2025 16:15] 0xstalin
+Great work everybody, lots of bugs were found by everybody.  🫡
+
+{Reactions}
+👍 (3) 
+
+[02/13/2025 16:19] ifex445
+nice
+
+
+[02/13/2025 16:22] willycode20
+Congrat @0xStalin 
+
+Can't wait to read the report on this
+
+{Reactions}
+🫡 (2) 
+
+[02/13/2025 16:36] 4gontuk
+Sharp eye!! Congrats 👏
+
+{Reactions}
+🫡 (3) 🔥 
+
+[02/13/2025 17:33] kartoonjoy
+🤑 🎉  Awards for **Concrete**:
+
+@0xStalin  >> 16088.43 in USDC
+@0x37  >> 10675.36 in USDC
+@0xrex  >> 5750.03 in USDC
+@samuraii77  >> 3410.46 in USDC
+@t0x1c  >> 2691.28 in USDC
+@Berndt  >> 2035.97 in USDC
+@Bauchibred  >> 1660.45 in USDC
+@Udsen  >> 1641.79 in USDC
+0xAlix2 (@a_kalout & @ali_shehab) >> 1542.40 in USDC
+@trachev  >> 1440.32 in USDC
+@a2security  >> 1327.06 in USDC
+@MrPotatoMagic  >> 1265.1 in USDC
+@sl1  >> 1214.74 in USDC
+EPSec (@0x539.eth | ChainDefenders & @petarP1998) >> 1203.93 in USDC
+@gesha17  >> 1163.52 in USDC
+@rbserver  >> 1130.94 in USDC
+@...  >> 992.28 in USDC
+@blutorque  >> 989.58 in USDC
+@peter  >> 964.3 in USDC
+tenge_club (@ABAIKUNANBAEV & @typicalHuman ) >> 941.62 in USDC
+@0x60scs  >> 833.75 in USDC
+@rscodes  >> 725.71 in USDC
+@0xStuart  >> 652.37 in USDC
+@Maroutis  >> 637.74 in USDC
+@Sparrow  >> 635.79 in USDC
+@0x2517  >> 586.58 in USDC
+@0xNirix  >> 549.63 in USDC
+@focusoor  >> 537.45 in USDC
+@silver_eth  >> 532.9 in USDC
+OpaBatyo (@armormadeofwoe & @amar) >> 532.81 in USDC
+@montecristo  >> 488.28 in USDC
+EaglesSecurity (@kane-goldmisth & @julian_avantgarde) >> 480.74 in USDC
+@encrypt  >> 471.86 in USDC
+@chaduke  >> 464.65 in USDC
+@dobrevaleri  >> 434.74 in USDC
+@Newspace  >> 422.26 in USDC
+@Jiri123   >> 389.72 in USDC
+@zzebra83  >> 387.46 in USDC
+@emerald7017  >> 376.21 in USDC
+@0xAristos  >> 369.06 in USDC
+@pwnforce  >> 363.25 in USDC
+@Ruhum  >> 357.69 in USDC
+@Tigerfrake  >> 348.96 in USDC
+@Bernd  >> 313.92 in USDC
+@Waydou  >> 299.37 in USDC
+@grearlake  >> 286.49 in USDC
+@deadrosesxyz  >> 284.89 in USDC
+@Catowice  >> 237.04 in USDC
+@nnez  >> 213.06 in USDC
+@The Fabled  >> 211.52 in USDC
+@auditism  >> 207.81 in USDC
+@iamandreiski  >> 207.81 in USDC
+@ayden  >> 207.66 in USDC
+@Mrxstrange  >> 191.94 in USDC
+@debo >> 191.94 in USDC
+@kodyvim  >> 186.08 in USDC
+ChainProof (@Yas000X & @takarez) >> 170.16 in USDC
+@0x007  >> 162.51 in USDC
+@Agontuk  >> 141.88 in USDC
+@Rhaydden  >> 139.43 in USDC
+NexusAudits (@cheatc0d3 & @zxnnx) >> 124.15 in USDC
+@SancyBars  >> 110.52 in USDC
+@serial-coder  >> 108.68 in USDC
+@Bigsam  >> 104.62 in USDC
+@peanuts  >> 97.82 in USDC
+@Fitro  >> 89.50 in USDC
+@Acnologiac  >> 86.47 in USDC
+@0xbrett8571  >> 84.07 in USDC
+@PCProdigy  >> 84.07 in USDC
+@foxb868  >> 80.74 in USDC
+Egis_Security (@nmirchev8 & @deth)  >> 76.16 in USDC
+@ifex445  >> 75.3 in USDC
+@ro1sharkm  >> 64.63 in USDC
+@zxriptor  >> 64.17 in USDC
+@0xLight  >> 61.58 in USDC
+@gajiknownnothing  >> 51.33 in USDC
+@0xleadwizard  >> 42.98 in USDC
+@zubyoz  >> 42.92 in USDC
+@wallstreetvilkas  >> 42.8 in USDC
+@lanrebayode77  >> 41.38 in USDC
+@Bin  >> 37.65 in USDC
+@mrmatrixxx  >> 37.65 in USDC
+@Cyphermonk  >> 28.73 in USDC
+@0x0  >> 27.05 in USDC
+
+{Reactions}
+🔥 (8) 🎉 (2) 
+
+[02/13/2025 17:35] kartoonjoy
+@leegh  >> 26.35 in USDC
+@gr8tree  >> 26.15 in USDC
+@testjjjj  >> 26.15 in USDC
+@Shen  >> 26.15 in USDC
+@ishtagy  >> 26.15 in USDC
+@BoraichoDrukenMaster  >> 26.15 in USDC
+@bearonbike  >> 26.15 in USDC
+@SUPERMAN_I4G  >> 23.64 in USDC
+@0xmuxyz  >> 23.57 in USDC
+@Daniel526  >> 23.57 in USDC
+@0xsagetony  >> 21.22 in USDC
+@Third_eye007  >> 21.17 in USDC
+@mahdifa  >> 18.38 in USDC
+@LoneWolf  >> 12.28 in USDC
+@Xcrypt  >> 12.28 in USDC
+@WillyCode20  >> 12.16 in USDC
+@Donko Tonev  >> 12.06 in USDC
+@4B  >> 11.45 in USDC
+@0x4rdiii  >> 10.24 in USDC
+@TheWeb3Mechanic  >> 9.86 in USDC
+@zhanmingjing  >> 5.369 in USDC
+@Bareli  >> 5.27 in USDC
+@codertjay  >> 5.27 in USDC
+@edger  >> 5.27 in USDC
+@Shubham  >> 5.2 in USDC
+@mansa11  >> 5.15 in USDC
+@10ap17  >> 5.15 in USDC
+hubble  (@shri4net & @ksk2345) >> 5.15 in USDC
+@PCProdigy  >> 5.15 in USDC
+@0xmujahid  >> 5.09 in USDC
+@PoeAudits  >> 3.46 in USDC
+@lanyi2023  >> 3.41 in USDC
+@Victor_TheOracle (🐼)  >> 3.41 in USDC
+@Enami_El  >> 3.41 in USDC
+@pepoc3  >> 2.78 in USDC
+@NiSeR  >> 2.78 in USDC
+@13u9  >> 1.15 in USDC
+@Yuza101  >> 1.05 in USDC
+@0xAura  >> 1.05 in USDC
+@mate  >> 1.05 in USDC
+@cold  >> 0.22 in USDC
+@momo023  >> 0.1 in USDC
+@levi_104  >> 0.1 in USDC
+@Nexarion  >> 0.1 in USDC
+@anirruth  >> 0.07 in USDC
+PolarizedLight ( @ChaseTheLight & @Auditor-Nate)  >> 0.07 in USDC
+@Smacaud  >> 0.05 in USDC
+@_1stephen  >> 0.05 in USDC
+@ka14ar  >> 0.05 in USDC
+@karsar  >> 0.05 in USDC
+@deeney.eth  >> 0.05 in USDC
+@Le_Rems  >> 0.05 in USDC
+
+🏁 Findings summary
+--------------------------------------—
+11 High risk findings
+34 Med risk findings
+189 wardens participated
+
+Top Hunter: @0xStalin
+Top Gatherer: @0x37 
+Top QA report: @Bauchibred 
+
+Awards will be distributed on Polygon within the next week. Congratulations all!  💸 💸 💸
+
+⚠️ Awardees, be sure to [complete your tax reporting info](https://docs.code4rena.com/awarding/incentive-model-and-awards/awarding-process#tax-information-for-code4rena-contributors-wardens-judges-etc) if you haven't already. This must be completed within 30 days (i.e. before Thursday, 13 March 2025 to receive your award distribution for this audit.
+
+The leaderboard will be updated at a later date with these audit results. 
+
+*Note: If you participated in this audit and don’t see your name on this list, please wait until the report is published and the findings repo is made public to check on your submissions.*
+
+{Embed}
+https://docs.code4rena.com/awarding/incentive-model-and-awards/awarding-process
+Awarding process | Code4rena
+This is a high level overview of the C4 awarding process.
+
+{Reactions}
+✅ 
+
+[02/13/2025 17:35] pcprodigy
+Congratulations all
+
+{Reactions}
+🔥 (8) 
+
+[02/13/2025 17:36] pcprodigy
+Honored to be on leader board on my very first contest.
+
+
+[02/13/2025 18:28] evokid
+Congrats for the security samurai @0xStalin ! 🫡⚔️
+
+{Reactions}
+💯 (5) 🙏 
+
+[02/14/2025 01:16] deeney3866
+Congratulations all. Honored to have my first win here from this contest. Looking forward to break more grounds and win more💪
+
+{Reactions}
+🫡 (3) 
+
+[02/14/2025 02:03] lanyi2024_15115
+I received my first reward.
+
+{Reactions}
+🔥 (4) 
+
+[02/14/2025 02:03] lanyi2024_15115
+:c4ship:
+
+
+[02/14/2025 02:04] t0x1c.c0de
+👏🏻 🫡 kudos to the judge @Picodes for maintaining their composure & politeness throughout the gruelling judging session. We as wardens surely can have feedback & expectations on speeding up the process, but honestly judging such volume of submissions and PJQA is no mean task. Whether I agree or disagree with the judgements, the fact that he maintained a high degree of professionalism is extremely commendable. 
+Politeness matters 🙏🏻
+
+{Reactions}
+👍 (10) 💯 (6) noddinggoat (2) ❤️ thankyou (2) 
+
+[02/14/2025 09:20] 0xnevi
+Congrats wardens, validating this was very difficult but worth it, especially seeing how much value the wardens brought to the codebase
+
+{Reactions}
+hi5 (12) cyberheart (6) clapping (7) 👑 (7) 
+
+[02/14/2025 11:00] princekay145
+Congratulations wardens 🙌 
+
+Better luck to me next time 💪
+
+
+[02/14/2025 13:30] debof_
+@kartoonjoy | C4🎇🎇 I see that I got a medium valid bug and a medium invalid bug. Did they cancel themselves out and I got nothing?
+
+
+[02/14/2025 13:30] debof_
+Hi
+
+
+[02/14/2025 13:50] kartoonjoy
+You'll have to use the powers of the SR to glean what you can. The report will hopefully be out soon.
+
+{Reactions}
+👍 
+
+[02/14/2025 20:31] evokid
+Dude you're doing a lot of hard work, I am suffering atm 😆🫡
+
+{Reactions}
+🙏 
+
+[02/15/2025 02:33] 0xnevi
+I'm sure you will do great too 🫡
+
+{Reactions}
+❤️ 🫡 
+
+[02/19/2025 17:32] 0xstalin
+@kartoonjoy | C4🎇🎇 Just wanted to check if awards have already been distributed. If so, I may have some problems with the tax reporting info 😅
+
+{Reactions}
+👍 
+
+[02/19/2025 17:59] thebrittfactor
+We have some staff outages that has caused a delay in awards. The first batch should be sent out soon!
+
+{Reactions}
+🙏 
+
+[02/19/2025 17:59] daniel526
+makes sense
+
+{Reactions}
+💜 
+
+[02/19/2025 18:02] 0xstalin
+all good, no hurries, thanks for the answer
+
+{Reactions}
+hi5 
+
+[02/19/2025 19:37] deeney3866
+if there is opening i can apply.
+
+
+[02/19/2025 21:12] 0x391
+when can i get the rewards?
+
+
+[02/21/2025 12:51] donkicha
+I submitted my tax info a few days ago, but it still not approved. Anyone else with the same issue?
+
+
+[02/21/2025 18:16] kartoonjoy
+This is a manual process. Please allow 1 - 2 weeks. Thanks
+
+
+[02/21/2025 20:34] pcprodigy
+
+
+{Attachments}
+Code4rena - ARCHIVE-PUBLIC - concrete-nov15 [1306716946313646090].txt_Files/pXT0B3DMmAV9q0EWQS-158C5.gif
+
+
+[02/23/2025 20:19] willycode20
+Have first batch been sent yet??
+
+
+[02/23/2025 20:23] 0xstalin
+not yet, maybe on Monday
+
+{Reactions}
+👍 
+
+[02/24/2025 07:38] boraichodrunkenmaster
+@thebrittfactor | C4 - Away ?
+
+
+[02/24/2025 11:10] donkicha
+What will happen if the rewards are sent before my tax info be approved?
+
+
+[02/24/2025 13:06] thebrittfactor
+As long as you have submitted your tax information, you should be fine.
+
+
+[02/24/2025 13:08] thebrittfactor
+I anticipate the first batch will be sent out this week, as staff are now back in office. Appreciate everyone's patience with the delay!
+
+
+[02/24/2025 13:12] kartoonjoy
+https://docs.code4rena.com/awarding/incentive-model-and-awards/awarding-process#award-distribution-requirements-and-schedule
+
+
+[02/25/2025 14:21] jpr15
+is this enough to receive awards?
+
+{Attachments}
+Code4rena - ARCHIVE-PUBLIC - concrete-nov15 [1306716946313646090].txt_Files/image-48CB3.png
+
+
+[02/25/2025 14:24] kartoonjoy
+Accepted is key
+
+{Reactions}
+✅ 
+
+[02/25/2025 15:26] ivanfitro
+payments are done?
+
+
+[02/25/2025 15:59] thebrittfactor
+We're pending the 1st batch being sent. Should be soon 🙂
+
+{Reactions}
+👀 (2) 
+
+[02/25/2025 16:02] ivanfitro
+Perfect thanks!
+
+
+[02/25/2025 16:02] jvorex
+bet you meant 1st??
+
+
+[02/25/2025 16:10] thebrittfactor
+Oops! Yes, first - corrected. Sorry about that!
+
+
+[02/25/2025 16:27] boraichodrunkenmaster
+Just to clarify soon as today?
+
+
+[02/25/2025 16:34] thebrittfactor
+Exact timing is pending. We've reached out the payments team and they'll process asap.
+
+
+[02/26/2025 01:29] boraichodrunkenmaster
+Thanks @thebrittfactor | C4 - Away funds have been distributed
+
+
+[02/26/2025 06:44] willycode20
+on which network?
+
+
+[02/26/2025 06:46] boraichodrunkenmaster
+Polygon
+
+{Reactions}
+👍 👆 
+
+[03/06/2025 15:53] third_eye007
+has the payments been sent ,since i didn’t recieve my payout.
+
+
+[03/06/2025 15:57] thebrittfactor
+First batch has been [sent](https://discord.com/channels/810916927919620096/810929015509483554/1344308006350884906). If you didn't receive an expected award, please ensure that you've submitted your tax information before March 13th and you'll be included in the second batch.
+
+
+[03/07/2025 00:01] itsmetechjay
+ℹ️ This channel is pending archive.   As a result, any private threads will be permanently deleted in 03/14/2025 23:01. Please make sure to grab anything you might need before then.
+
+
+[03/07/2025 03:16] third_eye007
+I submitted my tax information yesterday.
+
+
+[03/07/2025 12:00] thebrittfactor
+You'll be included in the second batch that occurs after March 13th then. 😊
+
+
+[03/14/2025 20:09] itsmetechjay
+ℹ️ Reminder: this channel will be deleted after 24 hours.
+
+
+==============================================================
+Exported 292 message(s)
+==============================================================
